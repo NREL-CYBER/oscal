@@ -1,0 +1,16 @@
+{
+  "name": "oscal-types",
+  "version": "1.0.0",
+  "description": "Oscal Typescript types",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.nrel.gov/CyberSecurity/oscal-types.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
