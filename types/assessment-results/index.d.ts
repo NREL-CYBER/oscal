@@ -8,13 +8,13 @@ export interface Coordinate {
  */
 export interface SecurityAssessmentResultsSAR {
     assessmentActivities?: AssessmentActivities;
-    assessmentSubjects?:   SubjectOfAssessment;
-    assets?:               AssetsClass;
-    backMatter?:           BackMatter;
-    importAp:              ImportAssessmentPlan;
-    metadata:              PublicationMetadata;
-    objectives:            ObjectivesOfAssessment;
-    resultsGroup:          ResultsGroup;
+    assessmentSubjects?: SubjectOfAssessment;
+    assets?: AssetsClass;
+    backMatter?: BackMatter;
+    importAp: ImportAssessmentPlan;
+    metadata: PublicationMetadata;
+    objectives: ObjectivesOfAssessment;
+    resultsGroup: ResultsGroup;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -28,9 +28,9 @@ export interface SecurityAssessmentResultsSAR {
 export interface AssessmentActivities {
     excludeActivities?: ExcludeActivityElement[];
     includeActivities?: IncludeActivityElement[];
-    remarks?:           string;
-    schedule?:          Schedule;
-    testMethods?:       TestMethod[];
+    remarks?: string;
+    schedule?: Schedule;
+    testMethods?: TestMethod[];
 }
 
 /**
@@ -39,15 +39,15 @@ export interface AssessmentActivities {
  * this could be used to explicitly identify an activity that was planned, but not performed.
  */
 export interface ExcludeActivityElement {
-    annotations?:   Annotation[];
-    compareTo?:     string;
-    description:    string;
+    annotations?: Annotation[];
+    compareTo?: string;
+    description: string;
     locationUuids?: string[];
-    partyUuids?:    string[];
-    properties?:    Property[];
-    remarks?:       string;
-    roleIDS?:       string[];
-    title?:         string;
+    partyUuids?: string[];
+    properties?: Property[];
+    remarks?: string;
+    roleIDS?: string[];
+    title?: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -65,7 +65,7 @@ export interface Annotation {
     /**
      * A namespace qualifying the name.
      */
-    ns?:      string;
+    ns?: string;
     remarks?: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
@@ -106,15 +106,15 @@ export interface Property {
  * performed.
  */
 export interface IncludeActivityElement {
-    annotations?:   Annotation[];
-    compareTo?:     string;
-    description:    string;
+    annotations?: Annotation[];
+    compareTo?: string;
+    description: string;
     locationUuids?: string[];
-    partyUuids?:    string[];
-    properties?:    Property[];
-    remarks?:       string;
-    roleIDS?:       string[];
-    title?:         string;
+    partyUuids?: string[];
+    properties?: Property[];
+    remarks?: string;
+    roleIDS?: string[];
+    title?: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -137,17 +137,17 @@ export interface Schedule {
  */
 export interface Task {
     activityUuids?: string[];
-    annotations?:   Annotation[];
-    compareTo?:     string;
-    description?:   string;
-    end?:           Date;
+    annotations?: Annotation[];
+    compareTo?: string;
+    description?: string;
+    end?: Date;
     locationUuids?: string[];
-    partyUuids?:    string[];
-    properties?:    Property[];
-    remarks?:       string;
-    roleIDS?:       string[];
-    start?:         Date;
-    title?:         string;
+    partyUuids?: string[];
+    properties?: Property[];
+    remarks?: string;
+    roleIDS?: string[];
+    start?: Date;
+    title?: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -159,13 +159,13 @@ export interface Task {
  */
 export interface TestMethod {
     annotations?: Annotation[];
-    compareTo?:   string;
+    compareTo?: string;
     description?: string;
-    links?:       Link[];
-    properties?:  Property[];
-    remarks?:     string;
-    testSteps?:   TestSteps[];
-    title?:       string;
+    links?: Link[];
+    properties?: Property[];
+    remarks?: string;
+    testSteps?: TestSteps[];
+    title?: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -196,12 +196,12 @@ export interface Link {
  * Identifies an individual test step.
  */
 export interface TestSteps {
-    compareTo?:  string;
+    compareTo?: string;
     description: string;
     partyUuids?: string[];
-    remarks?:    string;
-    roleIDS?:    string[];
-    sequence?:   number;
+    remarks?: string;
+    roleIDS?: string[];
+    sequence?: number;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -215,10 +215,10 @@ export interface TestSteps {
  * the plan.
  */
 export interface SubjectOfAssessment {
-    excludes?:         ExcludedAssessmentSubject[];
-    includes:          IncludedAssessmentSubject[];
+    excludes?: ExcludedAssessmentSubject[];
+    includes: IncludedAssessmentSubject[];
     localDefinitions?: LocalDefinitions;
-    remarks?:          string;
+    remarks?: string;
 }
 
 /**
@@ -227,19 +227,19 @@ export interface SubjectOfAssessment {
  * items, such as hosts to avoid scanning.
  */
 export interface ExcludedAssessmentSubject {
-    all?:         string;
+    all?: string;
     annotations?: Annotation[];
     /**
      * Indicating the type or classification of the containing object
      */
-    class?:      string;
+    class?: string;
     description: string;
     /**
      * Identifying the purpose and intended use of the property, part or other object.
      */
-    name:               string;
-    properties?:        Property[];
-    remarks?:           string;
+    name: string;
+    properties?: Property[];
+    remarks?: string;
     subjectReferences?: IdentifiesTheSubject[];
 }
 
@@ -266,19 +266,19 @@ export interface IdentifiesTheSubject {
  * defined is out-of-scope.
  */
 export interface IncludedAssessmentSubject {
-    all?:         string;
+    all?: string;
     annotations?: Annotation[];
     /**
      * Indicating the type or classification of the containing object
      */
-    class?:      string;
+    class?: string;
     description: string;
     /**
      * Identifying the purpose and intended use of the property, part or other object.
      */
-    name:               string;
-    properties?:        Property[];
-    remarks?:           string;
+    name: string;
+    properties?: Property[];
+    remarks?: string;
     subjectReferences?: IdentifiesTheSubject[];
 }
 
@@ -289,10 +289,10 @@ export interface IncludedAssessmentSubject {
  * metadata to define additional locations if needed.
  */
 export interface LocalDefinitions {
-    components?:     Record<string,Component };
-    inventoryItems?: Record<string,InventoryItem };
-    remarks?:        string;
-    users?:          Record<string,SystemUserClass };
+    components?: Record<string, Component>;
+    inventoryItems?: Record<string, InventoryItem>;
+    remarks?: string;
+    users?: Record<string, SystemUserClass>;
 }
 
 /**
@@ -303,16 +303,16 @@ export interface Component {
     /**
      * A category describing the purpose of the component.
      */
-    componentType:     string;
-    description:       string;
-    links?:            Link[];
-    properties?:       Property[];
-    protocols?:        Protocol[];
-    purpose?:          string;
-    remarks?:          string;
-    responsibleRoles?: Record<string,ResponsibleRole };
-    status:            Status;
-    title:             string;
+    componentType: string;
+    description: string;
+    links?: Link[];
+    properties?: Property[];
+    protocols?: Protocol[];
+    purpose?: string;
+    remarks?: string;
+    responsibleRoles?: Record<string, ResponsibleRole>;
+    status: Status;
+    title: string;
 }
 
 /**
@@ -322,9 +322,9 @@ export interface Protocol {
     /**
      * The short name of the protocol (e.g., TLS).
      */
-    name:        string;
+    name: string;
     portRanges?: PortRange[];
-    title?:      string;
+    title?: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -363,10 +363,10 @@ export enum Transport {
  */
 export interface ResponsibleRole {
     annotations?: Annotation[];
-    links?:       Link[];
-    partyUuids?:  string[];
-    properties?:  Property[];
-    remarks?:     string;
+    links?: Link[];
+    partyUuids?: string[];
+    properties?: Property[];
+    remarks?: string;
 }
 
 /**
@@ -401,24 +401,24 @@ export interface InventoryItem {
      * a reference to the identifier used in an asset tracking system or a vulnerability
      * scanning tool.
      */
-    assetID:                string;
-    description:            string;
-    implementedComponents?: Record<string,ImplementedComponent };
-    links?:                 Link[];
-    properties?:            Property[];
-    remarks?:               string;
-    responsibleParties?:    Record<string,ResponsibleParty };
+    assetID: string;
+    description: string;
+    implementedComponents?: Record<string, ImplementedComponent>;
+    links?: Link[];
+    properties?: Property[];
+    remarks?: string;
+    responsibleParties?: Record<string, ResponsibleParty>;
 }
 
 /**
  * The set of componenets that are implemented in a given system inventory item.
  */
 export interface ImplementedComponent {
-    annotations?:        Annotation[];
-    links?:              Link[];
-    properties?:         Property[];
-    remarks?:            string;
-    responsibleParties?: Record<string,ResponsibleParty };
+    annotations?: Annotation[];
+    links?: Link[];
+    properties?: Property[];
+    remarks?: string;
+    responsibleParties?: Record<string, ResponsibleParty>;
     /**
      * The type of implementation
      */
@@ -431,25 +431,25 @@ export interface ImplementedComponent {
  */
 export interface ResponsibleParty {
     annotations?: Annotation[];
-    links?:       Link[];
-    partyUuids:   string[];
-    properties?:  Property[];
-    remarks?:     string;
+    links?: Link[];
+    partyUuids: string[];
+    properties?: Property[];
+    remarks?: string;
 }
 
 /**
  * A type of user that interacts with the system based on an associated role.
  */
 export interface SystemUserClass {
-    annotations?:          Annotation[];
+    annotations?: Annotation[];
     authorizedPrivileges?: Privilege[];
-    description?:          string;
-    links?:                Link[];
-    properties?:           Property[];
-    remarks?:              string;
-    roleIDS:               string[];
-    shortName?:            string;
-    title?:                string;
+    description?: string;
+    links?: Link[];
+    properties?: Property[];
+    remarks?: string;
+    roleIDS: string[];
+    shortName?: string;
+    title?: string;
 }
 
 /**
@@ -457,9 +457,9 @@ export interface SystemUserClass {
  * description and/or rationale for the privilege.
  */
 export interface Privilege {
-    description?:       string;
+    description?: string;
     functionsPerformed: string[];
-    title:              string;
+    title: string;
 }
 
 /**
@@ -469,10 +469,10 @@ export interface Privilege {
 export interface AssetsClass {
     annotations?: Annotation[];
     origination?: AssessmentOrigination;
-    parts?:       Part[];
-    properties?:  Property[];
-    remarks?:     string;
-    tools?:       ToolsClass;
+    parts?: Part[];
+    properties?: Property[];
+    remarks?: string;
+    tools?: ToolsClass;
 }
 
 /**
@@ -481,8 +481,8 @@ export interface AssetsClass {
  */
 export interface AssessmentOrigination {
     description?: string;
-    properties?:  Property[];
-    title:        string;
+    properties?: Property[];
+    title: string;
 }
 
 /**
@@ -501,11 +501,11 @@ export interface Part {
     /**
      * A namespace qualifying the name.
      */
-    ns?:         string;
-    parts?:      Part[];
+    ns?: string;
+    parts?: Part[];
     properties?: Property[];
-    prose?:      string;
-    title?:      string;
+    prose?: string;
+    title?: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -519,7 +519,7 @@ export interface Part {
  * assessment plan.
  */
 export interface ToolsClass {
-    components?: Record<string,Component };
+    components?: Record<string, Component>;
 }
 
 /**
@@ -535,13 +535,13 @@ export interface BackMatter {
  */
 export interface Resource {
     attachments?: Base64[];
-    citation?:    Citation;
-    desc?:        string;
+    citation?: Citation;
+    desc?: string;
     documentIDS?: DocumentIdentifier[];
-    properties?:  Property[];
-    remarks?:     string;
-    rlinks?:      ResourceLink[];
-    title?:       string;
+    properties?: Property[];
+    remarks?: string;
+    rlinks?: ResourceLink[];
+    title?: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -558,16 +558,16 @@ export interface Base64 {
      * Describes the media type of the linked resource
      */
     mediaType?: string;
-    value:      string;
+    value: string;
 }
 
 /**
  * A citation consisting of end note text and optional structured bibliographic data.
  */
 export interface Citation {
-    biblio?:     BibliographicDefinition;
+    biblio?: BibliographicDefinition;
     properties?: Property[];
-    text:        string;
+    text: string;
 }
 
 /**
@@ -612,7 +612,7 @@ export interface Hash {
      * Method by which a hash is derived
      */
     algorithm: string;
-    value:     string;
+    value: string;
 }
 
 /**
@@ -623,7 +623,7 @@ export interface ImportAssessmentPlan {
     /**
      * A link to a document or document fragment (actual, nominal or projected)
      */
-    href:     string;
+    href: string;
     remarks?: string;
 }
 
@@ -631,35 +631,35 @@ export interface ImportAssessmentPlan {
  * Provides information about the publication and availability of the containing document.
  */
 export interface PublicationMetadata {
-    documentIDS?:        DocumentIdentifier[];
-    lastModified:        Date;
-    links?:              Link[];
-    locations?:          Location[];
-    oscalVersion:        string;
-    parties?:            PartyOrganizationOrPerson[];
-    properties?:         Property[];
-    published?:          Date;
-    remarks?:            string;
-    responsibleParties?: Record<string,ResponsibleParty };
-    revisionHistory?:    RevisionHistoryEntry[];
-    roles?:              Role[];
-    title:               string;
-    version:             string;
+    documentIDS?: DocumentIdentifier[];
+    lastModified: Date;
+    links?: Link[];
+    locations?: Location[];
+    oscalVersion: string;
+    parties?: PartyOrganizationOrPerson[];
+    properties?: Property[];
+    published?: Date;
+    remarks?: string;
+    responsibleParties?: Record<string, ResponsibleParty>;
+    revisionHistory?: RevisionHistoryEntry[];
+    roles?: Role[];
+    title: string;
+    version: string;
 }
 
 /**
  * A location, with associated metadata that can be referenced.
  */
 export interface Location {
-    address:           Address;
-    annotations?:      Annotation[];
-    emailAddresses?:   string[];
-    links?:            Link[];
-    properties?:       Property[];
-    remarks?:          string;
+    address: Address;
+    annotations?: Annotation[];
+    emailAddresses?: string[];
+    links?: Link[];
+    properties?: Property[];
+    remarks?: string;
     telephoneNumbers?: Telephone[];
-    title?:            string;
-    urLs?:             string[];
+    title?: string;
+    urLs?: string[];
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -670,11 +670,11 @@ export interface Location {
  * A postal address.
  */
 export interface Address {
-    city?:          string;
-    country?:       string;
+    city?: string;
+    country?: string;
     postalAddress?: string[];
-    postalCode?:    string;
-    state?:         string;
+    postalCode?: string;
+    state?: string;
     /**
      * Indicates the type of address.
      */
@@ -697,18 +697,18 @@ export interface Telephone {
  * persons)
  */
 export interface PartyOrganizationOrPerson {
-    addresses?:             Address[];
-    annotations?:           Annotation[];
-    emailAddresses?:        string[];
-    externalIDS?:           PersonalIdentifier[];
-    links?:                 Link[];
-    locationUuids?:         string[];
+    addresses?: Address[];
+    annotations?: Annotation[];
+    emailAddresses?: string[];
+    externalIDS?: PersonalIdentifier[];
+    links?: Link[];
+    locationUuids?: string[];
     memberOfOrganizations?: string[];
-    partyName:              string;
-    properties?:            Property[];
-    remarks?:               string;
-    shortName?:             string;
-    telephoneNumbers?:      Telephone[];
+    partyName: string;
+    properties?: Property[];
+    remarks?: string;
+    shortName?: string;
+    telephoneNumbers?: Telephone[];
     /**
      * A category describing the kind of party the object describes.
      */
@@ -744,13 +744,13 @@ export enum PartyType {
  */
 export interface RevisionHistoryEntry {
     lastModified?: Date;
-    links?:        Link[];
+    links?: Link[];
     oscalVersion?: string;
-    properties?:   Property[];
-    published?:    Date;
-    remarks?:      string;
-    title?:        string;
-    version?:      string;
+    properties?: Property[];
+    published?: Date;
+    remarks?: string;
+    title?: string;
+    version?: string;
 }
 
 /**
@@ -758,16 +758,16 @@ export interface RevisionHistoryEntry {
  */
 export interface Role {
     annotations?: Annotation[];
-    desc?:        string;
+    desc?: string;
     /**
      * Unique identifier of the containing object
      */
-    id:          string;
-    links?:      Link[];
+    id: string;
+    links?: Link[];
     properties?: Property[];
-    remarks?:    string;
-    shortName?:  string;
-    title:       string;
+    remarks?: string;
+    shortName?: string;
+    title: string;
 }
 
 /**
@@ -777,14 +777,14 @@ export interface Role {
  * plan.
  */
 export interface ObjectivesOfAssessment {
-    annotations?:           Annotation[];
-    controlGroup:           AssessedControls[];
+    annotations?: Annotation[];
+    controlGroup: AssessedControls[];
     controlObjectiveGroup?: ControlObjectives[];
-    description?:           string;
-    methodDefinitions?:     MethodDefinitionElement[];
-    objectives?:            Objectives;
-    properties?:            Property[];
-    remarks?:               string;
+    description?: string;
+    methodDefinitions?: MethodDefinitionElement[];
+    objectives?: Objectives;
+    properties?: Property[];
+    remarks?: string;
 }
 
 /**
@@ -793,13 +793,13 @@ export interface ObjectivesOfAssessment {
  * changes from the plan.
  */
 export interface AssessedControls {
-    all?:             string;
-    annotations?:     Annotation[];
-    description?:     string;
+    all?: string;
+    annotations?: Annotation[];
+    description?: string;
     excludeControls?: ExcludeControl[];
     includeControls?: IncludeControl[];
-    properties?:      Property[];
-    remarks?:         string;
+    properties?: Property[];
+    remarks?: string;
 }
 
 /**
@@ -810,7 +810,7 @@ export interface ExcludeControl {
      * A reference to a control identifier.
      */
     controlID: string;
-    strvalue:  string;
+    strvalue: string;
 }
 
 /**
@@ -821,7 +821,7 @@ export interface IncludeControl {
      * A reference to a control identifier.
      */
     controlID: string;
-    strvalue:  string;
+    strvalue: string;
 }
 
 /**
@@ -830,13 +830,13 @@ export interface IncludeControl {
  * reflects any changes from the plan.
  */
 export interface ControlObjectives {
-    all?:               string;
-    annotations?:       Annotation[];
-    description?:       string;
+    all?: string;
+    annotations?: Annotation[];
+    description?: string;
     excludeObjectives?: ExcludeObjective[];
     includeObjectives?: IncludeObjective[];
-    properties?:        Property[];
-    remarks?:           string;
+    properties?: Property[];
+    remarks?: string;
 }
 
 /**
@@ -847,7 +847,7 @@ export interface ExcludeObjective {
      * Points to an assessment objective.
      */
     objectiveID: string;
-    strvalue:    string;
+    strvalue: string;
 }
 
 /**
@@ -858,7 +858,7 @@ export interface IncludeObjective {
      * Points to an assessment objective.
      */
     objectiveID: string;
-    strvalue:    string;
+    strvalue: string;
 }
 
 /**
@@ -868,9 +868,9 @@ export interface IncludeObjective {
 export interface MethodDefinitionElement {
     annotations?: Annotation[];
     description?: string;
-    part:         Part;
-    properties?:  Property[];
-    remarks?:     string;
+    part: Part;
+    properties?: Property[];
+    remarks?: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -888,16 +888,16 @@ export interface ControlObjective {
     /**
      * A reference to a control identifier.
      */
-    controlID:    string;
+    controlID: string;
     description?: string;
     /**
      * Unique identifier of the containing object
      */
-    id:          string;
-    methods?:    MethodElement[];
-    part:        Part;
+    id: string;
+    methods?: MethodElement[];
+    part: Part;
     properties?: Property[];
-    remarks?:    string;
+    remarks?: string;
 }
 
 /**
@@ -908,7 +908,7 @@ export interface MethodElement {
      * Identifies the assessment method.
      */
     methodUUID: string;
-    strvalue:   string;
+    strvalue: string;
 }
 
 export type ResultsGroup = AssessmentResults[] | AssessmentResults;
@@ -921,13 +921,13 @@ export type ResultsGroup = AssessmentResults[] | AssessmentResults;
  */
 export interface AssessmentResults {
     annotations?: Annotation[];
-    description:  string;
-    end:          Date;
-    findings:     Finding[];
-    properties?:  Property[];
-    remarks?:     string;
-    start:        Date;
-    title:        string;
+    description: string;
+    end: Date;
+    findings: Finding[];
+    properties?: Property[];
+    remarks?: string;
+    start: Date;
+    title: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -938,19 +938,19 @@ export interface AssessmentResults {
  * Describes an individual finding.
  */
 export interface Finding {
-    annotations?:                 Annotation[];
-    collected:                    Date;
-    description:                  string;
-    expires?:                     Date;
+    annotations?: Annotation[];
+    collected: Date;
+    description: string;
+    expires?: Date;
     implementationStatementUUID?: string;
-    objectiveStatus?:             ObjectiveStatusClass;
-    observations?:                Objective[];
-    partyUuids?:                  string[];
-    properties?:                  Property[];
-    remarks?:                     string;
-    risks?:                       IdentifiedRisk[];
-    threatIDS?:                   ThreatID[];
-    title:                        string;
+    objectiveStatus?: ObjectiveStatusClass;
+    observations?: Objective[];
+    partyUuids?: string[];
+    properties?: Property[];
+    remarks?: string;
+    risks?: IdentifiedRisk[];
+    threatIDS?: ThreatID[];
+    title: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -964,16 +964,16 @@ export interface ObjectiveStatusClass {
     /**
      * A reference to a control identifier.
      */
-    controlID?:            string;
-    description?:          string;
+    controlID?: string;
+    description?: string;
     implementationStatus?: ImplementationStatusClass;
     /**
      * Points to an assessment objective.
      */
     objectiveID?: string;
-    remarks?:     string;
-    result?:      Result;
-    title?:       string;
+    remarks?: string;
+    result?: Result;
+    title?: string;
 }
 
 /**
@@ -1002,17 +1002,17 @@ export interface Result {
  * Describes an individual observation.
  */
 export interface Objective {
-    annotations?:       Annotation[];
-    assessors?:         Assessor[];
-    description:        string;
-    evidenceGroup?:     RelevantEvidence[];
+    annotations?: Annotation[];
+    assessors?: Assessor[];
+    description: string;
+    evidenceGroup?: RelevantEvidence[];
     observationMethods: string[];
-    observationTypes?:  string[];
-    origins?:           Origin[];
-    properties?:        Property[];
-    remarks?:           string;
+    observationTypes?: string[];
+    origins?: Origin[];
+    properties?: Property[];
+    remarks?: string;
     subjectReferences?: IdentifiesTheSubject[];
-    title?:             string;
+    title?: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -1028,7 +1028,7 @@ export interface Assessor {
      * The UUID of the assessor who collected the evidence or made the observation.
      */
     partyUUID: string;
-    strvalue:  string;
+    strvalue: string;
 }
 
 /**
@@ -1036,14 +1036,14 @@ export interface Assessor {
  */
 export interface RelevantEvidence {
     annotations?: Annotation[];
-    description:  string;
+    description: string;
     /**
      * Links to evidence as URI. May use a URI fragment to point to a resource in the
      * back-matter.
      */
-    href?:       string;
+    href?: string;
     properties?: Property[];
-    remarks?:    string;
+    remarks?: string;
 }
 
 /**
@@ -1076,19 +1076,19 @@ export enum Type {
  * An identified risk.
  */
 export interface IdentifiedRisk {
-    annotations?:         Annotation[];
-    closureActions?:      string;
-    description:          string;
-    mitigatingFactors?:   MitigatingFactor[];
-    partyUuids?:          string[];
-    properties?:          Property[];
+    annotations?: Annotation[];
+    closureActions?: string;
+    description: string;
+    mitigatingFactors?: MitigatingFactor[];
+    partyUuids?: string[];
+    properties?: Property[];
     remediationDeadline?: Date;
-    remediationGroup?:    Remediation[];
+    remediationGroup?: Remediation[];
     remediationTracking?: RemediationTracking;
-    riskMetrics?:         RiskMetric[];
-    riskStatement:        string;
-    riskStatus:           string;
-    title:                string;
+    riskMetrics?: RiskMetric[];
+    riskStatement: string;
+    riskStatus: string;
+    title: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -1105,7 +1105,7 @@ export interface MitigatingFactor {
      * Points to an implementation statement in the SSP.
      */
     implementationUUID?: string;
-    subjectReferences?:  IdentifiesTheSubject[];
+    subjectReferences?: IdentifiesTheSubject[];
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -1116,14 +1116,14 @@ export interface MitigatingFactor {
  * Describes either recommendation or an actual plan for remediating the risk.
  */
 export interface Remediation {
-    annotations?:  Annotation[];
-    description:   string;
-    origins?:      RemediationOrigin[];
-    properties?:   Property[];
-    remarks?:      string;
+    annotations?: Annotation[];
+    description: string;
+    origins?: RemediationOrigin[];
+    properties?: Property[];
+    remarks?: string;
     requirements?: Required[];
-    schedule?:     Schedule;
-    title:         string;
+    schedule?: Schedule;
+    title: string;
     /**
      * Indicating the type of identifier, address, email or other data item.
      */
@@ -1153,12 +1153,12 @@ export interface RemediationOrigin {
  * Identifies something required to achieve remediation.
  */
 export interface Required {
-    annotations?:       Annotation[];
-    description:        string;
-    properties?:        Property[];
-    remarks?:           string;
+    annotations?: Annotation[];
+    description: string;
+    properties?: Property[];
+    remarks?: string;
     subjectReferences?: IdentifiesTheSubject[];
-    title?:             string;
+    title?: string;
     /**
      * A RFC 4122 version 4 Universally Unique Identifier (UUID) for the containing object.
      */
@@ -1177,12 +1177,12 @@ export interface RemediationTracking {
  * remediation of the associated risk.
  */
 export interface TrackingEntry {
-    annotations?:  Annotation[];
+    annotations?: Annotation[];
     dateTimeStamp: Date;
-    description:   string;
-    properties?:   Property[];
-    remarks?:      string;
-    title?:        string;
+    description: string;
+    properties?: Property[];
+    remarks?: string;
+    title?: string;
     /**
      * Indicating the type of identifier, address, email or other data item.
      */
@@ -1204,7 +1204,7 @@ export interface RiskMetric {
     /**
      * Identifying the purpose and intended use of the property, part or other object.
      */
-    name:     string;
+    name: string;
     strvalue: string;
     /**
      * Specifies the system represented by this risk metric.
