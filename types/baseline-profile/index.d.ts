@@ -6,7 +6,7 @@
  */
 
 /**
- * A globally unique identifier for this catalog instance. This UUID should be changed when this document is revised.
+ * A globally unique identifier for this profile instance. This UUID should be changed when this document is revised.
  */
 export type CatalogUniversallyUniqueIdentifier = string;
 /**
@@ -230,6 +230,54 @@ export type OrganizationalAffiliation = string;
  */
 export type PartyReference = string;
 /**
+ * A resolvable URL reference to the base catalog or profile that this profile is tailoring.
+ */
+export type CatalogOrProfileReference = string;
+/**
+ * When a control is included, whether its child (dependent) controls are also included.
+ */
+export type IncludeContainedControlsWithControl = "yes" | "no";
+/**
+ * Value of the 'id' flag on a target control
+ */
+export type ControlID = string;
+/**
+ * When a control is included, whether its child (dependent) controls are also included.
+ */
+export type IncludeContainedControlsWithControl1 = "yes" | "no";
+/**
+ * A regular expression matching the IDs of one or more controls to be selected
+ */
+export type Pattern = string;
+/**
+ * A designation of how a selection of controls in a profile is to be ordered.
+ */
+export type Order = "keep" | "ascending" | "descending";
+/**
+ * When a control is included, whether its child (dependent) controls are also included.
+ */
+export type IncludeContainedControlsWithControl2 = "yes" | "no";
+/**
+ * How clashing controls should be handled
+ */
+export type CombinationMethod = "use-first" | "merge" | "keep";
+/**
+ * An As-is element indicates that the controls should be structured in resolution as they are structured in their source catalogs. It does not contain any elements or attributes.
+ */
+export type AsIs = boolean;
+/**
+ * A unique identifier for a specific group instance that can be used to reference the group within this and in other OSCAL documents. This identifier's uniqueness is document scoped and is intended to be consistent for the same group across minor revisions of the document.
+ */
+export type GroupIdentifier = string;
+/**
+ * A textual label that provides a sub-type or characterization of the group.
+ */
+export type GroupClass = string;
+/**
+ * A name given to the group, which may be used by a tool for display and navigation.
+ */
+export type GroupTitle = string;
+/**
  * A unique identifier for a specific parameter instance. This identifier's uniqueness is document scoped and is intended to be consistent for the same parameter across minor revisions of the document.
  */
 export type ParameterIdentifier = string;
@@ -274,18 +322,6 @@ export type ParameterCardinality = string;
  */
 export type Choice = string;
 /**
- * A unique identifier for a specific control instance that can be used to reference the control in other OSCAL documents. This identifier's uniqueness is document scoped and is intended to be consistent for the same control across minor revisions of the document.
- */
-export type ControlIdentifier = string;
-/**
- * A textual label that provides a sub-type or characterization of the control.
- */
-export type ControlClass = string;
-/**
- * A name given to the control, which may be used by a tool for display and navigation.
- */
-export type ControlTitle = string;
-/**
  * A unique identifier for a specific part instance. This identifier's uniqueness is document scoped and is intended to be consistent for the same part across minor revisions of the document.
  */
 export type PartIdentifier = string;
@@ -310,17 +346,53 @@ export type PartTitle = string;
  */
 export type PartText = string;
 /**
- * A unique identifier for a specific group instance that can be used to reference the group within this and in other OSCAL documents. This identifier's uniqueness is document scoped and is intended to be consistent for the same group across minor revisions of the document.
+ * A textual label that provides a characterization of the parameter.
  */
-export type GroupIdentifier = string;
+export type ParameterClass1 = string;
 /**
- * A textual label that provides a sub-type or characterization of the group.
+ * Another parameter invoking this one
  */
-export type GroupClass = string;
+export type DependsOn1 = string;
 /**
- * A name given to the group, which may be used by a tool for display and navigation.
+ * A short, placeholder name for the parameter, which can be used as a subsitute for a value if no value is assigned.
  */
-export type GroupTitle = string;
+export type ParameterLabel1 = string;
+/**
+ * Describes the purpose and use of a parameter
+ */
+export type ParameterUsageDescription1 = string;
+/**
+ * Value of the 'id' flag on a target control
+ */
+export type ControlID1 = string;
+/**
+ * Items to remove, by assigned name
+ */
+export type ReferenceByAssignedName = string;
+/**
+ * Items to remove, by class. A token match.
+ */
+export type ReferenceByClass = string;
+/**
+ * Items to remove, indicated by their IDs
+ */
+export type ReferenceByID = string;
+/**
+ * Items to remove, by the name of the item's type, or generic identifier, e.g. title or prop
+ */
+export type ReferencesByItemNameOrGenericIdentifier = string;
+/**
+ * Where to add the new content with respect to the targeted element (beside it or inside it)
+ */
+export type Position = "before" | "after" | "starting" | "ending";
+/**
+ * Target location of the addition.
+ */
+export type ReferenceByID1 = string;
+/**
+ * A name given to the control, which may be used by a tool for display and navigation.
+ */
+export type TitleChange = string;
 /**
  * A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.
  */
@@ -362,18 +434,18 @@ export type FileName = string;
  */
 export type MediaType2 = string;
 
-export interface OscalCatalogSchema {
-  catalog: Catalog;
+export interface OscalProfileSchema {
+  profile: Profile;
 }
 /**
- * A collection of controls.
+ * Each OSCAL profile is defined by a Profile element
  */
-export interface Catalog {
+export interface Profile {
   uuid: CatalogUniversallyUniqueIdentifier;
   metadata: PublicationMetadata;
-  params?: [Parameter, ...Parameter[]];
-  controls?: [Control, ...Control[]];
-  groups?: [ControlGroup, ...ControlGroup[]];
+  imports: [ImportResource, ...ImportResource[]];
+  merge?: MergeControls;
+  modify?: ModifyControls;
   "back-matter"?: BackMatter;
 }
 /**
@@ -551,6 +623,88 @@ export interface ResponsibleParty {
   remarks?: Remarks;
 }
 /**
+ * An Import element designates a catalog, profile, or other resource to be included (referenced and potentially modified) by this profile.
+ */
+export interface ImportResource {
+  href: CatalogOrProfileReference;
+  include?: IncludeControls;
+  exclude?: ExcludeControls;
+}
+/**
+ * Specifies which controls to include from the resource (source catalog) being imported
+ */
+export interface IncludeControls {
+  all?: IncludeAll;
+  calls?: [Call, ...Call[]];
+  matches?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
+}
+/**
+ * Include all controls from the imported resource (catalog)
+ */
+export interface IncludeAll {
+  "with-child-controls"?: IncludeContainedControlsWithControl;
+}
+/**
+ * Call a control by its ID
+ */
+export interface Call {
+  "control-id": ControlID;
+  "with-child-controls"?: IncludeContainedControlsWithControl1;
+}
+/**
+ * Select controls by (regular expression) match on ID
+ */
+export interface MatchControlsByIdentifier {
+  pattern?: Pattern;
+  order?: Order;
+  "with-child-controls"?: IncludeContainedControlsWithControl2;
+}
+/**
+ * Which controls to exclude from the resource (source catalog) being imported
+ */
+export interface ExcludeControls {
+  calls?: [Call, ...Call[]];
+  matches?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
+}
+/**
+ * A Merge element merges controls in resolution.
+ */
+export interface MergeControls {
+  combine?: CombinationRule;
+  "as-is"?: AsIs;
+  custom?: CustomGrouping;
+}
+/**
+ * A Combine element defines whether and how to combine multiple (competing) versions of the same control
+ */
+export interface CombinationRule {
+  method?: CombinationMethod;
+}
+/**
+ * A Custom element frames a structure for embedding represented controls in resolution.
+ */
+export interface CustomGrouping {
+  groups?: [ControlGroup, ...ControlGroup[]];
+  "id-selectors"?: [Call, ...Call[]];
+  "pattern-selectors"?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
+}
+/**
+ * A group of (selected) controls or of groups of controls
+ */
+export interface ControlGroup {
+  id?: GroupIdentifier;
+  class?: GroupClass;
+  title: GroupTitle;
+  params?: [Parameter, ...Parameter[]];
+  props?: [Property, ...Property[]];
+  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+  links?: [Link, ...Link[]];
+  parts?: [Part, ...Part[]];
+  groups?: [ControlGroup, ...ControlGroup[]];
+  calls?: [Call, ...Call[]];
+  matches?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
+}
+/**
  * Parameters provide a mechanism for the dynamic assignment of value(s) in a control.
  */
 export interface Parameter {
@@ -595,20 +749,6 @@ export interface Selection {
   choice?: [Choice, ...Choice[]];
 }
 /**
- * A structured information object representing a security or privacy control. Each security or privacy control within the Catalog is defined by a distinct control instance.
- */
-export interface Control {
-  id: ControlIdentifier;
-  class?: ControlClass;
-  title: ControlTitle;
-  params?: [Parameter, ...Parameter[]];
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  parts?: [Part, ...Part[]];
-  controls?: [Control, ...Control[]];
-}
-/**
  * A partition of a control's definition or a child of another part.
  */
 export interface Part {
@@ -624,19 +764,61 @@ export interface Part {
   links?: [Link, ...Link[]];
 }
 /**
- * A group of controls, or of groups of controls.
+ * Set parameters or amend controls in resolution
  */
-export interface ControlGroup {
-  id?: GroupIdentifier;
-  class?: GroupClass;
-  title: GroupTitle;
+export interface ModifyControls {
+  "set-parameters"?: {
+    [k: string]: ParameterSetting & {
+      [k: string]: unknown;
+    };
+  };
+  alters?: [Alteration, ...Alteration[]];
+}
+/**
+ * A parameter setting, to be propagated to points of insertion
+ */
+export interface ParameterSetting {
+  class?: ParameterClass1;
+  "depends-on"?: DependsOn1;
+  props?: [Property, ...Property[]];
+  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+  links?: [Link, ...Link[]];
+  label?: ParameterLabel1;
+  usage?: ParameterUsageDescription1;
+  constraints?: [Constraint, ...Constraint[]];
+  guidelines?: [Guideline, ...Guideline[]];
+  values?: [ParameterValue, ...ParameterValue[]];
+  select?: Selection;
+}
+/**
+ * An Alter element specifies changes to be made to an included control when a profile is resolved.
+ */
+export interface Alteration {
+  "control-id"?: ControlID1;
+  removes?: [Removal, ...Removal[]];
+  adds?: [Addition, ...Addition[]];
+}
+/**
+ * Specifies elements to be removed from a control, in resolution
+ */
+export interface Removal {
+  "name-ref"?: ReferenceByAssignedName;
+  "class-ref"?: ReferenceByClass;
+  "id-ref"?: ReferenceByID;
+  "item-name"?: ReferencesByItemNameOrGenericIdentifier;
+}
+/**
+ * Specifies contents to be added into controls, in resolution
+ */
+export interface Addition {
+  position?: Position;
+  "id-ref"?: ReferenceByID1;
+  title?: TitleChange;
   params?: [Parameter, ...Parameter[]];
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   parts?: [Part, ...Part[]];
-  groups?: [ControlGroup, ...ControlGroup[]];
-  controls?: [Control, ...Control[]];
 }
 /**
  * A collection of resources, which may be included directly or by reference.

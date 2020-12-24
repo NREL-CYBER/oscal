@@ -4,7 +4,7 @@
   "description": "Oscal Typescript types",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -12,5 +12,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "json-schema-to-typescript": "^10.0.2"
+  }
 }
