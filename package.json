@@ -2,9 +2,9 @@
   "name": "oscal-types",
   "version": "1.0.0",
   "description": "Oscal Typescript types",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "compile": "node index.js"
+    "compile": "node compile.js"
   },
   "repository": {
     "type": "git",
