@@ -1,6 +1,6 @@
 {
-  "name": "oscal-types",
-  "version": "1.0.0",
+  "name": "oscal",
+  "version": "1.0.1",
   "description": "Oscal Typescript types",
   "main": "index.ts",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.nrel.gov/CyberSecurity/oscal-types.git"
+    "url": "https://github.nrel.gov/CyberSecurity/oscal.git"
   },
   "keywords": [],
   "author": "",
