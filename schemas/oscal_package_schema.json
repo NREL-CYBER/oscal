@@ -7303,30 +7303,33 @@
         }
     },
     "properties": {
-        "system_security_plan": {
+        "system_security_plans": {
+            "type": "array",
             "$ref": "#/definitions/system_security_plan"
         },
-        "catalog": {
+        "catalogs": {
+            "type": "array",
             "$ref": "#/definitions/catalog"
         },
-        "profile": {
+        "profiles": {
+            "type": "array",
             "$ref": "#/definitions/profile"
         },
-        "assessment_plan": {
+        "assessment_plans": {
+            "type": "array",
             "$ref": "#/definitions/assessment_plan"
         },
         "assessment_results": {
+            "type": "array",
             "$ref": "#/definitions/assessment_results"
         },
-        "component_definition": {
+        "component_definitions": {
+            "type": "array",
             "$ref": "#/definitions/component_definition"
         }
     },
-    "required": [
-        "system_security_plan"
-    ],
     "additionalProperties": false,
     "maxProperties": 1,
-    "title": "Oscal Package Schema",
+    "title": "Oscal",
     "description": "Oscal Package Types"
 }
