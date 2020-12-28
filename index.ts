@@ -1,2 +1,2 @@
-import Oscal from "./types"
+import * as Oscal from "./types";
 export default Oscal;

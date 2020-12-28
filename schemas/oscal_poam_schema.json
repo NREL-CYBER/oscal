@@ -239,7 +239,7 @@
               { "title" : 
                 { "title" : "Document Title",
                   "description" : "A name given to the document revision, which may be used by a tool for display and navigation.",
-                  "$id" : "#/definitions/title",
+                  "$id": "#/definitions/document-title",
                   "type" : "string" },
                 "published" : 
                 { "title" : "Publication Timestamp",
@@ -365,7 +365,7 @@
           "title" : 
           { "title" : "Location Title",
             "description" : "A name given to the location, which may be used by a tool for display and navigation.",
-            "$id" : "#/definitions/title",
+            "$id": "#/definitions/location-title",
             "type" : "string" },
           "address" : 
           { "title" : "Address",
@@ -642,17 +642,17 @@
           "title" : 
           { "title" : "Role Title",
             "description" : "A name given to the role, which may be used by a tool for display and navigation.",
-            "$id" : "#/definitions/title",
+            "$id": "#/definitions/role-title",
             "type" : "string" },
           "short-name" : 
           { "title" : "Role Short Name",
             "description" : "A short common name, abbreviation, or acronym for the role.",
-            "$id" : "#/definitions/short-name",
+            "$id": "#/definitions/role-short-name",
             "type" : "string" },
           "description" : 
           { "title" : "Role Description",
             "description" : "A summary of the role's purpose and associated responsibilities.",
-            "$id" : "#/definitions/description",
+            "$id": "#/definitions/role-description",
             "type" : "string" },
           "props" : 
           { "type" : "array",
@@ -703,7 +703,7 @@
                 "title" : 
                 { "title" : "Resource Title",
                   "description" : "A name given to the resource, which may be used by a tool for display and navigation.",
-                  "$id" : "#/definitions/title",
+                  "$id": "#/definitions/resource-title",
                   "type" : "string" },
                 "description" : 
                 { "title" : "Resource Description",
@@ -1003,7 +1003,7 @@
           "title" : 
           { "title" : "Component Title",
             "description" : "A human readable name for the system component.",
-            "$id" : "#/definitions/title",
+            "$id": "#/definitions/component-title",
             "type" : "string" },
           "description" : 
           { "title" : "Component Description",
@@ -1033,7 +1033,7 @@
           "status" : 
           { "title" : "Status",
             "description" : "Describes the operational status of the system component.",
-            "$id" : "#/definitions/status",
+            "$id" : "#/definitions/operational-status",
             "type" : "object",
             "properties" : 
             { "state" : 
@@ -1091,7 +1091,7 @@
           "title" : 
           { "title" : "title field",
             "description" : "A human readable name for the protocol (e.g., Transport Layer Security).",
-            "$id" : "#/definitions/title",
+            "$id": "#/definitions/protocol-title",
             "type" : "string" },
           "port-ranges" : 
           { "type" : "array",
@@ -1185,7 +1185,7 @@
         { "title" : 
           { "title" : "title field",
             "description" : "A human readable name for the privilege.",
-            "$id" : "#/definitions/title",
+            "$id": "#/definitions/privilege-title",
             "type" : "string" },
           "description" : 
           { "title" : "Privilege Description",
@@ -2242,7 +2242,7 @@
           "status" : 
           { "title" : "Implementation Status",
             "description" : "A brief indication as to whether the objective is satisfied or not within a given system.",
-            "$id" : "#/definitions/status",
+            "$id" : "#/definitions/implementation-status",
             "type" : "string",
             "enum" : 
             [ "satisfied",
@@ -2529,7 +2529,7 @@
           "status" : 
           { "title" : "Status",
             "description" : "Describes the status of the associated risk.",
-            "$id" : "#/definitions/status",
+            "$id" : "#/definitions/risk-status",
             "type" : "string" },
           "origins" : 
           { "type" : "array",

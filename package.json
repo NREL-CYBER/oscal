@@ -2,8 +2,9 @@
   "name": "oscal",
   "version": "1.0.2",
   "description": "Oscal Typescript types",
-  "main": "index.ts",
+  "main": "index.d.ts",
   "scripts": {
+    "make": "tsc compile.ts",
     "compile": "node compile.js"
   },
   "repository": {
@@ -14,6 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "json-schema-to-typescript": "^10.0.2"
+    "@types/lodash": "^4.14.166",
+    "camelcase-keys": "^6.2.2",
+    "json-schema-to-typescript": "^10.0.3"
   }
 }
