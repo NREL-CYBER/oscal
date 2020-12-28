@@ -56,13 +56,13 @@
                             "title": {
                                 "title": "Document Title",
                                 "description": "A name given to the document revision, which may be used by a tool for display and navigation.",
-                                "$id": "#/definitions/document_title",
+                                "$id": "#/definitions/document_revision_title",
                                 "type": "string"
                             },
                             "published": {
                                 "title": "Publication Timestamp",
                                 "description": "The date and time the document was published. The date_time value must be formatted according to RFC 3339 with full time and time zone included.",
-                                "$id": "#/definitions/published",
+                                "$id": "#/definitions/revision_published",
                                 "type": "string",
                                 "format": "date_time",
                                 "pattern": "^((2000|2400|2800|(19|2[0_9](0[48]|[2468][048]|[13579][26])))_02_29)|(((19|2[0_9])[0_9]{2})_02_(0[1_9]|1[0_9]|2[0_8]))|(((19|2[0_9])[0_9]{2})_(0[13578]|10|12)_(0[1_9]|[12][0_9]|3[01]))|(((19|2[0_9])[0_9]{2})_(0[469]|11)_(0[1_9]|[12][0_9]|30))T(2[0_3]|[01][0_9]):([0_5][0_9]):([0_5][0_9])(\\.[0_9]+)?(Z|[+_][0_9]{2}:[0_9]{2})$"
@@ -70,7 +70,7 @@
                             "last_modified": {
                                 "title": "Last Modified Timestamp",
                                 "description": "The date and time the document was last modified. The date_time value must be formatted according to RFC 3339 with full time and time zone included.",
-                                "$id": "#/definitions/last_modified",
+                                "$id": "#/definitions/revision_last_modified",
                                 "type": "string",
                                 "format": "date_time",
                                 "pattern": "^((2000|2400|2800|(19|2[0_9](0[48]|[2468][048]|[13579][26])))_02_29)|(((19|2[0_9])[0_9]{2})_02_(0[1_9]|1[0_9]|2[0_8]))|(((19|2[0_9])[0_9]{2})_(0[13578]|10|12)_(0[1_9]|[12][0_9]|3[01]))|(((19|2[0_9])[0_9]{2})_(0[469]|11)_(0[1_9]|[12][0_9]|30))T(2[0_3]|[01][0_9]):([0_5][0_9]):([0_5][0_9])(\\.[0_9]+)?(Z|[+_][0_9]{2}:[0_9]{2})$"
@@ -78,13 +78,13 @@
                             "version": {
                                 "title": "Document Version",
                                 "description": "A string used to distinguish the current version of the document from other previous (and future) versions.",
-                                "$id": "#/definitions/version",
+                                "$id": "#/definitions/revision_version",
                                 "type": "string"
                             },
                             "oscal_version": {
                                 "title": "OSCAL version",
                                 "description": "The OSCAL model version the document was authored against.",
-                                "$id": "#/definitions/oscal_version",
+                                "$id": "#/definitions/revision_oscal_version",
                                 "type": "string"
                             },
                             "props": {
