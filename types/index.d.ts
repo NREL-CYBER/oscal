@@ -955,18 +955,18 @@ export type CapabilityDescription = string;
 /**
  * Oscal Package Types
  */
-export interface OscalPackageSchema {
-  system_security_plan: SystemSecurityPlanSSP;
-  catalog?: Catalog;
-  profile?: Profile;
-  assessment_plan?: SecurityAssessmentPlanSAP;
-  assessment_results?: SecurityAssessmentResultsSAR;
-  component_definition?: ComponentDefinition;
+export interface Oscal {
+  system_security_plans: SystemSecurityPlan[];
+  catalogs?: Catalog[];
+  profiles?: Profile[];
+  assessment_plans?: SecurityAssessmentPlan[];
+  assessment_results?: SecurityAssessmentResults[];
+  component_definitions?: ComponentDefinition[];
 }
 /**
  * A system security plan, such as those described in NIST SP 800_18
  */
-export interface SystemSecurityPlanSSP {
+export interface SystemSecurityPlan {
   uuid: SystemSecurityPlanUniversallyUniqueIdentifier;
   metadata: PublicationMetadata;
   import_profile: ImportProfile;
@@ -1827,7 +1827,7 @@ export interface Addition {
 /**
  * An assessment plan, such as those provided by a FedRAMP assessor.
  */
-export interface SecurityAssessmentPlanSAP {
+export interface SecurityAssessmentPlan {
   uuid: AssessmentPlanUniversallyUniqueIdentifier;
   metadata: PublicationMetadata;
   import_ssp: ImportSystemSecurityPlan;
@@ -2168,7 +2168,7 @@ export interface ActionReference {
 /**
  * Security assessment results, such as those provided by a FedRAMP assessor in the FedRAMP Security Assessment Report.
  */
-export interface SecurityAssessmentResultsSAR {
+export interface SecurityAssessmentResults {
   uuid: AssessmentResultsUniversallyUniqueIdentifier;
   metadata: PublicationMetadata;
   import_ap: ImportAssessmentPlan;
