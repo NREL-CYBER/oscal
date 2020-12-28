@@ -1,8 +1,8 @@
 {
   "name": "oscal",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Oscal Typescript types",
-  "main": "index.d.ts",
+  "main": "./index.ts",
   "scripts": {
     "make": "tsc compile.ts",
     "compile": "node compile.js"

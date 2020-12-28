@@ -812,10 +812,6 @@ export type RiskDescription = string;
  */
 export type RiskStatement = string;
 /**
- * Describes the status of the associated risk.
- */
-export type RiskStatus = string;
-/**
  * Specifies the source of the threat information.
  */
 export type ThreatTypeIdentificationSystem = string;
@@ -1402,7 +1398,7 @@ export interface Component {
  * Describes the operational status of the system component.
  */
 export interface OperationalStatus {
-  state: OpertationalState;
+  state: OperationalState;
   remarks?: Remarks;
 }
 /**
@@ -2471,7 +2467,7 @@ export interface Finding {
  */
 export interface ObjectiveStatus {
   objective_id?: ObjectiveID;
-  control_id?: ControlIdentifierReference4;
+  control_id?: ControlIdentifierReference;
   title?: ObjectiveStatusTitle;
   description?: ObjectiveStatusDescription;
   props?: Property[];
