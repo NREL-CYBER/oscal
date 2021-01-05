@@ -169,11 +169,11 @@ export type IdentificationSystemType = string;
 /**
  * The full name of the system.
  */
-export type SystemName_Full = string;
+export type SystemNameFull = string;
 /**
  * A short name for the system, such as an acronym, that is suitable for display in a data table or summary list.
  */
-export type SystemName_Short = string;
+export type SystemNameShort = string;
 /**
  * A summary of the system.
  */
@@ -1048,8 +1048,8 @@ export interface ImportProfile {
  */
 export interface SystemCharacteristics {
   system_ids: [SystemIdentification, ...SystemIdentification[]];
-  system_name: SystemName_Full;
-  system_name_short?: SystemName_Short;
+  system_name: SystemNameFull;
+  system_name_short?: SystemNameShort;
   description: SystemDescription;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
