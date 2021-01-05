@@ -1027,13 +1027,6 @@ export interface PartyExternalIdentifier {
   id: string;
 }
 /**
- * Contact number by telephone.
- */
-export interface TelephoneNumber1 {
-  type?: TypeFlag;
-  number: string;
-}
-/**
  * A reference to a set of organizations or persons that have responsibility for performing a referenced role in the context of the containing object.
  */
 export interface ResponsibleParty {
@@ -2035,18 +2028,6 @@ export interface AssessmentActor {
   links?: [Link, ...Link[]];
 }
 /**
- * A pointer to a resource based on its universally unique identifier (UUID). Use type to indicate whether the identified resource is a component, inventory item, location, user, or something else.
- */
-export interface IdentifiesTheSubject {
-  uuid_ref: UUIDReference;
-  type: UniversallyUniqueIdentifierReferenceType;
-  title?: SubjectReferenceTitle;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  remarks?: Remarks;
-}
-/**
  * Links this observation to relevant evidence.
  */
 export interface RelevantEvidence {
@@ -2141,7 +2122,7 @@ export interface RiskResponse {
  */
 export interface RequiredAsset {
   uuid: SatisfiedUniversallyUniqueIdentifier;
-  subjects?: IdentifiesTheSubject2;
+  subjects?: IdentifiesTheSubject;
   title?: TitleForRequiredAsset;
   description: DescriptionOfRequiredAsset;
   props?: [Property, ...Property[]];
@@ -2152,7 +2133,7 @@ export interface RequiredAsset {
 /**
  * A pointer to a resource based on its universally unique identifier (UUID). Use type to indicate whether the identified resource is a component, inventory item, location, user, or something else.
  */
-export interface IdentifiesTheSubject2 {
+export interface IdentifiesTheSubject {
   uuid_ref: UUIDReference;
   type: UniversallyUniqueIdentifierReferenceType;
   title?: SubjectReferenceTitle;
@@ -2412,15 +2393,9 @@ export interface POAMItem {
   origins?: [Origin, ...Origin[]];
   collected: CollectedField;
   expires?: ExpiresField;
-  related_observations?: RelatedObservation2;
+  related_observations?: RelatedObservation;
   related_risks?: AssociatedRisk;
   remarks?: Remarks;
-}
-/**
- * Relates the poam_item to a set of referenced observations that were used to determine the finding.
- */
-export interface RelatedObservation2 {
-  observation_uuid: ObservationUniversallyUniqueIdentifierReference;
 }
 /**
  * Each OSCAL profile is defined by a Profile element
@@ -2533,7 +2508,7 @@ export interface ComponentDefinition {
   metadata: PublicationMetadata;
   import_component_definitions?: [ImportComponentDefinition, ...ImportComponentDefinition[]];
   components?: {
-    [k: string]: Component1 & {
+    [k: string]: Component & {
       [k: string]: unknown;
     };
   };
@@ -2549,26 +2524,6 @@ export interface ComponentDefinition {
  */
 export interface ImportComponentDefinition {
   href: HyperlinkReference;
-}
-/**
- * A defined component that can be part of an implemented system.
- */
-export interface Component1 {
-  type: ComponentType;
-  title: ComponentTitle;
-  description: ComponentDescription;
-  purpose?: Purpose;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_roles?: {
-    [k: string]: ResponsibleRole & {
-      [k: string]: unknown;
-    };
-  };
-  protocols?: [ServiceProtocolInformation, ...ServiceProtocolInformation[]];
-  control_implementations?: [ControlImplementation, ...ControlImplementation[]];
-  remarks?: Remarks;
 }
 /**
  * A grouping of other components and/or capabilities.
