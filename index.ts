@@ -1034,17 +1034,6 @@ export interface TelephoneNumber1 {
   number: string;
 }
 /**
- * A postal address for the location.
- */
-export interface Address1 {
-  type?: AddressType;
-  addr_lines?: AddressLine;
-  city?: City;
-  state?: State;
-  postal_code?: PostalCode;
-  country?: CountryCode;
-}
-/**
  * A reference to a set of organizations or persons that have responsibility for performing a referenced role in the context of the containing object.
  */
 export interface ResponsibleParty {
@@ -1775,12 +1764,12 @@ export interface AssessmentResultSecurityAssessmentResultsLocalDefinitions {
       [k: string]: unknown;
     };
   };
-  assessment_actions?: [Action1, ...Action1[]];
+  assessment_actions?: [AssessmentAction, ...AssessmentAction[]];
 }
 /**
  * Identifies an assessment_related event that must occur as part of executing an assessment plan, the result of which may be recorded within the assessment log in assessment results.
  */
-export interface Action1 {
+export interface AssessmentAction {
   uuid: SatisfiedUniversallyUniqueIdentifier;
   title?: EventTitle;
   description: EventDescription;
@@ -2616,7 +2605,7 @@ export interface SecurityAssessmentPlan {
   reviewed_controls: ReviewedControlsAndControlObjectives;
   assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
   assessment_assets?: AssessmentAssets;
-  assessment_actions?: [Action1, ...Action1[]];
+  assessment_actions?: [AssessmentAction, ...AssessmentAction[]];
   tasks?: [Task, ...Task[]];
   back_matter?: BackMatter;
 }
