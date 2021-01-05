@@ -1,6 +1,6 @@
 {
   "name": "oscal",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Oscal Typescript types",
   "main": "./index.ts",
   "scripts": {
