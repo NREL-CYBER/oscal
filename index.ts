@@ -1,3 +1,6 @@
+import oscal_schema from "./schema/oscal_package_schema.json";
+
+export { oscal_schema };
 /**
 * Oscal Package Types
 */
