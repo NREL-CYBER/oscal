@@ -8,7 +8,7 @@ export { oscal_schema };
 /**
  * A globally unique identifier that can be used to reference this satisfied entry elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.
  */
-export type SatisfiedUniversallyUniqueIdentifier = string;
+export type UniversalIdentifier = string;
 /**
  * A name given to the document, which may be used by a tool for display and navigation.
  */
@@ -875,7 +875,7 @@ export interface OscalPackageSchema {
  * A system security plan, such as those described in NIST SP 800_18
  */
 export interface SystemSecurityPlan {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   metadata: PublicationMetadata;
   import_profile: ImportProfile;
   system_characteristics: SystemCharacteristics;
@@ -899,11 +899,9 @@ export interface PublicationMetadata {
   links?: [Link, ...Link[]];
   roles?: [Role, ...Role[]];
   locations?: [Location, ...Location[]];
-  parties?: [PartyOrganizationOrPerson, ...PartyOrganizationOrPerson[]];
+  parties?: [Party, ...Party[]];
   responsible_parties?: {
-    [k: string]: ResponsibleParty & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleParty
   };
   remarks?: Remarks;
 }
@@ -925,7 +923,7 @@ export interface RevisionHistoryEntry {
  * An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values in some OSCAL formats.
  */
 export interface Property {
-  uuid?: SatisfiedUniversallyUniqueIdentifier;
+  uuid?: UniversalIdentifier;
   name: PropertyName;
   ns?: PropertyNamespace;
   class?: PropertyClass;
@@ -936,7 +934,7 @@ export interface Property {
  */
 export interface AnnotatedProperty {
   name: AnnotatedPropertyName;
-  uuid?: SatisfiedUniversallyUniqueIdentifier;
+  uuid?: UniversalIdentifier;
   ns?: AnnotatedPropertyNamespace;
   value: AnnotatedPropertyValue;
   remarks?: Remarks;
@@ -974,7 +972,7 @@ export interface Role {
  * A location, with associated metadata that can be referenced.
  */
 export interface Location {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title?: LocationTitle;
   address: Address;
   email_addresses?: EmailAddress;
@@ -1006,8 +1004,8 @@ export interface TelephoneNumber {
 /**
  * A responsible entity which is either a person or an organization.
  */
-export interface PartyOrganizationOrPerson {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+export interface Party {
+  uuid: UniversalIdentifier;
   type: PartyType;
   name?: PartyName;
   short_name?: PartyShortName;
@@ -1066,9 +1064,7 @@ export interface SystemCharacteristics {
   network_architecture?: NetworkArchitecture;
   data_flow?: DataFlow;
   responsible_parties?: {
-    [k: string]: ResponsibleParty & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleParty;
   };
   remarks?: Remarks;
 }
@@ -1092,7 +1088,7 @@ export interface SystemInformation {
  * Contains details about one information type that is stored, processed, or transmitted by the system, such as privacy information, and those defined in NIST SP 800_60.
  */
 export interface InformationType {
-  uuid?: SatisfiedUniversallyUniqueIdentifier;
+  uuid?: UniversalIdentifier;
   title: TitleField;
   description: InformationTypeDescription;
   categorizations?: InformationTypeCategorization;
@@ -1167,9 +1163,7 @@ export interface AuthorizationBoundary {
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   diagrams?: {
-    [k: string]: Diagram & {
-      [k: string]: unknown;
-    };
+    [k: string]: Diagram
   };
   remarks?: RemarksField;
 }
@@ -1193,9 +1187,7 @@ export interface NetworkArchitecture {
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   diagrams?: {
-    [k: string]: Diagram & {
-      [k: string]: unknown;
-    };
+    [k: string]: Diagram
   };
   remarks?: Remarks;
 }
@@ -1208,9 +1200,7 @@ export interface DataFlow {
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   diagrams?: {
-    [k: string]: Diagram & {
-      [k: string]: unknown;
-    };
+    [k: string]: Diagram
   };
   remarks?: Remarks;
 }
@@ -1223,14 +1213,10 @@ export interface SystemImplementation {
   links?: [Link, ...Link[]];
   leveraged_authorizations?: LeveragedAuthorization;
   users: {
-    [k: string]: SystemUser & {
-      [k: string]: unknown;
-    };
+    [k: string]: SystemUser
   };
   components: {
-    [k: string]: Component & {
-      [k: string]: unknown;
-    };
+    [k: string]: Component
   };
   inventory_items?: [InventoryItem, ...InventoryItem[]];
   remarks?: Remarks;
@@ -1239,7 +1225,7 @@ export interface SystemImplementation {
  * A description of another authorized system from which this system inherits capabilities that satisfy security requirements. Another term for this concept is a common control provider.
  */
 export interface LeveragedAuthorization {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title: TitleField;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
@@ -1283,9 +1269,7 @@ export interface Component {
   links?: [Link, ...Link[]];
   status: OperationalStatus;
   responsible_roles?: {
-    [k: string]: ResponsibleRole & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleRole
   };
   protocols?: [ServiceProtocolInformation, ...ServiceProtocolInformation[]];
   remarks?: Remarks;
@@ -1311,7 +1295,7 @@ export interface ResponsibleRole {
  * Information about the protocol used to provide a service.
  */
 export interface ServiceProtocolInformation {
-  uuid?: SatisfiedUniversallyUniqueIdentifier;
+  uuid?: UniversalIdentifier;
   name: ProtocolName;
   title?: ProtocolTitle;
   port_ranges?: [PortRange, ...PortRange[]];
@@ -1328,15 +1312,13 @@ export interface PortRange {
  * A single managed inventory item within the system.
  */
 export interface InventoryItem {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   description: InventoryItemDescription;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   responsible_parties?: {
-    [k: string]: ResponsibleParty & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleParty
   };
   implemented_components?: ImplementedComponent;
   remarks?: Remarks;
@@ -1350,9 +1332,7 @@ export interface ImplementedComponent {
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   responsible_parties?: {
-    [k: string]: ResponsibleParty & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleParty
   };
   remarks?: Remarks;
 }
@@ -1367,30 +1347,22 @@ export interface ControlImplementation {
  * Describes how the system satisfies an individual control.
  */
 export interface ControlBasedRequirement {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   control_id: ControlIdentifierReference;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   parameter_settings?: {
-    [k: string]: SetParameterValue & {
-      [k: string]: unknown;
-    };
+    [k: string]: SetParameterValue
   };
   responsible_roles?: {
-    [k: string]: ResponsibleRole & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleRole
   };
   by_components?: {
-    [k: string]: ComponentControlImplementation & {
-      [k: string]: unknown;
-    };
+    [k: string]: ComponentControlImplementation
   };
   statements?: {
-    [k: string]: SpecificControlStatement & {
-      [k: string]: unknown;
-    };
+    [k: string]: SpecificControlStatement
   };
   remarks?: Remarks;
 }
@@ -1404,23 +1376,19 @@ export interface SetParameterValue {
  * Defines how the referenced component implements a set of controls.
  */
 export interface ComponentControlImplementation {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   description: ControlImplementationMethodDescription;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   parameter_settings?: {
-    [k: string]: SetParameterValue & {
-      [k: string]: unknown;
-    };
+    [k: string]: SetParameterValue
   };
   export?: Export;
   inherited?: InheritedControlImplementation;
   satisfied?: SatisfiedControlImplementationResponsibility;
   responsible_roles?: {
-    [k: string]: ResponsibleRole & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleRole
   };
   remarks?: Remarks;
 }
@@ -1440,15 +1408,13 @@ export interface Export {
  * Describes a capability which may be inherited by a leveraging system.
  */
 export interface ProvidedControlImplementation {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   description: ProvidedControlImplementationDescription;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   responsible_roles?: {
-    [k: string]: ResponsibleRole & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleRole
   };
   remarks?: Remarks;
 }
@@ -1456,16 +1422,14 @@ export interface ProvidedControlImplementation {
  * Describes a control implementation responsibiity imposed on a leveraging system.
  */
 export interface ControlImplementationResponsibility {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   provided_uuid?: ProvidedUUID;
   description: ControlImplementationResponsibilityDescription;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   responsible_roles?: {
-    [k: string]: ResponsibleRole & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleRole
   };
   remarks?: Remarks;
 }
@@ -1473,32 +1437,28 @@ export interface ControlImplementationResponsibility {
  * Describes a control implementation inherited by a leveraging system.
  */
 export interface InheritedControlImplementation {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   provided_uuid?: ProvidedUUID;
   description: InheritedControlImplementationDescription;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   responsible_roles?: {
-    [k: string]: ResponsibleRole & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleRole
   };
 }
 /**
  * Describes how this system satisfies a responsibiity imposed by a leveraged system.
  */
 export interface SatisfiedControlImplementationResponsibility {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   responsibility_uuid?: ProvidedUUID;
   description: SatisfiedControlImplementationResponsibilityDescription;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   responsible_roles?: {
-    [k: string]: ResponsibleRole & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleRole
   };
   remarks?: Remarks;
 }
@@ -1506,14 +1466,12 @@ export interface SatisfiedControlImplementationResponsibility {
  * Identifies which statements within a control are addressed.
  */
 export interface SpecificControlStatement {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   by_components?: {
-    [k: string]: ComponentControlImplementation & {
-      [k: string]: unknown;
-    };
+    [k: string]: ComponentControlImplementation
   };
   remarks?: Remarks;
 }
@@ -1527,7 +1485,7 @@ export interface BackMatter {
  * A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equavalent internet resources.
  */
 export interface Resource {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title?: ResourceTitle;
   description?: ResourceDescription;
   props?: [Property, ...Property[]];
@@ -1585,7 +1543,7 @@ export interface Base64 {
  * Security assessment results, such as those provided by a FedRAMP assessor in the FedRAMP Security Assessment Report.
  */
 export interface SecurityAssessmentResults {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   metadata: PublicationMetadata;
   import_ap: ImportAssessmentPlan;
   local_definitions?: SecurityAssessmentResultsLocalDefinitions;
@@ -1638,7 +1596,7 @@ export interface Part {
  * Identifies an assessment or related process that can be performed. In the assessment plan, this is an intended activity which may be associated with an assessment task. In the assessment results, this an activity that was actually performed as part of an assessement.
  */
 export interface Activity {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title?: IncludedActivityTitle;
   description: IncludedActivityDescription;
   props?: [Property, ...Property[]];
@@ -1647,9 +1605,7 @@ export interface Activity {
   actions?: Action;
   related_controls?: ReviewedControlsAndControlObjectives;
   responsible_roles?: {
-    [k: string]: ResponsibleRole & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleRole
   };
   remarks?: Remarks;
 }
@@ -1657,7 +1613,7 @@ export interface Activity {
  * Identifies an individual actions, such as test steps or examination procedures.
  */
 export interface Action {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title?: ActionTitle;
   description: ActionDescription;
   props?: [Property, ...Property[]];
@@ -1665,9 +1621,7 @@ export interface Action {
   links?: [Link, ...Link[]];
   reviewed_controls?: ReviewedControlsAndControlObjectives;
   responsible_roles?: {
-    [k: string]: ResponsibleRole & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleRole
   };
   remarks?: Remarks;
 }
@@ -1726,7 +1680,7 @@ export interface SelectObjective {
  * Used by the assessment results and POA&M. In the assessment results, this identifies all of the assessment observations and findings, initial and residual risks, deviations, and disposition. In the POA&M, this identifies initial and residual risks, deviations, and disposition.
  */
 export interface AssessmentResult {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title: ResultsTitle;
   description: ResultsDescription;
   start: StartField;
@@ -1750,15 +1704,11 @@ export interface AssessmentResult {
  */
 export interface AssessmentResultSecurityAssessmentResultsLocalDefinitions {
   components?: {
-    [k: string]: Component & {
-      [k: string]: unknown;
-    };
+    [k: string]: Component
   };
   inventory_items?: [InventoryItem, ...InventoryItem[]];
   users?: {
-    [k: string]: SystemUser & {
-      [k: string]: unknown;
-    };
+    [k: string]: SystemUser
   };
   assessment_actions?: [AssessmentAction, ...AssessmentAction[]];
 }
@@ -1766,7 +1716,7 @@ export interface AssessmentResultSecurityAssessmentResultsLocalDefinitions {
  * Identifies an assessment_related event that must occur as part of executing an assessment plan, the result of which may be recorded within the assessment log in assessment results.
  */
 export interface AssessmentAction {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title?: EventTitle;
   description: EventDescription;
   props?: [Property, ...Property[]];
@@ -1775,9 +1725,7 @@ export interface AssessmentAction {
   timing?: EventTiming;
   assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
   responsible_roles?: {
-    [k: string]: ResponsibleRole & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleRole
   };
   associated_activities?: AssociatedActivity;
   remarks?: Remarks;
@@ -1838,15 +1786,13 @@ export interface SelectAssessmentSubject {
  * Identifies an individual activity to be performed as part of an action.
  */
 export interface AssociatedActivity {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   activity_uuid: ActivityUniversallyUniqueIdentifierReference;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   responsible_roles?: {
-    [k: string]: ResponsibleRole & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleRole
   };
   assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
   assessment_subject_placeholder?: AssessmentSubjectPlaceholder;
@@ -1874,9 +1820,7 @@ export interface AssessmentSubjectSource {
  */
 export interface AssessmentAssets {
   components?: {
-    [k: string]: Component & {
-      [k: string]: unknown;
-    };
+    [k: string]: Component
   };
   assessment_platforms: AssessmentPlatform;
 }
@@ -1884,7 +1828,7 @@ export interface AssessmentAssets {
  * Used to represent the toolset used to perform aspects of the assessment.
  */
 export interface AssessmentPlatform {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title?: AssessmentPlatformTitle;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
@@ -1901,9 +1845,7 @@ export interface UsesComponent {
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   responsible_parties?: {
-    [k: string]: ResponsibleParty & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleParty
   };
   remarks?: Remarks;
 }
@@ -1912,9 +1854,7 @@ export interface UsesComponent {
  */
 export interface AttestationStatements {
   responsible_parties?: {
-    [k: string]: ResponsibleParty & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleParty
   };
   parts: [AssessmentPart, ...AssessmentPart[]];
 }
@@ -1922,7 +1862,7 @@ export interface AttestationStatements {
  * A partition of an assessment plan or results or a child of another part.
  */
 export interface AssessmentPart {
-  uuid?: SatisfiedUniversallyUniqueIdentifier;
+  uuid?: UniversalIdentifier;
   name: PartName;
   ns?: PartNamespace;
   class?: PartClass;
@@ -1943,7 +1883,7 @@ export interface AssessmentLog {
  * Identifies the result of an action and/or task that occured as part of executing an assessment plan or an assessment event that occured in producing the assessment results.
  */
 export interface AssessmentLogEntry {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title?: ActionTitle;
   description?: ActionDescription;
   start: Start;
@@ -1972,9 +1912,7 @@ export interface ActionReference {
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   responsible_parties?: {
-    [k: string]: ResponsibleParty & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleParty
   };
   remarks?: Remarks;
 }
@@ -1987,9 +1925,7 @@ export interface TaskReference {
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   responsible_parties?: {
-    [k: string]: ResponsibleParty & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleParty
   };
   assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
   remarks?: Remarks;
@@ -1998,7 +1934,7 @@ export interface TaskReference {
  * Describes an individual observation.
  */
 export interface Objective {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title?: ObservationTitle;
   description: ObservatonDescription;
   props?: [Property, ...Property[]];
@@ -2045,7 +1981,7 @@ export interface RelevantEvidence {
  * An identified risk.
  */
 export interface IdentifiedRisk {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title: RiskTitle;
   description: RiskDescription;
   statement: RiskStatement;
@@ -2096,7 +2032,7 @@ export interface Facet {
  * Describes an existing mitigating factor that may affect the overall determination of the risk, with an optional link to an implementation statement in the SSP.
  */
 export interface MitigatingFactor {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   implementation_uuid?: ImplementationUUID;
   description: MitigatingFactorDescription;
   props?: [Property, ...Property[]];
@@ -2108,7 +2044,7 @@ export interface MitigatingFactor {
  * Describes either recommended or an actual plan for addressing the risk.
  */
 export interface RiskResponse {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   lifecycle: RemediationIntent;
   title: ResponseTitle;
   description: ResponseDescription;
@@ -2124,7 +2060,7 @@ export interface RiskResponse {
  * Identifies an asset required to achieve remediation.
  */
 export interface RequiredAsset {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   subjects?: IdentifiesTheSubject;
   title?: TitleForRequiredAsset;
   description: DescriptionOfRequiredAsset;
@@ -2149,7 +2085,7 @@ export interface IdentifiesTheSubject {
  * Represents a scheduled event or milestone, which may be associated with a series of assessment actions.
  */
 export interface Task {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title: TaskTitle;
   description?: TaskDescription;
   props?: [Property, ...Property[]];
@@ -2159,9 +2095,7 @@ export interface Task {
   end: TaskEndDate;
   related_actions?: [ActionReference, ...ActionReference[]];
   responsible_roles?: {
-    [k: string]: ResponsibleRole & {
-      [k: string]: unknown;
-    };
+    [k: string]: ResponsibleRole
   };
   remarks?: Remarks;
 }
@@ -2175,7 +2109,7 @@ export interface RiskLog {
  * Identifies the result of an action and/or task that occured as part of executing an assessment plan or an assessment event that occured in producing the assessment results.
  */
 export interface RiskLogEntry {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title?: ActionTitle;
   description?: ActionDescription;
   start: Start;
@@ -2209,7 +2143,7 @@ export interface RelatedObservation {
  * Describes an individual finding.
  */
 export interface Finding {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   title: FindingTitle;
   description: FindingDescription;
   props?: [Property, ...Property[]];
@@ -2254,7 +2188,7 @@ export interface AssociatedRisk {
  * A collection of controls.
  */
 export interface Catalog {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   metadata: PublicationMetadata;
   params?: [Parameter, ...Parameter[]];
   controls?: [Control, ...Control[]];
@@ -2354,7 +2288,7 @@ export interface MatchControlsByIdentifier {
  * A plan of action and milestones which identifies initial and residual risks, deviations, and disposition, such as those required by FedRAMP.
  */
 export interface PlanOfActionAndMilestones {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   metadata: PublicationMetadata;
   import_ssp?: ImportSystemSecurityPlan;
   system_id?: SystemIdentification;
@@ -2376,9 +2310,7 @@ export interface ImportSystemSecurityPlan {
  */
 export interface PlanOfActionAndMilestonesSecurityAssessmentResultsLocalDefinitions {
   components?: {
-    [k: string]: Component & {
-      [k: string]: unknown;
-    };
+    [k: string]: Component
   };
   inventory_items?: [InventoryItem, ...InventoryItem[]];
   remarks?: Remarks;
@@ -2387,7 +2319,7 @@ export interface PlanOfActionAndMilestonesSecurityAssessmentResultsLocalDefiniti
  * Describes an individual POA&M item.
  */
 export interface POAMItem {
-  uuid?: SatisfiedUniversallyUniqueIdentifier;
+  uuid?: UniversalIdentifier;
   title: POAMItemTitle;
   description: POAMItemDescription;
   props?: [Property, ...Property[]];
@@ -2404,7 +2336,7 @@ export interface POAMItem {
  * Each OSCAL profile is defined by a Profile element
  */
 export interface Profile {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   metadata: PublicationMetadata;
   imports: [ImportResource, ...ImportResource[]];
   merge?: MergeControls;
@@ -2467,9 +2399,7 @@ export interface CustomGrouping {
  */
 export interface ModifyControls {
   set_parameters?: {
-    [k: string]: SetParameterValue & {
-      [k: string]: unknown;
-    };
+    [k: string]: SetParameterValue
   };
   alters?: [Alteration, ...Alteration[]];
 }
@@ -2507,18 +2437,14 @@ export interface Addition {
  * A collection of component descriptions, which may optionally be grouped by capability.
  */
 export interface ComponentDefinition {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   metadata: PublicationMetadata;
   import_component_definitions?: [ImportComponentDefinition, ...ImportComponentDefinition[]];
   components?: {
-    [k: string]: Component & {
-      [k: string]: unknown;
-    };
+    [k: string]: Component
   };
   capabilities?: {
-    [k: string]: Capability & {
-      [k: string]: unknown;
-    };
+    [k: string]: Capability
   };
   back_matter?: BackMatter;
 }
@@ -2538,9 +2464,7 @@ export interface Capability {
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   incorporates_components?: {
-    [k: string]: IncorporatesComponent & {
-      [k: string]: unknown;
-    };
+    [k: string]: IncorporatesComponent
   };
   control_implementations?: [ControlImplementation, ...ControlImplementation[]];
   remarks?: Remarks;
@@ -2555,7 +2479,7 @@ export interface IncorporatesComponent {
  * An assessment plan, such as those provided by a FedRAMP assessor.
  */
 export interface SecurityAssessmentPlan {
-  uuid: SatisfiedUniversallyUniqueIdentifier;
+  uuid: UniversalIdentifier;
   metadata: PublicationMetadata;
   import_ssp: ImportSystemSecurityPlan;
   local_definitions?: SecurityAssessmentPlanSecurityAssessmentResultsLocalDefinitions;
@@ -2572,15 +2496,11 @@ export interface SecurityAssessmentPlan {
  */
 export interface SecurityAssessmentPlanSecurityAssessmentResultsLocalDefinitions {
   components?: {
-    [k: string]: Component & {
-      [k: string]: unknown;
-    };
+    [k: string]: Component
   };
   inventory_items?: [InventoryItem, ...InventoryItem[]];
   users?: {
-    [k: string]: SystemUser & {
-      [k: string]: unknown;
-    };
+    [k: string]: SystemUser
   };
   add_objectives_and_methods?: [AssessmentSpecificControlObjective, ...AssessmentSpecificControlObjective[]];
   activities?: [Activity, ...Activity[]];
