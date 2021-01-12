@@ -204,18 +204,6 @@ export declare type ResponseDescription = string;
  */
 export declare type RequiredUniversallyUniqueIdentifier = string;
 /**
- * A pointer to a component, inventory_item, location, party, user, or resource using it's UUID.
- */
-export declare type UUIDReference3 = string;
-/**
- * Used to indicate the type of object pointed to by the uuid_ref.
- */
-export declare type UniversallyUniqueIdentifierReferenceType2 = string;
-/**
- * The title or name for the referenced subject.
- */
-export declare type SubjectReferenceTitle2 = string;
-/**
  * Uniquely identifies an assessment event. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. A UUID should be consistantly used for this schedule across revisions of the document.
  */
 export declare type RiskLogEntryUniversallyUniqueIdentifier = string;

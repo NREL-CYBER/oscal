@@ -343,7 +343,7 @@ export declare type RoleIdentifierReference = string;
 /**
  * A human readable name for the privilege.
  */
-export declare type TitleField2 = string;
+export declare type PrivilegeTitle = string;
 /**
  * A summary of the privilege's purpose within the system.
  */
@@ -443,7 +443,7 @@ export declare type ParameterValue = string;
 /**
  * A globally unique identifier that can be used to reference this by_component entry elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.
  */
-export declare type By_ComponentUniversallyUniqueIdentifier = string;
+export declare type ByComponentUniversallyUniqueIdentifier = string;
 /**
  * An implementation statement that describes the aspects of the control or control statement implementation that can be available to another system leveraging this system.
  */
@@ -1248,7 +1248,7 @@ export interface SystemUser {
  * Identifies a specific system privilege held by the user, along with an associated description and/or rationale for the privilege.
  */
 export interface Privilege {
-    title: TitleField2;
+    title: PrivilegeTitle;
     description?: PrivilegeDescription;
     functions_performed: [FunctionsPerformed, ...FunctionsPerformed[]];
 }
@@ -1387,7 +1387,7 @@ export interface SetParameterValue {
  * Defines how the referenced component implements a set of controls.
  */
 export interface ComponentControlImplementation {
-    uuid: By_ComponentUniversallyUniqueIdentifier;
+    uuid: ByComponentUniversallyUniqueIdentifier;
     description: ControlImplementationDescription;
     props?: [Property, ...Property[]];
     annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];

@@ -206,18 +206,6 @@ export type ResponseDescription = string;
  * Uniquely identifies this required asset. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. Once assigned, a UUID should be consistantly used for a given required asset across revisions.
  */
 export type RequiredUniversallyUniqueIdentifier = string;
-/**
- * A pointer to a component, inventory_item, location, party, user, or resource using it's UUID.
- */
-export type UUIDReference3 = string;
-/**
- * Used to indicate the type of object pointed to by the uuid_ref.
- */
-export type UniversallyUniqueIdentifierReferenceType2 = string;
-/**
- * The title or name for the referenced subject.
- */
-export type SubjectReferenceTitle2 = string;
 
 
 /**

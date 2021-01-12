@@ -2,9 +2,9 @@ import { CollectedField, ExpiresField, ObservationMethod, ObservationTitle, Obse
 import { ActionDescription, ActionTitle, ActionUniversallyUniqueIdentifier, ActionUniversallyUniqueIdentifierReference, ActivityUniversallyUniqueIdentifierReference, All, AnnotatedProperty, AssessmentActivityUniversallyUniqueIdentifier, AssessmentLogEntryUniversallyUniqueIdentifier, AssessmentPlanReference, AssessmentPlatformTitle, AssessmentPlatformUniversallyUniqueIdentifier, AssociatedActivityUniversallyUniqueIdentifier, BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ConditionalDate, ControlIdentifierReference, ControlOjectivesDescription, End, EndDateCondition, EventDescription, EventTitle, EventUniversallyUniqueIdentifier, ImplementationStatementUUID, ImplementationStatus, IncludedActivityDescription, IncludedActivityTitle, IncludeSpecificStatements, InventoryItemDescription, InventoryItemUniversallyUniqueIdentifier, Link, ObjectiveDescription, ObjectiveID, ObjectiveStatusDescription, ObjectiveStatusTitle, OperatingState, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, PartyReference, Period, Privilege, Property, ProtocolName, PublicationMetadata, Remarks, ResponsibleParty, ReviewedControlsAndControlObjectives, RoleIdentifierReference, ServiceProtocolInformationUniversallyUniqueIdentifier, Start, StartDateCondition, TaskUniversallyUniqueIdentifierReference, TimeUnit, TitleField, Transport, UniversallyUniqueIdentifierReferenceType, UserDescription, UserShortName, UserTitle, UUIDReference } from "src/shared";
 import { ActorRole, AssessmentActor } from "src/shared/Actor";
 import { AssociatedRisk, IdentifiedRisk, RelevantEvidenceDescription, RelevantEvidenceReference, SubjectReferenceTitle } from "src/shared/IdentifiedRisk";
+import { RelatedObservation } from "src/shared/Observation";
 import { AssessmentSubjectPlaceholder, SubjectOfAssessment } from "src/shared/Subject";
 import { DescriptionOfRequiredAsset, TaskDescription, TaskEndDate, TaskStartDate, TaskTitle, TaskUniversallyUniqueIdentifier, TitleForRequiredAsset } from "src/shared/Task";
-import { RelatedObservation } from "src/shared/Observation";
 /**
  * Uniquely identifies this assessment results file. This UUID must be changed each time the content of the results changes.
  */
@@ -63,14 +63,14 @@ export interface ImportAssessmentPlan {
  * Used to define data objects that are used in the assessment plan, that do not appear in the referenced SSP.
  */
 export interface LocalDefinitions {
-    add_objectives_and_methods?: [Assessment_SpecificControlObjective, ...Assessment_SpecificControlObjective[]];
+    add_objectives_and_methods?: [AssessmentSpecificControlObjective, ...AssessmentSpecificControlObjective[]];
     activities?: [Activity, ...Activity[]];
     remarks?: Remarks;
 }
 /**
  * A local definition of a control objective for this assessment. Uses catalog syntax for control objective and assessment actions.
  */
-export interface Assessment_SpecificControlObjective {
+export interface AssessmentSpecificControlObjective {
     control_id: ControlIdentifierReference;
     description?: ObjectiveDescription;
     props?: [Property, ...Property[]];
