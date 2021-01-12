@@ -9,7 +9,10 @@
   },
   "scripts": {
     "build:types": "tsc --emitDeclarationOnly ",
-    "build": "babel src --out-dir dist --extensions .ts,.tsx"
+    "build": "babel src --out-dir dist --extensions .ts,.tsx",
+    "build:docs": "typedoc --mode file",
+    "make:ssp": "tsc ./compile.ts",
+    "compile:ssp": "node ./compile.js"
   },
   "repository": {
     "type": "git",

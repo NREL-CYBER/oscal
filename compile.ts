@@ -9,13 +9,11 @@ import _ from "lodash";
 
 
 const main = () => {
-    compileFromFile("./schema/oscal_package_schema.json")
+    compileFromFile("./src/m3/ssp/oscal_package_schema.json")
         .then(compiled => {
-            writeFileSync('./index.d.ts', compiled);
+            writeFileSync('./src/m3/ssp/index.d.ts', compiled);
         });
 }
-
-
 main();
 
 
