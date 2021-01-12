@@ -1,9 +1,10 @@
-import { PublicationMetadata, Remarks, ControlIdentifierReference, ObjectiveDescription, Property, AnnotatedProperty, Link, PartIdentifier, PartName, PartNamespace, PartClass, PartTitle, PartText, AssessmentActivityUniversallyUniqueIdentifier, IncludedActivityTitle, IncludedActivityDescription, ReviewedControlsAndControlObjectives, ActionUniversallyUniqueIdentifier, ActionTitle, ActionDescription, IncludeSpecificStatements, ControlOjectivesDescription, ObjectiveID, PartyReference, ComponentType, ComponentTitle, ComponentDescription, Purpose, ServiceProtocolInformationUniversallyUniqueIdentifier, ProtocolName, TitleField, Start, End, Transport, InventoryItemUniversallyUniqueIdentifier, InventoryItemDescription, ResponsibleParty, ComponentUniversallyUniqueIdentifierReference, UserTitle, UserShortName, UserDescription, RoleIdentifierReference, PrivilegeDescription, FunctionsPerformed, ActionUniversallyUniqueIdentifierReference, TaskUniversallyUniqueIdentifierReference, ResourceUniversallyUniqueIdentifier, ResourceTitle, ResourceDescription, CitationText, HashAlgorithm, FileName, All, OperatingState, AssessmentPlanReference, Privilege, EventUniversallyUniqueIdentifier, EventTitle, EventDescription, ConditionalDate, StartDateCondition, EndDateCondition, Period, TimeUnit, AssociatedActivityUniversallyUniqueIdentifier, ActivityUniversallyUniqueIdentifierReference, ActivityInstanceUniversallyUniqueIdentifier, AssessmentPlatformUniversallyUniqueIdentifier, AssessmentPlatformTitle, AssessmentLogEntryUniversallyUniqueIdentifier, ImplementationStatementUUID, ObjectiveStatusTitle, ObjectiveStatusDescription, ImplementationStatus, SubjectType, IncludeSubjectsDescription, UUIDReference, UniversallyUniqueIdentifierReferenceType, BackMatter, Component } from "src/shared";
-import { IdentifiedRisk, SubjectReferenceTitle, RelevantEvidenceReference, RelevantEvidenceDescription, AssociatedRisk } from "src/shared/IdentifiedRisk";
-import { TitleForRequiredAsset, DescriptionOfRequiredAsset, TaskUniversallyUniqueIdentifier, TaskTitle, TaskDescription, TaskStartDate, TaskEndDate } from "src/shared/Task";
-import { AssessmentActor, ActorRole } from "src/shared/Actor";
+import { CollectedField, ExpiresField, ObservationMethod, ObservationTitle, ObservationType, ObservationUniversallyUniqueIdentifier, ObservatonDescription, PartyUUIDReference, RemediationIntent, RemediationUniversallyUniqueIdentifier, RequiredUniversallyUniqueIdentifier, ResponseDescription, ResponseTitle, ResponseUniversallyUniqueIdentifierReference, RiskLogEntryUniversallyUniqueIdentifier, RiskStatus, SubjectReferenceTitle2, UniversallyUniqueIdentifierReferenceType2, UUIDReference3 } from "src/poam";
+import { ActionDescription, ActionTitle, ActionUniversallyUniqueIdentifier, ActionUniversallyUniqueIdentifierReference, ActivityUniversallyUniqueIdentifierReference, All, AnnotatedProperty, AssessmentActivityUniversallyUniqueIdentifier, AssessmentLogEntryUniversallyUniqueIdentifier, AssessmentPlanReference, AssessmentPlatformTitle, AssessmentPlatformUniversallyUniqueIdentifier, AssociatedActivityUniversallyUniqueIdentifier, BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ConditionalDate, ControlIdentifierReference, ControlOjectivesDescription, End, EndDateCondition, EventDescription, EventTitle, EventUniversallyUniqueIdentifier, ImplementationStatementUUID, ImplementationStatus, IncludedActivityDescription, IncludedActivityTitle, IncludeSpecificStatements, InventoryItemDescription, InventoryItemUniversallyUniqueIdentifier, Link, ObjectiveDescription, ObjectiveID, ObjectiveStatusDescription, ObjectiveStatusTitle, OperatingState, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, PartyReference, Period, Privilege, Property, ProtocolName, PublicationMetadata, Remarks, ResponsibleParty, ReviewedControlsAndControlObjectives, RoleIdentifierReference, ServiceProtocolInformationUniversallyUniqueIdentifier, Start, StartDateCondition, TaskUniversallyUniqueIdentifierReference, TimeUnit, TitleField, Transport, UniversallyUniqueIdentifierReferenceType, UserDescription, UserShortName, UserTitle, UUIDReference } from "src/shared";
+import { ActorRole, AssessmentActor } from "src/shared/Actor";
+import { AssociatedRisk, IdentifiedRisk, RelevantEvidenceDescription, RelevantEvidenceReference, SubjectReferenceTitle } from "src/shared/IdentifiedRisk";
 import { AssessmentSubjectPlaceholder, SubjectOfAssessment } from "src/shared/Subject";
-import { CollectedField, ExpiresField, PartyUUIDReference, ObservationUniversallyUniqueIdentifier, ObservationTitle, ObservatonDescription, ObservationMethod, ObservationType, UUIDReference2, UniversallyUniqueIdentifierReferenceType1, SubjectReferenceTitle1, RemediationUniversallyUniqueIdentifier, RemediationIntent, ResponseTitle, ResponseDescription, RequiredUniversallyUniqueIdentifier, UUIDReference3, UniversallyUniqueIdentifierReferenceType2, SubjectReferenceTitle2, RiskLogEntryUniversallyUniqueIdentifier, RiskStatus, ResponseUniversallyUniqueIdentifierReference, ObservationUniversallyUniqueIdentifierReference, ObservationUniversallyUniqueIdentifierReference1 } from "src/poam";
+import { DescriptionOfRequiredAsset, TaskDescription, TaskEndDate, TaskStartDate, TaskTitle, TaskUniversallyUniqueIdentifier, TitleForRequiredAsset } from "src/shared/Task";
+import { RelatedObservation } from "src/shared/Observation";
 
 /**
  * Uniquely identifies this assessment results file. This UUID must be changed each time the content of the results changes.
@@ -188,7 +189,7 @@ export interface Finding {
   expires?: ExpiresField;
   objective_status?: ObjectiveStatus;
   implementation_statement_uuid?: ImplementationStatementUUID;
-  related_observations?: [RelatedObservation1, ...RelatedObservation1[]];
+  related_observations?: [RelatedObservation, ...RelatedObservation[]];
   related_risks?: [AssociatedRisk, ...AssociatedRisk[]];
   remarks?: Remarks;
 }
@@ -522,18 +523,6 @@ export interface RelevantEvidence {
   remarks?: Remarks;
 }
 /**
- * A pointer to a resource based on its universally unique identifier (UUID). Use type to indicate whether the identified resource is a component, inventory item, location, user, or something else.
- */
-export interface IdentifiesTheSubject1 {
-  uuid_ref: UUIDReference2;
-  type: UniversallyUniqueIdentifierReferenceType1;
-  title?: SubjectReferenceTitle1;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  remarks?: Remarks;
-}
-/**
  * Describes either recommended or an actual plan for addressing the risk.
  */
 export interface RiskResponse {
@@ -612,25 +601,19 @@ export interface RiskLogEntry {
   links?: [Link, ...Link[]];
   logged_by?: [LoggedBy, ...LoggedBy[]];
   status_change?: RiskStatus;
-  related_responses?: [ActionReference1, ...ActionReference1[]];
+  related_responses?: [RiskResponseActionReference, ...RiskResponseActionReference[]];
   remarks?: Remarks;
 }
 /**
  * Identifies an individual risk response that this log entry is for.
  */
-export interface ActionReference1 {
+export interface RiskResponseActionReference {
   response_uuid: ResponseUniversallyUniqueIdentifierReference;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
   links?: [Link, ...Link[]];
   related_actions?: [ActionReference, ...ActionReference[]];
   remarks?: Remarks;
-}
-/**
- * Relates the finding to a set of referenced observations that were used to determine the finding.
- */
-export interface RelatedObservation {
-  observation_uuid: ObservationUniversallyUniqueIdentifierReference;
 }
 
 /**
@@ -646,10 +629,4 @@ export interface ObjectiveStatus {
   links?: [Link, ...Link[]];
   status: ImplementationStatus;
   remarks?: Remarks;
-}
-/**
- * Relates the finding to a set of referenced observations that were used to determine the finding.
- */
-export interface RelatedObservation1 {
-  observation_uuid: ObservationUniversallyUniqueIdentifierReference1;
 }

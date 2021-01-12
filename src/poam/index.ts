@@ -5,9 +5,10 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-import { ActionDescription, ActionTitle, AnnotatedProperty, Component, InventoryItem, Link, Property, PublicationMetadata, Remarks, ResponsibleRole, SystemSecurityPlanReference, ActionReference } from "src/shared";
+import { ActionDescription, ActionTitle, AnnotatedProperty, Component, InventoryItem, Link, Property, PublicationMetadata, Remarks, ResponsibleRole, SystemSecurityPlanReference, ActionReference, DocumentIdentifier } from "src/shared";
 import { Origin, IdentifiedRisk, RiskUniversallyUniqueIdentifierReference, AssociatedRisk } from "src/shared/IdentifiedRisk";
 import { TitleForRequiredAsset, DescriptionOfRequiredAsset, Task } from "src/shared/Task";
+import { RelatedObservation } from "src/shared/Observation";
 
 /**
  * Uniquely identifies this POA&M. This UUID must be changed each time the content of the POA&M changes.
@@ -259,10 +260,6 @@ export type RiskStatus = string;
  * References a unique risk response by UUID.
  */
 export type ResponseUniversallyUniqueIdentifierReference = string;
-/**
- * References an observation defined in the list of observations.
- */
-export type ObservationUniversallyUniqueIdentifierReference = string;
 /**
  * Uniquely identifies the POA&M entry. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. A UUID should be consistantly used for a given POA&M item across revisions of the document.
  */
@@ -537,12 +534,6 @@ export interface ActionReference1 {
   remarks?: Remarks;
 }
 /**
- * Relates the finding to a set of referenced observations that were used to determine the finding.
- */
-export interface RelatedObservation {
-  observation_uuid: ObservationUniversallyUniqueIdentifierReference;
-}
-/**
  * Describes an individual POA&M item.
  */
 export interface POAMItem {
@@ -555,15 +546,9 @@ export interface POAMItem {
   origins?: [Origin, ...Origin[]];
   collected: CollectedField;
   expires?: ExpiresField;
-  related_observations?: [RelatedPoamObservation, ...RelatedPoamObservation[]];
+  related_observations?: [RelatedObservation, ...RelatedObservation[]];
   related_risks?: [AssociatedRisk, ...AssociatedRisk[]];
   remarks?: Remarks;
-}
-/**
- * Relates the poam_item to a set of referenced observations that were used to determine the finding.
- */
-export interface RelatedPoamObservation {
-  observation_uuid: ObservationUniversallyUniqueIdentifierReference;
 }
 /**
  * A collection of resources, which may be included directly or by reference.
@@ -580,18 +565,11 @@ export interface Resource {
   description?: ResourceDescription;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  document_ids?: [DocumentIdentifier1, ...DocumentIdentifier1[]];
+  document_ids?: [DocumentIdentifier, ...DocumentIdentifier[]];
   citation?: Citation;
   rlinks?: [ResourceLink, ...ResourceLink[]];
   base64?: Base64;
   remarks?: Remarks;
-}
-/**
- * A document identifier qualified by an identifier type.
- */
-export interface DocumentIdentifier1 {
-  scheme: DocumentIdentificationScheme1;
-  identifier: string;
 }
 /**
  * A citation consisting of end note text and optional structured bibliographic data.

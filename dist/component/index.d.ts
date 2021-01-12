@@ -3,7 +3,7 @@
  * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
  * and run json-schema-to-typescript to regenerate this file.
  */
-import { PublicationMetadata, Component, Property, AnnotatedProperty, Link, ResponsibleRole, ControlImplementation } from "src";
+import { PublicationMetadata, Component, Property, AnnotatedProperty, Link, ResponsibleRole, ControlImplementation, DocumentIdentifier } from "src";
 /**
  * A globally unique identifier for this component definition instance. This UUID should be changed when this document is revised.
  */
@@ -446,18 +446,11 @@ export interface Resource {
     description?: ResourceDescription;
     props?: [Property, ...Property[]];
     annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    document_ids?: [DocumentIdentifier1, ...DocumentIdentifier1[]];
+    document_ids?: [DocumentIdentifier, ...DocumentIdentifier[]];
     citation?: Citation;
     rlinks?: [ResourceLink, ...ResourceLink[]];
     base64?: Base64;
     remarks?: Remarks;
-}
-/**
- * A document identifier qualified by an identifier type.
- */
-export interface DocumentIdentifier1 {
-    scheme: DocumentIdentificationScheme1;
-    identifier: string;
 }
 /**
  * A citation consisting of end note text and optional structured bibliographic data.

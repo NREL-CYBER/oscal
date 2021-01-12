@@ -1,7 +1,7 @@
 import { Property, AnnotatedProperty, Link, AssociatedRiskStatus, ActionReference, TaskReference, Remarks, UUIDReference } from ".";
 import { AssessmentActor } from "./Actor";
-import { IdentifiesTheSubject1 } from "src/assessment_results";
-import { RiskResolutionDeadline, RiskResponse, RiskLog, RelatedObservation } from "src/poam";
+import { RiskResolutionDeadline, RiskResponse, RiskLog } from "src/poam";
+import { RelatedObservation } from "./Observation";
 /**
  * Used to indicate the type of object pointed to by the uuid_ref.
  */
@@ -146,7 +146,7 @@ export interface MitigatingFactor {
     props?: [Property, ...Property[]];
     annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
     links?: [Link, ...Link[]];
-    subjects?: [IdentifiesTheSubject1, ...IdentifiesTheSubject1[]];
+    subjects?: [IdentifiesTheSubject, ...IdentifiesTheSubject[]];
 }
 /**
  * An identified risk.

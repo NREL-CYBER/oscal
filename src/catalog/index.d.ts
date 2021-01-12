@@ -653,18 +653,11 @@ export interface Resource {
   description?: ResourceDescription;
   props?: [Property, ...Property[]];
   annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  document_ids?: [DocumentIdentifier1, ...DocumentIdentifier1[]];
+  document_ids?: [DocumentIdentifier, ...DocumentIdentifier[]];
   citation?: Citation;
   rlinks?: [ResourceLink, ...ResourceLink[]];
   base64?: Base64;
   remarks?: Remarks;
-}
-/**
- * A document identifier qualified by an identifier type.
- */
-export interface DocumentIdentifier1 {
-  scheme: DocumentIdentificationScheme1;
-  identifier: string;
 }
 /**
  * A citation consisting of end note text and optional structured bibliographic data.
