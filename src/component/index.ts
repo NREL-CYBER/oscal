@@ -5,7 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-import { PublicationMetadata, Component, Property, AnnotatedProperty, Link, ResponsibleRole, ControlImplementation, DocumentIdentifier } from "src";
+import { PublicationMetadata, Component, Property, AnnotatedProperty, Link, ResponsibleRole, ControlImplementation, DocumentIdentifier, BackMatter } from "src";
 
 /**
  * A globally unique identifier for this component definition instance. This UUID should be changed when this document is revised.
@@ -32,25 +32,6 @@ export type DocumentVersion = string;
  */
 export type OSCALVersion = string;
 /**
- * A name given to the document revision, which may be used by a tool for display and navigation.
- */
-export type DocumentTitle1 = string;
-/**
- * The date and time the document was published. The date_time value must be formatted according to RFC 3339 with full time and time zone included.
- */
-export type PublicationTimestamp1 = string;
-/**
- * The date and time the document was last modified. The date_time value must be formatted according to RFC 3339 with full time and time zone included.
- */
-export type LastModifiedTimestamp1 = string;
-/**
- * A string used to distinguish the current version of the document from other previous (and future) versions.
- */
-export type DocumentVersion1 = string;
-/**
- * The OSCAL model version the document was authored against.
- */
-export type OSCALVersion1 = string;
 /**
  * A unique identifier that can be used to reference this property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.
  */
@@ -188,38 +169,6 @@ export type PartyShortName = string;
  */
 export type ExternalIdentifierSchema = string;
 /**
- * An email address as defined by RFC 5322 Section 3.4.1.
- */
-export type EmailAddress1 = string;
-/**
- * Indicates the type of phone number.
- */
-export type TypeFlag1 = string;
-/**
- * Indicates the type of address.
- */
-export type AddressType1 = string;
-/**
- * A single line of an address.
- */
-export type AddressLine1 = string;
-/**
- * City, town or geographical region for the mailing address.
- */
-export type City1 = string;
-/**
- * State, province or analogous geographical region for mailing address
- */
-export type State1 = string;
-/**
- * Postal or ZIP code for mailing address
- */
-export type PostalCode1 = string;
-/**
- * The ISO 3166_1 alpha_2 country code for the mailing address.
- */
-export type CountryCode1 = string;
-/**
  * References a location defined in metadata.
  */
 export type LocationReference = string;
@@ -284,7 +233,7 @@ export type ControlImplementationSetIdentifier = string;
  */
 export type SourceResourceReference = string;
 /**
- * A description of how the spefied set of controls are implemented for the containing component or capability.
+ * A description of how the specified set of controls are implemented for the containing component or capability.
  */
 export type ControlImplementationDescription = string;
 /**
@@ -295,10 +244,6 @@ export type ControlImplementationIdentifier = string;
  * A reference to a control identifier.
  */
 export type ControlIdentifierReference = string;
-/**
- * A description of how the spefied control is implemented for the containing component or capability.
- */
-export type ControlImplementationDescription1 = string;
 /**
  * A parameter value or set of values.
  */
@@ -322,7 +267,7 @@ export type CapabilityDescription = string;
 /**
  * A description of the component, including information about its function.
  */
-export type ComponentDescription1 = string;
+export type IncorporatesComponentDescription = string;
 /**
  * A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.
  */
@@ -336,21 +281,9 @@ export type ResourceTitle = string;
  */
 export type ResourceDescription = string;
 /**
- * Qualifies the kind of document identifier.
- */
-export type DocumentIdentificationScheme1 = string;
-/**
  * A line of citation text.
  */
 export type CitationText = string;
-/**
- * A resolvable URI reference to a resource.
- */
-export type HypertextReference1 = string;
-/**
- * Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.
- */
-export type MediaType1 = string;
 /**
  * Method by which a hash is derived
  */
@@ -359,10 +292,6 @@ export type HashAlgorithm = string;
  * Name of the file before it was encoded as Base64 to be embedded in a resource. This is the name that will be assigned to the file when the file is decoded.
  */
 export type FileName = string;
-/**
- * Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.
- */
-export type MediaType2 = string;
 
 export interface OscalComponentSchema {
   component_definition: ComponentDefinition;
@@ -434,62 +363,5 @@ export interface Capability {
  * TBD
  */
 export interface IncorporatesComponent {
-  description: ComponentDescription1;
-}
-/**
- * A collection of resources, which may be included directly or by reference.
- */
-export interface BackMatter {
-  resources?: [Resource, ...Resource[]];
-}
-/**
- * A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equavalent internet resources.
- */
-export interface Resource {
-  uuid: ResourceUniversallyUniqueIdentifier;
-  title?: ResourceTitle;
-  description?: ResourceDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  document_ids?: [DocumentIdentifier, ...DocumentIdentifier[]];
-  citation?: Citation;
-  rlinks?: [ResourceLink, ...ResourceLink[]];
-  base64?: Base64;
-  remarks?: Remarks;
-}
-/**
- * A citation consisting of end note text and optional structured bibliographic data.
- */
-export interface Citation {
-  text: CitationText;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  biblio?: BibliographicDefinition;
-}
-/**
- * A container for structured bibliographic information. The model of this information is undefined by OSCAL.
- */
-export interface BibliographicDefinition { }
-/**
- * A pointer to an external resource with an optional hash for verification and change detection.
- */
-export interface ResourceLink {
-  href: HypertextReference1;
-  media_type?: MediaType1;
-  hashes?: [Hash, ...Hash[]];
-}
-/**
- * A representation of a cryptographic digest generated over a resource using a specified hash algorithm.
- */
-export interface Hash {
-  algorithm: HashAlgorithm;
-  value: string;
-}
-/**
- * The Base64 alphabet in RFC 2045 _ aligned with XSD.
- */
-export interface Base64 {
-  filename?: FileName;
-  media_type?: MediaType2;
-  value: string;
+  description: IncorporatesComponentDescription;
 }

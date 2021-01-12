@@ -108,10 +108,6 @@ export declare type ReferencesByItemNameOrGenericIdentifier = string;
  */
 export declare type Position = "before" | "after" | "starting" | "ending";
 /**
- * Target location of the addition.
- */
-export declare type ReferenceByID1 = string;
-/**
  * A name given to the control, which may be used by a tool for display and navigation.
  */
 export declare type TitleChange = string;
@@ -128,21 +124,9 @@ export declare type ResourceTitle = string;
  */
 export declare type ResourceDescription = string;
 /**
- * Qualifies the kind of document identifier.
- */
-export declare type DocumentIdentificationScheme1 = string;
-/**
  * A line of citation text.
  */
 export declare type CitationText = string;
-/**
- * A resolvable URI reference to a resource.
- */
-export declare type HypertextReference1 = string;
-/**
- * Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.
- */
-export declare type MediaType1 = string;
 /**
  * Method by which a hash is derived
  */

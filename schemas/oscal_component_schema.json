@@ -1350,7 +1350,7 @@
             "format" : "uri_reference" },
           "description" : 
           { "title" : "Control Implementation Description",
-            "description" : "A description of how the spefied set of controls are implemented for the containing component or capability.",
+            "description" : "A description of how the specified set of controls are implemented for the containing component or capability.",
             "$id" : "#/definitions/description",
             "type" : "string" },
           "props" : 
@@ -1396,7 +1396,7 @@
             "type" : "string" },
           "description" : 
           { "title" : "Control Implementation Description",
-            "description" : "A description of how the spefied control is implemented for the containing component or capability.",
+            "description" : "A description of how the specified control is implemented for the containing component or capability.",
             "$id" : "#/definitions/description",
             "type" : "string" },
           "props" : 

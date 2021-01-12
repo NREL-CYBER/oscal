@@ -111,10 +111,6 @@ export type ReferencesByItemNameOrGenericIdentifier = string;
  */
 export type Position = "before" | "after" | "starting" | "ending";
 /**
- * Target location of the addition.
- */
-export type ReferenceByID1 = string;
-/**
  * A name given to the control, which may be used by a tool for display and navigation.
  */
 export type TitleChange = string;
@@ -131,21 +127,9 @@ export type ResourceTitle = string;
  */
 export type ResourceDescription = string;
 /**
- * Qualifies the kind of document identifier.
- */
-export type DocumentIdentificationScheme1 = string;
-/**
  * A line of citation text.
  */
 export type CitationText = string;
-/**
- * A resolvable URI reference to a resource.
- */
-export type HypertextReference1 = string;
-/**
- * Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.
- */
-export type MediaType1 = string;
 /**
  * Method by which a hash is derived
  */

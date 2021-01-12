@@ -3,8 +3,8 @@
  * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
  * and run json-schema-to-typescript to regenerate this file.
  */
-import { ActionDescription, ActionTitle, AnnotatedProperty, Component, InventoryItem, Link, Property, PublicationMetadata, Remarks, SystemSecurityPlanReference, ActionReference, DocumentIdentifier } from "src/shared";
-import { Origin, IdentifiedRisk, AssociatedRisk } from "src/shared/IdentifiedRisk";
+import { ActionDescription, ActionTitle, AnnotatedProperty, Component, InventoryItem, Link, Property, PublicationMetadata, Remarks, SystemSecurityPlanReference, ActionReference, BackMatter } from "src/shared";
+import { Origin, IdentifiedRisk, AssociatedRisk, IdentifiesTheSubject } from "src/shared/IdentifiedRisk";
 import { TitleForRequiredAsset, DescriptionOfRequiredAsset, Task } from "src/shared/Task";
 import { RelatedObservation } from "src/shared/Observation";
 /**
@@ -180,18 +180,6 @@ export declare type ImplementationUUID = string;
  */
 export declare type MitigatingFactorDescription = string;
 /**
- * A pointer to a component, inventory_item, location, party, user, or resource using it's UUID.
- */
-export declare type UUIDReference2 = string;
-/**
- * Used to indicate the type of object pointed to by the uuid_ref.
- */
-export declare type UniversallyUniqueIdentifierReferenceType1 = string;
-/**
- * The title or name for the referenced subject.
- */
-export declare type SubjectReferenceTitle1 = string;
-/**
  * The date/time by which the risk must be resolved.
  */
 export declare type RiskResolutionDeadline = string;
@@ -232,21 +220,13 @@ export declare type SubjectReferenceTitle2 = string;
  */
 export declare type RiskLogEntryUniversallyUniqueIdentifier = string;
 /**
- * Identifies the start date and time of an event.
- */
-export declare type Start1 = string;
-/**
- * Identifies the end date and time of an event. If the event is a point in time, the start and end will be the same date and time.
- */
-export declare type End1 = string;
-/**
  * A pointer to the party who is making the log entry.
  */
 export declare type PartyUUIDReference = string;
 /**
  * A point to the role_id of the role in which the party is making the log entry.
  */
-export declare type ActorRole1 = string;
+export declare type LogActorRole = string;
 /**
  * Describes the status of the associated risk.
  */
@@ -276,10 +256,6 @@ export declare type CollectedField = string;
  */
 export declare type ExpiresField = string;
 /**
- * References an observation defined in the list of observations.
- */
-export declare type ObservationUniversallyUniqueIdentifierReference1 = string;
-/**
  * A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.
  */
 export declare type ResourceUniversallyUniqueIdentifier = string;
@@ -292,21 +268,9 @@ export declare type ResourceTitle = string;
  */
 export declare type ResourceDescription = string;
 /**
- * Qualifies the kind of document identifier.
- */
-export declare type DocumentIdentificationScheme1 = string;
-/**
  * A line of citation text.
  */
 export declare type CitationText = string;
-/**
- * A resolvable URI reference to a resource.
- */
-export declare type HypertextReference1 = string;
-/**
- * Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.
- */
-export declare type MediaType1 = string;
 /**
  * Method by which a hash is derived
  */
@@ -315,10 +279,6 @@ export declare type HashAlgorithm = string;
  * Name of the file before it was encoded as Base64 to be embedded in a resource. This is the name that will be assigned to the file when the file is decoded.
  */
 export declare type FileName = string;
-/**
- * Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.
- */
-export declare type MediaType2 = string;
 /**
  * A plan of action and milestones which identifies initial and residual risks, deviations, and disposition, such as those required by FedRAMP.
  */
@@ -445,18 +405,6 @@ export interface MitigatingFactor {
     subjects?: [IdentifiesTheSubject, ...IdentifiesTheSubject[]];
 }
 /**
- * A pointer to a resource based on its universally unique identifier (UUID). Use type to indicate whether the identified resource is a component, inventory item, location, user, or something else.
- */
-export interface IdentifiesTheSubject {
-    uuid_ref: UUIDReference2;
-    type: UniversallyUniqueIdentifierReferenceType1;
-    title?: SubjectReferenceTitle1;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
-    remarks?: Remarks;
-}
-/**
  * Describes either recommended or an actual plan for addressing the risk.
  */
 export interface RiskResponse {
@@ -498,8 +446,8 @@ export interface RiskLogEntry {
     uuid: RiskLogEntryUniversallyUniqueIdentifier;
     title?: ActionTitle;
     description?: ActionDescription;
-    start: Start1;
-    end?: End1;
+    start: Start;
+    end?: End;
     props?: [Property, ...Property[]];
     annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
     links?: [Link, ...Link[]];
@@ -513,7 +461,7 @@ export interface RiskLogEntry {
  */
 export interface LoggedBy {
     party_uuid: PartyUUIDReference;
-    role_id?: ActorRole1;
+    role_id?: LogActorRole;
 }
 /**
  * Identifies an individual risk response that this log entry is for.
@@ -542,62 +490,4 @@ export interface POAMItem {
     related_observations?: [RelatedObservation, ...RelatedObservation[]];
     related_risks?: [AssociatedRisk, ...AssociatedRisk[]];
     remarks?: Remarks;
-}
-/**
- * A collection of resources, which may be included directly or by reference.
- */
-export interface BackMatter {
-    resources?: [Resource, ...Resource[]];
-}
-/**
- * A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equavalent internet resources.
- */
-export interface Resource {
-    uuid: ResourceUniversallyUniqueIdentifier;
-    title?: ResourceTitle;
-    description?: ResourceDescription;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    document_ids?: [DocumentIdentifier, ...DocumentIdentifier[]];
-    citation?: Citation;
-    rlinks?: [ResourceLink, ...ResourceLink[]];
-    base64?: Base64;
-    remarks?: Remarks;
-}
-/**
- * A citation consisting of end note text and optional structured bibliographic data.
- */
-export interface Citation {
-    text: CitationText;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    biblio?: BibliographicDefinition;
-}
-/**
- * A container for structured bibliographic information. The model of this information is undefined by OSCAL.
- */
-export interface BibliographicDefinition {
-}
-/**
- * A pointer to an external resource with an optional hash for verification and change detection.
- */
-export interface ResourceLink {
-    href: HypertextReference1;
-    media_type?: MediaType1;
-    hashes?: [Hash, ...Hash[]];
-}
-/**
- * A representation of a cryptographic digest generated over a resource using a specified hash algorithm.
- */
-export interface Hash {
-    algorithm: HashAlgorithm;
-    value: string;
-}
-/**
- * The Base64 alphabet in RFC 2045 _ aligned with XSD.
- */
-export interface Base64 {
-    filename?: FileName;
-    media_type?: MediaType2;
-    value: string;
 }
