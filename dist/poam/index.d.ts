@@ -505,7 +505,7 @@ export interface RiskLogEntry {
     links?: [Link, ...Link[]];
     logged_by?: [LoggedBy, ...LoggedBy[]];
     status_change?: RiskStatus;
-    related_responses?: [ActionReference1, ...ActionReference1[]];
+    related_responses?: [RiskResponseReference, ...RiskResponseReference[]];
     remarks?: Remarks;
 }
 /**
@@ -518,7 +518,7 @@ export interface LoggedBy {
 /**
  * Identifies an individual risk response that this log entry is for.
  */
-export interface ActionReference1 {
+export interface RiskResponseReference {
     response_uuid: ResponseUniversallyUniqueIdentifierReference;
     props?: [Property, ...Property[]];
     annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
