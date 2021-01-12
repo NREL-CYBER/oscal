@@ -1017,7 +1017,7 @@ export interface Party {
     telephone_numbers?: TelephoneNumber;
     addresses?: Address;
     location_uuids?: [LocationReference, ...LocationReference[]];
-    member_of_organizations?: OrganizationalAffiliation;
+    member_of_organizations?: OrganizationalAffiliation[];
     remarks?: Remarks;
 }
 /**
