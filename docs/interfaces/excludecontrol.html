@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ImportSystemSecurityPlan | oscal</title>
+	<title>ExcludeControl | oscal</title>
 	<meta name="description" content="Documentation for oscal">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="importsystemsecurityplan.html">ImportSystemSecurityPlan</a>
+					<a href="excludecontrol.html">ExcludeControl</a>
 				</li>
 			</ul>
-			<h1>Interface ImportSystemSecurityPlan</h1>
+			<h1>Interface ExcludeControl</h1>
 		</div>
 	</div>
 </header>
@@ -69,8 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Used by the assessment plan and POA&amp;M to import information about the system.
-						Used by the assessment plan and POA&amp;M to import information about the system.</p>
+						<p>Used to select a control for exclusion based on the control&#39;s identifier. A set of statement identifiers can be optionally used to target the inclusion/exclusion to only specific control statements providing more granularity over the specific statements that are within the asessment scope.</p>
 					</div>
 				</div>
 			</section>
@@ -78,7 +77,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ImportSystemSecurityPlan</span>
+						<a href="selectcontrol.html" class="tsd-signature-type">SelectControl</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">ExcludeControl</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -86,37 +90,37 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="importsystemsecurityplan.html#href" class="tsd-kind-icon">href</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="importsystemsecurityplan.html#remarks" class="tsd-kind-icon">remarks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="excludecontrol.html#control_id" class="tsd-kind-icon">control_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="excludecontrol.html#statement_ids" class="tsd-kind-icon">statement_<wbr>ids</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="href" class="tsd-anchor"></a>
-					<h3>href</h3>
-					<div class="tsd-signature tsd-kind-icon">href<span class="tsd-signature-symbol">:</span> <a href="../globals.html#systemsecurityplanreference" class="tsd-signature-type">SystemSecurityPlanReference</a></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="control_id" class="tsd-anchor"></a>
+					<h3>control_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">control_<wbr>id<span class="tsd-signature-symbol">:</span> <a href="../globals.html#controlidentifierreference" class="tsd-signature-type">ControlIdentifierReference</a></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="selectcontrol.html">SelectControl</a>.<a href="selectcontrol.html#control_id">control_id</a></p>
 						<ul>
-							<li>Defined in src/poam/index.ts:347</li>
-							<li>Defined in src/shared/index.ts:714</li>
+							<li>Defined in src/assessment_plan/index.ts:102</li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="remarks" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> remarks</h3>
-					<div class="tsd-signature tsd-kind-icon">remarks<span class="tsd-signature-symbol">:</span> <a href="../globals.html#remarks" class="tsd-signature-type">Remarks</a></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="statement_ids" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> statement_<wbr>ids</h3>
+					<div class="tsd-signature tsd-kind-icon">statement_<wbr>ids<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="../globals.html#includespecificstatements" class="tsd-signature-type">IncludeSpecificStatements</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="selectcontrol.html">SelectControl</a>.<a href="selectcontrol.html#statement_ids">statement_ids</a></p>
 						<ul>
-							<li>Defined in src/poam/index.ts:348</li>
-							<li>Defined in src/shared/index.ts:715</li>
+							<li>Defined in src/assessment_plan/index.ts:103</li>
 						</ul>
 					</aside>
 				</section>
@@ -135,13 +139,13 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="importsystemsecurityplan.html" class="tsd-kind-icon">Import<wbr>System<wbr>Security<wbr>Plan</a>
+						<a href="excludecontrol.html" class="tsd-kind-icon">Exclude<wbr>Control</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="importsystemsecurityplan.html#href" class="tsd-kind-icon">href</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="excludecontrol.html#control_id" class="tsd-kind-icon">control_<wbr>id</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="importsystemsecurityplan.html#remarks" class="tsd-kind-icon">remarks</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="excludecontrol.html#statement_ids" class="tsd-kind-icon">statement_<wbr>ids</a>
 							</li>
 						</ul>
 					</li>
