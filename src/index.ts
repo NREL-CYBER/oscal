@@ -862,655 +862,655 @@ export type CapabilityDescription = string;
  * Oscal Package Types
  */
 export interface OscalPackageSchema {
-  system_security_plan?: SystemSecurityPlan;
-  assessment_results?: SecurityAssessmentResults;
-  catalog?: Catalog;
-  plan_of_action_and_milestones?: PlanOfActionAndMilestones;
-  profile?: Profile;
-  component_definition?: ComponentDefinition;
-  assessment_plan?: SecurityAssessmentPlan;
-  [k: string]: unknown;
+    system_security_plan?: SystemSecurityPlan;
+    assessment_results?: SecurityAssessmentResults;
+    catalog?: Catalog;
+    plan_of_action_and_milestones?: PlanOfActionAndMilestones;
+    profile?: Profile;
+    component_definition?: ComponentDefinition;
+    assessment_plan?: SecurityAssessmentPlan;
+    [k: string]: unknown;
 }
 /**
  * A system security plan, such as those described in NIST SP 800_18
  */
 export interface SystemSecurityPlan {
-  uuid: UniversalIdentifier;
-  metadata: PublicationMetadata;
-  import_profile: ImportProfile;
-  system_characteristics: SystemCharacteristics;
-  system_implementation: SystemImplementation;
-  control_implementation: ControlImplementation;
-  back_matter?: BackMatter;
+    uuid: UniversalIdentifier;
+    metadata: PublicationMetadata;
+    import_profile: ImportProfile;
+    system_characteristics: SystemCharacteristics;
+    system_implementation: SystemImplementation;
+    control_implementation: ControlImplementation;
+    back_matter?: BackMatter;
 }
 /**
  * Provides information about the publication and availability of the containing document.
  */
 export interface PublicationMetadata {
-  title: DocumentTitle;
-  published?: PublicationTimestamp;
-  last_modified: LastModifiedTimestamp;
-  version: DocumentVersion;
-  oscal_version: OSCALVersion;
-  revisions?: RevisionHistoryEntry;
-  document_ids?: DocumentIdentifier;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  roles?: [Role, ...Role[]];
-  locations?: [Location, ...Location[]];
-  parties?: [Party, ...Party[]];
-  responsible_parties?: {
-    [k: string]: ResponsibleParty
-  };
-  remarks?: Remarks;
+    title: DocumentTitle;
+    published?: PublicationTimestamp;
+    last_modified: LastModifiedTimestamp;
+    version: DocumentVersion;
+    oscal_version: OSCALVersion;
+    revisions?: RevisionHistoryEntry;
+    document_ids?: DocumentIdentifier;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    roles?: [Role, ...Role[]];
+    locations?: [Location, ...Location[]];
+    parties?: [Party, ...Party[]];
+    responsible_parties?: {
+        [k: string]: ResponsibleParty
+    };
+    remarks?: Remarks;
 }
 /**
  * An entry in a sequential list of revisions to the containing document in reverse chronological order (i.e., most recent previous revision first).
  */
 export interface RevisionHistoryEntry {
-  title?: DocumentTitle;
-  published?: PublicationTimestamp;
-  last_modified?: LastModifiedTimestamp;
-  version?: DocumentVersion;
-  oscal_version?: OSCALVersion;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  remarks?: Remarks;
+    title?: DocumentTitle;
+    published?: PublicationTimestamp;
+    last_modified?: LastModifiedTimestamp;
+    version?: DocumentVersion;
+    oscal_version?: OSCALVersion;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    remarks?: Remarks;
 }
 /**
  * An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values in some OSCAL formats.
  */
 export interface Property {
-  uuid?: UniversalIdentifier;
-  name: PropertyName;
-  ns?: PropertyNamespace;
-  class?: PropertyClass;
-  value: string;
+    uuid?: UniversalIdentifier;
+    name: PropertyName;
+    ns?: PropertyNamespace;
+    class?: PropertyClass;
+    value: string;
 }
 /**
  * An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair with optional explanatory remarks. The value of an annotated property is a simple scalar value.
  */
 export interface AnnotatedProperty {
-  name: AnnotatedPropertyName;
-  uuid?: UniversalIdentifier;
-  ns?: AnnotatedPropertyNamespace;
-  value: AnnotatedPropertyValue;
-  remarks?: Remarks;
+    name: AnnotatedPropertyName;
+    uuid?: UniversalIdentifier;
+    ns?: AnnotatedPropertyNamespace;
+    value: AnnotatedPropertyValue;
+    remarks?: Remarks;
 }
 /**
  * A reference to a local or remote resource
  */
 export interface Link {
-  href: HypertextReference;
-  rel?: Relation;
-  media_type?: MediaType;
-  text?: LinkText;
+    href: HypertextReference;
+    rel?: Relation;
+    media_type?: MediaType;
+    text?: LinkText;
 }
 /**
  * A document identifier qualified by an identifier type.
  */
 export interface DocumentIdentifier {
-  scheme: DocumentIdentificationScheme;
-  identifier: string;
+    scheme: DocumentIdentificationScheme;
+    identifier: string;
 }
 /**
  * Defines a function assumed or expected to be assumed by a party in a specific situation.
  */
 export interface Role {
-  id: RoleIdentifier;
-  title: RoleTitle;
-  short_name?: RoleShortName;
-  description?: RoleDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  remarks?: Remarks;
+    id: RoleIdentifier;
+    title: RoleTitle;
+    short_name?: RoleShortName;
+    description?: RoleDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    remarks?: Remarks;
 }
 /**
  * A location, with associated metadata that can be referenced.
  */
 export interface Location {
-  uuid: UniversalIdentifier;
-  title?: LocationTitle;
-  address: Address;
-  email_addresses?: EmailAddress;
-  telephone_numbers?: TelephoneNumber;
-  urls?: LocationURL;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    title?: LocationTitle;
+    address: Address;
+    email_addresses?: EmailAddress;
+    telephone_numbers?: TelephoneNumber;
+    urls?: LocationURL;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    remarks?: Remarks;
 }
 /**
  * A postal address for the location.
  */
 export interface Address {
-  type?: AddressType;
-  addr_lines?: AddressLine;
-  city?: City;
-  state?: State;
-  postal_code?: PostalCode;
-  country?: CountryCode;
+    type?: AddressType;
+    addr_lines?: AddressLine;
+    city?: City;
+    state?: State;
+    postal_code?: PostalCode;
+    country?: CountryCode;
 }
 /**
  * Contact number by telephone.
  */
 export interface TelephoneNumber {
-  type?: TypeFlag;
-  number: string;
+    type?: TypeFlag;
+    number: string;
 }
 /**
  * A responsible entity which is either a person or an organization.
  */
 export interface Party {
-  uuid: UniversalIdentifier;
-  type: PartyType;
-  name?: PartyName;
-  short_name?: PartyShortName;
-  external_ids?: PartyExternalIdentifier;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  email_addresses?: EmailAddress;
-  telephone_numbers?: TelephoneNumber;
-  addresses?: Address;
-  location_uuids?: [LocationReference, ...LocationReference[]];
-  member_of_organizations?: OrganizationalAffiliation;
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    type: PartyType;
+    name?: PartyName;
+    short_name?: PartyShortName;
+    external_ids?: PartyExternalIdentifier;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    email_addresses?: EmailAddress;
+    telephone_numbers?: TelephoneNumber;
+    addresses?: Address;
+    location_uuids?: [LocationReference, ...LocationReference[]];
+    member_of_organizations?: OrganizationalAffiliation;
+    remarks?: Remarks;
 }
 /**
  * An identifier for a person or organization using a designated scheme. e.g. an Open Researcher and Contributor ID (ORCID)
  */
 export interface PartyExternalIdentifier {
-  scheme: ExternalIdentifierSchema;
-  id: string;
+    scheme: ExternalIdentifierSchema;
+    id: string;
 }
 /**
  * A reference to a set of organizations or persons that have responsibility for performing a referenced role in the context of the containing object.
  */
 export interface ResponsibleParty {
-  party_uuids: [PartyReference, ...PartyReference[]];
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  remarks?: Remarks;
+    party_uuids: [PartyReference, ...PartyReference[]];
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    remarks?: Remarks;
 }
 /**
  * Used to import the OSCAL profile representing the system's control baseline.
  */
 export interface ImportProfile {
-  href: ProfileReference;
-  remarks?: Remarks;
+    href: ProfileReference;
+    remarks?: Remarks;
 }
 /**
  * Contains the characteristics of the system, such as its name, purpose, and security impact level.
  */
 export interface SystemCharacteristics {
-  system_ids: [SystemIdentification, ...SystemIdentification[]];
-  system_name: SystemNameFull;
-  system_name_short?: SystemNameShort;
-  description: SystemDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  date_authorized?: SystemAuthorizationDate;
-  security_sensitivity_level: SecuritySensitivityLevel;
-  system_information: SystemInformation;
-  security_impact_level: SecurityImpactLevel;
-  status: Status;
-  authorization_boundary: AuthorizationBoundary;
-  network_architecture?: NetworkArchitecture;
-  data_flow?: DataFlow;
-  responsible_parties?: {
-    [k: string]: ResponsibleParty;
-  };
-  remarks?: Remarks;
+    system_ids: [SystemIdentification, ...SystemIdentification[]];
+    system_name: SystemNameFull;
+    system_name_short?: SystemNameShort;
+    description: SystemDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    date_authorized?: SystemAuthorizationDate;
+    security_sensitivity_level: SecuritySensitivityLevel;
+    system_information: SystemInformation;
+    security_impact_level: SecurityImpactLevel;
+    status: Status;
+    authorization_boundary: AuthorizationBoundary;
+    network_architecture?: NetworkArchitecture;
+    data_flow?: DataFlow;
+    responsible_parties?: {
+        [k: string]: ResponsibleParty;
+    };
+    remarks?: Remarks;
 }
 /**
  * A unique identifier for the system described by this system security plan.
  */
 export interface SystemIdentification {
-  identifier_type?: IdentificationSystemType;
-  id: string;
+    identifier_type?: IdentificationSystemType;
+    id: string;
 }
 /**
  * Contains details about all information types that are stored, processed, or transmitted by the system, such as privacy information, and those defined in NIST SP 800_60.
  */
 export interface SystemInformation {
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  information_types: InformationType;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    information_types: InformationType;
 }
 /**
  * Contains details about one information type that is stored, processed, or transmitted by the system, such as privacy information, and those defined in NIST SP 800_60.
  */
 export interface InformationType {
-  uuid?: UniversalIdentifier;
-  title: TitleField;
-  description: InformationTypeDescription;
-  categorizations?: InformationTypeCategorization;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  confidentiality_impact: ConfidentialityImpactLevel;
-  integrity_impact: IntegrityImpactLevel;
-  availability_impact: AvailabilityImpactLevel;
+    uuid?: UniversalIdentifier;
+    title: TitleField;
+    description: InformationTypeDescription;
+    categorizations?: InformationTypeCategorization;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    confidentiality_impact: ConfidentialityImpactLevel;
+    integrity_impact: IntegrityImpactLevel;
+    availability_impact: AvailabilityImpactLevel;
 }
 /**
  * A set of information type identifiers qualified by the given identification system used, such as NIST SP 800_60.
  */
 export interface InformationTypeCategorization {
-  system: InformationTypeIdentificationSystem;
-  information_type_ids?: InformationTypeSystemizedIdentifier;
+    system: InformationTypeIdentificationSystem;
+    information_type_ids?: InformationTypeSystemizedIdentifier;
 }
 /**
  * The expected level of impact resulting from the unauthorized disclosure of the described information.
  */
 export interface ConfidentialityImpactLevel {
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  base: BaseLevelConfidentialityIntegrityOrAvailability;
-  selected?: SelectedLevelConfidentialityIntegrityOrAvailability;
-  adjustment_justification?: AdjustmentJustification;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    base: BaseLevelConfidentialityIntegrityOrAvailability;
+    selected?: SelectedLevelConfidentialityIntegrityOrAvailability;
+    adjustment_justification?: AdjustmentJustification;
 }
 /**
  * The expected level of impact resulting from the unauthorized modification of the described information.
  */
 export interface IntegrityImpactLevel {
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  base: BaseLevelConfidentialityIntegrityOrAvailability;
-  selected?: SelectedLevelConfidentialityIntegrityOrAvailability;
-  adjustment_justification?: AdjustmentJustification;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    base: BaseLevelConfidentialityIntegrityOrAvailability;
+    selected?: SelectedLevelConfidentialityIntegrityOrAvailability;
+    adjustment_justification?: AdjustmentJustification;
 }
 /**
  * The expected level of impact resulting from the disruption of access to or use of the described information or the information system.
  */
 export interface AvailabilityImpactLevel {
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  base: BaseLevelConfidentialityIntegrityOrAvailability;
-  selected?: SelectedLevelConfidentialityIntegrityOrAvailability;
-  adjustment_justification?: AdjustmentJustification;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    base: BaseLevelConfidentialityIntegrityOrAvailability;
+    selected?: SelectedLevelConfidentialityIntegrityOrAvailability;
+    adjustment_justification?: AdjustmentJustification;
 }
 /**
  * The overall level of expected impact resulting from unauthorized disclosure, modification, or loss of access to information.
  */
 export interface SecurityImpactLevel {
-  security_objective_confidentiality: SecurityObjectiveConfidentiality;
-  security_objective_integrity: SecurityObjectiveIntegrity;
-  security_objective_availability: SecurityObjectiveAvailability;
+    security_objective_confidentiality: SecurityObjectiveConfidentiality;
+    security_objective_integrity: SecurityObjectiveIntegrity;
+    security_objective_availability: SecurityObjectiveAvailability;
 }
 /**
  * Describes the operational status of the system.
  */
 export interface Status {
-  state: SystemState;
-  remarks?: Remarks;
+    state: SystemState;
+    remarks?: Remarks;
 }
 /**
  * A description of this system's authorization boundary, optionally supplemented by diagrams that illustrate the authorization boundary.
  */
 export interface AuthorizationBoundary {
-  description: AuthorizationBoundaryDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  diagrams?: {
-    [k: string]: Diagram
-  };
-  remarks?: RemarksField;
+    description: AuthorizationBoundaryDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    diagrams?: {
+        [k: string]: Diagram
+    };
+    remarks?: RemarksField;
 }
 /**
  * A graphic that provides a visual representation the system, or some aspect of it.
  */
 export interface Diagram {
-  description?: DiagramDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  caption?: Caption;
-  remarks?: RemarksField;
+    description?: DiagramDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    caption?: Caption;
+    remarks?: RemarksField;
 }
 /**
  * A description of the system's network architecture, optionally supplemented by diagrams that illustrate the network architecture.
  */
 export interface NetworkArchitecture {
-  description: NetworkArchitectureDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  diagrams?: {
-    [k: string]: Diagram
-  };
-  remarks?: Remarks;
+    description: NetworkArchitectureDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    diagrams?: {
+        [k: string]: Diagram
+    };
+    remarks?: Remarks;
 }
 /**
  * A description of the logical flow of information within the system and across its boundaries, optionally supplemented by diagrams that illustrate these flows.
  */
 export interface DataFlow {
-  description: DataFlowDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  diagrams?: {
-    [k: string]: Diagram
-  };
-  remarks?: Remarks;
+    description: DataFlowDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    diagrams?: {
+        [k: string]: Diagram
+    };
+    remarks?: Remarks;
 }
 /**
  * Provides information as to how the system is implemented.
  */
 export interface SystemImplementation {
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  leveraged_authorizations?: LeveragedAuthorization;
-  users: {
-    [k: string]: SystemUser
-  };
-  components: {
-    [k: string]: Component
-  };
-  inventory_items?: [InventoryItem, ...InventoryItem[]];
-  remarks?: Remarks;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    leveraged_authorizations?: LeveragedAuthorization;
+    users: {
+        [k: string]: SystemUser
+    };
+    components: {
+        [k: string]: Component
+    };
+    inventory_items?: [InventoryItem, ...InventoryItem[]];
+    remarks?: Remarks;
 }
 /**
  * A description of another authorized system from which this system inherits capabilities that satisfy security requirements. Another term for this concept is a common control provider.
  */
 export interface LeveragedAuthorization {
-  uuid: UniversalIdentifier;
-  title: TitleField;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  party_uuid: PartyUuidField;
-  date_authorized: SystemAuthorizationDate;
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    title: TitleField;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    party_uuid: PartyUuidField;
+    date_authorized: SystemAuthorizationDate;
+    remarks?: Remarks;
 }
 /**
  * A type of user that interacts with the system based on an associated role.
  */
 export interface SystemUser {
-  title?: UserTitle;
-  short_name?: UserShortName;
-  description?: UserDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  role_ids?: [RoleIdentifierReference, ...RoleIdentifierReference[]];
-  authorized_privileges?: [Privilege, ...Privilege[]];
-  remarks?: Remarks;
+    title?: UserTitle;
+    short_name?: UserShortName;
+    description?: UserDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    role_ids?: [RoleIdentifierReference, ...RoleIdentifierReference[]];
+    authorized_privileges?: [Privilege, ...Privilege[]];
+    remarks?: Remarks;
 }
 /**
  * Identifies a specific system privilege held by the user, along with an associated description and/or rationale for the privilege.
  */
 export interface Privilege {
-  title: PrivilegeTitle;
-  description?: PrivilegeDescription;
-  functions_performed: [FunctionsPerformed, ...FunctionsPerformed[]];
+    title: PrivilegeTitle;
+    description?: PrivilegeDescription;
+    functions_performed: [FunctionsPerformed, ...FunctionsPerformed[]];
 }
 /**
  * A defined component that can be part of an implemented system.
  */
 export interface Component {
-  type: ComponentType;
-  title: ComponentTitle;
-  description: ComponentDescription;
-  purpose?: Purpose;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  status: OperationalStatus;
-  responsible_roles?: {
-    [k: string]: ResponsibleRole
-  };
-  protocols?: [ServiceProtocolInformation, ...ServiceProtocolInformation[]];
-  remarks?: Remarks;
+    type: ComponentType;
+    title: ComponentTitle;
+    description: ComponentDescription;
+    purpose?: Purpose;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    status: OperationalStatus;
+    responsible_roles?: {
+        [k: string]: ResponsibleRole
+    };
+    protocols?: [ServiceProtocolInformation, ...ServiceProtocolInformation[]];
+    remarks?: Remarks;
 }
 /**
  * Describes the operational status of the system component.
  */
 export interface OperationalStatus {
-  state: OperationalState;
-  remarks?: Remarks;
+    state: OperationalState;
+    remarks?: Remarks;
 }
 /**
  * A reference to one or more roles with responsibility for performing a function relative to the containing object.
  */
 export interface ResponsibleRole {
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  party_uuids?: [PartyReference, ...PartyReference[]];
-  remarks?: Remarks;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    party_uuids?: [PartyReference, ...PartyReference[]];
+    remarks?: Remarks;
 }
 /**
  * Information about the protocol used to provide a service.
  */
 export interface ServiceProtocolInformation {
-  uuid?: UniversalIdentifier;
-  name: ProtocolName;
-  title?: ProtocolTitle;
-  port_ranges?: [PortRange, ...PortRange[]];
+    uuid?: UniversalIdentifier;
+    name: ProtocolName;
+    title?: ProtocolTitle;
+    port_ranges?: [PortRange, ...PortRange[]];
 }
 /**
  * Where applicable this is the IPv4 port range on which the service operates.
  */
 export interface PortRange {
-  start?: Start;
-  end?: End;
-  transport?: Transport;
+    start?: Start;
+    end?: End;
+    transport?: Transport;
 }
 /**
  * A single managed inventory item within the system.
  */
 export interface InventoryItem {
-  uuid: UniversalIdentifier;
-  description: InventoryItemDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_parties?: {
-    [k: string]: ResponsibleParty
-  };
-  implemented_components?: ImplementedComponent;
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    description: InventoryItemDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    responsible_parties?: {
+        [k: string]: ResponsibleParty
+    };
+    implemented_components?: ImplementedComponent;
+    remarks?: Remarks;
 }
 /**
  * The set of components that are implemented in a given system inventory item.
  */
 export interface ImplementedComponent {
-  component_uuid: ComponentUniversallyUniqueIdentifierReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_parties?: {
-    [k: string]: ResponsibleParty
-  };
-  remarks?: Remarks;
+    component_uuid: ComponentUniversallyUniqueIdentifierReference;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    responsible_parties?: {
+        [k: string]: ResponsibleParty
+    };
+    remarks?: Remarks;
 }
 /**
  * Describes how the system satisfies a set of controls.
  */
 export interface ControlImplementation {
-  description: ControlImplementationDescription;
-  implemented_requirements: [ControlBasedRequirement, ...ControlBasedRequirement[]];
+    description: ControlImplementationDescription;
+    implemented_requirements: [ControlBasedRequirement, ...ControlBasedRequirement[]];
 }
 /**
  * Describes how the system satisfies an individual control.
  */
 export interface ControlBasedRequirement {
-  uuid: UniversalIdentifier;
-  control_id: ControlIdentifierReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  parameter_settings?: {
-    [k: string]: SetParameterValue
-  };
-  responsible_roles?: {
-    [k: string]: ResponsibleRole
-  };
-  by_components?: {
-    [k: string]: ComponentControlImplementation
-  };
-  statements?: {
-    [k: string]: SpecificControlStatement
-  };
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    control_id: ControlIdentifierReference;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    parameter_settings?: {
+        [k: string]: SetParameterValue
+    };
+    responsible_roles?: {
+        [k: string]: ResponsibleRole
+    };
+    by_components?: {
+        [k: string]: ComponentControlImplementation
+    };
+    statements?: {
+        [k: string]: SpecificControlStatement
+    };
+    remarks?: Remarks;
 }
 /**
  * Identifies the parameter that will be set by the enclosed value.
  */
 export interface SetParameterValue {
-  values: ParameterValue;
+    values: ParameterValue;
 }
 /**
  * Defines how the referenced component implements a set of controls.
  */
 export interface ComponentControlImplementation {
-  uuid: UniversalIdentifier;
-  description: ControlImplementationMethodDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  parameter_settings?: {
-    [k: string]: SetParameterValue
-  };
-  export?: Export;
-  inherited?: InheritedControlImplementation;
-  satisfied?: SatisfiedControlImplementationResponsibility;
-  responsible_roles?: {
-    [k: string]: ResponsibleRole
-  };
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    description: ControlImplementationMethodDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    parameter_settings?: {
+        [k: string]: SetParameterValue
+    };
+    export?: Export;
+    inherited?: InheritedControlImplementation;
+    satisfied?: SatisfiedControlImplementationResponsibility;
+    responsible_roles?: {
+        [k: string]: ResponsibleRole
+    };
+    remarks?: Remarks;
 }
 /**
  * Identifies content intended for external consumption, such as with leveraged organizations.
  */
 export interface Export {
-  description?: ControlImplementationExportDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  provided?: ProvidedControlImplementation;
-  responsibilities?: ControlImplementationResponsibility;
-  remarks?: Remarks;
+    description?: ControlImplementationExportDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    provided?: ProvidedControlImplementation;
+    responsibilities?: ControlImplementationResponsibility;
+    remarks?: Remarks;
 }
 /**
  * Describes a capability which may be inherited by a leveraging system.
  */
 export interface ProvidedControlImplementation {
-  uuid: UniversalIdentifier;
-  description: ProvidedControlImplementationDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_roles?: {
-    [k: string]: ResponsibleRole
-  };
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    description: ProvidedControlImplementationDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    responsible_roles?: {
+        [k: string]: ResponsibleRole
+    };
+    remarks?: Remarks;
 }
 /**
  * Describes a control implementation responsibiity imposed on a leveraging system.
  */
 export interface ControlImplementationResponsibility {
-  uuid: UniversalIdentifier;
-  provided_uuid?: ProvidedUUID;
-  description: ControlImplementationResponsibilityDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_roles?: {
-    [k: string]: ResponsibleRole
-  };
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    provided_uuid?: ProvidedUUID;
+    description: ControlImplementationResponsibilityDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    responsible_roles?: {
+        [k: string]: ResponsibleRole
+    };
+    remarks?: Remarks;
 }
 /**
  * Describes a control implementation inherited by a leveraging system.
  */
 export interface InheritedControlImplementation {
-  uuid: UniversalIdentifier;
-  provided_uuid?: ProvidedUUID;
-  description: InheritedControlImplementationDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_roles?: {
-    [k: string]: ResponsibleRole
-  };
+    uuid: UniversalIdentifier;
+    provided_uuid?: ProvidedUUID;
+    description: InheritedControlImplementationDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    responsible_roles?: {
+        [k: string]: ResponsibleRole
+    };
 }
 /**
  * Describes how this system satisfies a responsibiity imposed by a leveraged system.
  */
 export interface SatisfiedControlImplementationResponsibility {
-  uuid: UniversalIdentifier;
-  responsibility_uuid?: ProvidedUUID;
-  description: SatisfiedControlImplementationResponsibilityDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_roles?: {
-    [k: string]: ResponsibleRole
-  };
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    responsibility_uuid?: ProvidedUUID;
+    description: SatisfiedControlImplementationResponsibilityDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    responsible_roles?: {
+        [k: string]: ResponsibleRole
+    };
+    remarks?: Remarks;
 }
 /**
  * Identifies which statements within a control are addressed.
  */
 export interface SpecificControlStatement {
-  uuid: UniversalIdentifier;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  by_components?: {
-    [k: string]: ComponentControlImplementation
-  };
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    by_components?: {
+        [k: string]: ComponentControlImplementation
+    };
+    remarks?: Remarks;
 }
 /**
  * A collection of resources, which may be included directly or by reference.
  */
 export interface BackMatter {
-  resources?: Resource;
+    resources?: Resource;
 }
 /**
  * A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equavalent internet resources.
  */
 export interface Resource {
-  uuid: UniversalIdentifier;
-  title?: ResourceTitle;
-  description?: ResourceDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  document_ids?: DocumentIdentifier;
-  citation?: Citation;
-  rlinks?: ResourceLink;
-  base64?: Base64;
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    title?: ResourceTitle;
+    description?: ResourceDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    document_ids?: DocumentIdentifier;
+    citation?: Citation;
+    rlinks?: ResourceLink;
+    base64?: Base64;
+    remarks?: Remarks;
 }
 /**
  * A document identifier qualified by an identifier type.
  */
 export interface DocumentIdentifier {
-  scheme: DocumentIdentificationScheme;
-  identifier: string;
+    scheme: DocumentIdentificationScheme;
+    identifier: string;
 }
 /**
  * A citation consisting of end note text and optional structured bibliographic data.
  */
 export interface Citation {
-  text: CitationText;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  biblio?: BibliographicDefinition;
+    text: CitationText;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    biblio?: BibliographicDefinition;
 }
 /**
  * A container for structured bibliographic information. The model of this information is undefined by OSCAL.
@@ -1520,995 +1520,995 @@ export interface BibliographicDefinition { }
  * A pointer to an external resource with an optional hash for verification and change detection.
  */
 export interface ResourceLink {
-  href: HypertextReference;
-  media_type?: MediaType;
-  hashes?: [Hash, ...Hash[]];
+    href: HypertextReference;
+    media_type?: MediaType;
+    hashes?: [Hash, ...Hash[]];
 }
 /**
  * A representation of a cryptographic digest generated over a resource using a specified hash algorithm.
  */
 export interface Hash {
-  algorithm: HashAlgorithm;
-  value: string;
+    algorithm: HashAlgorithm;
+    value: string;
 }
 /**
  * The Base64 alphabet in RFC 2045 _ aligned with XSD.
  */
 export interface Base64 {
-  filename?: FileName;
-  media_type?: MediaType;
-  value: string;
+    filename?: FileName;
+    media_type?: MediaType;
+    value: string;
 }
 /**
  * Security assessment results, such as those provided by a FedRAMP assessor in the FedRAMP Security Assessment Report.
  */
 export interface SecurityAssessmentResults {
-  uuid: UniversalIdentifier;
-  metadata: PublicationMetadata;
-  import_ap: ImportAssessmentPlan;
-  local_definitions?: SecurityAssessmentResultsLocalDefinitions;
-  results: [AssessmentResult, ...AssessmentResult[]];
-  back_matter?: BackMatter;
+    uuid: UniversalIdentifier;
+    metadata: PublicationMetadata;
+    import_ap: ImportAssessmentPlan;
+    local_definitions?: SecurityAssessmentResultsLocalDefinitions;
+    results: [AssessmentResult, ...AssessmentResult[]];
+    back_matter?: BackMatter;
 }
 /**
  * Used by assessment_results to import information about the original plan for assessing the system.
  */
 export interface ImportAssessmentPlan {
-  href: AssessmentPlanReference;
-  remarks?: Remarks;
+    href: AssessmentPlanReference;
+    remarks?: Remarks;
 }
 /**
  * Used to define data objects that are used in the assessment plan, that do not appear in the referenced SSP.
  */
 export interface SecurityAssessmentResultsLocalDefinitions {
-  add_objectives_and_methods?: [AssessmentSpecificControlObjective, ...AssessmentSpecificControlObjective[]];
-  activities?: [Activity, ...Activity[]];
-  remarks?: Remarks;
+    add_objectives_and_methods?: [AssessmentSpecificControlObjective, ...AssessmentSpecificControlObjective[]];
+    activities?: [Activity, ...Activity[]];
+    remarks?: Remarks;
 }
 /**
  * A local definition of a control objective for this assessment. Uses catalog syntax for control objective and assessment actions.
  */
 export interface AssessmentSpecificControlObjective {
-  control_id: ControlIdentifierReference;
-  description?: ObjectiveDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  parts: [Part, ...Part[]];
-  remarks?: Remarks;
+    control_id: ControlIdentifierReference;
+    description?: ObjectiveDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    parts: [Part, ...Part[]];
+    remarks?: Remarks;
 }
 /**
  * A partition of a control's definition or a child of another part.
  */
 export interface Part {
-  id?: PartIdentifier;
-  name: PartName;
-  ns?: PartNamespace;
-  class?: PartClass;
-  title?: PartTitle;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  prose?: PartText;
-  parts?: [Part, ...Part[]];
-  links?: [Link, ...Link[]];
+    id?: PartIdentifier;
+    name: PartName;
+    ns?: PartNamespace;
+    class?: PartClass;
+    title?: PartTitle;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    prose?: PartText;
+    parts?: [Part, ...Part[]];
+    links?: [Link, ...Link[]];
 }
 /**
  * Identifies an assessment or related process that can be performed. In the assessment plan, this is an intended activity which may be associated with an assessment task. In the assessment results, this an activity that was actually performed as part of an assessement.
  */
 export interface Activity {
-  uuid: UniversalIdentifier;
-  title?: IncludedActivityTitle;
-  description: IncludedActivityDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  actions?: Action;
-  related_controls?: ReviewedControlsAndControlObjectives;
-  responsible_roles?: {
-    [k: string]: ResponsibleRole
-  };
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    title?: IncludedActivityTitle;
+    description: IncludedActivityDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    actions?: Action;
+    related_controls?: ReviewedControlsAndControlObjectives;
+    responsible_roles?: {
+        [k: string]: ResponsibleRole
+    };
+    remarks?: Remarks;
 }
 /**
  * Identifies an individual actions, such as test steps or examination procedures.
  */
 export interface Action {
-  uuid: UniversalIdentifier;
-  title?: ActionTitle;
-  description: ActionDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  reviewed_controls?: ReviewedControlsAndControlObjectives;
-  responsible_roles?: {
-    [k: string]: ResponsibleRole
-  };
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    title?: ActionTitle;
+    description: ActionDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    reviewed_controls?: ReviewedControlsAndControlObjectives;
+    responsible_roles?: {
+        [k: string]: ResponsibleRole
+    };
+    remarks?: Remarks;
 }
 /**
  * Identifies the controls being assessed and their control objectives.
  */
 export interface ReviewedControlsAndControlObjectives {
-  description?: ControlObjectiveDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  control_selections: AssessedControls;
-  control_objective_selections?: ReferenedControlObjectives;
-  remarks?: Remarks;
+    description?: ControlObjectiveDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    control_selections: AssessedControls;
+    control_objective_selections?: ReferenedControlObjectives;
+    remarks?: Remarks;
 }
 /**
  * Identifies the controls being assessed. In the assessment plan, these are the planned controls. In the assessment results, these are the actual controls, and reflects any changes from the plan.
  */
 export interface AssessedControls {
-  description?: AssessedControlsDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  include_all?: All;
-  include_controls?: SelectControl;
-  exclude_controls?: SelectControl;
-  remarks?: Remarks;
+    description?: AssessedControlsDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    include_all?: All;
+    include_controls?: SelectControl;
+    exclude_controls?: SelectControl;
+    remarks?: Remarks;
 }
 /**
  * Used to select a control for inclusion/exclusion based on the control's identifier. A set of statement identifiers can be optionally used to target the inclusion/exclusion to only specific control statements providing more granularity over the specific statements that are within the asessment scope.
  */
 export interface SelectControl {
-  control_id: ControlIdentifierReference;
-  statement_ids?: IncludeSpecificStatements;
+    control_id: ControlIdentifierReference;
+    statement_ids?: IncludeSpecificStatements;
 }
 /**
  * Identifies the control objectives of the assessment. In the assessment plan, these are the planned objectives. In the assessment results, these are the assessed objectives, and reflects any changes from the plan.
  */
 export interface ReferenedControlObjectives {
-  description?: ControlOjectivesDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  include_all?: All;
-  include_objectives?: [SelectObjective, ...SelectObjective[]];
-  exclude_objectives?: [SelectObjective, ...SelectObjective[]];
-  remarks?: Remarks;
+    description?: ControlOjectivesDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    include_all?: All;
+    include_objectives?: [SelectObjective, ...SelectObjective[]];
+    exclude_objectives?: [SelectObjective, ...SelectObjective[]];
+    remarks?: Remarks;
 }
 /**
  * Used to select a control objective for inclusion/exclusion based on the control objective's identifier.
  */
 export interface SelectObjective {
-  objective_id: ObjectiveID;
+    objective_id: ObjectiveID;
 }
 /**
  * Used by the assessment results and POA&M. In the assessment results, this identifies all of the assessment observations and findings, initial and residual risks, deviations, and disposition. In the POA&M, this identifies initial and residual risks, deviations, and disposition.
  */
 export interface AssessmentResult {
-  uuid: UniversalIdentifier;
-  title: ResultsTitle;
-  description: ResultsDescription;
-  start: StartField;
-  end?: EndField;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  local_definitions?: AssessmentResultSecurityAssessmentResultsLocalDefinitions;
-  reviewed_controls: ReviewedControlsAndControlObjectives;
-  assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
-  assessment_assets?: AssessmentAssets;
-  attestations?: AttestationStatements;
-  assessment_log?: AssessmentLog;
-  observations?: [Objective, ...Objective[]];
-  risks?: [IdentifiedRisk, ...IdentifiedRisk[]];
-  findings: [Finding, ...Finding[]];
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    title: ResultsTitle;
+    description: ResultsDescription;
+    start: StartField;
+    end?: EndField;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    local_definitions?: AssessmentResultSecurityAssessmentResultsLocalDefinitions;
+    reviewed_controls: ReviewedControlsAndControlObjectives;
+    assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
+    assessment_assets?: AssessmentAssets;
+    attestations?: AttestationStatements;
+    assessment_log?: AssessmentLog;
+    observations?: [Objective, ...Objective[]];
+    risks?: [IdentifiedRisk, ...IdentifiedRisk[]];
+    findings: [Finding, ...Finding[]];
+    remarks?: Remarks;
 }
 /**
  * Used to define data objects that are used in the assessment plan, that do not appear in the referenced SSP.
  */
 export interface AssessmentResultSecurityAssessmentResultsLocalDefinitions {
-  components?: {
-    [k: string]: Component
-  };
-  inventory_items?: [InventoryItem, ...InventoryItem[]];
-  users?: {
-    [k: string]: SystemUser
-  };
-  assessment_actions?: [AssessmentAction, ...AssessmentAction[]];
+    components?: {
+        [k: string]: Component
+    };
+    inventory_items?: [InventoryItem, ...InventoryItem[]];
+    users?: {
+        [k: string]: SystemUser
+    };
+    assessment_actions?: [AssessmentAction, ...AssessmentAction[]];
 }
 /**
  * Identifies an assessment_related event that must occur as part of executing an assessment plan, the result of which may be recorded within the assessment log in assessment results.
  */
 export interface AssessmentAction {
-  uuid: UniversalIdentifier;
-  title?: EventTitle;
-  description: EventDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  timing?: EventTiming;
-  assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
-  responsible_roles?: {
-    [k: string]: ResponsibleRole
-  };
-  associated_activities?: AssociatedActivity;
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    title?: EventTitle;
+    description: EventDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    timing?: EventTiming;
+    assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
+    responsible_roles?: {
+        [k: string]: ResponsibleRole
+    };
+    associated_activities?: AssociatedActivity;
+    remarks?: Remarks;
 }
 /**
  * The timing under which the event is intended to occur.
  */
 export interface EventTiming {
-  on_date?: OnDateCondition;
-  within_date_range?: OnDateRangeCondition;
-  at_frequency?: FrequencyCondition;
+    on_date?: OnDateCondition;
+    within_date_range?: OnDateRangeCondition;
+    at_frequency?: FrequencyCondition;
 }
 /**
  * The event is intended to occur on the specified date.
  */
 export interface OnDateCondition {
-  date: OnDateCondition;
+    date: OnDateCondition;
 }
 /**
  * The event is intended to occur within the specified date range.
  */
 export interface OnDateRangeCondition {
-  start: StartDateCondition;
-  end: EndDateCondition;
+    start: StartDateCondition;
+    end: EndDateCondition;
 }
 /**
  * The event is intended to occur at the specified frequency.
  */
 export interface FrequencyCondition {
-  period: Period;
-  unit: TimeUnit;
+    period: Period;
+    unit: TimeUnit;
 }
 /**
  * Identifies system elements being assessed, such as components, inventory items, and locations. In the assessment plan, this identifies a planned assessment subject. In the assessment results this is an actual assessment subject, and reflects any changes from the plan. exactly what will be the focus of this assessment. Any subjects not identified in this way are out_of_scope.
  */
 export interface SubjectOfAssessment {
-  type: SubjectType;
-  description?: IncludeSubjectsDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  include_all?: All;
-  include_subjects?: [SelectAssessmentSubject, ...SelectAssessmentSubject[]];
-  exclude_subjects?: [SelectAssessmentSubject, ...SelectAssessmentSubject[]];
-  remarks?: Remarks;
+    type: SubjectType;
+    description?: IncludeSubjectsDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    include_all?: All;
+    include_subjects?: [SelectAssessmentSubject, ...SelectAssessmentSubject[]];
+    exclude_subjects?: [SelectAssessmentSubject, ...SelectAssessmentSubject[]];
+    remarks?: Remarks;
 }
 /**
  * Identifies a set of assessment subjects to include/exclude by UUID.
  */
 export interface SelectAssessmentSubject {
-  uuid_ref: UUIDReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  remarks?: Remarks;
+    uuid_ref: UUIDReference;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    remarks?: Remarks;
 }
 /**
  * Identifies an individual activity to be performed as part of an action.
  */
 export interface AssociatedActivity {
-  uuid: UniversalIdentifier;
-  activity_uuid: ActivityUniversallyUniqueIdentifierReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_roles?: {
-    [k: string]: ResponsibleRole
-  };
-  assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
-  assessment_subject_placeholder?: AssessmentSubjectPlaceholder;
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    activity_uuid: ActivityUniversallyUniqueIdentifierReference;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    responsible_roles?: {
+        [k: string]: ResponsibleRole
+    };
+    assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
+    assessment_subject_placeholder?: AssessmentSubjectPlaceholder;
+    remarks?: Remarks;
 }
 /**
  * Used when the assessment subjects will be determined as part of one or more other assessment activities. These assessment subjects will be recorded in the assessment results.
  */
 export interface AssessmentSubjectPlaceholder {
-  description?: AssessmentSubjectPlaceholderDescription;
-  sources: AssessmentSubjectSource;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  remarks?: Remarks;
+    description?: AssessmentSubjectPlaceholderDescription;
+    sources: AssessmentSubjectSource;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    remarks?: Remarks;
 }
 /**
  * Assessment subjects will be identified while conducting the referenced activity_instance.
  */
 export interface AssessmentSubjectSource {
-  activity_instance_uuid: ActivityInstanceUniversallyUniqueIdentifier;
+    activity_instance_uuid: ActivityInstanceUniversallyUniqueIdentifier;
 }
 /**
  * Identifies the assets used to perform this assessment, such as the assessment team, scanning tools, and assumptions.
  */
 export interface AssessmentAssets {
-  components?: {
-    [k: string]: Component
-  };
-  assessment_platforms: AssessmentPlatform;
+    components?: {
+        [k: string]: Component
+    };
+    assessment_platforms: AssessmentPlatform;
 }
 /**
  * Used to represent the toolset used to perform aspects of the assessment.
  */
 export interface AssessmentPlatform {
-  uuid: UniversalIdentifier;
-  title?: AssessmentPlatformTitle;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  uses_components?: UsesComponent;
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    title?: AssessmentPlatformTitle;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    uses_components?: UsesComponent;
+    remarks?: Remarks;
 }
 /**
  * The set of components that are used by the assessment platform.
  */
 export interface UsesComponent {
-  component_uuid: ComponentUniversallyUniqueIdentifierReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_parties?: {
-    [k: string]: ResponsibleParty
-  };
-  remarks?: Remarks;
+    component_uuid: ComponentUniversallyUniqueIdentifierReference;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    responsible_parties?: {
+        [k: string]: ResponsibleParty
+    };
+    remarks?: Remarks;
 }
 /**
  * A set of textual statements, typically written by the assessor.
  */
 export interface AttestationStatements {
-  responsible_parties?: {
-    [k: string]: ResponsibleParty
-  };
-  parts: [AssessmentPart, ...AssessmentPart[]];
+    responsible_parties?: {
+        [k: string]: ResponsibleParty
+    };
+    parts: [AssessmentPart, ...AssessmentPart[]];
 }
 /**
  * A partition of an assessment plan or results or a child of another part.
  */
 export interface AssessmentPart {
-  uuid?: UniversalIdentifier;
-  name: PartName;
-  ns?: PartNamespace;
-  class?: PartClass;
-  title?: PartTitle;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  prose: PartText;
-  parts?: [AssessmentPart, ...AssessmentPart[]];
-  links?: [Link, ...Link[]];
+    uuid?: UniversalIdentifier;
+    name: PartName;
+    ns?: PartNamespace;
+    class?: PartClass;
+    title?: PartTitle;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    prose: PartText;
+    parts?: [AssessmentPart, ...AssessmentPart[]];
+    links?: [Link, ...Link[]];
 }
 /**
  * A log of all assessment_related actions taken.
  */
 export interface AssessmentLog {
-  entries: AssessmentLogEntry;
+    entries: AssessmentLogEntry;
 }
 /**
  * Identifies the result of an action and/or task that occured as part of executing an assessment plan or an assessment event that occured in producing the assessment results.
  */
 export interface AssessmentLogEntry {
-  uuid: UniversalIdentifier;
-  title?: ActionTitle;
-  description?: ActionDescription;
-  start: Start;
-  end?: End;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  logged_by?: [LoggedBy, ...LoggedBy[]];
-  related_actions?: [ActionReference, ...ActionReference[]];
-  related_tasks?: [TaskReference, ...TaskReference[]];
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    title?: ActionTitle;
+    description?: ActionDescription;
+    start: Start;
+    end?: End;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    logged_by?: [LoggedBy, ...LoggedBy[]];
+    related_actions?: [ActionReference, ...ActionReference[]];
+    related_tasks?: [TaskReference, ...TaskReference[]];
+    remarks?: Remarks;
 }
 /**
  * Used to indicate who created a log entry in what role.
  */
 export interface LoggedBy {
-  party_uuid: PartyUUIDReference;
-  role_id?: ActorRole;
+    party_uuid: PartyUUIDReference;
+    role_id?: ActorRole;
 }
 /**
  * Identifies an individual action for which the containing object is a consequence of.
  */
 export interface ActionReference {
-  action_uuid: ActionUniversallyUniqueIdentifierReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_parties?: {
-    [k: string]: ResponsibleParty
-  };
-  remarks?: Remarks;
+    action_uuid: ActionUniversallyUniqueIdentifierReference;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    responsible_parties?: {
+        [k: string]: ResponsibleParty
+    };
+    remarks?: Remarks;
 }
 /**
  * Identifies an individual task for which the containing object is a consequence of.
  */
 export interface TaskReference {
-  task_uuid: TaskUniversallyUniqueIdentifierReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_parties?: {
-    [k: string]: ResponsibleParty
-  };
-  assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
-  remarks?: Remarks;
+    task_uuid: TaskUniversallyUniqueIdentifierReference;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    responsible_parties?: {
+        [k: string]: ResponsibleParty
+    };
+    assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
+    remarks?: Remarks;
 }
 /**
  * Describes an individual observation.
  */
 export interface Objective {
-  uuid: UniversalIdentifier;
-  title?: ObservationTitle;
-  description: ObservatonDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  methods: ObservationMethod;
-  types?: ObservationType;
-  origins?: [Origin, ...Origin[]];
-  subjects?: IdentifiesTheSubject;
-  relevant_evidence?: RelevantEvidence;
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    title?: ObservationTitle;
+    description: ObservatonDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    methods: ObservationMethod;
+    types?: ObservationType;
+    origins?: [Origin, ...Origin[]];
+    subjects?: IdentifiesTheSubject;
+    relevant_evidence?: RelevantEvidence;
+    remarks?: Remarks;
 }
 /**
  * Identifies the source of the finding, such as a tool, interviewed person, or activity.
  */
 export interface Origin {
-  actors: AssessmentActor;
-  related_actions?: [ActionReference, ...ActionReference[]];
-  related_tasks?: [TaskReference, ...TaskReference[]];
+    actors: AssessmentActor;
+    related_actions?: [ActionReference, ...ActionReference[]];
+    related_tasks?: [TaskReference, ...TaskReference[]];
 }
 /**
  * The actor that produces an observation, a finding, or a risk. One or more actor type can be used to specify a person that is using a tool.
  */
 export interface AssessmentActor {
-  type: ActorType;
-  uuid_ref: ActorUUIDReference;
-  role_id?: ActorRole;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
+    type: ActorType;
+    uuid_ref: ActorUUIDReference;
+    role_id?: ActorRole;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
 }
 /**
  * Links this observation to relevant evidence.
  */
 export interface RelevantEvidence {
-  href?: RelevantEvidenceReference;
-  description: RelevantEvidenceDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  remarks?: Remarks;
+    href?: RelevantEvidenceReference;
+    description: RelevantEvidenceDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    remarks?: Remarks;
 }
 /**
  * An identified risk.
  */
 export interface IdentifiedRisk {
-  uuid: UniversalIdentifier;
-  title: RiskTitle;
-  description: RiskDescription;
-  statement: RiskStatement;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  status: RiskStatus;
-  origins?: [Origin, ...Origin[]];
-  threat_ids?: [ThreatID, ...ThreatID[]];
-  characterizations?: [Characterization, ...Characterization[]];
-  mitigating_factors?: MitigatingFactor;
-  deadline?: RiskResolutionDeadline;
-  remediations?: RiskResponse;
-  risk_log?: RiskLog;
-  related_observations?: RelatedObservation;
+    uuid: UniversalIdentifier;
+    title: RiskTitle;
+    description: RiskDescription;
+    statement: RiskStatement;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    status: RiskStatus;
+    origins?: [Origin, ...Origin[]];
+    threat_ids?: [ThreatID, ...ThreatID[]];
+    characterizations?: [Characterization, ...Characterization[]];
+    mitigating_factors?: MitigatingFactor;
+    deadline?: RiskResolutionDeadline;
+    remediations?: RiskResponse;
+    risk_log?: RiskLog;
+    related_observations?: RelatedObservation;
 }
 /**
  * A pointer, by ID, to an externally_defined threat.
  */
 export interface ThreatID {
-  system: ThreatTypeIdentificationSystem;
-  href?: ThreatInformationResourceReference;
-  id: string;
+    system: ThreatTypeIdentificationSystem;
+    href?: ThreatInformationResourceReference;
+    id: string;
 }
 /**
  * A collection of descriptive data about the containing object from a specific origin.
  */
 export interface Characterization {
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  origin: Origin;
-  facets: Facet;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    origin: Origin;
+    facets: Facet;
 }
 /**
  * An individual characteristic that is part of a larger set produced by the same actor.
  */
 export interface Facet {
-  name: FacetName;
-  system: NamingSystem;
-  value: FacetValue;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  remarks?: Remarks;
+    name: FacetName;
+    system: NamingSystem;
+    value: FacetValue;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    remarks?: Remarks;
 }
 /**
  * Describes an existing mitigating factor that may affect the overall determination of the risk, with an optional link to an implementation statement in the SSP.
  */
 export interface MitigatingFactor {
-  uuid: UniversalIdentifier;
-  implementation_uuid?: ImplementationUUID;
-  description: MitigatingFactorDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  subjects?: IdentifiesTheSubject;
+    uuid: UniversalIdentifier;
+    implementation_uuid?: ImplementationUUID;
+    description: MitigatingFactorDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    subjects?: IdentifiesTheSubject;
 }
 /**
  * Describes either recommended or an actual plan for addressing the risk.
  */
 export interface RiskResponse {
-  uuid: UniversalIdentifier;
-  lifecycle: RemediationIntent;
-  title: ResponseTitle;
-  description: ResponseDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  origins?: [Origin, ...Origin[]];
-  required_assets?: RequiredAsset;
-  tasks?: [Task, ...Task[]];
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    lifecycle: RemediationIntent;
+    title: ResponseTitle;
+    description: ResponseDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    origins?: [Origin, ...Origin[]];
+    required_assets?: RequiredAsset;
+    tasks?: [Task, ...Task[]];
+    remarks?: Remarks;
 }
 /**
  * Identifies an asset required to achieve remediation.
  */
 export interface RequiredAsset {
-  uuid: UniversalIdentifier;
-  subjects?: IdentifiesTheSubject;
-  title?: TitleForRequiredAsset;
-  description: DescriptionOfRequiredAsset;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    subjects?: IdentifiesTheSubject;
+    title?: TitleForRequiredAsset;
+    description: DescriptionOfRequiredAsset;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    remarks?: Remarks;
 }
 /**
  * A pointer to a resource based on its universally unique identifier (UUID). Use type to indicate whether the identified resource is a component, inventory item, location, user, or something else.
  */
 export interface IdentifiesTheSubject {
-  uuid_ref: UUIDReference;
-  type: UniversallyUniqueIdentifierReferenceType;
-  title?: SubjectReferenceTitle;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  remarks?: Remarks;
+    uuid_ref: UUIDReference;
+    type: UniversallyUniqueIdentifierReferenceType;
+    title?: SubjectReferenceTitle;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    remarks?: Remarks;
 }
 /**
  * Represents a scheduled event or milestone, which may be associated with a series of assessment actions.
  */
 export interface Task {
-  uuid: UniversalIdentifier;
-  title: TaskTitle;
-  description?: TaskDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  start: TaskStartDate;
-  end: TaskEndDate;
-  related_actions?: [ActionReference, ...ActionReference[]];
-  responsible_roles?: {
-    [k: string]: ResponsibleRole
-  };
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    title: TaskTitle;
+    description?: TaskDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    start: TaskStartDate;
+    end: TaskEndDate;
+    related_actions?: [ActionReference, ...ActionReference[]];
+    responsible_roles?: {
+        [k: string]: ResponsibleRole
+    };
+    remarks?: Remarks;
 }
 /**
  * A log of all risk_related actions taken.
  */
 export interface RiskLog {
-  entries: RiskLogEntry;
+    entries: RiskLogEntry;
 }
 /**
  * Identifies the result of an action and/or task that occured as part of executing an assessment plan or an assessment event that occured in producing the assessment results.
  */
 export interface RiskLogEntry {
-  uuid: UniversalIdentifier;
-  title?: ActionTitle;
-  description?: ActionDescription;
-  start: Start;
-  end?: End;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  logged_by?: [LoggedBy, ...LoggedBy[]];
-  status_change?: RiskStatus;
-  related_responses?: RiskActionReference;
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    title?: ActionTitle;
+    description?: ActionDescription;
+    start: Start;
+    end?: End;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    logged_by?: [LoggedBy, ...LoggedBy[]];
+    status_change?: RiskStatus;
+    related_responses?: RiskActionReference;
+    remarks?: Remarks;
 }
 /**
  * Identifies an individual risk response that this log entry is for.
  */
 export interface RiskActionReference {
-  response_uuid: ResponseUniversallyUniqueIdentifierReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  related_actions?: [ActionReference, ...ActionReference[]];
-  remarks?: Remarks;
+    response_uuid: ResponseUniversallyUniqueIdentifierReference;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    related_actions?: [ActionReference, ...ActionReference[]];
+    remarks?: Remarks;
 }
 /**
  * Relates the finding to a set of referenced observations that were used to determine the finding.
  */
 export interface RelatedObservation {
-  observation_uuid: ObservationUniversallyUniqueIdentifierReference;
+    observation_uuid: ObservationUniversallyUniqueIdentifierReference;
 }
 /**
  * Describes an individual finding.
  */
 export interface Finding {
-  uuid: UniversalIdentifier;
-  title: FindingTitle;
-  description: FindingDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  origins?: [Origin, ...Origin[]];
-  collected: CollectedField;
-  expires?: ExpiresField;
-  objective_status?: ObjectiveStatus;
-  implementation_statement_uuid?: ImplementationStatementUUID;
-  related_observations?: RelatedObservation;
-  related_risks?: AssociatedRisk;
-  remarks?: Remarks;
+    uuid: UniversalIdentifier;
+    title: FindingTitle;
+    description: FindingDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    origins?: [Origin, ...Origin[]];
+    collected: CollectedField;
+    expires?: ExpiresField;
+    objective_status?: ObjectiveStatus;
+    implementation_statement_uuid?: ImplementationStatementUUID;
+    related_observations?: RelatedObservation;
+    related_risks?: AssociatedRisk;
+    remarks?: Remarks;
 }
 /**
  * Captures an assessor's conclusions regarding the degree to which an objective is satisfied.
  */
 export interface ObjectiveStatus {
-  objective_id?: ObjectiveID;
-  control_id?: ControlIdentifierReference;
-  title?: ObjectiveStatusTitle;
-  description?: ObjectiveStatusDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  status: ImplementationStatus;
-  remarks?: Remarks;
+    objective_id?: ObjectiveID;
+    control_id?: ControlIdentifierReference;
+    title?: ObjectiveStatusTitle;
+    description?: ObjectiveStatusDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    status: ImplementationStatus;
+    remarks?: Remarks;
 }
 /**
  * Relates the finding to a set of referenced observations that were used to determine the finding.
  */
 export interface RelatedObservation {
-  observation_uuid: ObservationUniversallyUniqueIdentifierReference;
+    observation_uuid: ObservationUniversallyUniqueIdentifierReference;
 }
 /**
  * Relates the finding to a set of referenced risks that were used to determine the finding.
  */
 export interface AssociatedRisk {
-  risk_uuid: RiskUniversallyUniqueIdentifierReference;
+    risk_uuid: RiskUniversallyUniqueIdentifierReference;
 }
 /**
  * A collection of controls.
  */
 export interface Catalog {
-  uuid: UniversalIdentifier;
-  metadata: PublicationMetadata;
-  params?: [Parameter, ...Parameter[]];
-  controls?: [Control, ...Control[]];
-  groups?: [ControlGroup, ...ControlGroup[]];
-  back_matter?: BackMatter;
+    uuid: UniversalIdentifier;
+    metadata: PublicationMetadata;
+    params?: [Parameter, ...Parameter[]];
+    controls?: [Control, ...Control[]];
+    groups?: [ControlGroup, ...ControlGroup[]];
+    back_matter?: BackMatter;
 }
 /**
  * Parameters provide a mechanism for the dynamic assignment of value(s) in a control.
  */
 export interface Parameter {
-  id: ParameterIdentifier;
-  class?: ParameterClass;
-  depends_on?: DependsOn;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  label?: ParameterLabel;
-  usage?: ParameterUsageDescription;
-  constraints?: [Constraint, ...Constraint[]];
-  guidelines?: [Guideline, ...Guideline[]];
-  values?: [ParameterValue, ...ParameterValue[]];
-  select?: Selection;
+    id: ParameterIdentifier;
+    class?: ParameterClass;
+    depends_on?: DependsOn;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    label?: ParameterLabel;
+    usage?: ParameterUsageDescription;
+    constraints?: [Constraint, ...Constraint[]];
+    guidelines?: [Guideline, ...Guideline[]];
+    values?: [ParameterValue, ...ParameterValue[]];
+    select?: Selection;
 }
 /**
  * A formal or informal expression of a constraint or test
  */
 export interface Constraint {
-  description?: ConstraintDescription;
-  tests?: ConstraintTest;
+    description?: ConstraintDescription;
+    tests?: ConstraintTest;
 }
 /**
  * A test expression which is expected to be evaluated by a tool.
  */
 export interface ConstraintTest {
-  expression: ConstraintTest;
-  remarks?: Remarks;
+    expression: ConstraintTest;
+    remarks?: Remarks;
 }
 /**
  * A prose statement that provides a recommendation for the use of a parameter.
  */
 export interface Guideline {
-  prose: GuidelineText;
+    prose: GuidelineText;
 }
 /**
  * Presenting a choice among alternatives
  */
 export interface Selection {
-  how_many?: ParameterCardinality;
-  choice?: Choice;
+    how_many?: ParameterCardinality;
+    choice?: Choice;
 }
 /**
  * A structured information object representing a security or privacy control. Each security or privacy control within the Catalog is defined by a distinct control instance.
  */
 export interface Control {
-  id: ControlIdentifier;
-  class?: ControlClass;
-  title: ControlTitle;
-  params?: [Parameter, ...Parameter[]];
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  parts?: [Part, ...Part[]];
-  controls?: [Control, ...Control[]];
+    id: ControlIdentifier;
+    class?: ControlClass;
+    title: ControlTitle;
+    params?: [Parameter, ...Parameter[]];
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    parts?: [Part, ...Part[]];
+    controls?: [Control, ...Control[]];
 }
 /**
  * A group of (selected) controls or of groups of controls
  */
 export interface ControlGroup {
-  id?: GroupIdentifier;
-  class?: GroupClass;
-  title: GroupTitle;
-  params?: [Parameter, ...Parameter[]];
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  parts?: [Part, ...Part[]];
-  groups?: [ControlGroup, ...ControlGroup[]];
-  calls?: [Call, ...Call[]];
-  matches?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
+    id?: GroupIdentifier;
+    class?: GroupClass;
+    title: GroupTitle;
+    params?: [Parameter, ...Parameter[]];
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    parts?: [Part, ...Part[]];
+    groups?: [ControlGroup, ...ControlGroup[]];
+    calls?: [Call, ...Call[]];
+    matches?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
 }
 /**
  * Call a control by its ID
  */
 export interface Call {
-  control_id: ControlID;
-  with_child_controls?: IncludeContainedControlsWithControl;
+    control_id: ControlID;
+    with_child_controls?: IncludeContainedControlsWithControl;
 }
 /**
  * Select controls by (regular expression) match on ID
  */
 export interface MatchControlsByIdentifier {
-  pattern?: Pattern;
-  order?: Order;
-  with_child_controls?: IncludeContainedControlsWithControl;
+    pattern?: Pattern;
+    order?: Order;
+    with_child_controls?: IncludeContainedControlsWithControl;
 }
 /**
  * A plan of action and milestones which identifies initial and residual risks, deviations, and disposition, such as those required by FedRAMP.
  */
 export interface PlanOfActionAndMilestones {
-  uuid: UniversalIdentifier;
-  metadata: PublicationMetadata;
-  import_ssp?: ImportSystemSecurityPlan;
-  system_id?: SystemIdentification;
-  local_definitions?: PlanOfActionAndMilestonesSecurityAssessmentResultsLocalDefinitions;
-  observations?: [Objective, ...Objective[]];
-  risks?: [IdentifiedRisk, ...IdentifiedRisk[]];
-  poam_items: [POAMItem, ...POAMItem[]];
-  back_matter?: BackMatter;
+    uuid: UniversalIdentifier;
+    metadata: PublicationMetadata;
+    import_ssp?: ImportSystemSecurityPlan;
+    system_id?: SystemIdentification;
+    local_definitions?: PlanOfActionAndMilestonesSecurityAssessmentResultsLocalDefinitions;
+    observations?: [Objective, ...Objective[]];
+    risks?: [IdentifiedRisk, ...IdentifiedRisk[]];
+    poam_items: [POAMItem, ...POAMItem[]];
+    back_matter?: BackMatter;
 }
 /**
  * Used by the assessment plan and POA&M to import information about the system.
  */
 export interface ImportSystemSecurityPlan {
-  href: SystemSecurityPlanReference;
-  remarks?: Remarks;
+    href: SystemSecurityPlanReference;
+    remarks?: Remarks;
 }
 /**
  * Allows components, and inventory_items to be defined within the POA&M for circumstances where no OSCAL_based SSP exists, or is not delivered with the POA&M.
  */
 export interface PlanOfActionAndMilestonesSecurityAssessmentResultsLocalDefinitions {
-  components?: {
-    [k: string]: Component
-  };
-  inventory_items?: [InventoryItem, ...InventoryItem[]];
-  remarks?: Remarks;
+    components?: {
+        [k: string]: Component
+    };
+    inventory_items?: [InventoryItem, ...InventoryItem[]];
+    remarks?: Remarks;
 }
 /**
  * Describes an individual POA&M item.
  */
 export interface POAMItem {
-  uuid?: UniversalIdentifier;
-  title: POAMItemTitle;
-  description: POAMItemDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  origins?: [Origin, ...Origin[]];
-  collected: CollectedField;
-  expires?: ExpiresField;
-  related_observations?: RelatedObservation;
-  related_risks?: AssociatedRisk;
-  remarks?: Remarks;
+    uuid?: UniversalIdentifier;
+    title: POAMItemTitle;
+    description: POAMItemDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    origins?: [Origin, ...Origin[]];
+    collected: CollectedField;
+    expires?: ExpiresField;
+    related_observations?: RelatedObservation;
+    related_risks?: AssociatedRisk;
+    remarks?: Remarks;
 }
 /**
  * Each OSCAL profile is defined by a Profile element
  */
 export interface Profile {
-  uuid: UniversalIdentifier;
-  metadata: PublicationMetadata;
-  imports: [ImportResource, ...ImportResource[]];
-  merge?: MergeControls;
-  modify?: ModifyControls;
-  back_matter?: BackMatter;
+    uuid: UniversalIdentifier;
+    metadata: PublicationMetadata;
+    imports: [ImportResource, ...ImportResource[]];
+    merge?: MergeControls;
+    modify?: ModifyControls;
+    back_matter?: BackMatter;
 }
 /**
  * An Import element designates a catalog, profile, or other resource to be included (referenced and potentially modified) by this profile.
  */
 export interface ImportResource {
-  href: CatalogOrProfileReference;
-  include?: IncludeControls;
-  exclude?: ExcludeControls;
+    href: CatalogOrProfileReference;
+    include?: IncludeControls;
+    exclude?: ExcludeControls;
 }
 /**
  * Specifies which controls to include from the resource (source catalog) being imported
  */
 export interface IncludeControls {
-  all?: IncludeAll;
-  calls?: [Call, ...Call[]];
-  matches?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
+    all?: IncludeAll;
+    calls?: [Call, ...Call[]];
+    matches?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
 }
 /**
  * Include all controls from the imported resource (catalog)
  */
 export interface IncludeAll {
-  with_child_controls?: IncludeContainedControlsWithControl;
+    with_child_controls?: IncludeContainedControlsWithControl;
 }
 /**
  * Which controls to exclude from the resource (source catalog) being imported
  */
 export interface ExcludeControls {
-  calls?: [Call, ...Call[]];
-  matches?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
+    calls?: [Call, ...Call[]];
+    matches?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
 }
 /**
  * A Merge element merges controls in resolution.
  */
 export interface MergeControls {
-  combine?: CombinationRule;
-  as_is?: AsIs;
-  custom?: CustomGrouping;
+    combine?: CombinationRule;
+    as_is?: AsIs;
+    custom?: CustomGrouping;
 }
 /**
  * A Combine element defines whether and how to combine multiple (competing) versions of the same control
  */
 export interface CombinationRule {
-  method?: CombinationMethod;
+    method?: CombinationMethod;
 }
 /**
  * A Custom element frames a structure for embedding represented controls in resolution.
  */
 export interface CustomGrouping {
-  groups?: [ControlGroup, ...ControlGroup[]];
-  id_selectors?: [Call, ...Call[]];
-  pattern_selectors?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
+    groups?: [ControlGroup, ...ControlGroup[]];
+    id_selectors?: [Call, ...Call[]];
+    pattern_selectors?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
 }
 /**
  * Set parameters or amend controls in resolution
  */
 export interface ModifyControls {
-  set_parameters?: {
-    [k: string]: SetParameterValue
-  };
-  alters?: [Alteration, ...Alteration[]];
+    set_parameters?: {
+        [k: string]: SetParameterValue
+    };
+    alters?: [Alteration, ...Alteration[]];
 }
 /**
  * An Alter element specifies changes to be made to an included control when a profile is resolved.
  */
 export interface Alteration {
-  control_id?: ControlID;
-  removes?: [Removal, ...Removal[]];
-  adds?: [Addition, ...Addition[]];
+    control_id?: ControlID;
+    removes?: [Removal, ...Removal[]];
+    adds?: [Addition, ...Addition[]];
 }
 /**
  * Specifies elements to be removed from a control, in resolution
  */
 export interface Removal {
-  name_ref?: ReferenceByAssignedName;
-  class_ref?: ReferenceByClass;
-  id_ref?: ReferenceByID;
-  item_name?: ReferencesByItemNameOrGenericIdentifier;
+    name_ref?: ReferenceByAssignedName;
+    class_ref?: ReferenceByClass;
+    id_ref?: ReferenceByID;
+    item_name?: ReferencesByItemNameOrGenericIdentifier;
 }
 /**
  * Specifies contents to be added into controls, in resolution
  */
 export interface Addition {
-  position?: Position;
-  id_ref?: ReferenceByID;
-  title?: TitleChange;
-  params?: [Parameter, ...Parameter[]];
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  parts?: [Part, ...Part[]];
+    position?: Position;
+    id_ref?: ReferenceByID;
+    title?: TitleChange;
+    params?: [Parameter, ...Parameter[]];
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    parts?: [Part, ...Part[]];
 }
 /**
  * A collection of component descriptions, which may optionally be grouped by capability.
  */
 export interface ComponentDefinition {
-  uuid: UniversalIdentifier;
-  metadata: PublicationMetadata;
-  import_component_definitions?: [ImportComponentDefinition, ...ImportComponentDefinition[]];
-  components?: {
-    [k: string]: Component
-  };
-  capabilities?: {
-    [k: string]: Capability
-  };
-  back_matter?: BackMatter;
+    uuid: UniversalIdentifier;
+    metadata: PublicationMetadata;
+    import_component_definitions?: [ImportComponentDefinition, ...ImportComponentDefinition[]];
+    components?: {
+        [k: string]: Component
+    };
+    capabilities?: {
+        [k: string]: Capability
+    };
+    back_matter?: BackMatter;
 }
 /**
  * Loads a component definition from another resource.
  */
 export interface ImportComponentDefinition {
-  href: HyperlinkReference;
+    href: HyperlinkReference;
 }
 /**
  * A grouping of other components and/or capabilities.
  */
 export interface Capability {
-  name: CapabilityName;
-  description: CapabilityDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  incorporates_components?: {
-    [k: string]: IncorporatesComponent
-  };
-  control_implementations?: [ControlImplementation, ...ControlImplementation[]];
-  remarks?: Remarks;
+    name: CapabilityName;
+    description: CapabilityDescription;
+    props?: [Property, ...Property[]];
+    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    links?: [Link, ...Link[]];
+    incorporates_components?: {
+        [k: string]: IncorporatesComponent
+    };
+    control_implementations?: [ControlImplementation, ...ControlImplementation[]];
+    remarks?: Remarks;
 }
 /**
  * TBD
  */
 export interface IncorporatesComponent {
-  description: ComponentDescription;
+    description: ComponentDescription;
 }
 /**
  * An assessment plan, such as those provided by a FedRAMP assessor.
  */
 export interface SecurityAssessmentPlan {
-  uuid: UniversalIdentifier;
-  metadata: PublicationMetadata;
-  import_ssp: ImportSystemSecurityPlan;
-  local_definitions?: SecurityAssessmentPlanSecurityAssessmentResultsLocalDefinitions;
-  terms_and_conditions?: AssessmentPlanTermsAndConditions;
-  reviewed_controls: ReviewedControlsAndControlObjectives;
-  assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
-  assessment_assets?: AssessmentAssets;
-  assessment_actions?: [AssessmentAction, ...AssessmentAction[]];
-  tasks?: [Task, ...Task[]];
-  back_matter?: BackMatter;
+    uuid: UniversalIdentifier;
+    metadata: PublicationMetadata;
+    import_ssp: ImportSystemSecurityPlan;
+    local_definitions?: SecurityAssessmentPlanLocalDefinitions;
+    terms_and_conditions?: AssessmentPlanTermsAndConditions;
+    reviewed_controls: ReviewedControlsAndControlObjectives;
+    assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
+    assessment_assets?: AssessmentAssets;
+    assessment_actions?: [AssessmentAction, ...AssessmentAction[]];
+    tasks?: [Task, ...Task[]];
+    back_matter?: BackMatter;
 }
 /**
  * Used to define data objects that are used in the assessment plan, that do not appear in the referenced SSP.
  */
-export interface SecurityAssessmentPlanSecurityAssessmentResultsLocalDefinitions {
-  components?: {
-    [k: string]: Component
-  };
-  inventory_items?: [InventoryItem, ...InventoryItem[]];
-  users?: {
-    [k: string]: SystemUser
-  };
-  add_objectives_and_methods?: [AssessmentSpecificControlObjective, ...AssessmentSpecificControlObjective[]];
-  activities?: [Activity, ...Activity[]];
-  remarks?: Remarks;
+export interface SecurityAssessmentPlanLocalDefinitions {
+    components?: {
+        [k: string]: Component
+    };
+    inventory_items?: [InventoryItem, ...InventoryItem[]];
+    users?: {
+        [k: string]: SystemUser
+    };
+    add_objectives_and_methods?: [AssessmentSpecificControlObjective, ...AssessmentSpecificControlObjective[]];
+    activities?: [Activity, ...Activity[]];
+    remarks?: Remarks;
 }
 /**
  * Used to define various terms and conditions under which an assessment, described by the plan, can be performed. Each child part defines a different type of term or condition.
  */
 export interface AssessmentPlanTermsAndConditions {
-  parts?: AssessmentPart | [AssessmentPart, ...AssessmentPart[]];
+    parts?: AssessmentPart | [AssessmentPart, ...AssessmentPart[]];
 }

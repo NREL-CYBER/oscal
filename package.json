@@ -1,10 +1,15 @@
 {
   "name": "oscal",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Oscal Typescript types",
-  "main": "./index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "directories": {
+    "src": "src"
+  },
   "scripts": {
-    "compile": "tsc compile.ts --resolveJsonModule | node compile.js"
+    "build:types": "tsc --emitDeclarationOnly ",
+    "build": "babel src --out-dir dist --extensions .ts,.tsx"
   },
   "repository": {
     "type": "git",
@@ -15,8 +20,13 @@
   "license": "ISC",
   "dependencies": {
     "@types/lodash": "^4.14.166",
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-typescript": "^7.12.7",
     "ajv": "^7.0.2",
     "ajv-formats": "^1.5.1",
+    "babel": "^6.23.0",
     "camelcase-keys": "^6.2.2",
     "json-schema-to-typescript": "^10.0.3",
     "typescript": "^4.1.3"
