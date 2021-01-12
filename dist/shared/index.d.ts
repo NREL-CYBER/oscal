@@ -1,4 +1,5 @@
 import { SubjectOfAssessment, AssessmentSubjectPlaceholder } from "./Subject";
+import { ExcludeControl } from "src/assessment_plan";
 /**
  * A name given to the document, which may be used by a tool for display and navigation.
  */
@@ -749,7 +750,7 @@ export interface AssessedControls {
     links?: [Link, ...Link[]];
     include_all?: All;
     include_controls?: [SelectControl, ...SelectControl[]];
-    exclude_controls?: [SelectControl1, ...SelectControl1[]];
+    exclude_controls?: [ExcludeControl, ...ExcludeControl[]];
     remarks?: Remarks;
 }
 /**
@@ -809,20 +810,13 @@ export interface AssessedControls {
     links?: [Link, ...Link[]];
     include_all?: All;
     include_controls?: [SelectControl, ...SelectControl[]];
-    exclude_controls?: [SelectControl1, ...SelectControl1[]];
+    exclude_controls?: [ExcludeControl, ...ExcludeControl[]];
     remarks?: Remarks;
 }
 /**
  * Used to select a control for inclusion/exclusion based on the control's identifier. A set of statement identifiers can be optionally used to target the inclusion/exclusion to only specific control statements providing more granularity over the specific statements that are within the asessment scope.
  */
 export interface SelectControl {
-    control_id: ControlIdentifierReference;
-    statement_ids?: [IncludeSpecificStatements, ...IncludeSpecificStatements[]];
-}
-/**
- * Used to select a control for inclusion/exclusion based on the control's identifier. A set of statement identifiers can be optionally used to target the inclusion/exclusion to only specific control statements providing more granularity over the specific statements that are within the asessment scope.
- */
-export interface SelectControl1 {
     control_id: ControlIdentifierReference;
     statement_ids?: [IncludeSpecificStatements, ...IncludeSpecificStatements[]];
 }

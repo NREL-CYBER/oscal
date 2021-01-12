@@ -92,23 +92,22 @@ export interface AssessedControls {
   links?: [Link, ...Link[]];
   include_all?: All;
   include_controls?: [SelectControl, ...SelectControl[]];
-  exclude_controls?: [SelectControl1, ...SelectControl1[]];
+  exclude_controls?: [ExcludeControl, ...ExcludeControl[]];
   remarks?: Remarks;
 }
 /**
- * Used to select a control for inclusion/exclusion based on the control's identifier. A set of statement identifiers can be optionally used to target the inclusion/exclusion to only specific control statements providing more granularity over the specific statements that are within the asessment scope.
+ * Used to select a control for inclusion based on the control's identifier. A set of statement identifiers can be optionally used to target the inclusion/exclusion to only specific control statements providing more granularity over the specific statements that are within the asessment scope.
  */
 export interface SelectControl {
   control_id: ControlIdentifierReference;
   statement_ids?: [IncludeSpecificStatements, ...IncludeSpecificStatements[]];
 }
 /**
- * Used to select a control for inclusion/exclusion based on the control's identifier. A set of statement identifiers can be optionally used to target the inclusion/exclusion to only specific control statements providing more granularity over the specific statements that are within the asessment scope.
+ * Used to select a control for exclusion based on the control's identifier. A set of statement identifiers can be optionally used to target the inclusion/exclusion to only specific control statements providing more granularity over the specific statements that are within the asessment scope.
  */
-export interface SelectControl1 {
-  control_id: ControlIdentifierReference;
-  statement_ids?: [IncludeSpecificStatements, ...IncludeSpecificStatements[]];
+export interface ExcludeControl extends SelectControl {
 }
+
 /**
  * Used to select a control objective for inclusion/exclusion based on the control objective's identifier.
  */

@@ -1,4 +1,4 @@
-import { CollectedField, ExpiresField, ObservationMethod, ObservationTitle, ObservationType, ObservationUniversallyUniqueIdentifier, ObservatonDescription, PartyUUIDReference, RemediationIntent, RemediationUniversallyUniqueIdentifier, RequiredUniversallyUniqueIdentifier, ResponseDescription, ResponseTitle, ResponseUniversallyUniqueIdentifierReference, RiskLogEntryUniversallyUniqueIdentifier, RiskStatus, SubjectReferenceTitle2, UniversallyUniqueIdentifierReferenceType2, UUIDReference3 } from "src/poam";
+import { CollectedField, ExpiresField, ObservationMethod, ObservationTitle, ObservationType, ObservationUniversallyUniqueIdentifier, ObservatonDescription, PartyUUIDReference, RemediationIntent, RemediationUniversallyUniqueIdentifier, RequiredUniversallyUniqueIdentifier, ResponseDescription, ResponseTitle, ResponseUniversallyUniqueIdentifierReference, RiskLogEntryUniversallyUniqueIdentifier, RiskStatus } from "src/poam";
 import { ActionDescription, ActionTitle, ActionUniversallyUniqueIdentifier, ActionUniversallyUniqueIdentifierReference, ActivityUniversallyUniqueIdentifierReference, All, AnnotatedProperty, AssessmentActivityUniversallyUniqueIdentifier, AssessmentLogEntryUniversallyUniqueIdentifier, AssessmentPlanReference, AssessmentPlatformTitle, AssessmentPlatformUniversallyUniqueIdentifier, AssociatedActivityUniversallyUniqueIdentifier, BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ConditionalDate, ControlIdentifierReference, ControlOjectivesDescription, End, EndDateCondition, EventDescription, EventTitle, EventUniversallyUniqueIdentifier, ImplementationStatementUUID, ImplementationStatus, IncludedActivityDescription, IncludedActivityTitle, IncludeSpecificStatements, InventoryItemDescription, InventoryItemUniversallyUniqueIdentifier, Link, ObjectiveDescription, ObjectiveID, ObjectiveStatusDescription, ObjectiveStatusTitle, OperatingState, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, PartyReference, Period, Privilege, Property, ProtocolName, PublicationMetadata, Remarks, ResponsibleParty, ReviewedControlsAndControlObjectives, RoleIdentifierReference, ServiceProtocolInformationUniversallyUniqueIdentifier, Start, StartDateCondition, TaskUniversallyUniqueIdentifierReference, TimeUnit, TitleField, Transport, UniversallyUniqueIdentifierReferenceType, UserDescription, UserShortName, UserTitle, UUIDReference } from "src/shared";
 import { ActorRole, AssessmentActor } from "src/shared/Actor";
 import { AssociatedRisk, IdentifiedRisk, RelevantEvidenceDescription, RelevantEvidenceReference, SubjectReferenceTitle } from "src/shared/IdentifiedRisk";
@@ -131,13 +131,6 @@ export interface Action {
  * Used to select a control for inclusion/exclusion based on the control's identifier. A set of statement identifiers can be optionally used to target the inclusion/exclusion to only specific control statements providing more granularity over the specific statements that are within the asessment scope.
  */
 export interface SelectControl {
-    control_id: ControlIdentifierReference;
-    statement_ids?: [IncludeSpecificStatements, ...IncludeSpecificStatements[]];
-}
-/**
- * Used to select a control for inclusion/exclusion based on the control's identifier. A set of statement identifiers can be optionally used to target the inclusion/exclusion to only specific control statements providing more granularity over the specific statements that are within the asessment scope.
- */
-export interface SelectControl1 {
     control_id: ControlIdentifierReference;
     statement_ids?: [IncludeSpecificStatements, ...IncludeSpecificStatements[]];
 }
@@ -537,21 +530,9 @@ export interface RiskResponse {
  */
 export interface RequiredAsset {
     uuid: RequiredUniversallyUniqueIdentifier;
-    subjects?: [IdentifiesTheSubject2, ...IdentifiesTheSubject2[]];
+    subjects?: [IdentifiesTheSubject, ...IdentifiesTheSubject[]];
     title?: TitleForRequiredAsset;
     description: DescriptionOfRequiredAsset;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
-    remarks?: Remarks;
-}
-/**
- * A pointer to a resource based on its universally unique identifier (UUID). Use type to indicate whether the identified resource is a component, inventory item, location, user, or something else.
- */
-export interface IdentifiesTheSubject2 {
-    uuid_ref: UUIDReference3;
-    type: UniversallyUniqueIdentifierReferenceType2;
-    title?: SubjectReferenceTitle2;
     props?: [Property, ...Property[]];
     annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
     links?: [Link, ...Link[]];

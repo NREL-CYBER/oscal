@@ -139,13 +139,6 @@ export interface SelectControl {
   statement_ids?: [IncludeSpecificStatements, ...IncludeSpecificStatements[]];
 }
 /**
- * Used to select a control for inclusion/exclusion based on the control's identifier. A set of statement identifiers can be optionally used to target the inclusion/exclusion to only specific control statements providing more granularity over the specific statements that are within the asessment scope.
- */
-export interface SelectControl1 {
-  control_id: ControlIdentifierReference;
-  statement_ids?: [IncludeSpecificStatements, ...IncludeSpecificStatements[]];
-}
-/**
  * Identifies the control objectives of the assessment. In the assessment plan, these are the planned objectives. In the assessment results, these are the assessed objectives, and reflects any changes from the plan.
  */
 export interface ReferenedControlObjectives {
@@ -543,7 +536,7 @@ export interface RiskResponse {
  */
 export interface RequiredAsset {
   uuid: RequiredUniversallyUniqueIdentifier;
-  subjects?: [IdentifiesTheSubject2, ...IdentifiesTheSubject2[]];
+  subjects?: [IdentifiesTheSubject, ...IdentifiesTheSubject[]];
   title?: TitleForRequiredAsset;
   description: DescriptionOfRequiredAsset;
   props?: [Property, ...Property[]];
@@ -551,18 +544,7 @@ export interface RequiredAsset {
   links?: [Link, ...Link[]];
   remarks?: Remarks;
 }
-/**
- * A pointer to a resource based on its universally unique identifier (UUID). Use type to indicate whether the identified resource is a component, inventory item, location, user, or something else.
- */
-export interface IdentifiesTheSubject2 {
-  uuid_ref: UUIDReference3;
-  type: UniversallyUniqueIdentifierReferenceType2;
-  title?: SubjectReferenceTitle2;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  remarks?: Remarks;
-}
+
 /**
  * Represents a scheduled event or milestone, which may be associated with a series of assessment actions.
  */
