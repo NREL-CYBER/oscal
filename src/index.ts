@@ -7,11 +7,11 @@ import { SecurityAssessmentPlan } from "./assessment_plan";
 
 export * from "./shared";
 
-export interface oscal {
-    sssp: SystemSecurityPlan
-    poam: PlanOfActionAndMilestones
-    profile: Profile,
-    catalog: Catalog
-    sar: SecurityAssessmentResults,
-    sap: SecurityAssessmentPlan
+export {
+    SystemSecurityPlan
+    , PlanOfActionAndMilestones
+    , Profile
+    , Catalog
+    , SecurityAssessmentResults
+    , SecurityAssessmentPlan
 }
