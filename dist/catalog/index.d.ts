@@ -1,4 +1,4 @@
-import { Choice, ConstraintDescription, ConstraintTest, DependsOn, GroupClass, GroupIdentifier, GroupTitle, GuidelineText, ParameterCardinality, ParameterClass, ParameterIdentifier, ParameterLabel, ParameterUsageDescription } from "src/profile";
+import { Choice, ConstraintDescription, ConstraintTest, DependsOn, GroupClass, GroupIdentifier, GroupTitle, GuidelineText, ParameterCardinality, ParameterClass, ParameterIdentifier, ParameterLabel, ParameterUsageDescription } from "../profile";
 import { AnnotatedProperty, BackMatter, DocumentIdentifier, DocumentTitle, DocumentVersion, ExternalIdentifierSchema, LastModifiedTimestamp, Link, Location, OSCALVersion, ParameterValue, Property, PublicationTimestamp, Remarks, Party, ResponsibleParty, RevisionHistoryEntry, Role, PartIdentifier, PartName, PartNamespace, PartClass, PartTitle, PartText } from "../shared";
 /**
  * A unique identifier for a specific control instance that can be used to reference the control in other OSCAL documents. This identifier's uniqueness is document scoped and is intended to be consistent for the same control across minor revisions of the document.

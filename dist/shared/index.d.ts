@@ -1,5 +1,5 @@
 import { SubjectOfAssessment, AssessmentSubjectPlaceholder } from "./Subject";
-import { ExcludeControl } from "src/assessment_plan";
+import { ExcludeControl } from "../assessment_plan";
 /**
  * A name given to the document, which may be used by a tool for display and navigation.
  */

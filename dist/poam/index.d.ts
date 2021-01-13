@@ -3,10 +3,10 @@
  * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
  * and run json-schema-to-typescript to regenerate this file.
  */
-import { ActionDescription, ActionTitle, AnnotatedProperty, Component, InventoryItem, Link, Property, PublicationMetadata, Remarks, SystemSecurityPlanReference, ActionReference, BackMatter } from "src/shared";
-import { Origin, IdentifiedRisk, AssociatedRisk, IdentifiesTheSubject } from "src/shared/IdentifiedRisk";
-import { TitleForRequiredAsset, DescriptionOfRequiredAsset, Task } from "src/shared/Task";
-import { RelatedObservation } from "src/shared/Observation";
+import { ActionDescription, ActionTitle, AnnotatedProperty, Component, InventoryItem, Link, Property, PublicationMetadata, Remarks, SystemSecurityPlanReference, ActionReference, BackMatter } from "../shared";
+import { Origin, IdentifiedRisk, AssociatedRisk, IdentifiesTheSubject } from "../shared/IdentifiedRisk";
+import { TitleForRequiredAsset, DescriptionOfRequiredAsset, Task } from "../shared/Task";
+import { RelatedObservation } from "../shared/Observation";
 /**
  * Uniquely identifies this POA&M. This UUID must be changed each time the content of the POA&M changes.
  */

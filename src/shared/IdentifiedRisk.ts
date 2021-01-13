@@ -1,6 +1,6 @@
-import { Property, AnnotatedProperty, Link, AssociatedRiskStatus, ActionReference, TaskReference, SubjectType, IncludeSubjectsDescription, All, Remarks, UUIDReference } from ".";
+import { ActionReference, AnnotatedProperty, AssociatedRiskStatus, Link, Property, Remarks, TaskReference, UUIDReference } from ".";
+import { RiskLog, RiskResolutionDeadline, RiskResponse } from "../poam";
 import { AssessmentActor } from "./Actor";
-import { RiskResolutionDeadline, RiskResponse, RiskLog } from "src/poam";
 import { RelatedObservation } from "./Observation";
 /**
  * Used to indicate the type of object pointed to by the uuid_ref.
