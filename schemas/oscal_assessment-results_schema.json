@@ -4100,7 +4100,6 @@
         "local_definitions": {
           "title": "Local Definitions",
           "description": "Used to define data objects that are used in the assessment plan, that do not appear in the referenced SSP.",
-          "$id": "#/definitions/local_definitions",
           "type": "object",
           "properties": {
             "add_objectives_and_methods": {
@@ -4202,7 +4201,6 @@
         "local_definitions": {
           "title": "Local Definitions",
           "description": "Used to define data objects that are used in the assessment plan, that do not appear in the referenced SSP.",
-          "$id": "#/definitions/local_definitions",
           "type": "object",
           "properties": {
             "components": {
