@@ -1281,7 +1281,6 @@
           "label" : 
           { "title" : "Parameter Label",
             "description" : "A short, placeholder name for the parameter, which can be used as a subsitute for a value if no value is assigned.",
-            "$id" : "#/definitions/label",
             "type" : "string" },
           "usage" : 
           { "title" : "Parameter Usage Description",
