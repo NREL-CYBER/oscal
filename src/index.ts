@@ -4,10 +4,14 @@ import { Profile } from "./profile";
 import { Catalog } from "./catalog";
 import { SecurityAssessmentResults } from "./assessment_results";
 import { SecurityAssessmentPlan } from "./assessment_plan";
+import exportOscal from "./exportOscal";
+import importOscal from "./importOscal";
 
 export * from "./shared";
 
 export {
+    exportOscal,
+    importOscal,
     SystemSecurityPlan
     , PlanOfActionAndMilestones
     , Profile
