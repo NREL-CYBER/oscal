@@ -760,7 +760,7 @@
                       { "title" : "Hypertext Reference",
                         "description" : "A resolvable URI reference to a resource.",
                         "type" : "string",
-                        "format" : "uri_reference" },
+                        "format" : "uri-reference" },
                       "media_type" : 
                       { "title" : "Media Type",
                         "description" : "Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.",
@@ -783,7 +783,7 @@
                     { "title" : "File Name",
                       "description" : "Name of the file before it was encoded as Base64 to be embedded in a resource. This is the name that will be assigned to the file when the file is decoded.",
                       "type" : "string",
-                      "format" : "uri_reference" },
+                      "format" : "uri-reference" },
                     "media_type" : 
                     { "title" : "Media Type",
                       "description" : "Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.",
@@ -869,7 +869,7 @@
           { "title" : "Hypertext Reference",
             "description" : "A resolvable URL reference to a resource.",
             "type" : "string",
-            "format" : "uri_reference" },
+            "format" : "uri-reference" },
           "rel" : 
           { "title" : "Relation",
             "description" : "Describes the type of relationship provided by the link. This can be an indicator of the link's purpose.",
@@ -1310,7 +1310,7 @@
           { "title" : "System Security Plan Reference",
             "description" : ">A resolvable URL reference to the system security plan for the system being assessed.",
             "type" : "string",
-            "format" : "uri_reference" },
+            "format" : "uri-reference" },
           "remarks" : 
           { "$ref" : "#/definitions/remarks" } },
         "required" : 
@@ -2315,7 +2315,7 @@
                 { "title" : "Relevant Evidence Reference",
                   "description" : ">A resolvable URL reference to relevant evidence.",
                   "type" : "string",
-                  "format" : "uri_reference" },
+                  "format" : "uri-reference" },
                 "description" : 
                 { "title" : "Relevant Evidence Description",
                   "description" : "A human_readable description of this evidence.",
@@ -2426,7 +2426,7 @@
           { "title" : "Threat Information Resource Reference",
             "description" : "An optional location for the threat data, from which this ID originates.",
             "type" : "string",
-            "format" : "uri_reference" },
+            "format" : "uri-reference" },
           "id" : 
           { "type" : "string" } },
         "required" : 

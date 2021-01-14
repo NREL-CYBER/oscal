@@ -742,7 +742,7 @@
                                             "title": "Hypertext Reference",
                                             "description": "A resolvable URI reference to a resource.",
                                             "type": "string",
-                                            "format": "uri_reference"
+                                            "format": "uri-reference"
                                         },
                                         "media_type": {
                                             "title": "Media Type",
@@ -773,7 +773,7 @@
                                         "title": "File Name",
                                         "description": "Name of the file before it was encoded as Base64 to be embedded in a resource. This is the name that will be assigned to the file when the file is decoded.",
                                         "type": "string",
-                                        "format": "uri_reference"
+                                        "format": "uri-reference"
                                     },
                                     "media_type": {
                                         "title": "Media Type",
@@ -888,7 +888,7 @@
                     "title": "Hypertext Reference",
                     "description": "A resolvable URL reference to a resource.",
                     "type": "string",
-                    "format": "uri_reference"
+                    "format": "uri-reference"
                 },
                 "rel": {
                     "title": "Relation",
@@ -1519,7 +1519,7 @@
                     "title": "Profile Reference",
                     "description": "A resolvable URL reference to the profile to use as the system's control baseline.",
                     "type": "string",
-                    "format": "uri_reference"
+                    "format": "uri-reference"
                 },
                 "remarks": {
                     "$ref": "#/definitions/remarks"

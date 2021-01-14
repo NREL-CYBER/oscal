@@ -575,7 +575,7 @@
                       { "title" : "Hypertext Reference",
                         "description" : "A resolvable URI reference to a resource.",
                         "type" : "string",
-                        "format" : "uri_reference" },
+                        "format" : "uri-reference" },
                       "media_type" : 
                       { "title" : "Media Type",
                         "description" : "Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.",
@@ -598,7 +598,7 @@
                     { "title" : "File Name",
                       "description" : "Name of the file before it was encoded as Base64 to be embedded in a resource. This is the name that will be assigned to the file when the file is decoded.",
                       "type" : "string",
-                      "format" : "uri_reference" },
+                      "format" : "uri-reference" },
                     "media_type" : 
                     { "title" : "Media Type",
                       "description" : "Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.",
@@ -684,7 +684,7 @@
           { "title" : "Hypertext Reference",
             "description" : "A resolvable URL reference to a resource.",
             "type" : "string",
-            "format" : "uri_reference" },
+            "format" : "uri-reference" },
           "rel" : 
           { "title" : "Relation",
             "description" : "Describes the type of relationship provided by the link. This can be an indicator of the link's purpose.",
@@ -1006,7 +1006,7 @@
           { "title" : "Catalog or Profile Reference",
             "description" : "A resolvable URL reference to the base catalog or profile that this profile is tailoring.",
             "type" : "string",
-            "format" : "uri_reference" },
+            "format" : "uri-reference" },
           "include" : 
           { "$ref" : "#/definitions/include" },
           "exclude" : 
