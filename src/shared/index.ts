@@ -165,7 +165,7 @@ export type PartyUniversallyUniqueIdentifier = string;
 /**
  * A category describing the kind of party the object describes.
  */
-export type PartyType = "person" | "organization";
+export type PartyType = "person" | "organization" | string;
 /**
  * The full name of the party. This is typically the legal name associated with the party.
  */
