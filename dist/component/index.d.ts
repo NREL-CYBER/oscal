@@ -9,6 +9,10 @@ import { PublicationMetadata, Component, Property, AnnotatedProperty, Link, Resp
  */
 export declare type ComponentDefinitionUniversallyUniqueIdentifier = string;
 /**
+ * A globally unique identifier for a component instance. This UUID should remain unchanged when this document is revised.
+ */
+export declare type ComponentUniversallyUniqueIdentifier = string;
+/**
  * A name given to the document, which may be used by a tool for display and navigation.
  */
 export declare type DocumentTitle = string;
@@ -320,9 +324,9 @@ export interface ControlImplementationSet {
     uuid: ControlImplementationSetIdentifier;
     source: SourceResourceReference;
     description: ControlImplementationDescription;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     implemented_requirements: [ControlImplementation, ...ControlImplementation[]];
 }
 /**
@@ -331,12 +335,10 @@ export interface ControlImplementationSet {
 export interface ControlStatementImplementation {
     uuid: ControlStatementImplementationIdentifier;
     description: StatementImplementationDescription;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
-    responsible_roles?: {
-        [k: string]: ResponsibleRole;
-    };
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
     remarks?: Remarks;
 }
 /**
@@ -345,9 +347,9 @@ export interface ControlStatementImplementation {
 export interface Capability {
     name: CapabilityName;
     description: CapabilityDescription;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     incorporates_components?: {
         [k: string]: IncorporatesComponent;
     };

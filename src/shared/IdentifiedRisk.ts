@@ -82,18 +82,18 @@ export interface AssociatedRisk {
  * Identifies the source of the finding, such as a tool, interviewed person, or activity.
  */
 export interface Origin {
-    actors: [AssessmentActor, ...AssessmentActor[]];
-    related_actions?: [ActionReference, ...ActionReference[]];
-    related_tasks?: [TaskReference, ...TaskReference[]];
+    actors: AssessmentActor[];
+    related_actions?: ActionReference[];
+    related_tasks?: TaskReference[];
 }
 /**
  * Identifies a set of assessment subjects to include/exclude by UUID.
  */
 export interface SelectAssessmentSubject {
     uuid_ref: UUIDReference;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     remarks?: Remarks;
 }
 /**
@@ -103,9 +103,9 @@ export interface IdentifiesTheSubject {
     uuid_ref: UUIDReference;
     type: UniversallyUniqueIdentifierReferenceType;
     title?: SubjectReferenceTitle;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     remarks?: Remarks;
 }
 /**
@@ -120,9 +120,9 @@ export interface ThreatID {
  * A collection of descriptive data about the containing object from a specific origin.
  */
 export interface Characterization {
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     origin: Origin;
     facets: [Facet, ...Facet[]];
 }
@@ -133,9 +133,9 @@ export interface Facet {
     name: FacetName;
     system: NamingSystem;
     value: FacetValue;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     remarks?: Remarks;
 }
 /**
@@ -145,10 +145,10 @@ export interface MitigatingFactor {
     uuid: MitigatingFactorUniversallyUniqueIdentifier;
     implementation_uuid?: ImplementationUUID;
     description: MitigatingFactorDescription;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
-    subjects?: [IdentifiesTheSubject, ...IdentifiesTheSubject[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    subjects?: IdentifiesTheSubject[];
 }
 
 /**
@@ -159,11 +159,11 @@ export interface IdentifiedRisk {
     title: RiskTitle;
     description: RiskDescription;
     statement: RiskStatement;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     status: AssociatedRiskStatus;
-    origins?: [Origin, ...Origin[]];
+    origins?: Origin[];
     threat_ids?: [ThreatID, ...ThreatID[]];
     characterizations?: [Characterization, ...Characterization[]];
     mitigating_factors?: [MitigatingFactor, ...MitigatingFactor[]];

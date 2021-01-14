@@ -302,7 +302,7 @@ export interface PoamLocalDefinitions {
     components?: {
         [k: string]: Component;
     };
-    inventory_items?: [InventoryItem, ...InventoryItem[]];
+    inventory_items?: InventoryItem[];
     remarks?: Remarks;
 }
 /**
@@ -312,7 +312,7 @@ export interface ServiceProtocolInformation {
     uuid?: ServiceProtocolInformationUniversallyUniqueIdentifier;
     name: ProtocolName;
     title?: TitleField;
-    port_ranges?: [PortRange, ...PortRange[]];
+    port_ranges?: PortRange[];
 }
 /**
  * Where applicable this is the IPv4 port range on which the service operates.
@@ -329,14 +329,14 @@ export interface Objective {
     uuid: ObservationUniversallyUniqueIdentifier;
     title?: ObservationTitle;
     description: ObservatonDescription;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
-    methods: [ObservationMethod, ...ObservationMethod[]];
-    types?: [ObservationType, ...ObservationType[]];
-    origins?: [Origin, ...Origin[]];
-    subjects?: [IdentifiesTheSubject, ...IdentifiesTheSubject[]];
-    relevant_evidence?: [RelevantEvidence, ...RelevantEvidence[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    methods: ObservationMethod[];
+    types?: ObservationType[];
+    origins?: Origin[];
+    subjects?: IdentifiesTheSubject[];
+    relevant_evidence?: RelevantEvidence[];
     remarks?: Remarks;
 }
 /**
@@ -345,9 +345,9 @@ export interface Objective {
 export interface RelevantEvidence {
     href?: RelevantEvidenceReference;
     description: RelevantEvidenceDescription;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     remarks?: Remarks;
 }
 /**
@@ -362,9 +362,9 @@ export interface ThreatID {
  * A collection of descriptive data about the containing object from a specific origin.
  */
 export interface Characterization {
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     origin: Origin;
     facets: [Facet, ...Facet[]];
 }
@@ -375,9 +375,9 @@ export interface Facet {
     name: FacetName;
     system: NamingSystem;
     value: FacetValue;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     remarks?: Remarks;
 }
 /**
@@ -387,10 +387,10 @@ export interface MitigatingFactor {
     uuid: MitigatingFactorUniversallyUniqueIdentifier;
     implementation_uuid?: ImplementationUUID;
     description: MitigatingFactorDescription;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
-    subjects?: [IdentifiesTheSubject, ...IdentifiesTheSubject[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    subjects?: IdentifiesTheSubject[];
 }
 /**
  * Describes either recommended or an actual plan for addressing the risk.
@@ -400,12 +400,12 @@ export interface RiskResponse {
     lifecycle: RemediationIntent;
     title: ResponseTitle;
     description: ResponseDescription;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
-    origins?: [Origin, ...Origin[]];
-    required_assets?: [RequiredAsset, ...RequiredAsset[]];
-    tasks?: [Task, ...Task[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    origins?: Origin[];
+    required_assets?: RequiredAsset[];
+    tasks?: Task[];
     remarks?: Remarks;
 }
 /**
@@ -413,19 +413,19 @@ export interface RiskResponse {
  */
 export interface RequiredAsset {
     uuid: RequiredUniversallyUniqueIdentifier;
-    subjects?: [IdentifiesTheSubject, ...IdentifiesTheSubject[]];
+    subjects?: IdentifiesTheSubject[];
     title?: TitleForRequiredAsset;
     description: DescriptionOfRequiredAsset;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     remarks?: Remarks;
 }
 /**
  * A log of all risk_related actions taken.
  */
 export interface RiskLog {
-    entries: [RiskLogEntry, ...RiskLogEntry[]];
+    entries: RiskLogEntry[];
 }
 /**
  * Identifies the result of an action and/or task that occured as part of executing an assessment plan or an assessment event that occured in producing the assessment results.
@@ -436,10 +436,10 @@ export interface RiskLogEntry {
     description?: ActionDescription;
     start: Start;
     end?: End;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
-    logged_by?: [LoggedBy, ...LoggedBy[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    logged_by?: LoggedBy[];
     status_change?: RiskStatus;
     related_responses?: [RiskResponseReference, ...RiskResponseReference[]];
     remarks?: Remarks;
@@ -456,10 +456,10 @@ export interface LoggedBy {
  */
 export interface RiskResponseReference {
     response_uuid: ResponseUniversallyUniqueIdentifierReference;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
-    related_actions?: [ActionReference, ...ActionReference[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    related_actions?: ActionReference[];
     remarks?: Remarks;
 }
 /**
@@ -469,10 +469,10 @@ export interface POAMItem {
     uuid?: POAMItemUniversallyUniqueIdentifier;
     title: POAMItemTitle;
     description: POAMItemDescription;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
-    origins?: [Origin, ...Origin[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    origins?: Origin[];
     collected: CollectedField;
     expires?: ExpiresField;
     related_observations?: [RelatedObservation, ...RelatedObservation[]];

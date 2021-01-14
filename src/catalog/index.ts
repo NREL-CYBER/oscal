@@ -1,5 +1,5 @@
 import { Choice, ConstraintDescription, ConstraintTest, DependsOn, GroupClass, GroupIdentifier, GroupTitle, GuidelineText, ParameterCardinality, ParameterClass, ParameterIdentifier, ParameterLabel, ParameterUsageDescription } from "../profile";
-import { AnnotatedProperty, BackMatter, DocumentIdentifier, DocumentTitle, DocumentVersion, ExternalIdentifierSchema, LastModifiedTimestamp, Link, Location, OSCALVersion, ParameterValue, Property, PublicationTimestamp, Remarks, Party, ResponsibleParty, RevisionHistoryEntry, Role, PartIdentifier, PartName, PartNamespace, PartClass, PartTitle, PartText } from "../shared";
+import { AnnotatedProperty, BackMatter, DocumentIdentifier, DocumentTitle, DocumentVersion, ExternalIdentifierSchema, LastModifiedTimestamp, Link, Location, OSCALVersion, ParameterValue, Property, PublicationTimestamp, Remarks, Party, ResponsibleParty, RevisionHistoryEntry, Role, PartIdentifier, PartName, PartNamespace, PartClass, PartTitle, PartText, RoleIdentifier } from "../shared";
 
 
 /**
@@ -39,17 +39,15 @@ export interface PublicationMetadata {
   last_modified: LastModifiedTimestamp;
   version: DocumentVersion;
   oscal_version: OSCALVersion;
-  revisions?: [RevisionHistoryEntry, ...RevisionHistoryEntry[]];
-  document_ids?: [DocumentIdentifier, ...DocumentIdentifier[]];
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  roles?: [Role, ...Role[]];
-  locations?: [Location, ...Location[]];
-  parties?: [Party, ...Party[]];
-  responsible_parties?: {
-    [k: string]: ResponsibleParty;
-  };
+  revisions?: RevisionHistoryEntry[];
+  document_ids?: DocumentIdentifier[];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  roles?: Role[];
+  locations?: Location[];
+  parties?: Party[];
+  responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
   remarks?: Remarks;
 }
 /**
@@ -66,14 +64,14 @@ export interface Parameter {
   id: ParameterIdentifier;
   class?: ParameterClass;
   depends_on?: DependsOn;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
   label?: ParameterLabel;
   usage?: ParameterUsageDescription;
   constraints?: [Constraint, ...Constraint[]];
   guidelines?: [Guideline, ...Guideline[]];
-  values?: [ParameterValue, ...ParameterValue[]];
+  values?: ParameterValue[];
   select?: Selection;
 }
 /**
@@ -104,10 +102,10 @@ export interface Control {
   class?: ControlClass;
   title: ControlTitle;
   params?: [Parameter, ...Parameter[]];
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  parts?: [Part, ...Part[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  parts?: Part[];
   controls?: [Control, ...Control[]];
 }
 /**
@@ -119,11 +117,11 @@ export interface Part {
   ns?: PartNamespace;
   class?: PartClass;
   title?: PartTitle;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
   prose?: PartText;
-  parts?: [Part, ...Part[]];
-  links?: [Link, ...Link[]];
+  parts?: Part[];
+  links?: Link[];
 }
 /**
  * A group of controls, or of groups of controls.
@@ -133,10 +131,10 @@ export interface ControlGroup {
   class?: GroupClass;
   title: GroupTitle;
   params?: [Parameter, ...Parameter[]];
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  parts?: [Part, ...Part[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  parts?: Part[];
   groups?: [ControlGroup, ...ControlGroup[]];
   controls?: [Control, ...Control[]];
 }

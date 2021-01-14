@@ -1,5 +1,5 @@
 import { CollectedField, ExpiresField, ObservationMethod, ObservationTitle, ObservationType, ObservationUniversallyUniqueIdentifier, ObservatonDescription, PartyUUIDReference, RemediationIntent, RemediationUniversallyUniqueIdentifier, RequiredUniversallyUniqueIdentifier, ResponseDescription, ResponseTitle, ResponseUniversallyUniqueIdentifierReference, RiskLogEntryUniversallyUniqueIdentifier, RiskStatus } from "../poam";
-import { ActionDescription, ActionTitle, ActionUniversallyUniqueIdentifier, ActionUniversallyUniqueIdentifierReference, ActivityUniversallyUniqueIdentifierReference, All, AnnotatedProperty, AssessmentActivityUniversallyUniqueIdentifier, AssessmentLogEntryUniversallyUniqueIdentifier, AssessmentPlanReference, AssessmentPlatformTitle, AssessmentPlatformUniversallyUniqueIdentifier, AssociatedActivityUniversallyUniqueIdentifier, BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ConditionalDate, ControlIdentifierReference, ControlOjectivesDescription, End, EndDateCondition, EventDescription, EventTitle, EventUniversallyUniqueIdentifier, ImplementationStatementUUID, ImplementationStatus, IncludedActivityDescription, IncludedActivityTitle, IncludeSpecificStatements, InventoryItemDescription, InventoryItemUniversallyUniqueIdentifier, Link, ObjectiveDescription, ObjectiveID, ObjectiveStatusDescription, ObjectiveStatusTitle, OperatingState, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, PartyReference, Period, Privilege, Property, ProtocolName, PublicationMetadata, Remarks, ResponsibleParty, ReviewedControlsAndControlObjectives, RoleIdentifierReference, ServiceProtocolInformationUniversallyUniqueIdentifier, Start, StartDateCondition, TaskUniversallyUniqueIdentifierReference, TimeUnit, TitleField, Transport, UniversallyUniqueIdentifierReferenceType, UserDescription, UserShortName, UserTitle, UUIDReference } from "../shared";
+import { ActionDescription, ActionTitle, ActionUniversallyUniqueIdentifier, ActionUniversallyUniqueIdentifierReference, ActivityUniversallyUniqueIdentifierReference, All, AnnotatedProperty, AssessmentActivityUniversallyUniqueIdentifier, AssessmentLogEntryUniversallyUniqueIdentifier, AssessmentPlanReference, AssessmentPlatformTitle, AssessmentPlatformUniversallyUniqueIdentifier, AssociatedActivityUniversallyUniqueIdentifier, BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ConditionalDate, ControlIdentifierReference, ControlOjectivesDescription, End, EndDateCondition, EventDescription, EventTitle, EventUniversallyUniqueIdentifier, ImplementationStatementUUID, ImplementationStatus, IncludedActivityDescription, IncludedActivityTitle, IncludeSpecificStatements, InventoryItemDescription, InventoryItemUniversallyUniqueIdentifier, Link, ObjectiveDescription, ObjectiveID, ObjectiveStatusDescription, ObjectiveStatusTitle, OperatingState, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, PartyReference, Period, Privilege, Property, ProtocolName, PublicationMetadata, Remarks, ResponsibleParty, ReviewedControlsAndControlObjectives, RoleIdentifierReference, ServiceProtocolInformationUniversallyUniqueIdentifier, Start, StartDateCondition, TaskUniversallyUniqueIdentifierReference, TimeUnit, TitleField, Transport, UniversallyUniqueIdentifierReferenceType, UserDescription, UserShortName, UserTitle, UUIDReference, RoleIdentifier } from "../shared";
 import { ActorRole, AssessmentActor } from "../shared/Actor";
 import { AssociatedRisk, IdentifiedRisk, RelevantEvidenceDescription, RelevantEvidenceReference, SubjectReferenceTitle } from "../shared/IdentifiedRisk";
 import { RelatedObservation } from "../shared/Observation";
@@ -68,7 +68,7 @@ export interface ImportAssessmentPlan {
  */
 export interface LocalDefinitions {
   add_objectives_and_methods?: [AssessmentSpecificControlObjective, ...AssessmentSpecificControlObjective[]];
-  activities?: [Activity, ...Activity[]];
+  activities?: Activity[];
   remarks?: Remarks;
 }
 /**
@@ -77,10 +77,10 @@ export interface LocalDefinitions {
 export interface AssessmentSpecificControlObjective {
   control_id: ControlIdentifierReference;
   description?: ObjectiveDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  parts: [Part, ...Part[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  parts: Part[];
   remarks?: Remarks;
 }
 /**
@@ -92,11 +92,11 @@ export interface Part {
   ns?: PartNamespace;
   class?: PartClass;
   title?: PartTitle;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
   prose?: PartText;
-  parts?: [Part, ...Part[]];
-  links?: [Link, ...Link[]];
+  parts?: Part[];
+  links?: Link[];
 }
 /**
  * Identifies an assessment or related process that can be performed. In the assessment plan, this is an intended activity which may be associated with an assessment task. In the assessment results, this an activity that was actually performed as part of an assessement.
@@ -105,14 +105,12 @@ export interface Activity {
   uuid: AssessmentActivityUniversallyUniqueIdentifier;
   title?: IncludedActivityTitle;
   description: IncludedActivityDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  actions?: [Action, ...Action[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  actions?: Action[];
   related_controls?: ReviewedControlsAndControlObjectives;
-  responsible_roles?: {
-    [k: string]: ResponsibleRole;
-  };
+  responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
   remarks?: Remarks;
 }
 /**
@@ -122,13 +120,11 @@ export interface Action {
   uuid: ActionUniversallyUniqueIdentifier;
   title?: ActionTitle;
   description: ActionDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
   reviewed_controls?: ReviewedControlsAndControlObjectives;
-  responsible_roles?: {
-    [k: string]: ResponsibleRole;
-  };
+  responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
   remarks?: Remarks;
 }
 /**
@@ -136,19 +132,19 @@ export interface Action {
  */
 export interface SelectControl {
   control_id: ControlIdentifierReference;
-  statement_ids?: [IncludeSpecificStatements, ...IncludeSpecificStatements[]];
+  statement_ids?: IncludeSpecificStatements[];
 }
 /**
  * Identifies the control objectives of the assessment. In the assessment plan, these are the planned objectives. In the assessment results, these are the assessed objectives, and reflects any changes from the plan.
  */
 export interface ReferenedControlObjectives {
   description?: ControlOjectivesDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
   include_all?: All;
-  include_objectives?: [SelectObjective, ...SelectObjective[]];
-  exclude_objectives?: [SelectObjective, ...SelectObjective[]];
+  include_objectives?: SelectObjective[];
+  exclude_objectives?: SelectObjective[];
   remarks?: Remarks;
 }
 /**
@@ -161,10 +157,10 @@ export interface SelectObjective {
  * A reference to one or more roles with responsibility for performing a function relative to the containing object.
  */
 export interface ResponsibleRole {
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  party_uuids?: [PartyReference, ...PartyReference[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  party_uuids?: PartyReference[];
   remarks?: Remarks;
 }
 /**
@@ -174,10 +170,10 @@ export interface Finding {
   uuid: FindingUniversallyUniqueIdentifier;
   title: FindingTitle;
   description: FindingDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  origins?: [Origin, ...Origin[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  origins?: Origin[];
   collected: CollectedField;
   expires?: ExpiresField;
   objective_status?: ObjectiveStatus;
@@ -196,12 +192,12 @@ export interface AssessmentResult {
   description: ResultsDescription;
   start: StartField;
   end?: EndField;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
   local_definitions?: SARLocalDefinitions;
   reviewed_controls: ReviewedControlsAndControlObjectives;
-  assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
+  assessment_subjects?: SubjectOfAssessment[];
   assessment_assets?: AssessmentAssets;
   attestations?: [AttestationStatements, ...AttestationStatements[]];
   assessment_log?: AssessmentLog;
@@ -217,7 +213,7 @@ export interface SARLocalDefinitions {
   components?: {
     [k: string]: Component;
   };
-  inventory_items?: [InventoryItem, ...InventoryItem[]];
+  inventory_items?: InventoryItem[];
   users?: {
     [k: string]: SystemUser;
   };
@@ -237,7 +233,7 @@ export interface ServiceProtocolInformation {
   uuid?: ServiceProtocolInformationUniversallyUniqueIdentifier;
   name: ProtocolName;
   title?: TitleField;
-  port_ranges?: [PortRange, ...PortRange[]];
+  port_ranges?: PortRange[];
 }
 /**
  * Where applicable this is the IPv4 port range on which the service operates.
@@ -253,13 +249,11 @@ export interface PortRange {
 export interface InventoryItem {
   uuid: InventoryItemUniversallyUniqueIdentifier;
   description: InventoryItemDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_parties?: {
-    [k: string]: ResponsibleParty;
-  };
-  implemented_components?: [ImplementedComponent, ...ImplementedComponent[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
+  implemented_components?: ImplementedComponent[];
   remarks?: Remarks;
 }
 /**
@@ -267,12 +261,10 @@ export interface InventoryItem {
  */
 export interface ImplementedComponent {
   component_uuid: ComponentUniversallyUniqueIdentifierReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_parties?: {
-    [k: string]: ResponsibleParty;
-  };
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
   remarks?: Remarks;
 }
 /**
@@ -282,11 +274,11 @@ export interface SystemUser {
   title?: UserTitle;
   short_name?: UserShortName;
   description?: UserDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  role_ids?: [RoleIdentifierReference, ...RoleIdentifierReference[]];
-  authorized_privileges?: [Privilege, ...Privilege[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  role_ids?: RoleIdentifierReference[];
+  authorized_privileges?: Privilege[];
   remarks?: Remarks;
 }
 
@@ -297,15 +289,13 @@ export interface AssessmentAction {
   uuid: EventUniversallyUniqueIdentifier;
   title?: EventTitle;
   description: EventDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
   timing?: EventTiming;
-  assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
-  responsible_roles?: {
-    [k: string]: ResponsibleRole;
-  };
-  associated_activities?: [AssociatedActivity, ...AssociatedActivity[]];
+  assessment_subjects?: SubjectOfAssessment[];
+  responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
+  associated_activities?: AssociatedActivity[];
   remarks?: Remarks;
 }
 /**
@@ -342,13 +332,11 @@ export interface FrequencyCondition {
 export interface AssociatedActivity {
   uuid: AssociatedActivityUniversallyUniqueIdentifier;
   activity_uuid: ActivityUniversallyUniqueIdentifierReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_roles?: {
-    [k: string]: ResponsibleRole;
-  };
-  assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
+  assessment_subjects?: SubjectOfAssessment[];
   assessment_subject_placeholder?: AssessmentSubjectPlaceholder;
   remarks?: Remarks;
 }
@@ -359,7 +347,7 @@ export interface AssessmentAssets {
   components?: {
     [k: string]: Component;
   };
-  assessment_platforms: [AssessmentPlatform, ...AssessmentPlatform[]];
+  assessment_platforms: AssessmentPlatform[];
 }
 /**
  * Used to represent the toolset used to perform aspects of the assessment.
@@ -367,10 +355,10 @@ export interface AssessmentAssets {
 export interface AssessmentPlatform {
   uuid: AssessmentPlatformUniversallyUniqueIdentifier;
   title?: AssessmentPlatformTitle;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  uses_components?: [UsesComponent, ...UsesComponent[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  uses_components?: UsesComponent[];
   remarks?: Remarks;
 }
 /**
@@ -378,22 +366,18 @@ export interface AssessmentPlatform {
  */
 export interface UsesComponent {
   component_uuid: ComponentUniversallyUniqueIdentifierReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_parties?: {
-    [k: string]: ResponsibleParty;
-  };
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
   remarks?: Remarks;
 }
 /**
  * A set of textual statements, typically written by the assessor.
  */
 export interface AttestationStatements {
-  responsible_parties?: {
-    [k: string]: ResponsibleParty;
-  };
-  parts: [AssessmentPart, ...AssessmentPart[]];
+  responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
+  parts: AssessmentPart[];
 }
 /**
  * A partition of an assessment plan or results or a child of another part.
@@ -404,17 +388,17 @@ export interface AssessmentPart {
   ns?: PartNamespace;
   class?: PartClass;
   title?: PartTitle;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
   prose: PartText;
-  parts?: [AssessmentPart, ...AssessmentPart[]];
-  links?: [Link, ...Link[]];
+  parts?: AssessmentPart[];
+  links?: Link[];
 }
 /**
  * A log of all assessment_related actions taken.
  */
 export interface AssessmentLog {
-  entries: [AssessmentLogEntry, ...AssessmentLogEntry[]];
+  entries: AssessmentLogEntry[];
 }
 /**
  * Identifies the result of an action and/or task that occured as part of executing an assessment plan or an assessment event that occured in producing the assessment results.
@@ -425,12 +409,12 @@ export interface AssessmentLogEntry {
   description?: ActionDescription;
   start: Start;
   end?: End;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  logged_by?: [LoggedBy, ...LoggedBy[]];
-  related_actions?: [ActionReference, ...ActionReference[]];
-  related_tasks?: [TaskReference, ...TaskReference[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  logged_by?: LoggedBy[];
+  related_actions?: ActionReference[];
+  related_tasks?: TaskReference[];
   remarks?: Remarks;
 }
 /**
@@ -445,12 +429,10 @@ export interface LoggedBy {
  */
 export interface ActionReference {
   action_uuid: ActionUniversallyUniqueIdentifierReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_parties?: {
-    [k: string]: ResponsibleParty;
-  };
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
   remarks?: Remarks;
 }
 /**
@@ -458,13 +440,11 @@ export interface ActionReference {
  */
 export interface TaskReference {
   task_uuid: TaskUniversallyUniqueIdentifierReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  responsible_parties?: {
-    [k: string]: ResponsibleParty;
-  };
-  assessment_subjects?: [SubjectOfAssessment, ...SubjectOfAssessment[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
+  assessment_subjects?: SubjectOfAssessment[];
   remarks?: Remarks;
 }
 /**
@@ -474,23 +454,23 @@ export interface Objective {
   uuid: ObservationUniversallyUniqueIdentifier;
   title?: ObservationTitle;
   description: ObservatonDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  methods: [ObservationMethod, ...ObservationMethod[]];
-  types?: [ObservationType, ...ObservationType[]];
-  origins?: [Origin, ...Origin[]];
-  subjects?: [IdentifiesTheSubject, ...IdentifiesTheSubject[]];
-  relevant_evidence?: [RelevantEvidence, ...RelevantEvidence[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  methods: ObservationMethod[];
+  types?: ObservationType[];
+  origins?: Origin[];
+  subjects?: IdentifiesTheSubject[];
+  relevant_evidence?: RelevantEvidence[];
   remarks?: Remarks;
 }
 /**
  * Identifies the source of the finding, such as a tool, interviewed person, or activity.
  */
 export interface Origin {
-  actors: [AssessmentActor, ...AssessmentActor[]];
-  related_actions?: [ActionReference, ...ActionReference[]];
-  related_tasks?: [TaskReference, ...TaskReference[]];
+  actors: AssessmentActor[];
+  related_actions?: ActionReference[];
+  related_tasks?: TaskReference[];
 }
 /**
  * A pointer to a resource based on its universally unique identifier (UUID). Use type to indicate whether the identified resource is a component, inventory item, location, user, or something else.
@@ -499,9 +479,9 @@ export interface IdentifiesTheSubject {
   uuid_ref: UUIDReference;
   type: UniversallyUniqueIdentifierReferenceType;
   title?: SubjectReferenceTitle;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
   remarks?: Remarks;
 }
 /**
@@ -510,9 +490,9 @@ export interface IdentifiesTheSubject {
 export interface RelevantEvidence {
   href?: RelevantEvidenceReference;
   description: RelevantEvidenceDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
   remarks?: Remarks;
 }
 /**
@@ -523,12 +503,12 @@ export interface RiskResponse {
   lifecycle: RemediationIntent;
   title: ResponseTitle;
   description: ResponseDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  origins?: [Origin, ...Origin[]];
-  required_assets?: [RequiredAsset, ...RequiredAsset[]];
-  tasks?: [Task, ...Task[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  origins?: Origin[];
+  required_assets?: RequiredAsset[];
+  tasks?: Task[];
   remarks?: Remarks;
 }
 /**
@@ -536,12 +516,12 @@ export interface RiskResponse {
  */
 export interface RequiredAsset {
   uuid: RequiredUniversallyUniqueIdentifier;
-  subjects?: [IdentifiesTheSubject, ...IdentifiesTheSubject[]];
+  subjects?: IdentifiesTheSubject[];
   title?: TitleForRequiredAsset;
   description: DescriptionOfRequiredAsset;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
   remarks?: Remarks;
 }
 
@@ -552,22 +532,20 @@ export interface Task {
   uuid: TaskUniversallyUniqueIdentifier;
   title: TaskTitle;
   description?: TaskDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
   start: TaskStartDate;
   end: TaskEndDate;
-  related_actions?: [ActionReference, ...ActionReference[]];
-  responsible_roles?: {
-    [k: string]: ResponsibleRole;
-  };
+  related_actions?: ActionReference[];
+  responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
   remarks?: Remarks;
 }
 /**
  * A log of all risk_related actions taken.
  */
 export interface RiskLog {
-  entries: [RiskLogEntry, ...RiskLogEntry[]];
+  entries: RiskLogEntry[];
 }
 /**
  * Identifies the result of an action and/or task that occured as part of executing an assessment plan or an assessment event that occured in producing the assessment results.
@@ -578,12 +556,12 @@ export interface RiskLogEntry {
   description?: ActionDescription;
   start: Start;
   end?: End;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  logged_by?: [LoggedBy, ...LoggedBy[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  logged_by?: LoggedBy[];
   status_change?: RiskStatus;
-  related_responses?: [RiskResponseActionReference, ...RiskResponseActionReference[]];
+  related_responses?: RiskResponseActionReference[];
   remarks?: Remarks;
 }
 /**
@@ -591,10 +569,10 @@ export interface RiskLogEntry {
  */
 export interface RiskResponseActionReference {
   response_uuid: ResponseUniversallyUniqueIdentifierReference;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
-  related_actions?: [ActionReference, ...ActionReference[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
+  related_actions?: ActionReference[];
   remarks?: Remarks;
 }
 
@@ -606,9 +584,9 @@ export interface ObjectiveStatus {
   control_id?: ControlIdentifierReference;
   title?: ObjectiveStatusTitle;
   description?: ObjectiveStatusDescription;
-  props?: [Property, ...Property[]];
-  annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-  links?: [Link, ...Link[]];
+  props?: Property[];
+  annotations?: AnnotatedProperty[];
+  links?: Link[];
   status: ImplementationStatus;
   remarks?: Remarks;
 }

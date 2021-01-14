@@ -220,10 +220,10 @@ export interface ControlGroup {
     class?: GroupClass;
     title: GroupTitle;
     params?: [Parameter, ...Parameter[]];
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
-    parts?: [Part, ...Part[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    parts?: Part[];
     groups?: [ControlGroup, ...ControlGroup[]];
     calls?: [Call, ...Call[]];
     matches?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
@@ -235,14 +235,14 @@ export interface Parameter {
     id: ParameterIdentifier;
     class?: ParameterClass;
     depends_on?: DependsOn;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     label?: ParameterLabel;
     usage?: ParameterUsageDescription;
     constraints?: [Constraint, ...Constraint[]];
     guidelines?: [Guideline, ...Guideline[]];
-    values?: [ParameterValue, ...ParameterValue[]];
+    values?: ParameterValue[];
     select?: Selection;
 }
 /**
@@ -281,11 +281,11 @@ export interface Part {
     ns?: PartNamespace;
     class?: PartClass;
     title?: PartTitle;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
     prose?: PartText;
-    parts?: [Part, ...Part[]];
-    links?: [Link, ...Link[]];
+    parts?: Part[];
+    links?: Link[];
 }
 /**
  * Set parameters or amend controls in resolution
@@ -302,14 +302,14 @@ export interface ModifyControls {
 export interface ParameterSetting {
     class?: ParameterClass;
     depends_on?: DependsOn;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     label?: ParameterLabel;
     usage?: ParameterUsageDescription;
     constraints?: [Constraint, ...Constraint[]];
     guidelines?: [Guideline, ...Guideline[]];
-    values?: [ParameterValue, ...ParameterValue[]];
+    values?: ParameterValue[];
     select?: Selection;
 }
 /**
@@ -337,16 +337,16 @@ export interface Addition {
     id_ref?: ReferenceByID;
     title?: TitleChange;
     params?: [Parameter, ...Parameter[]];
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
-    parts?: [Part, ...Part[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    parts?: Part[];
 }
 /**
  * A collection of resources, which may be included directly or by reference.
  */
 export interface BackMatter {
-    resources?: [Resource, ...Resource[]];
+    resources?: Resource[];
 }
 /**
  * A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equavalent internet resources.
@@ -355,11 +355,11 @@ export interface Resource {
     uuid: ResourceUniversallyUniqueIdentifier;
     title?: ResourceTitle;
     description?: ResourceDescription;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    document_ids?: [DocumentIdentifier, ...DocumentIdentifier[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    document_ids?: DocumentIdentifier[];
     citation?: Citation;
-    rlinks?: [ResourceLink, ...ResourceLink[]];
+    rlinks?: ResourceLink[];
     base64?: Base64;
     remarks?: Remarks;
 }
@@ -368,8 +368,8 @@ export interface Resource {
  */
 export interface Citation {
     text: CitationText;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
     biblio?: BibliographicDefinition;
 }
 /**
@@ -383,7 +383,7 @@ export interface BibliographicDefinition {
 export interface ResourceLink {
     href: HypertextReference;
     media_type?: MediaType;
-    hashes?: [Hash, ...Hash[]];
+    hashes?: Hash[];
 }
 /**
  * A representation of a cryptographic digest generated over a resource using a specified hash algorithm.

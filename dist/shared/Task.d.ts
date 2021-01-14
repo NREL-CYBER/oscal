@@ -1,4 +1,4 @@
-import { Property, AnnotatedProperty, Link, ActionReference, ResponsibleRole, Remarks } from ".";
+import { Property, AnnotatedProperty, Link, ActionReference, ResponsibleRole, Remarks, RoleIdentifier } from ".";
 /**
  * The title for this required asset.
  */
@@ -34,14 +34,12 @@ export interface Task {
     uuid: TaskUniversallyUniqueIdentifier;
     title: TaskTitle;
     description?: TaskDescription;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     start: TaskStartDate;
     end: TaskEndDate;
-    related_actions?: [ActionReference, ...ActionReference[]];
-    responsible_roles?: {
-        [k: string]: ResponsibleRole;
-    };
+    related_actions?: ActionReference[];
+    responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
     remarks?: Remarks;
 }

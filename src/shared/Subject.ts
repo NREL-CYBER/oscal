@@ -20,9 +20,9 @@ export type ActivityInstanceUniversallyUniqueIdentifier = string;
  */
 export interface SelectAssessmentSubject {
     uuid_ref: UUIDReference;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     remarks?: Remarks;
 }
 
@@ -32,12 +32,12 @@ export interface SelectAssessmentSubject {
 export interface SubjectOfAssessment {
     type: SubjectType;
     description?: IncludeSubjectsDescription;
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     include_all?: All;
-    include_subjects?: [SelectAssessmentSubject, ...SelectAssessmentSubject[]];
-    exclude_subjects?: [SelectAssessmentSubject, ...SelectAssessmentSubject[]];
+    include_subjects?: SelectAssessmentSubject[];
+    exclude_subjects?: SelectAssessmentSubject[];
     remarks?: Remarks;
 }
 
@@ -47,8 +47,8 @@ export interface SubjectOfAssessment {
 export interface AssessmentSubjectPlaceholder {
     description?: AssessmentSubjectPlaceholderDescription;
     sources: [AssessmentSubjectSource, ...AssessmentSubjectSource[]];
-    props?: [Property, ...Property[]];
-    annotations?: [AnnotatedProperty, ...AnnotatedProperty[]];
-    links?: [Link, ...Link[]];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     remarks?: Remarks;
 }
