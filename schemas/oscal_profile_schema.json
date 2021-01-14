@@ -1285,7 +1285,6 @@
           "usage" : 
           { "title" : "Parameter Usage Description",
             "description" : "Describes the purpose and use of a parameter",
-            "$id" : "#/definitions/usage",
             "type" : "string" },
           "constraints" : 
           { "type" : "array",
