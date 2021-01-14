@@ -1047,7 +1047,7 @@ export interface SystemInformation {
     props?: Property[];
     annotations?: AnnotatedProperty[];
     links?: Link[];
-    information_types: [InformationType, ...InformationType[]];
+    information_types: InformationType[];
 }
 /**
  * Contains details about one information type that is stored, processed, or transmitted by the system, such as privacy information, and those defined in NIST SP 800_60.
