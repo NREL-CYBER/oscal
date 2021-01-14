@@ -4316,7 +4316,6 @@
               "items": {
                 "title": "Assessment Log Entry",
                 "description": "Identifies the result of an action and/or task that occured as part of executing an assessment plan or an assessment event that occured in producing the assessment results.",
-                "$id": "#/definitions/entry",
                 "type": "object",
                 "properties": {
                   "uuid": {
