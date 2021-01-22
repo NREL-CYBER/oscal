@@ -1,0 +1,120 @@
+[
+    {
+        "id": "prepared-by",
+        "title": "Prepared By",
+        "desc": "The organization that prepared this SSP. If developed in-house, this is the CSP itself."
+    },
+    {
+        "id": "prepared-for",
+        "title": "Prepared For",
+        "desc": "The organization for which this SSP was prepared. Typically the CSP."
+    },
+    {
+        "id": "stake-holder",
+        "title": "Stakeholders",
+        "desc": "Parties that hold a stake in the system."
+    },
+    {
+        "id": "content-approver",
+        "title": "System Security Plan Approval",
+        "desc": "The individual or individuals accountable for the accuracy of this SSP."
+    },
+    {
+        "id": "cloud-service-provider",
+        "title": "Cloud Service Provider",
+        "desc": "A Specific Cloud Service provider",
+        "short-name": "CSP"
+    },
+    {
+        "id": "system-owner",
+        "title": "Information System Owner",
+        "desc": "The individual within the CSP who is ultimately accountable for everything related to this system."
+    },
+    {
+        "id": "authorizing-official",
+        "title": "Authorizing Official",
+        "desc": "The individual or individuals who must grant this system an authorization to operate."
+    },
+    {
+        "id": "authorizing-official-poc",
+        "title": "Authorizing Official's Point of Contact",
+        "desc": "The individual representing the authorizing official."
+    },
+    {
+        "id": "system-poc-management",
+        "title": "Information System Management Point of Contact (POC)",
+        "desc": "The highest level manager who responsible for system operation on behalf of the System Owner."
+    },
+    {
+        "id": "system-poc-technical",
+        "title": "Information System Technical Point of Contact",
+        "desc": "The individual or individuals leading the technical operation of the system."
+    },
+    {
+        "id": "system-poc-other",
+        "title": "General Point of Contact (POC)",
+        "desc": "A general point of contact for the system, designated by the system owner."
+    },
+    {
+        "id": "information-system-security-officer",
+        "title": "System Information System Security Officer (or Equivalent)",
+        "desc": "The individual accountable for the security posture of the system on behalf of the system owner."
+    },
+    {
+        "id": "privacy-poc",
+        "title": "Privacy Official's Point of Contact",
+        "desc": "The individual responsible for the privacy threshold analysis and if necessary the privacy impact assessment."
+    },
+    {
+        "id": "asset-owner",
+        "title": "Owner of an inventory item within the system."
+    },
+    {
+        "id": "asset-administrator",
+        "title": "Administrative responsibility an inventory item within the system."
+    },
+    {
+        "id": "isa-poc-local",
+        "title": "ICA POC (Local)",
+        "desc": "The point of contact for an interconnection on behalf of this system.",
+        "remarks": "Remove this role if there are no ICAs."
+    },
+    {
+        "id": "isa-poc-remote",
+        "title": "ICA POC (Remote)",
+        "desc": "The point of contact for an interconnection on behalf of this external system to which this system connects.",
+        "remarks": "Remove this role if there are no ICAs."
+    },
+    {
+        "id": "isa-authorizing-official-local",
+        "title": "ICA Signatory (Local)",
+        "desc": "Responsible for signing an interconnection security agreement on behalf of this system.",
+        "remarks": "Remove this role if there are no ICAs."
+    },
+    {
+        "id": "isa-authorizing-official-remote",
+        "title": "ICA Signatory (Remote)",
+        "desc": "Responsible for signing an interconnection security agreement on behalf of the external system to which this system connects.",
+        "remarks": "Remove this role if there are no ICAs."
+    },
+    {
+        "id": "consultant",
+        "title": "Consultant",
+        "desc": "Any consultants involved with developing or maintaining this content."
+    },
+    {
+        "id": "admin-unix",
+        "title": "Unix Administrator",
+        "desc": "The administrator of a unix system."
+    },
+    {
+        "id": "admin-client",
+        "title": "Client Administrator",
+        "desc": "The administrator of clients."
+    },
+    {
+        "id": "program-director",
+        "title": "Program Director",
+        "desc": "The directory of a group or organization."
+    }
+]
