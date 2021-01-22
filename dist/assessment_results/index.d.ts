@@ -1,10 +1,10 @@
-import { CollectedField, ExpiresField, ObservationMethod, ObservationTitle, ObservationType, ObservationUniversallyUniqueIdentifier, ObservatonDescription, PartyUUIDReference, RemediationIntent, RemediationUniversallyUniqueIdentifier, RequiredUniversallyUniqueIdentifier, ResponseDescription, ResponseTitle, ResponseUniversallyUniqueIdentifierReference, RiskLogEntryUniversallyUniqueIdentifier, RiskStatus } from "../poam";
-import { ActionDescription, ActionTitle, ActionUniversallyUniqueIdentifier, ActionUniversallyUniqueIdentifierReference, ActivityUniversallyUniqueIdentifierReference, All, AnnotatedProperty, AssessmentActivityUniversallyUniqueIdentifier, AssessmentLogEntryUniversallyUniqueIdentifier, AssessmentPlanReference, AssessmentPlatformTitle, AssessmentPlatformUniversallyUniqueIdentifier, AssociatedActivityUniversallyUniqueIdentifier, BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ConditionalDate, ControlIdentifierReference, ControlOjectivesDescription, End, EndDateCondition, EventDescription, EventTitle, EventUniversallyUniqueIdentifier, ImplementationStatementUUID, ImplementationStatus, IncludedActivityDescription, IncludedActivityTitle, IncludeSpecificStatements, InventoryItemDescription, InventoryItemUniversallyUniqueIdentifier, Link, ObjectiveDescription, ObjectiveID, ObjectiveStatusDescription, ObjectiveStatusTitle, OperatingState, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, PartyReference, Period, Privilege, Property, ProtocolName, PublicationMetadata, Remarks, ResponsibleParty, ReviewedControlsAndControlObjectives, RoleIdentifierReference, ServiceProtocolInformationUniversallyUniqueIdentifier, Start, StartDateCondition, TaskUniversallyUniqueIdentifierReference, TimeUnit, TitleField, Transport, UniversallyUniqueIdentifierReferenceType, UserDescription, UserShortName, UserTitle, UUIDReference, RoleIdentifier } from "../shared";
+import { CollectedField, ExpiresField, ObservationMethod, ObservationTitle, ObservationType, ObservationUniversallyUniqueIdentifier, ObservatonDescription, PartyUUIDReference } from "../poam";
+import { ActionDescription, ActionTitle, ActionUniversallyUniqueIdentifier, ActionUniversallyUniqueIdentifierReference, ActivityUniversallyUniqueIdentifierReference, All, AnnotatedProperty, AssessmentActivityUniversallyUniqueIdentifier, AssessmentLogEntryUniversallyUniqueIdentifier, AssessmentPlanReference, AssessmentPlatformTitle, AssessmentPlatformUniversallyUniqueIdentifier, AssociatedActivityUniversallyUniqueIdentifier, BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ConditionalDate, ControlIdentifierReference, ControlOjectivesDescription, EndDateCondition, EventDescription, EventTitle, EventUniversallyUniqueIdentifier, ImplementationStatementUUID, ImplementationStatus, IncludedActivityDescription, IncludedActivityTitle, IncludeSpecificStatements, InventoryItemDescription, InventoryItemUniversallyUniqueIdentifier, Link, ObjectiveDescription, ObjectiveID, ObjectiveStatusDescription, ObjectiveStatusTitle, OperatingState, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, PartyReference, Period, Privilege, Property, PublicationMetadata, Remarks, ResponsibleParty, ReviewedControlsAndControlObjectives, RoleIdentifier, RoleIdentifierReference, StartDateCondition, TaskUniversallyUniqueIdentifierReference, TimeUnit, UniversallyUniqueIdentifierReferenceType, UserDescription, UserShortName, UserTitle, UUIDReference } from "../shared";
 import { ActorRole, AssessmentActor } from "../shared/Actor";
 import { AssociatedRisk, IdentifiedRisk, RelevantEvidenceDescription, RelevantEvidenceReference, SubjectReferenceTitle } from "../shared/IdentifiedRisk";
 import { RelatedObservation } from "../shared/Observation";
 import { AssessmentSubjectPlaceholder, SubjectOfAssessment } from "../shared/Subject";
-import { DescriptionOfRequiredAsset, TaskDescription, TaskEndDate, TaskStartDate, TaskTitle, TaskUniversallyUniqueIdentifier, TitleForRequiredAsset } from "../shared/Task";
+import { TaskDescription, TaskEndDate, TaskStartDate, TaskTitle, TaskUniversallyUniqueIdentifier } from "../shared/Task";
 /**
  * Uniquely identifies this assessment results file. This UUID must be changed each time the content of the results changes.
  */
@@ -197,8 +197,8 @@ export interface AssessmentResult {
     attestations?: [AttestationStatements, ...AttestationStatements[]];
     assessment_log?: AssessmentLog;
     observations?: [Objective, ...Objective[]];
-    risks?: [IdentifiedRisk, ...IdentifiedRisk[]];
-    findings: [Finding, ...Finding[]];
+    risks?: IdentifiedRisk[];
+    findings: Finding[];
     remarks?: Remarks;
 }
 /**
@@ -220,23 +220,6 @@ export interface SARLocalDefinitions {
 export interface Status {
     state: OperatingState;
     remarks?: Remarks;
-}
-/**
- * Information about the protocol used to provide a service.
- */
-export interface ServiceProtocolInformation {
-    uuid?: ServiceProtocolInformationUniversallyUniqueIdentifier;
-    name: ProtocolName;
-    title?: TitleField;
-    port_ranges?: PortRange[];
-}
-/**
- * Where applicable this is the IPv4 port range on which the service operates.
- */
-export interface PortRange {
-    start?: Start;
-    end?: End;
-    transport?: Transport;
 }
 /**
  * A single managed inventory item within the system.
@@ -401,8 +384,8 @@ export interface AssessmentLogEntry {
     uuid: AssessmentLogEntryUniversallyUniqueIdentifier;
     title?: ActionTitle;
     description?: ActionDescription;
-    start: Start;
-    end?: End;
+    start: StartField;
+    end?: EndField;
     props?: Property[];
     annotations?: AnnotatedProperty[];
     links?: Link[];
@@ -490,35 +473,6 @@ export interface RelevantEvidence {
     remarks?: Remarks;
 }
 /**
- * Describes either recommended or an actual plan for addressing the risk.
- */
-export interface RiskResponse {
-    uuid: RemediationUniversallyUniqueIdentifier;
-    lifecycle: RemediationIntent;
-    title: ResponseTitle;
-    description: ResponseDescription;
-    props?: Property[];
-    annotations?: AnnotatedProperty[];
-    links?: Link[];
-    origins?: Origin[];
-    required_assets?: RequiredAsset[];
-    tasks?: Task[];
-    remarks?: Remarks;
-}
-/**
- * Identifies an asset required to achieve remediation.
- */
-export interface RequiredAsset {
-    uuid: RequiredUniversallyUniqueIdentifier;
-    subjects?: IdentifiesTheSubject[];
-    title?: TitleForRequiredAsset;
-    description: DescriptionOfRequiredAsset;
-    props?: Property[];
-    annotations?: AnnotatedProperty[];
-    links?: Link[];
-    remarks?: Remarks;
-}
-/**
  * Represents a scheduled event or milestone, which may be associated with a series of assessment actions.
  */
 export interface Task {
@@ -532,40 +486,6 @@ export interface Task {
     end: TaskEndDate;
     related_actions?: ActionReference[];
     responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
-    remarks?: Remarks;
-}
-/**
- * A log of all risk_related actions taken.
- */
-export interface RiskLog {
-    entries: RiskLogEntry[];
-}
-/**
- * Identifies the result of an action and/or task that occured as part of executing an assessment plan or an assessment event that occured in producing the assessment results.
- */
-export interface RiskLogEntry {
-    uuid: RiskLogEntryUniversallyUniqueIdentifier;
-    title?: ActionTitle;
-    description?: ActionDescription;
-    start: Start;
-    end?: End;
-    props?: Property[];
-    annotations?: AnnotatedProperty[];
-    links?: Link[];
-    logged_by?: LoggedBy[];
-    status_change?: RiskStatus;
-    related_responses?: RiskResponseActionReference[];
-    remarks?: Remarks;
-}
-/**
- * Identifies an individual risk response that this log entry is for.
- */
-export interface RiskResponseActionReference {
-    response_uuid: ResponseUniversallyUniqueIdentifierReference;
-    props?: Property[];
-    annotations?: AnnotatedProperty[];
-    links?: Link[];
-    related_actions?: ActionReference[];
     remarks?: Remarks;
 }
 /**

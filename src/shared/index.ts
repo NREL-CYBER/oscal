@@ -392,11 +392,11 @@ export type ProtocolTitle = string;
 /**
  * Indicates the starting port number in a port range
  */
-export type Start = number;
+export type PortRangeStart = number;
 /**
  * Indicates the ending port number in a port range
  */
-export type End = number;
+export type PortRangeEnd = number;
 /**
  * Indicates the transport type.
  */
@@ -1309,8 +1309,8 @@ export interface ServiceProtocolInformation {
  * Where applicable this is the IPv4 port range on which the service operates.
  */
 export interface PortRange {
-    start?: Start;
-    end?: End;
+    start?: PortRangeStart;
+    end?: PortRangeEnd;
     transport?: Transport;
 }
 /**

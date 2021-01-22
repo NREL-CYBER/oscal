@@ -66,9 +66,33 @@ var _ssp = require("./ssp");
 
 var _poam = require("./poam");
 
+Object.keys(_poam).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  if (key in exports && exports[key] === _poam[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _poam[key];
+    }
+  });
+});
+
 var _profile = require("./profile");
 
 var _catalog = require("./catalog");
+
+Object.keys(_catalog).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  if (key in exports && exports[key] === _catalog[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _catalog[key];
+    }
+  });
+});
 
 var _assessment_results = require("./assessment_results");
 

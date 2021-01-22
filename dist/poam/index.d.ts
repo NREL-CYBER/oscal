@@ -3,70 +3,14 @@
  * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
  * and run json-schema-to-typescript to regenerate this file.
  */
-import { ActionDescription, ActionTitle, AnnotatedProperty, Component, InventoryItem, Link, Property, PublicationMetadata, Remarks, SystemSecurityPlanReference, ActionReference, BackMatter } from "../shared";
-import { Origin, IdentifiedRisk, AssociatedRisk, IdentifiesTheSubject } from "../shared/IdentifiedRisk";
-import { TitleForRequiredAsset, DescriptionOfRequiredAsset, Task } from "../shared/Task";
+import { AnnotatedProperty, BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ImportSystemSecurityPlan, InventoryItem, Link, Property, PublicationMetadata, Remarks, SystemIdentification } from "../shared";
+import { AssociatedRisk, IdentifiedRisk, IdentifiesTheSubject, Origin } from "../shared/IdentifiedRisk";
 import { RelatedObservation } from "../shared/Observation";
+import { DescriptionOfRequiredAsset, TitleForRequiredAsset } from "../shared/Task";
 /**
  * Uniquely identifies this POA&M. This UUID must be changed each time the content of the POA&M changes.
  */
 export declare type POAMUniversallyUniqueIdentifier = string;
-/**
- * Identifies the identification system from which the provided identifier was assigned.
- */
-export declare type IdentificationSystemType = string;
-/**
- * A category describing the purpose of the component.
- */
-export declare type ComponentType = string;
-/**
- * A human readable name for the system component.
- */
-export declare type ComponentTitle = string;
-/**
- * A description of the component, including information about its function.
- */
-export declare type ComponentDescription = string;
-/**
- * A summary of the technological or business purpose of the component.
- */
-export declare type Purpose = string;
-/**
- * A globally unique identifier that can be used to reference this service protocol entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.
- */
-export declare type ServiceProtocolInformationUniversallyUniqueIdentifier = string;
-/**
- * The common name of the protocol, which should be the appropriate "service name" from the IANA Service Name and Transport Protocol Port Number Registry.
- */
-export declare type ProtocolName = string;
-/**
- * A human readable name for the protocol (e.g., Transport Layer Security).
- */
-export declare type TitleField = string;
-/**
- * Indicates the starting port number in a port range
- */
-export declare type Start = number;
-/**
- * Indicates the ending port number in a port range
- */
-export declare type End = number;
-/**
- * Indicates the transport type.
- */
-export declare type Transport = "TCP" | "UDP";
-/**
- * A globally unique identifier that can be used to reference this inventory item entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.
- */
-export declare type InventoryItemUniversallyUniqueIdentifier = string;
-/**
- * A summary of the inventory item stating its purpose within the system.
- */
-export declare type InventoryItemDescription = string;
-/**
- * A reference to a component that is implemented as part of an inventory item.
- */
-export declare type ComponentUniversallyUniqueIdentifierReference = string;
 /**
  * Uniquely identifies this observation. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. Once assigned, a UUID should be consistantly used for a given observation across revisions.
  */
@@ -100,22 +44,6 @@ export declare type ActorUUIDReference = string;
  */
 export declare type ActorRole = string;
 /**
- * Indicates the type of assessment subject, such as a component, inventory, item, location, or party represented by this selection statement.
- */
-export declare type SubjectType = string;
-/**
- * A human_readable description of the collection of subjects being included in this assessment.
- */
-export declare type IncludeSubjectsDescription = string;
-/**
- * A pointer to a component, inventory_item, location, party, user, or resource using it's UUID.
- */
-export declare type UUIDReference = string;
-/**
- * Used to indicate the type of object pointed to by the uuid_ref.
- */
-export declare type UniversallyUniqueIdentifierReferenceType = string;
-/**
  * The title or name for the referenced subject.
  */
 export declare type SubjectReferenceTitle = string;
@@ -143,10 +71,6 @@ export declare type RiskDescription = string;
  * An summary of impact for how the risk affects the system.
  */
 export declare type RiskStatement = string;
-/**
- * Describes the status of the associated risk.
- */
-export declare type AssociatedRiskStatus = string;
 /**
  * Specifies the source of the threat information.
  */
@@ -180,33 +104,9 @@ export declare type ImplementationUUID = string;
  */
 export declare type MitigatingFactorDescription = string;
 /**
- * The date/time by which the risk must be resolved.
- */
-export declare type RiskResolutionDeadline = string;
-/**
- * Uniquely identifies this remediation. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. Once assigned, a UUID should be consistantly used for a given remediation across revisions.
- */
-export declare type RemediationUniversallyUniqueIdentifier = string;
-/**
- * Identifies whether this is a recommendation, such as from an assessor or tool, or an actual plan accepted by the system owner.
- */
-export declare type RemediationIntent = string;
-/**
- * The title for this response activity.
- */
-export declare type ResponseTitle = string;
-/**
- * A human_readable description of this response plan.
- */
-export declare type ResponseDescription = string;
-/**
  * Uniquely identifies this required asset. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. Once assigned, a UUID should be consistantly used for a given required asset across revisions.
  */
 export declare type RequiredUniversallyUniqueIdentifier = string;
-/**
- * Uniquely identifies an assessment event. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. A UUID should be consistantly used for this schedule across revisions of the document.
- */
-export declare type RiskLogEntryUniversallyUniqueIdentifier = string;
 /**
  * A pointer to the party who is making the log entry.
  */
@@ -215,14 +115,6 @@ export declare type PartyUUIDReference = string;
  * A point to the role_id of the role in which the party is making the log entry.
  */
 export declare type LogActorRole = string;
-/**
- * Describes the status of the associated risk.
- */
-export declare type RiskStatus = string;
-/**
- * References a unique risk response by UUID.
- */
-export declare type ResponseUniversallyUniqueIdentifierReference = string;
 /**
  * Uniquely identifies the POA&M entry. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. A UUID should be consistantly used for a given POA&M item across revisions of the document.
  */
@@ -244,30 +136,6 @@ export declare type CollectedField = string;
  */
 export declare type ExpiresField = string;
 /**
- * A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.
- */
-export declare type ResourceUniversallyUniqueIdentifier = string;
-/**
- * A name given to the resource, which may be used by a tool for display and navigation.
- */
-export declare type ResourceTitle = string;
-/**
- * A short summary of the resource used to indicate the purpose of the resource.
- */
-export declare type ResourceDescription = string;
-/**
- * A line of citation text.
- */
-export declare type CitationText = string;
-/**
- * Method by which a hash is derived
- */
-export declare type HashAlgorithm = string;
-/**
- * Name of the file before it was encoded as Base64 to be embedded in a resource. This is the name that will be assigned to the file when the file is decoded.
- */
-export declare type FileName = string;
-/**
  * A plan of action and milestones which identifies initial and residual risks, deviations, and disposition, such as those required by FedRAMP.
  */
 export interface PlanOfActionAndMilestones {
@@ -276,51 +144,18 @@ export interface PlanOfActionAndMilestones {
     import_ssp?: ImportSystemSecurityPlan;
     system_id?: SystemIdentification;
     local_definitions?: PoamLocalDefinitions;
-    observations?: [Objective, ...Objective[]];
-    risks?: [IdentifiedRisk, ...IdentifiedRisk[]];
-    poam_items: [POAMItem, ...POAMItem[]];
+    observations?: Objective[];
+    risks?: IdentifiedRisk[];
+    poam_items: POAMItem[];
     back_matter?: BackMatter;
-}
-/**
- * Used by the assessment plan and POA&M to import information about the system.
- */
-export interface ImportSystemSecurityPlan {
-    href: SystemSecurityPlanReference;
-    remarks?: Remarks;
-}
-/**
- * A unique identifier for the system described by this system security plan.
- */
-export interface SystemIdentification {
-    identifier_type?: IdentificationSystemType;
-    id: string;
 }
 /**
  * Allows components, and inventory_items to be defined within the POA&M for circumstances where no OSCAL_based SSP exists, or is not delivered with the POA&M.
  */
 export interface PoamLocalDefinitions {
-    components?: {
-        [k: string]: Component;
-    };
+    components?: Record<ComponentUniversallyUniqueIdentifierReference, Component>;
     inventory_items?: InventoryItem[];
     remarks?: Remarks;
-}
-/**
- * Information about the protocol used to provide a service.
- */
-export interface ServiceProtocolInformation {
-    uuid?: ServiceProtocolInformationUniversallyUniqueIdentifier;
-    name: ProtocolName;
-    title?: TitleField;
-    port_ranges?: PortRange[];
-}
-/**
- * Where applicable this is the IPv4 port range on which the service operates.
- */
-export interface PortRange {
-    start?: Start;
-    end?: End;
-    transport?: Transport;
 }
 /**
  * Describes an individual observation.
@@ -393,22 +228,6 @@ export interface MitigatingFactor {
     subjects?: IdentifiesTheSubject[];
 }
 /**
- * Describes either recommended or an actual plan for addressing the risk.
- */
-export interface RiskResponse {
-    uuid: RemediationUniversallyUniqueIdentifier;
-    lifecycle: RemediationIntent;
-    title: ResponseTitle;
-    description: ResponseDescription;
-    props?: Property[];
-    annotations?: AnnotatedProperty[];
-    links?: Link[];
-    origins?: Origin[];
-    required_assets?: RequiredAsset[];
-    tasks?: Task[];
-    remarks?: Remarks;
-}
-/**
  * Identifies an asset required to achieve remediation.
  */
 export interface RequiredAsset {
@@ -422,45 +241,11 @@ export interface RequiredAsset {
     remarks?: Remarks;
 }
 /**
- * A log of all risk_related actions taken.
- */
-export interface RiskLog {
-    entries: RiskLogEntry[];
-}
-/**
- * Identifies the result of an action and/or task that occured as part of executing an assessment plan or an assessment event that occured in producing the assessment results.
- */
-export interface RiskLogEntry {
-    uuid: RiskLogEntryUniversallyUniqueIdentifier;
-    title?: ActionTitle;
-    description?: ActionDescription;
-    start: Start;
-    end?: End;
-    props?: Property[];
-    annotations?: AnnotatedProperty[];
-    links?: Link[];
-    logged_by?: LoggedBy[];
-    status_change?: RiskStatus;
-    related_responses?: [RiskResponseReference, ...RiskResponseReference[]];
-    remarks?: Remarks;
-}
-/**
  * Used to indicate who created a log entry in what role.
  */
 export interface LoggedBy {
     party_uuid: PartyUUIDReference;
     role_id?: LogActorRole;
-}
-/**
- * Identifies an individual risk response that this log entry is for.
- */
-export interface RiskResponseReference {
-    response_uuid: ResponseUniversallyUniqueIdentifierReference;
-    props?: Property[];
-    annotations?: AnnotatedProperty[];
-    links?: Link[];
-    related_actions?: ActionReference[];
-    remarks?: Remarks;
 }
 /**
  * Describes an individual POA&M item.
@@ -475,7 +260,7 @@ export interface POAMItem {
     origins?: Origin[];
     collected: CollectedField;
     expires?: ExpiresField;
-    related_observations?: [RelatedObservation, ...RelatedObservation[]];
-    related_risks?: [AssociatedRisk, ...AssociatedRisk[]];
+    related_observations?: RelatedObservation[];
+    related_risks?: AssociatedRisk[];
     remarks?: Remarks;
 }

@@ -1,7 +1,8 @@
-import { ActionReference, AnnotatedProperty, AssociatedRiskStatus, Link, Property, Remarks, TaskReference, UUIDReference } from ".";
-import { RiskLog, RiskResolutionDeadline, RiskResponse } from "../poam";
+import { ActionReference, AnnotatedProperty, AssociatedRiskStatus, Link, Property, Remarks, TaskReference, UUIDReference, ActionDescription, ActionTitle } from ".";
 import { AssessmentActor } from "./Actor";
 import { RelatedObservation } from "./Observation";
+import { EndField, StartField, LoggedBy } from "src/assessment_results";
+import { Task, DescriptionOfRequiredAsset } from "./Task";
 /**
  * Used to indicate the type of object pointed to by the uuid_ref.
  */
@@ -70,6 +71,80 @@ export declare type MitigatingFactorDescription = string;
  * References an risk defined in the list of risks.
  */
 export declare type RiskUniversallyUniqueIdentifierReference = string;
+/**
+ * Uniquely identifies an assessment event. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. A UUID should be consistantly used for this schedule across revisions of the document.
+ */
+export declare type RiskLogEntryUniversallyUniqueIdentifier = string;
+/**
+ * The date/time by which the risk must be resolved.
+ */
+export declare type RiskResolutionDeadline = string;
+/**
+ * Describes the status of the associated risk.
+ */
+export declare type RiskStatus = string;
+/**
+ * References a unique risk response by UUID.
+ */
+export declare type ResponseUniversallyUniqueIdentifierReference = string;
+/**
+ * Uniquely identifies this required asset. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. Once assigned, a UUID should be consistantly used for a given required asset across revisions.
+ */
+export declare type RequiredUniversallyUniqueIdentifier = string;
+/**
+ * Uniquely identifies this remediation. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. Once assigned, a UUID should be consistantly used for a given remediation across revisions.
+ */
+export declare type RemediationUniversallyUniqueIdentifier = string;
+/**
+ * Identifies whether this is a recommendation, such as from an assessor or tool, or an actual plan accepted by the system owner.
+ */
+export declare type RemediationIntent = string;
+/**
+ * The title for this response activity.
+ */
+export declare type ResponseTitle = string;
+/**
+ * A human_readable description of this response plan.
+ */
+export declare type ResponseDescription = string;
+/**
+ * The title for this required asset.
+ */
+export declare type TitleForRequiredAsset = string;
+/**
+ * A log of all risk_related actions taken.
+ */
+export interface RiskLog {
+    entries: RiskLogEntry[];
+}
+/**
+ * Identifies the result of an action and/or task that occured as part of executing an assessment plan or an assessment event that occured in producing the assessment results.
+ */
+export interface RiskLogEntry {
+    uuid: RiskLogEntryUniversallyUniqueIdentifier;
+    title?: ActionTitle;
+    description?: ActionDescription;
+    start: StartField;
+    end?: EndField;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    logged_by?: LoggedBy[];
+    status_change?: RiskStatus;
+    related_responses?: RiskResponseReference[];
+    remarks?: Remarks;
+}
+/**
+ * Identifies an individual risk response that this log entry is for.
+ */
+export interface RiskResponseReference {
+    response_uuid: ResponseUniversallyUniqueIdentifierReference;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    related_actions?: ActionReference[];
+    remarks?: Remarks;
+}
 /**
  * Relates the finding to a set of referenced risks that were used to determine the finding.
  */
@@ -149,6 +224,46 @@ export interface MitigatingFactor {
     subjects?: IdentifiesTheSubject[];
 }
 /**
+ * Identifies an asset required to achieve remediation.
+ */
+export interface RequiredAsset {
+    uuid: RequiredUniversallyUniqueIdentifier;
+    subjects?: IdentifiesTheSubject[];
+    title?: TitleForRequiredAsset;
+    description: DescriptionOfRequiredAsset;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    remarks?: Remarks;
+}
+/**
+ * Identifies an individual risk response that this log entry is for.
+ */
+export interface RiskResponseActionReference {
+    response_uuid: ResponseUniversallyUniqueIdentifierReference;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    related_actions?: ActionReference[];
+    remarks?: Remarks;
+}
+/**
+ * Describes either recommended or an actual plan for addressing the risk.
+ */
+export interface RiskResponse {
+    uuid: RemediationUniversallyUniqueIdentifier;
+    lifecycle: RemediationIntent;
+    title: ResponseTitle;
+    description: ResponseDescription;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    origins?: Origin[];
+    required_assets?: RequiredAsset[];
+    tasks?: Task[];
+    remarks?: Remarks;
+}
+/**
  * An identified risk.
  */
 export interface IdentifiedRisk {
@@ -161,11 +276,11 @@ export interface IdentifiedRisk {
     links?: Link[];
     status: AssociatedRiskStatus;
     origins?: Origin[];
-    threat_ids?: [ThreatID, ...ThreatID[]];
-    characterizations?: [Characterization, ...Characterization[]];
-    mitigating_factors?: [MitigatingFactor, ...MitigatingFactor[]];
+    threat_ids?: ThreatID[];
+    characterizations?: Characterization[];
+    mitigating_factors?: MitigatingFactor[];
     deadline?: RiskResolutionDeadline;
-    remediations?: [RiskResponse, ...RiskResponse[]];
+    remediations?: RiskResponse[];
     risk_log?: RiskLog;
-    related_observations?: [RelatedObservation, ...RelatedObservation[]];
+    related_observations?: RelatedObservation[];
 }

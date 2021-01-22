@@ -201,34 +201,6 @@ export type ComponentTitle = string;
  */
 export type ComponentDescription = string;
 /**
- * A summary of the technological or business purpose of the component.
- */
-export type Purpose = string;
-/**
- * A globally unique identifier that can be used to reference this service protocol entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.
- */
-export type ServiceProtocolInformationUniversallyUniqueIdentifier = string;
-/**
- * The common name of the protocol, which should be the appropriate "service name" from the IANA Service Name and Transport Protocol Port Number Registry.
- */
-export type ProtocolName = string;
-/**
- * A human readable name for the protocol (e.g., Transport Layer Security).
- */
-export type TitleField = string;
-/**
- * Indicates the starting port number in a port range
- */
-export type Start = number;
-/**
- * Indicates the ending port number in a port range
- */
-export type End = number;
-/**
- * Indicates the transport type.
- */
-export type Transport = "TCP" | "UDP";
-/**
  * A unique identifier for the set of implemented controls.
  */
 export type ControlImplementationSetIdentifier = string;

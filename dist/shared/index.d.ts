@@ -387,11 +387,11 @@ export declare type ProtocolTitle = string;
 /**
  * Indicates the starting port number in a port range
  */
-export declare type Start = number;
+export declare type PortRangeStart = number;
 /**
  * Indicates the ending port number in a port range
  */
-export declare type End = number;
+export declare type PortRangeEnd = number;
 /**
  * Indicates the transport type.
  */
@@ -1280,8 +1280,8 @@ export interface ServiceProtocolInformation {
  * Where applicable this is the IPv4 port range on which the service operates.
  */
 export interface PortRange {
-    start?: Start;
-    end?: End;
+    start?: PortRangeStart;
+    end?: PortRangeEnd;
     transport?: Transport;
 }
 /**

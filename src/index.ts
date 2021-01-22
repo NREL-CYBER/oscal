@@ -8,6 +8,8 @@ import exportOscal from "./exportOscal";
 import importOscal from "./importOscal";
 
 export * from "./shared";
+export * from "./catalog";
+export * from "./poam";
 
 export {
     exportOscal,

@@ -1,5 +1,5 @@
 import { Choice, ConstraintDescription, ConstraintTest, DependsOn, GroupClass, GroupIdentifier, GroupTitle, GuidelineText, ParameterCardinality, ParameterClass, ParameterIdentifier, ParameterLabel, ParameterUsageDescription } from "../profile";
-import { AnnotatedProperty, BackMatter, DocumentIdentifier, DocumentTitle, DocumentVersion, ExternalIdentifierSchema, LastModifiedTimestamp, Link, Location, OSCALVersion, ParameterValue, Property, PublicationTimestamp, Remarks, Party, ResponsibleParty, RevisionHistoryEntry, Role, PartIdentifier, PartName, PartNamespace, PartClass, PartTitle, PartText, RoleIdentifier } from "../shared";
+import { AnnotatedProperty, BackMatter, DocumentIdentifier, DocumentTitle, DocumentVersion, ExternalIdentifierSchema, LastModifiedTimestamp, Link, Location, OSCALVersion, ParameterValue, Property, PublicationTimestamp, Remarks, Party, ResponsibleParty, RevisionHistoryEntry, Role, PartIdentifier, PartName, PartNamespace, PartClass, PartTitle, PartText, RoleIdentifier, Part, PublicationMetadata } from "../shared";
 
 
 /**
@@ -29,33 +29,6 @@ export interface Catalog {
   controls?: [Control, ...Control[]];
   groups?: [ControlGroup, ...ControlGroup[]];
   back_matter?: BackMatter;
-}
-/**
- * Provides information about the publication and availability of the containing document.
- */
-export interface PublicationMetadata {
-  title: DocumentTitle;
-  published?: PublicationTimestamp;
-  last_modified: LastModifiedTimestamp;
-  version: DocumentVersion;
-  oscal_version: OSCALVersion;
-  revisions?: RevisionHistoryEntry[];
-  document_ids?: DocumentIdentifier[];
-  props?: Property[];
-  annotations?: AnnotatedProperty[];
-  links?: Link[];
-  roles?: Role[];
-  locations?: Location[];
-  parties?: Party[];
-  responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
-  remarks?: Remarks;
-}
-/**
- * An identifier for a person or organization using a designated scheme. e.g. an Open Researcher and Contributor ID (ORCID)
- */
-export interface PartyExternalIdentifier {
-  scheme: ExternalIdentifierSchema;
-  id: string;
 }
 /**
  * Parameters provide a mechanism for the dynamic assignment of value(s) in a control.
@@ -107,21 +80,6 @@ export interface Control {
   links?: Link[];
   parts?: Part[];
   controls?: [Control, ...Control[]];
-}
-/**
- * A partition of a control's definition or a child of another part.
- */
-export interface Part {
-  id?: PartIdentifier;
-  name: PartName;
-  ns?: PartNamespace;
-  class?: PartClass;
-  title?: PartTitle;
-  props?: Property[];
-  annotations?: AnnotatedProperty[];
-  prose?: PartText;
-  parts?: Part[];
-  links?: Link[];
 }
 /**
  * A group of controls, or of groups of controls.
