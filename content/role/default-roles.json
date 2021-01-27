@@ -1,120 +1,120 @@
 [
     {
-        "id": "prepared-by",
+        "id": "prepared_by",
         "title": "Prepared By",
-        "desc": "The organization that prepared this SSP. If developed in-house, this is the CSP itself."
+        "description": "The organization that prepared this SSP. If developed in_house, this is the CSP itself."
     },
     {
-        "id": "prepared-for",
+        "id": "prepared_for",
         "title": "Prepared For",
-        "desc": "The organization for which this SSP was prepared. Typically the CSP."
+        "description": "The organization for which this SSP was prepared. Typically the CSP."
     },
     {
-        "id": "stake-holder",
+        "id": "stake_holder",
         "title": "Stakeholders",
-        "desc": "Parties that hold a stake in the system."
+        "description": "Parties that hold a stake in the system."
     },
     {
-        "id": "content-approver",
+        "id": "content_approver",
         "title": "System Security Plan Approval",
-        "desc": "The individual or individuals accountable for the accuracy of this SSP."
+        "description": "The individual or individuals accountable for the accuracy of this SSP."
     },
     {
-        "id": "cloud-service-provider",
+        "id": "cloud_service_provider",
         "title": "Cloud Service Provider",
-        "desc": "A Specific Cloud Service provider",
-        "short-name": "CSP"
+        "description": "A Specific Cloud Service provider",
+        "short_name": "CSP"
     },
     {
-        "id": "system-owner",
+        "id": "system_owner",
         "title": "Information System Owner",
-        "desc": "The individual within the CSP who is ultimately accountable for everything related to this system."
+        "description": "The individual within the CSP who is ultimately accountable for everything related to this system."
     },
     {
-        "id": "authorizing-official",
+        "id": "authorizing_official",
         "title": "Authorizing Official",
-        "desc": "The individual or individuals who must grant this system an authorization to operate."
+        "description": "The individual or individuals who must grant this system an authorization to operate."
     },
     {
-        "id": "authorizing-official-poc",
+        "id": "authorizing_official_poc",
         "title": "Authorizing Official's Point of Contact",
-        "desc": "The individual representing the authorizing official."
+        "description": "The individual representing the authorizing official."
     },
     {
-        "id": "system-poc-management",
+        "id": "system_poc_management",
         "title": "Information System Management Point of Contact (POC)",
-        "desc": "The highest level manager who responsible for system operation on behalf of the System Owner."
+        "description": "The highest level manager who responsible for system operation on behalf of the System Owner."
     },
     {
-        "id": "system-poc-technical",
+        "id": "system_poc_technical",
         "title": "Information System Technical Point of Contact",
-        "desc": "The individual or individuals leading the technical operation of the system."
+        "description": "The individual or individuals leading the technical operation of the system."
     },
     {
-        "id": "system-poc-other",
+        "id": "system_poc_other",
         "title": "General Point of Contact (POC)",
-        "desc": "A general point of contact for the system, designated by the system owner."
+        "description": "A general point of contact for the system, designated by the system owner."
     },
     {
-        "id": "information-system-security-officer",
+        "id": "information_system_security_officer",
         "title": "System Information System Security Officer (or Equivalent)",
-        "desc": "The individual accountable for the security posture of the system on behalf of the system owner."
+        "description": "The individual accountable for the security posture of the system on behalf of the system owner."
     },
     {
-        "id": "privacy-poc",
+        "id": "privacy_poc",
         "title": "Privacy Official's Point of Contact",
-        "desc": "The individual responsible for the privacy threshold analysis and if necessary the privacy impact assessment."
+        "description": "The individual responsible for the privacy threshold analysis and if necessary the privacy impact assessment."
     },
     {
-        "id": "asset-owner",
+        "id": "asset_owner",
         "title": "Owner of an inventory item within the system."
     },
     {
-        "id": "asset-administrator",
+        "id": "asset_administrator",
         "title": "Administrative responsibility an inventory item within the system."
     },
     {
-        "id": "isa-poc-local",
+        "id": "isa_poc_local",
         "title": "ICA POC (Local)",
-        "desc": "The point of contact for an interconnection on behalf of this system.",
+        "description": "The point of contact for an interconnection on behalf of this system.",
         "remarks": "Remove this role if there are no ICAs."
     },
     {
-        "id": "isa-poc-remote",
+        "id": "isa_poc_remote",
         "title": "ICA POC (Remote)",
-        "desc": "The point of contact for an interconnection on behalf of this external system to which this system connects.",
+        "description": "The point of contact for an interconnection on behalf of this external system to which this system connects.",
         "remarks": "Remove this role if there are no ICAs."
     },
     {
-        "id": "isa-authorizing-official-local",
+        "id": "isa_authorizing_official_local",
         "title": "ICA Signatory (Local)",
-        "desc": "Responsible for signing an interconnection security agreement on behalf of this system.",
+        "description": "Responsible for signing an interconnection security agreement on behalf of this system.",
         "remarks": "Remove this role if there are no ICAs."
     },
     {
-        "id": "isa-authorizing-official-remote",
+        "id": "isa_authorizing_official_remote",
         "title": "ICA Signatory (Remote)",
-        "desc": "Responsible for signing an interconnection security agreement on behalf of the external system to which this system connects.",
+        "description": "Responsible for signing an interconnection security agreement on behalf of the external system to which this system connects.",
         "remarks": "Remove this role if there are no ICAs."
     },
     {
         "id": "consultant",
         "title": "Consultant",
-        "desc": "Any consultants involved with developing or maintaining this content."
+        "description": "Any consultants involved with developing or maintaining this content."
     },
     {
-        "id": "admin-unix",
+        "id": "admin_unix",
         "title": "Unix Administrator",
-        "desc": "The administrator of a unix system."
+        "description": "The administrator of a unix system."
     },
     {
-        "id": "admin-client",
+        "id": "admin_client",
         "title": "Client Administrator",
-        "desc": "The administrator of clients."
+        "description": "The administrator of clients."
     },
     {
-        "id": "program-director",
+        "id": "program_director",
         "title": "Program Director",
-        "desc": "The directory of a group or organization."
+        "description": "The directory of a group or organization."
     }
 ]
