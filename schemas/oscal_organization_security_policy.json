@@ -19,11 +19,11 @@
                 "metadata": {
                     "$ref": "#/definitions/metadata"
                 },
-                "processes": {
+                "functiones": {
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/business_process"
+                        "$ref": "#/definitions/business_function"
                     }
                 },
                 "back_matter": {
@@ -1477,24 +1477,24 @@
             ],
             "additionalProperties": false
         },
-        "business_process": {
-            "title": "Business Process Definition",
-            "description": "A collection of component descriptions, which may optionally be grouped by capability.",
-            "$id": "#/definitions/business_process",
+        "business_function": {
+            "title": "Business function Definition",
+            "description": "Structured activities or tasks by people or equipment in which a specific sequence.",
+            "$id": "#/definitions/business_function",
             "type": "object",
             "properties": {
                 "uuid": {
-                    "title": "Business Process Universally Unique Identifier",
+                    "title": "Business function Universally Unique Identifier",
                     "description": "A globally unique identifier for this component definition instance. This UUID should be changed when this document is revised.",
                     "type": "string",
                     "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                 },
                 "title": {
-                    "title": "Business Mission / Process title",
+                    "title": "Business Mission / function title",
                     "type": "string"
                 },
                 "description": {
-                    "title": "Business Mission / Process description",
+                    "title": "Business Mission / function description",
                     "type": "string"
                 },
                 "remarks": {

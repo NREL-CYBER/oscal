@@ -1,13 +1,12 @@
-import { PublicationMetadata, ImportSystemSecurityPlan, SystemIdentification, BackMatter } from "src/shared";
 
 export type OSPUniversallyUniqueIdentifier = string
-export type BusinessProcessUniversallyUniqueIdentifier = string
+export type BusinessFunctionUniversallyUniqueIdentifier = string
 
 /**
- * Organization Security Policy.
+ * Organization Business Function.
  */
-export interface BusinessProcess {
-    uuid: BusinessProcessUniversallyUniqueIdentifier
+export interface BusinessFunction {
+    uuid: BusinessFunctionUniversallyUniqueIdentifier
     title: string,
     description: string
 }
@@ -16,7 +15,5 @@ export interface BusinessProcess {
  */
 export interface OrganizationSecurityPolicy {
     uuid: OSPUniversallyUniqueIdentifier;
-    metadata: PublicationMetadata;
-    processes: BusinessProcess[];
-    back_matter?: BackMatter;
+    functions: BusinessFunction[];
 }
