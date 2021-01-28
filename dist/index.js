@@ -11,7 +11,8 @@ var _exportNames = {
   SecurityAssessmentResults: true,
   SecurityAssessmentPlan: true,
   exportOscal: true,
-  importOscal: true
+  importOscal: true,
+  OrganizationSecurityPolicy: true
 };
 Object.defineProperty(exports, "SystemSecurityPlan", {
   enumerable: true,
@@ -61,6 +62,12 @@ Object.defineProperty(exports, "importOscal", {
     return _importOscal["default"];
   }
 });
+Object.defineProperty(exports, "OrganizationSecurityPolicy", {
+  enumerable: true,
+  get: function get() {
+    return _osp.OrganizationSecurityPolicy;
+  }
+});
 
 var _ssp = require("./ssp");
 
@@ -101,6 +108,8 @@ var _assessment_plan = require("./assessment_plan");
 var _exportOscal = _interopRequireDefault(require("./exportOscal"));
 
 var _importOscal = _interopRequireDefault(require("./importOscal"));
+
+var _osp = require("./osp");
 
 var _shared = require("./shared");
 

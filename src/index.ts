@@ -6,6 +6,7 @@ import { SecurityAssessmentResults } from "./assessment_results";
 import { SecurityAssessmentPlan } from "./assessment_plan";
 import exportOscal from "./exportOscal";
 import importOscal from "./importOscal";
+import { OrganizationSecurityPolicy } from "./osp";
 
 export * from "./shared";
 export * from "./catalog";
@@ -14,6 +15,7 @@ export * from "./poam";
 export {
     exportOscal,
     importOscal,
+    OrganizationSecurityPolicy,
     SystemSecurityPlan
     , PlanOfActionAndMilestones
     , Profile
