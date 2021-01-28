@@ -19,18 +19,11 @@
                 "metadata": {
                     "$ref": "#/definitions/metadata"
                 },
-                "params": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                        "$ref": "#/definitions/parameter"
-                    }
-                },
                 "processes": {
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/business_processes"
+                        "$ref": "#/definitions/business_process"
                     }
                 },
                 "back_matter": {
@@ -1068,7 +1061,6 @@
                 "purpose": {
                     "title": "Purpose",
                     "description": "A summary of the technological or business purpose of the component.",
-                    "$id": "#/definitions/purpose",
                     "type": "string"
                 },
                 "props": {
@@ -1558,7 +1550,6 @@
                 "purpose": {
                     "title": "Purpose",
                     "description": "A summary of the technological or business purpose of the component.",
-                    "$id": "#/definitions/purpose",
                     "type": "string"
                 },
                 "props": {
