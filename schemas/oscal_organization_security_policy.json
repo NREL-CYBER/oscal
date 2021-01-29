@@ -16,23 +16,18 @@
                     "type": "string",
                     "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                 },
-                "metadata": {
-                    "$ref": "#/definitions/metadata"
-                },
-                "functiones": {
+                "functions": {
+                    "title":"Business Functions Supported by the system",
                     "type": "array",
                     "minItems": 1,
                     "items": {
                         "$ref": "#/definitions/business_function"
                     }
-                },
-                "back_matter": {
-                    "$ref": "#/definitions/back_matter"
                 }
             },
             "required": [
                 "uuid",
-                "metadata"
+                "functions"
             ],
             "additionalProperties": false
         },

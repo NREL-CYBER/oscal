@@ -9,6 +9,7 @@ export interface BusinessFunction {
     uuid: BusinessFunctionUniversallyUniqueIdentifier
     title: string,
     description: string
+    remarks?: string
 }
 /**
  * Organization Security Policy.
