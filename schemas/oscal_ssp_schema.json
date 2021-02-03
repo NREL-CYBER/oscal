@@ -116,7 +116,6 @@
                     "items": {
                         "title": "Document Identifier",
                         "description": "A document identifier qualified by an identifier type.",
-                        "$id": "#/definitions/document_id",
                         "type": "object",
                         "properties": {
                             "scheme": {

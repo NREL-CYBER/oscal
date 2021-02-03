@@ -25,9 +25,9 @@ export type CatalogUniversallyUniqueIdentifier = string;
 export interface Catalog {
   uuid: CatalogUniversallyUniqueIdentifier;
   metadata: PublicationMetadata;
-  params?: [Parameter, ...Parameter[]];
-  controls?: [Control, ...Control[]];
-  groups?: [ControlGroup, ...ControlGroup[]];
+  params?: Parameter[];
+  controls?: Control[];
+  groups?: ControlGroup[];
   back_matter?: BackMatter;
 }
 /**
@@ -42,8 +42,8 @@ export interface Parameter {
   links?: Link[];
   label?: ParameterLabel;
   usage?: ParameterUsageDescription;
-  constraints?: [Constraint, ...Constraint[]];
-  guidelines?: [Guideline, ...Guideline[]];
+  constraints?: Constraint[];
+  guidelines?: Guideline[];
   values?: ParameterValue[];
   select?: Selection;
 }
@@ -52,7 +52,7 @@ export interface Parameter {
  */
 export interface Constraint {
   description?: ConstraintDescription;
-  tests?: [ConstraintTest, ...ConstraintTest[]];
+  tests?: ConstraintTest[];
 }
 /**
  * A prose statement that provides a recommendation for the use of a parameter.
@@ -65,7 +65,7 @@ export interface Guideline {
  */
 export interface Selection {
   how_many?: ParameterCardinality;
-  choice?: [Choice, ...Choice[]];
+  choice?: Choice[];
 }
 /**
  * A structured information object representing a security or privacy control. Each security or privacy control within the Catalog is defined by a distinct control instance.
@@ -74,12 +74,12 @@ export interface Control {
   id: ControlIdentifier;
   class?: ControlClass;
   title: ControlTitle;
-  params?: [Parameter, ...Parameter[]];
+  params?: Parameter[];
   props?: Property[];
   annotations?: AnnotatedProperty[];
   links?: Link[];
   parts?: Part[];
-  controls?: [Control, ...Control[]];
+  controls?: Control[];
 }
 /**
  * A group of controls, or of groups of controls.
@@ -88,13 +88,13 @@ export interface ControlGroup {
   id?: GroupIdentifier;
   class?: GroupClass;
   title: GroupTitle;
-  params?: [Parameter, ...Parameter[]];
+  params?: Parameter[];
   props?: Property[];
   annotations?: AnnotatedProperty[];
   links?: Link[];
   parts?: Part[];
-  groups?: [ControlGroup, ...ControlGroup[]];
-  controls?: [Control, ...Control[]];
+  groups?: ControlGroup[];
+  controls?: Control[];
 }
 /**
  * A collection of resources, which may be included directly or by reference.

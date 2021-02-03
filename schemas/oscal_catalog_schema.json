@@ -227,7 +227,7 @@
             "items" : 
             { "title" : "Revision History Entry",
               "description" : "An entry in a sequential list of revisions to the containing document in reverse chronological order (i.e., most recent previous revision first).",
-              "$id" : "#/definitions/revision",
+              
               "type" : "object",
               "properties" : 
               { "title" : 
