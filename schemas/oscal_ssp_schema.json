@@ -1724,7 +1724,6 @@
                                 "items": {
                                     "title": "Information Type Categorization",
                                     "description": "A set of information type identifiers qualified by the given identification system used, such as NIST SP 800_60.",
-                                    "$id": "#/definitions/categorization",
                                     "type": "object",
                                     "properties": {
                                         "system": {
@@ -1739,7 +1738,6 @@
                                             "items": {
                                                 "title": "Information Type Systemized Identifier",
                                                 "description": "An identifier qualified by the given identification system used, such as NIST SP 800_60.",
-                                                "$id": "#/definitions/information_type_id",
                                                 "type": "string"
                                             }
                                         }
