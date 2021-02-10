@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "$id": "http://csrc.nist.gov/ns/oscal/1.0_schema.json",
+    "$id": "http://csrc.nist.gov/ns/oscal/1.0_osp_schema.json",
     "$comment": "OSCAL Organization Security Policy",
     "type": "object",
     "definitions": {
