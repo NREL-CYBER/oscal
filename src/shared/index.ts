@@ -1,5 +1,6 @@
 import { SubjectOfAssessment, AssessmentSubjectPlaceholder } from "./Subject";
 import { ExcludeControl } from "../assessment_plan";
+import { IdentifiedRisk, ThreatID } from "./IdentifiedRisk";
 
 /**
  * A name given to the document, which may be used by a tool for display and navigation.
@@ -1474,9 +1475,7 @@ export interface SpecificControlStatement {
     props?: Property[];
     annotations?: AnnotatedProperty[];
     links?: Link[];
-    by_components?: {
-        [k: string]: ComponentControlImplementation;
-    };
+    by_components?: Record<string, ComponentControlImplementation>;
     remarks?: Remarks;
 }
 /**
@@ -1535,4 +1534,7 @@ export interface Base64 {
     filename?: FileName;
     media_type?: MediaType;
     value: string;
+}
+export {
+    IdentifiedRisk,
 }

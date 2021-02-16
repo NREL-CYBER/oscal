@@ -1,7 +1,7 @@
 import { ActionReference, AnnotatedProperty, AssociatedRiskStatus, Link, Property, Remarks, TaskReference, UUIDReference, ActionDescription, ActionTitle } from ".";
 import { AssessmentActor } from "./Actor";
 import { RelatedObservation } from "./Observation";
-import { EndField, StartField, LoggedBy } from "src/assessment_results";
+import { EndField, StartField, LoggedBy } from "../assessment_results";
 import { Task, DescriptionOfRequiredAsset } from "./Task";
 /**
  * Used to indicate the type of object pointed to by the uuid_ref.
