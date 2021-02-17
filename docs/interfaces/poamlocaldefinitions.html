@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>OscalAssessmentPlanSchema | oscal</title>
+	<title>PoamLocalDefinitions | oscal</title>
 	<meta name="description" content="Documentation for oscal">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,21 +56,28 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="oscalassessmentplanschema.html">OscalAssessmentPlanSchema</a>
+					<a href="poamlocaldefinitions.html">PoamLocalDefinitions</a>
 				</li>
 			</ul>
-			<h1>Interface OscalAssessmentPlanSchema</h1>
+			<h1>Interface PoamLocalDefinitions</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Allows components, and inventory_items to be defined within the POA&amp;M for circumstances where no OSCAL_based SSP exists, or is not delivered with the POA&amp;M.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">OscalAssessmentPlanSchema</span>
+						<span class="target">PoamLocalDefinitions</span>
 					</li>
 				</ul>
 			</section>
@@ -81,7 +88,9 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="oscalassessmentplanschema.html#assessment_plan" class="tsd-kind-icon">assessment_<wbr>plan</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="poamlocaldefinitions.html#components" class="tsd-kind-icon">components</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="poamlocaldefinitions.html#inventory_items" class="tsd-kind-icon">inventory_<wbr>items</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="poamlocaldefinitions.html#remarks" class="tsd-kind-icon">remarks</a></li>
 							</ul>
 						</section>
 					</div>
@@ -90,12 +99,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="assessment_plan" class="tsd-anchor"></a>
-					<h3>assessment_<wbr>plan</h3>
-					<div class="tsd-signature tsd-kind-icon">assessment_<wbr>plan<span class="tsd-signature-symbol">:</span> <a href="securityassessmentplansap.html" class="tsd-signature-type">SecurityAssessmentPlanSAP</a></div>
+					<a name="components" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> components</h3>
+					<div class="tsd-signature tsd-kind-icon">components<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/assessment_plan/index.ts:514</li>
+							<li>Defined in src/poam/index.ts:309</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="inventory_items" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> inventory_<wbr>items</h3>
+					<div class="tsd-signature tsd-kind-icon">inventory_<wbr>items<span class="tsd-signature-symbol">:</span> <a href="inventoryitem.html" class="tsd-signature-type">InventoryItem</a><span class="tsd-signature-symbol">[]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/poam/index.ts:312</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="remarks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> remarks</h3>
+					<div class="tsd-signature tsd-kind-icon">remarks<span class="tsd-signature-symbol">:</span> <a href="../globals.html#remarks" class="tsd-signature-type">Remarks</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/poam/index.ts:313</li>
 						</ul>
 					</aside>
 				</section>
@@ -114,10 +143,16 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="oscalassessmentplanschema.html" class="tsd-kind-icon">Oscal<wbr>Assessment<wbr>Plan<wbr>Schema</a>
+						<a href="poamlocaldefinitions.html" class="tsd-kind-icon">Poam<wbr>Local<wbr>Definitions</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="oscalassessmentplanschema.html#assessment_plan" class="tsd-kind-icon">assessment_<wbr>plan</a>
+								<a href="poamlocaldefinitions.html#components" class="tsd-kind-icon">components</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="poamlocaldefinitions.html#inventory_items" class="tsd-kind-icon">inventory_<wbr>items</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="poamlocaldefinitions.html#remarks" class="tsd-kind-icon">remarks</a>
 							</li>
 						</ul>
 					</li>

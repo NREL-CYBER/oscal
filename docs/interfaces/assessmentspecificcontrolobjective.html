@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SystemSecurityPlanSSP | oscal</title>
+	<title>AssessmentSpecificControlObjective | oscal</title>
 	<meta name="description" content="Documentation for oscal">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="systemsecurityplanssp.html">SystemSecurityPlanSSP</a>
+					<a href="assessmentspecificcontrolobjective.html">AssessmentSpecificControlObjective</a>
 				</li>
 			</ul>
-			<h1>Interface SystemSecurityPlanSSP</h1>
+			<h1>Interface AssessmentSpecificControlObjective</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>A system security plan, such as those described in NIST SP 800_18</p>
+						<p>A local definition of a control objective for this assessment. Uses catalog syntax for control objective and assessment actions.
+						A local definition of a control objective for this assessment. Uses catalog syntax for control objective and assessment actions.</p>
 					</div>
 				</div>
 			</section>
@@ -77,7 +78,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">SystemSecurityPlanSSP</span>
+						<span class="target">AssessmentSpecificControlObjective</span>
 					</li>
 				</ul>
 			</section>
@@ -88,13 +89,13 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="systemsecurityplanssp.html#back_matter" class="tsd-kind-icon">back_<wbr>matter</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="systemsecurityplanssp.html#control_implementation" class="tsd-kind-icon">control_<wbr>implementation</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="systemsecurityplanssp.html#import_profile" class="tsd-kind-icon">import_<wbr>profile</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="systemsecurityplanssp.html#metadata" class="tsd-kind-icon">metadata</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="systemsecurityplanssp.html#system_characteristics" class="tsd-kind-icon">system_<wbr>characteristics</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="systemsecurityplanssp.html#system_implementation" class="tsd-kind-icon">system_<wbr>implementation</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="systemsecurityplanssp.html#uuid" class="tsd-kind-icon">uuid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentspecificcontrolobjective.html#annotations" class="tsd-kind-icon">annotations</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentspecificcontrolobjective.html#control_id" class="tsd-kind-icon">control_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentspecificcontrolobjective.html#description" class="tsd-kind-icon">description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentspecificcontrolobjective.html#links" class="tsd-kind-icon">links</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentspecificcontrolobjective.html#parts" class="tsd-kind-icon">parts</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentspecificcontrolobjective.html#props" class="tsd-kind-icon">props</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentspecificcontrolobjective.html#remarks" class="tsd-kind-icon">remarks</a></li>
 							</ul>
 						</section>
 					</div>
@@ -103,72 +104,79 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="back_matter" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> back_<wbr>matter</h3>
-					<div class="tsd-signature tsd-kind-icon">back_<wbr>matter<span class="tsd-signature-symbol">:</span> <a href="backmatter.html" class="tsd-signature-type">BackMatter</a></div>
+					<a name="annotations" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> annotations</h3>
+					<div class="tsd-signature tsd-kind-icon">annotations<span class="tsd-signature-symbol">:</span> <a href="annotatedproperty.html" class="tsd-signature-type">AnnotatedProperty</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/ssp/index.ts:506</li>
+							<li>Defined in src/assessment_plan/index.ts:49</li>
+							<li>Defined in src/assessment_results/index.ts:81</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="control_implementation" class="tsd-anchor"></a>
-					<h3>control_<wbr>implementation</h3>
-					<div class="tsd-signature tsd-kind-icon">control_<wbr>implementation<span class="tsd-signature-symbol">:</span> <a href="controlimplementation.html" class="tsd-signature-type">ControlImplementation</a></div>
+					<a name="control_id" class="tsd-anchor"></a>
+					<h3>control_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">control_<wbr>id<span class="tsd-signature-symbol">:</span> <a href="../globals.html#controlidentifierreference" class="tsd-signature-type">ControlIdentifierReference</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/ssp/index.ts:505</li>
+							<li>Defined in src/assessment_plan/index.ts:46</li>
+							<li>Defined in src/assessment_results/index.ts:78</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="import_profile" class="tsd-anchor"></a>
-					<h3>import_<wbr>profile</h3>
-					<div class="tsd-signature tsd-kind-icon">import_<wbr>profile<span class="tsd-signature-symbol">:</span> <a href="importprofile.html" class="tsd-signature-type">ImportProfile</a></div>
+					<a name="description" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> description</h3>
+					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <a href="../globals.html#objectivedescription" class="tsd-signature-type">ObjectiveDescription</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/ssp/index.ts:502</li>
+							<li>Defined in src/assessment_plan/index.ts:47</li>
+							<li>Defined in src/assessment_results/index.ts:79</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="metadata" class="tsd-anchor"></a>
-					<h3>metadata</h3>
-					<div class="tsd-signature tsd-kind-icon">metadata<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PublicationMetadata</span></div>
+					<a name="links" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> links</h3>
+					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <a href="link.html" class="tsd-signature-type">Link</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/ssp/index.ts:501</li>
+							<li>Defined in src/assessment_plan/index.ts:50</li>
+							<li>Defined in src/assessment_results/index.ts:82</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="system_characteristics" class="tsd-anchor"></a>
-					<h3>system_<wbr>characteristics</h3>
-					<div class="tsd-signature tsd-kind-icon">system_<wbr>characteristics<span class="tsd-signature-symbol">:</span> <a href="systemcharacteristics.html" class="tsd-signature-type">SystemCharacteristics</a></div>
+					<a name="parts" class="tsd-anchor"></a>
+					<h3>parts</h3>
+					<div class="tsd-signature tsd-kind-icon">parts<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Part</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/ssp/index.ts:503</li>
+							<li>Defined in src/assessment_plan/index.ts:51</li>
+							<li>Defined in src/assessment_results/index.ts:83</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="system_implementation" class="tsd-anchor"></a>
-					<h3>system_<wbr>implementation</h3>
-					<div class="tsd-signature tsd-kind-icon">system_<wbr>implementation<span class="tsd-signature-symbol">:</span> <a href="systemimplementation.html" class="tsd-signature-type">SystemImplementation</a></div>
+					<a name="props" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> props</h3>
+					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <a href="property.html" class="tsd-signature-type">Property</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/ssp/index.ts:504</li>
+							<li>Defined in src/assessment_plan/index.ts:48</li>
+							<li>Defined in src/assessment_results/index.ts:80</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="uuid" class="tsd-anchor"></a>
-					<h3>uuid</h3>
-					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <a href="../globals.html#systemsecurityplanuniversallyuniqueidentifier" class="tsd-signature-type">SystemSecurityPlanUniversallyUniqueIdentifier</a></div>
+					<a name="remarks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> remarks</h3>
+					<div class="tsd-signature tsd-kind-icon">remarks<span class="tsd-signature-symbol">:</span> <a href="../globals.html#remarks" class="tsd-signature-type">Remarks</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/ssp/index.ts:500</li>
+							<li>Defined in src/assessment_plan/index.ts:52</li>
+							<li>Defined in src/assessment_results/index.ts:84</li>
 						</ul>
 					</aside>
 				</section>
@@ -187,28 +195,28 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="systemsecurityplanssp.html" class="tsd-kind-icon">System<wbr>Security<wbr>PlanSSP</a>
+						<a href="assessmentspecificcontrolobjective.html" class="tsd-kind-icon">Assessment<wbr>Specific<wbr>Control<wbr>Objective</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="systemsecurityplanssp.html#back_matter" class="tsd-kind-icon">back_<wbr>matter</a>
+								<a href="assessmentspecificcontrolobjective.html#annotations" class="tsd-kind-icon">annotations</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="systemsecurityplanssp.html#control_implementation" class="tsd-kind-icon">control_<wbr>implementation</a>
+								<a href="assessmentspecificcontrolobjective.html#control_id" class="tsd-kind-icon">control_<wbr>id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="systemsecurityplanssp.html#import_profile" class="tsd-kind-icon">import_<wbr>profile</a>
+								<a href="assessmentspecificcontrolobjective.html#description" class="tsd-kind-icon">description</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="systemsecurityplanssp.html#metadata" class="tsd-kind-icon">metadata</a>
+								<a href="assessmentspecificcontrolobjective.html#links" class="tsd-kind-icon">links</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="systemsecurityplanssp.html#system_characteristics" class="tsd-kind-icon">system_<wbr>characteristics</a>
+								<a href="assessmentspecificcontrolobjective.html#parts" class="tsd-kind-icon">parts</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="systemsecurityplanssp.html#system_implementation" class="tsd-kind-icon">system_<wbr>implementation</a>
+								<a href="assessmentspecificcontrolobjective.html#props" class="tsd-kind-icon">props</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="systemsecurityplanssp.html#uuid" class="tsd-kind-icon">uuid</a>
+								<a href="assessmentspecificcontrolobjective.html#remarks" class="tsd-kind-icon">remarks</a>
 							</li>
 						</ul>
 					</li>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>BusinessFunction | oscal</title>
+	<title>SecurityAssessmentResults | oscal</title>
 	<meta name="description" content="Documentation for oscal">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="businessfunction.html">BusinessFunction</a>
+					<a href="securityassessmentresults.html">SecurityAssessmentResults</a>
 				</li>
 			</ul>
-			<h1>Interface BusinessFunction</h1>
+			<h1>Interface SecurityAssessmentResults</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Organization Business Function.</p>
+						<p>Security assessment results, such as those provided by a FedRAMP assessor in the FedRAMP Security Assessment Report.</p>
 					</div>
 				</div>
 			</section>
@@ -77,7 +77,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">BusinessFunction</span>
+						<span class="target">SecurityAssessmentResults</span>
 					</li>
 				</ul>
 			</section>
@@ -88,10 +88,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="businessfunction.html#description" class="tsd-kind-icon">description</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="businessfunction.html#remarks" class="tsd-kind-icon">remarks</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="businessfunction.html#title" class="tsd-kind-icon">title</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="businessfunction.html#uuid" class="tsd-kind-icon">uuid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="securityassessmentresults.html#back_matter" class="tsd-kind-icon">back_<wbr>matter</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="securityassessmentresults.html#import_ap" class="tsd-kind-icon">import_<wbr>ap</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="securityassessmentresults.html#local_definitions" class="tsd-kind-icon">local_<wbr>definitions</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="securityassessmentresults.html#metadata" class="tsd-kind-icon">metadata</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="securityassessmentresults.html#results" class="tsd-kind-icon">results</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="securityassessmentresults.html#uuid" class="tsd-kind-icon">uuid</a></li>
 							</ul>
 						</section>
 					</div>
@@ -100,42 +102,62 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="description" class="tsd-anchor"></a>
-					<h3>description</h3>
-					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="back_matter" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> back_<wbr>matter</h3>
+					<div class="tsd-signature tsd-kind-icon">back_<wbr>matter<span class="tsd-signature-symbol">:</span> <a href="backmatter.html" class="tsd-signature-type">BackMatter</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/osp/index.ts:11</li>
+							<li>Defined in src/assessment_results/index.ts:57</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="remarks" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> remarks</h3>
-					<div class="tsd-signature tsd-kind-icon">remarks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<a name="import_ap" class="tsd-anchor"></a>
+					<h3>import_<wbr>ap</h3>
+					<div class="tsd-signature tsd-kind-icon">import_<wbr>ap<span class="tsd-signature-symbol">:</span> <a href="importassessmentplan.html" class="tsd-signature-type">ImportAssessmentPlan</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/osp/index.ts:12</li>
+							<li>Defined in src/assessment_results/index.ts:54</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="title" class="tsd-anchor"></a>
-					<h3>title</h3>
-					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<a name="local_definitions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> local_<wbr>definitions</h3>
+					<div class="tsd-signature tsd-kind-icon">local_<wbr>definitions<span class="tsd-signature-symbol">:</span> <a href="localdefinitions.html" class="tsd-signature-type">LocalDefinitions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/osp/index.ts:10</li>
+							<li>Defined in src/assessment_results/index.ts:55</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="metadata" class="tsd-anchor"></a>
+					<h3>metadata</h3>
+					<div class="tsd-signature tsd-kind-icon">metadata<span class="tsd-signature-symbol">:</span> <a href="publicationmetadata.html" class="tsd-signature-type">PublicationMetadata</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/assessment_results/index.ts:53</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="results" class="tsd-anchor"></a>
+					<h3>results</h3>
+					<div class="tsd-signature tsd-kind-icon">results<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="assessmentresult.html" class="tsd-signature-type">AssessmentResult</a><span class="tsd-signature-symbol">, </span><a href="assessmentresult.html" class="tsd-signature-type">AssessmentResult</a><span class="tsd-signature-symbol">]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in src/assessment_results/index.ts:56</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="uuid" class="tsd-anchor"></a>
 					<h3>uuid</h3>
-					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <a href="../globals.html#businessfunctionuniversallyuniqueidentifier" class="tsd-signature-type">BusinessFunctionUniversallyUniqueIdentifier</a></div>
+					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <a href="../globals.html#assessmentresultsuniversallyuniqueidentifier" class="tsd-signature-type">AssessmentResultsUniversallyUniqueIdentifier</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/osp/index.ts:9</li>
+							<li>Defined in src/assessment_results/index.ts:52</li>
 						</ul>
 					</aside>
 				</section>
@@ -154,19 +176,25 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="businessfunction.html" class="tsd-kind-icon">Business<wbr>Function</a>
+						<a href="securityassessmentresults.html" class="tsd-kind-icon">Security<wbr>Assessment<wbr>Results</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="businessfunction.html#description" class="tsd-kind-icon">description</a>
+								<a href="securityassessmentresults.html#back_matter" class="tsd-kind-icon">back_<wbr>matter</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="businessfunction.html#remarks" class="tsd-kind-icon">remarks</a>
+								<a href="securityassessmentresults.html#import_ap" class="tsd-kind-icon">import_<wbr>ap</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="businessfunction.html#title" class="tsd-kind-icon">title</a>
+								<a href="securityassessmentresults.html#local_definitions" class="tsd-kind-icon">local_<wbr>definitions</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="businessfunction.html#uuid" class="tsd-kind-icon">uuid</a>
+								<a href="securityassessmentresults.html#metadata" class="tsd-kind-icon">metadata</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="securityassessmentresults.html#results" class="tsd-kind-icon">results</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="securityassessmentresults.html#uuid" class="tsd-kind-icon">uuid</a>
 							</li>
 						</ul>
 					</li>

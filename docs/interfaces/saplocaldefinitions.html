@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SecurityAssessmentResultsSAR | oscal</title>
+	<title>SAPLocalDefinitions | oscal</title>
 	<meta name="description" content="Documentation for oscal">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="securityassessmentresultssar.html">SecurityAssessmentResultsSAR</a>
+					<a href="saplocaldefinitions.html">SAPLocalDefinitions</a>
 				</li>
 			</ul>
-			<h1>Interface SecurityAssessmentResultsSAR</h1>
+			<h1>Interface SAPLocalDefinitions</h1>
 		</div>
 	</div>
 </header>
@@ -69,7 +69,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Security assessment results, such as those provided by a FedRAMP assessor in the FedRAMP Security Assessment Report.</p>
+						<p>Used to define data objects that are used in the assessment plan, that do not appear in the referenced SSP.</p>
 					</div>
 				</div>
 			</section>
@@ -77,7 +77,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">SecurityAssessmentResultsSAR</span>
+						<span class="target">SAPLocalDefinitions</span>
 					</li>
 				</ul>
 			</section>
@@ -88,12 +88,12 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="securityassessmentresultssar.html#back_matter" class="tsd-kind-icon">back_<wbr>matter</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="securityassessmentresultssar.html#import_ap" class="tsd-kind-icon">import_<wbr>ap</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="securityassessmentresultssar.html#local_definitions" class="tsd-kind-icon">local_<wbr>definitions</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="securityassessmentresultssar.html#metadata" class="tsd-kind-icon">metadata</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="securityassessmentresultssar.html#results" class="tsd-kind-icon">results</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="securityassessmentresultssar.html#uuid" class="tsd-kind-icon">uuid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="saplocaldefinitions.html#activities" class="tsd-kind-icon">activities</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="saplocaldefinitions.html#add_objectives_and_methods" class="tsd-kind-icon">add_<wbr>objectives_<wbr>and_<wbr>methods</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="saplocaldefinitions.html#components" class="tsd-kind-icon">components</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="saplocaldefinitions.html#inventory_items" class="tsd-kind-icon">inventory_<wbr>items</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="saplocaldefinitions.html#remarks" class="tsd-kind-icon">remarks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="saplocaldefinitions.html#users" class="tsd-kind-icon">users</a></li>
 							</ul>
 						</section>
 					</div>
@@ -102,62 +102,62 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="back_matter" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> back_<wbr>matter</h3>
-					<div class="tsd-signature tsd-kind-icon">back_<wbr>matter<span class="tsd-signature-symbol">:</span> <a href="backmatter.html" class="tsd-signature-type">BackMatter</a></div>
+					<a name="activities" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> activities</h3>
+					<div class="tsd-signature tsd-kind-icon">activities<span class="tsd-signature-symbol">:</span> <a href="activity.html" class="tsd-signature-type">Activity</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/assessment_results/index.ts:793</li>
+							<li>Defined in src/assessment_plan/index.ts:39</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="import_ap" class="tsd-anchor"></a>
-					<h3>import_<wbr>ap</h3>
-					<div class="tsd-signature tsd-kind-icon">import_<wbr>ap<span class="tsd-signature-symbol">:</span> <a href="importassessmentplan.html" class="tsd-signature-type">ImportAssessmentPlan</a></div>
+					<a name="add_objectives_and_methods" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> add_<wbr>objectives_<wbr>and_<wbr>methods</h3>
+					<div class="tsd-signature tsd-kind-icon">add_<wbr>objectives_<wbr>and_<wbr>methods<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="assessmentspecificcontrolobjective.html" class="tsd-signature-type">AssessmentSpecificControlObjective</a><span class="tsd-signature-symbol">, </span><a href="assessmentspecificcontrolobjective.html" class="tsd-signature-type">AssessmentSpecificControlObjective</a><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/assessment_results/index.ts:790</li>
+							<li>Defined in src/assessment_plan/index.ts:38</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="local_definitions" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> local_<wbr>definitions</h3>
-					<div class="tsd-signature tsd-kind-icon">local_<wbr>definitions<span class="tsd-signature-symbol">:</span> <a href="localdefinitions.html" class="tsd-signature-type">LocalDefinitions</a></div>
+					<a name="components" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> components</h3>
+					<div class="tsd-signature tsd-kind-icon">components<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/assessment_results/index.ts:791</li>
+							<li>Defined in src/assessment_plan/index.ts:31</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="metadata" class="tsd-anchor"></a>
-					<h3>metadata</h3>
-					<div class="tsd-signature tsd-kind-icon">metadata<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">PublicationMetadata</span></div>
+					<a name="inventory_items" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> inventory_<wbr>items</h3>
+					<div class="tsd-signature tsd-kind-icon">inventory_<wbr>items<span class="tsd-signature-symbol">:</span> <a href="inventoryitem.html" class="tsd-signature-type">InventoryItem</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/assessment_results/index.ts:789</li>
+							<li>Defined in src/assessment_plan/index.ts:34</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="results" class="tsd-anchor"></a>
-					<h3>results</h3>
-					<div class="tsd-signature tsd-kind-icon">results<span class="tsd-signature-symbol">:</span> <a href="assessmentresult.html" class="tsd-signature-type">AssessmentResult</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="remarks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> remarks</h3>
+					<div class="tsd-signature tsd-kind-icon">remarks<span class="tsd-signature-symbol">:</span> <a href="../globals.html#remarks" class="tsd-signature-type">Remarks</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/assessment_results/index.ts:792</li>
+							<li>Defined in src/assessment_plan/index.ts:40</li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="uuid" class="tsd-anchor"></a>
-					<h3>uuid</h3>
-					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <a href="../globals.html#assessmentresultsuniversallyuniqueidentifier" class="tsd-signature-type">AssessmentResultsUniversallyUniqueIdentifier</a></div>
+					<a name="users" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> users</h3>
+					<div class="tsd-signature tsd-kind-icon">users<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{}</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in src/assessment_results/index.ts:788</li>
+							<li>Defined in src/assessment_plan/index.ts:35</li>
 						</ul>
 					</aside>
 				</section>
@@ -176,25 +176,25 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="securityassessmentresultssar.html" class="tsd-kind-icon">Security<wbr>Assessment<wbr>ResultsSAR</a>
+						<a href="saplocaldefinitions.html" class="tsd-kind-icon">SAPLocal<wbr>Definitions</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="securityassessmentresultssar.html#back_matter" class="tsd-kind-icon">back_<wbr>matter</a>
+								<a href="saplocaldefinitions.html#activities" class="tsd-kind-icon">activities</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="securityassessmentresultssar.html#import_ap" class="tsd-kind-icon">import_<wbr>ap</a>
+								<a href="saplocaldefinitions.html#add_objectives_and_methods" class="tsd-kind-icon">add_<wbr>objectives_<wbr>and_<wbr>methods</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="securityassessmentresultssar.html#local_definitions" class="tsd-kind-icon">local_<wbr>definitions</a>
+								<a href="saplocaldefinitions.html#components" class="tsd-kind-icon">components</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="securityassessmentresultssar.html#metadata" class="tsd-kind-icon">metadata</a>
+								<a href="saplocaldefinitions.html#inventory_items" class="tsd-kind-icon">inventory_<wbr>items</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="securityassessmentresultssar.html#results" class="tsd-kind-icon">results</a>
+								<a href="saplocaldefinitions.html#remarks" class="tsd-kind-icon">remarks</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="securityassessmentresultssar.html#uuid" class="tsd-kind-icon">uuid</a>
+								<a href="saplocaldefinitions.html#users" class="tsd-kind-icon">users</a>
 							</li>
 						</ul>
 					</li>
