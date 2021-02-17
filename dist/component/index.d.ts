@@ -3,15 +3,10 @@
  * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
  * and run json-schema-to-typescript to regenerate this file.
  */
-import { PublicationMetadata, Component, Property, AnnotatedProperty, Link, ResponsibleRole, ControlImplementation, BackMatter } from "src";
 /**
  * A globally unique identifier for this component definition instance. This UUID should be changed when this document is revised.
  */
 export declare type ComponentDefinitionUniversallyUniqueIdentifier = string;
-/**
- * A globally unique identifier for a component instance. This UUID should remain unchanged when this document is revised.
- */
-export declare type ComponentUniversallyUniqueIdentifier = string;
 /**
  * A name given to the document, which may be used by a tool for display and navigation.
  */
@@ -33,6 +28,9 @@ export declare type DocumentVersion = string;
  */
 export declare type OSCALVersion = string;
 /**
+ * A name given to the document revision, which may be used by a tool for display and navigation.
+ */
+export declare type DocumentTitle1 = string;
 /**
  * A unique identifier that can be used to reference this property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.
  */
@@ -114,10 +112,6 @@ export declare type LocationUniversallyUniqueIdentifier = string;
  */
 export declare type LocationTitle = string;
 /**
- * Indicates the type of address.
- */
-export declare type AddressType = string;
-/**
  * A single line of an address.
  */
 export declare type AddressLine = string;
@@ -198,6 +192,34 @@ export declare type ComponentTitle = string;
  */
 export declare type ComponentDescription = string;
 /**
+ * A summary of the technological or business purpose of the component.
+ */
+export declare type Purpose = string;
+/**
+ * A globally unique identifier that can be used to reference this service protocol entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.
+ */
+export declare type ServiceProtocolInformationUniversallyUniqueIdentifier = string;
+/**
+ * The common name of the protocol, which should be the appropriate "service name" from the IANA Service Name and Transport Protocol Port Number Registry.
+ */
+export declare type ProtocolName = string;
+/**
+ * A human readable name for the protocol (e.g., Transport Layer Security).
+ */
+export declare type TitleField = string;
+/**
+ * Indicates the starting port number in a port range
+ */
+export declare type Start = number;
+/**
+ * Indicates the ending port number in a port range
+ */
+export declare type End = number;
+/**
+ * Indicates the transport type.
+ */
+export declare type Transport = "TCP" | "UDP";
+/**
  * A unique identifier for the set of implemented controls.
  */
 export declare type ControlImplementationSetIdentifier = string;
@@ -206,7 +228,7 @@ export declare type ControlImplementationSetIdentifier = string;
  */
 export declare type SourceResourceReference = string;
 /**
- * A description of how the specified set of controls are implemented for the containing component or capability.
+ * A description of how the spefied set of controls are implemented for the containing component or capability.
  */
 export declare type ControlImplementationDescription = string;
 /**
@@ -217,6 +239,10 @@ export declare type ControlImplementationIdentifier = string;
  * A reference to a control identifier.
  */
 export declare type ControlIdentifierReference = string;
+/**
+ * A description of how the spefied control is implemented for the containing component or capability.
+ */
+export declare type ControlImplementationDescription1 = string;
 /**
  * A parameter value or set of values.
  */
@@ -240,7 +266,7 @@ export declare type CapabilityDescription = string;
 /**
  * A description of the component, including information about its function.
  */
-export declare type IncorporatesComponentDescription = string;
+export declare type ComponentDescription1 = string;
 /**
  * A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.
  */
@@ -258,6 +284,14 @@ export declare type ResourceDescription = string;
  */
 export declare type CitationText = string;
 /**
+ * A resolvable URI reference to a resource.
+ */
+export declare type HypertextReference1 = string;
+/**
+ * Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.
+ */
+export declare type MediaType1 = string;
+/**
  * Method by which a hash is derived
  */
 export declare type HashAlgorithm = string;
@@ -265,6 +299,10 @@ export declare type HashAlgorithm = string;
  * Name of the file before it was encoded as Base64 to be embedded in a resource. This is the name that will be assigned to the file when the file is decoded.
  */
 export declare type FileName = string;
+/**
+ * Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.
+ */
+export declare type MediaType2 = string;
 export interface OscalComponentSchema {
     component_definition: ComponentDefinition;
 }
@@ -274,20 +312,227 @@ export interface OscalComponentSchema {
 export interface ComponentDefinition {
     uuid: ComponentDefinitionUniversallyUniqueIdentifier;
     metadata: PublicationMetadata;
-    import_component_definitions?: [ImportComponentDefinition, ...ImportComponentDefinition[]];
+    import_component_definitions?: ImportComponentDefinition[];
     components?: {
-        [k: string]: Component;
+        [k: string]: Component & {
+            [k: string]: unknown;
+        };
     };
     capabilities?: {
-        [k: string]: Capability;
+        [k: string]: Capability & {
+            [k: string]: unknown;
+        };
     };
     back_matter?: BackMatter;
+}
+/**
+ * Provides information about the publication and availability of the containing document.
+ */
+export interface PublicationMetadata {
+    title: DocumentTitle;
+    published?: PublicationTimestamp;
+    last_modified: LastModifiedTimestamp;
+    version: DocumentVersion;
+    oscal_version: OSCALVersion;
+    revisions?: RevisionHistoryEntry[];
+    document_ids?: DocumentIdentifier[];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    roles?: Role[];
+    locations?: Location[];
+    parties?: PartyOrganizationOrPerson[];
+    responsible_parties?: {
+        [k: string]: ResponsibleParty & {
+            [k: string]: unknown;
+        };
+    };
+    remarks?: Remarks;
+}
+/**
+ * An entry in a sequential list of revisions to the containing document in reverse chronological order (i.e., most recent previous revision first).
+ */
+export interface RevisionHistoryEntry {
+    title?: DocumentTitle1;
+    published?: PublicationTimestamp;
+    last_modified?: LastModifiedTimestamp;
+    version?: DocumentVersion;
+    oscal_version?: OSCALVersion;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    remarks?: Remarks;
+}
+/**
+ * An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values in some OSCAL formats.
+ */
+export interface Property {
+    uuid?: PropertyUniversallyUniqueIdentifier;
+    name: PropertyName;
+    ns?: PropertyNamespace;
+    class?: PropertyClass;
+    value: string;
+}
+/**
+ * An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair with optional explanatory remarks. The value of an annotated property is a simple scalar value.
+ */
+export interface AnnotatedProperty {
+    name: AnnotatedPropertyName;
+    uuid?: AnnotatedPropertyUniversallyUniqueIdentifier;
+    ns?: AnnotatedPropertyNamespace;
+    value: AnnotatedPropertyValue;
+    remarks?: Remarks;
+}
+/**
+ * A reference to a local or remote resource
+ */
+export interface Link {
+    href: HypertextReference;
+    rel?: Relation;
+    media_type?: MediaType;
+    text?: LinkText;
+}
+/**
+ * A document identifier qualified by an identifier type.
+ */
+export interface DocumentIdentifier {
+    scheme: DocumentIdentificationScheme;
+    identifier: string;
+}
+/**
+ * Defines a function assumed or expected to be assumed by a party in a specific situation.
+ */
+export interface Role {
+    id: RoleIdentifier;
+    title: RoleTitle;
+    short_name?: RoleShortName;
+    description?: RoleDescription;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    remarks?: Remarks;
+}
+/**
+ * A location, with associated metadata that can be referenced.
+ */
+export interface Location {
+    uuid: LocationUniversallyUniqueIdentifier;
+    title?: LocationTitle;
+    address: Address;
+    email_addresses?: EmailAddress[];
+    telephone_numbers?: TelephoneNumber[];
+    urls?: LocationURL[];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    remarks?: Remarks;
+}
+/**
+ * A postal address for the location.
+ */
+export interface Address {
+    type?: string;
+    addr_lines?: AddressLine[];
+    city?: City;
+    state?: State;
+    postal_code?: PostalCode;
+    country?: CountryCode;
+}
+/**
+ * Contact number by telephone.
+ */
+export interface TelephoneNumber {
+    type?: TypeFlag;
+    number: string;
+}
+/**
+ * A responsible entity which is either a person or an organization.
+ */
+export interface PartyOrganizationOrPerson {
+    uuid: PartyUniversallyUniqueIdentifier;
+    type: PartyType;
+    name?: PartyName;
+    short_name?: PartyShortName;
+    external_ids?: PartyExternalIdentifier[];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    email_addresses?: EmailAddress[];
+    telephone_numbers?: TelephoneNumber[];
+    addresses?: Address[];
+    location_uuids?: LocationReference[];
+    member_of_organizations?: OrganizationalAffiliation[];
+    remarks?: Remarks;
+}
+/**
+ * An identifier for a person or organization using a designated scheme. e.g. an Open Researcher and Contributor ID (ORCID)
+ */
+export interface PartyExternalIdentifier {
+    scheme: ExternalIdentifierSchema;
+    id: string;
+}
+/**
+ * A reference to a set of organizations or persons that have responsibility for performing a referenced role in the context of the containing object.
+ */
+export interface ResponsibleParty {
+    party_uuids: PartyReference[];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    remarks?: Remarks;
 }
 /**
  * Loads a component definition from another resource.
  */
 export interface ImportComponentDefinition {
     href: HyperlinkReference;
+}
+/**
+ * A defined component that can be part of an implemented system.
+ */
+export interface Component {
+    type: ComponentType;
+    title: ComponentTitle;
+    description: ComponentDescription;
+    purpose?: Purpose;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    responsible_roles?: {
+        [k: string]: ResponsibleRole & {
+            [k: string]: unknown;
+        };
+    };
+    protocols?: ServiceProtocolInformation[];
+    control_implementations?: ControlImplementationSet[];
+    remarks?: Remarks;
+}
+/**
+ * A reference to one or more roles with responsibility for performing a function relative to the containing object.
+ */
+export interface ResponsibleRole {
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    party_uuids?: PartyReference[];
+    remarks?: Remarks;
+}
+/**
+ * Information about the protocol used to provide a service.
+ */
+export interface ServiceProtocolInformation {
+    uuid?: ServiceProtocolInformationUniversallyUniqueIdentifier;
+    name: ProtocolName;
+    title?: TitleField;
+    port_ranges?: PortRange[];
+}
+/**
+ * Where applicable this is the IPv4 port range on which the service operates.
+ */
+export interface PortRange {
+    start?: Start;
+    end?: End;
+    transport?: Transport;
 }
 /**
  * Defines how the component or capability supports a set of controls.
@@ -299,7 +544,40 @@ export interface ControlImplementationSet {
     props?: Property[];
     annotations?: AnnotatedProperty[];
     links?: Link[];
-    implemented_requirements: [ControlImplementation, ...ControlImplementation[]];
+    implemented_requirements: ControlImplementation[];
+}
+/**
+ * Describes how the containing component or capability implements an individual control.
+ */
+export interface ControlImplementation {
+    uuid: ControlImplementationIdentifier;
+    control_id?: ControlIdentifierReference;
+    description: ControlImplementationDescription1;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    responsible_roles?: {
+        [k: string]: ResponsibleRole & {
+            [k: string]: unknown;
+        };
+    };
+    set_parameters?: {
+        [k: string]: SetParameterValue & {
+            [k: string]: unknown;
+        };
+    };
+    statements?: {
+        [k: string]: ControlStatementImplementation & {
+            [k: string]: unknown;
+        };
+    };
+    remarks?: Remarks;
+}
+/**
+ * Identifies the parameter that will be set by the enclosed value.
+ */
+export interface SetParameterValue {
+    values: ParameterValue[];
 }
 /**
  * Identifies which statements within a control are addressed.
@@ -310,7 +588,11 @@ export interface ControlStatementImplementation {
     props?: Property[];
     annotations?: AnnotatedProperty[];
     links?: Link[];
-    responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
+    responsible_roles?: {
+        [k: string]: ResponsibleRole & {
+            [k: string]: unknown;
+        };
+    };
     remarks?: Remarks;
 }
 /**
@@ -323,14 +605,74 @@ export interface Capability {
     annotations?: AnnotatedProperty[];
     links?: Link[];
     incorporates_components?: {
-        [k: string]: IncorporatesComponent;
+        [k: string]: IncorporatesComponent & {
+            [k: string]: unknown;
+        };
     };
-    control_implementations?: [ControlImplementationSet, ...ControlImplementationSet[]];
+    control_implementations?: ControlImplementationSet[];
     remarks?: Remarks;
 }
 /**
  * TBD
  */
 export interface IncorporatesComponent {
-    description: IncorporatesComponentDescription;
+    description: ComponentDescription1;
+}
+/**
+ * A collection of resources, which may be included directly or by reference.
+ */
+export interface BackMatter {
+    resources?: Resource[];
+}
+/**
+ * A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equavalent internet resources.
+ */
+export interface Resource {
+    uuid: ResourceUniversallyUniqueIdentifier;
+    title?: ResourceTitle;
+    description?: ResourceDescription;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    document_ids?: DocumentIdentifier[];
+    citation?: Citation;
+    rlinks?: ResourceLink[];
+    base64?: Base64;
+    remarks?: Remarks;
+}
+/**
+ * A citation consisting of end note text and optional structured bibliographic data.
+ */
+export interface Citation {
+    text: CitationText;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    biblio?: BibliographicDefinition;
+}
+/**
+ * A container for structured bibliographic information. The model of this information is undefined by OSCAL.
+ */
+export interface BibliographicDefinition {
+}
+/**
+ * A pointer to an external resource with an optional hash for verification and change detection.
+ */
+export interface ResourceLink {
+    href: HypertextReference1;
+    media_type?: MediaType1;
+    hashes?: Hash[];
+}
+/**
+ * A representation of a cryptographic digest generated over a resource using a specified hash algorithm.
+ */
+export interface Hash {
+    algorithm: HashAlgorithm;
+    value: string;
+}
+/**
+ * The Base64 alphabet in RFC 2045 _ aligned with XSD.
+ */
+export interface Base64 {
+    filename?: FileName;
+    media_type?: MediaType2;
+    value: string;
 }

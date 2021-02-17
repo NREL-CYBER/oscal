@@ -3,51 +3,22 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var _exportNames = {
-  SystemSecurityPlan: true,
-  PlanOfActionAndMilestones: true,
-  Profile: true,
-  Catalog: true,
-  SecurityAssessmentResults: true,
-  SecurityAssessmentPlan: true,
-  exportOscal: true,
-  importOscal: true,
-  OrganizationSecurityPolicy: true
-};
-Object.defineProperty(exports, "SystemSecurityPlan", {
+Object.defineProperty(exports, "SecurityAssessmentPlanSAP", {
   enumerable: true,
   get: function get() {
-    return _ssp.SystemSecurityPlan;
+    return _assessment_plan.SecurityAssessmentPlanSAP;
   }
 });
-Object.defineProperty(exports, "PlanOfActionAndMilestones", {
+Object.defineProperty(exports, "SecurityAssessmentResultsSAR", {
   enumerable: true,
   get: function get() {
-    return _poam.PlanOfActionAndMilestones;
-  }
-});
-Object.defineProperty(exports, "Profile", {
-  enumerable: true,
-  get: function get() {
-    return _profile.Profile;
+    return _assessment_results.SecurityAssessmentResultsSAR;
   }
 });
 Object.defineProperty(exports, "Catalog", {
   enumerable: true,
   get: function get() {
     return _catalog.Catalog;
-  }
-});
-Object.defineProperty(exports, "SecurityAssessmentResults", {
-  enumerable: true,
-  get: function get() {
-    return _assessment_results.SecurityAssessmentResults;
-  }
-});
-Object.defineProperty(exports, "SecurityAssessmentPlan", {
-  enumerable: true,
-  get: function get() {
-    return _assessment_plan.SecurityAssessmentPlan;
   }
 });
 Object.defineProperty(exports, "exportOscal", {
@@ -68,42 +39,30 @@ Object.defineProperty(exports, "OrganizationSecurityPolicy", {
     return _osp.OrganizationSecurityPolicy;
   }
 });
-
-var _ssp = require("./ssp");
-
-var _poam = require("./poam");
-
-Object.keys(_poam).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
-  if (key in exports && exports[key] === _poam[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _poam[key];
-    }
-  });
+Object.defineProperty(exports, "PlanOfActionAndMilestonesPOAM", {
+  enumerable: true,
+  get: function get() {
+    return _poam.PlanOfActionAndMilestonesPOAM;
+  }
+});
+Object.defineProperty(exports, "Profile", {
+  enumerable: true,
+  get: function get() {
+    return _profile.Profile;
+  }
+});
+Object.defineProperty(exports, "SystemSecurityPlanSSP", {
+  enumerable: true,
+  get: function get() {
+    return _ssp.SystemSecurityPlanSSP;
+  }
 });
 
-var _profile = require("./profile");
-
-var _catalog = require("./catalog");
-
-Object.keys(_catalog).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
-  if (key in exports && exports[key] === _catalog[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _catalog[key];
-    }
-  });
-});
+var _assessment_plan = require("./assessment_plan");
 
 var _assessment_results = require("./assessment_results");
 
-var _assessment_plan = require("./assessment_plan");
+var _catalog = require("./catalog");
 
 var _exportOscal = _interopRequireDefault(require("./exportOscal"));
 
@@ -111,18 +70,10 @@ var _importOscal = _interopRequireDefault(require("./importOscal"));
 
 var _osp = require("./osp");
 
-var _shared = require("./shared");
+var _poam = require("./poam");
 
-Object.keys(_shared).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
-  if (key in exports && exports[key] === _shared[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _shared[key];
-    }
-  });
-});
+var _profile = require("./profile");
+
+var _ssp = require("./ssp");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }

@@ -3,14 +3,242 @@
  * DO NOT MODIFY IT BY HAND. Instead, modify the source JSONSchema file,
  * and run json-schema-to-typescript to regenerate this file.
  */
-import { AnnotatedProperty, BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ImportSystemSecurityPlan, InventoryItem, Link, Property, PublicationMetadata, Remarks, SystemIdentification } from "../shared";
-import { AssociatedRisk, IdentifiedRisk, IdentifiesTheSubject, Origin } from "../shared/IdentifiedRisk";
-import { RelatedObservation } from "../shared/Observation";
-import { DescriptionOfRequiredAsset, TitleForRequiredAsset } from "../shared/Task";
 /**
  * Uniquely identifies this POA&M. This UUID must be changed each time the content of the POA&M changes.
  */
 export declare type POAMUniversallyUniqueIdentifier = string;
+/**
+ * A name given to the document, which may be used by a tool for display and navigation.
+ */
+export declare type DocumentTitle = string;
+/**
+ * The date and time the document was published. The date-time value must be formatted according to RFC 3339 with full time and time zone included.
+ */
+export declare type PublicationTimestamp = string;
+/**
+ * The date and time the document was last modified. The date-time value must be formatted according to RFC 3339 with full time and time zone included.
+ */
+export declare type LastModifiedTimestamp = string;
+/**
+ * A string used to distinguish the current version of the document from other previous (and future) versions.
+ */
+export declare type DocumentVersion = string;
+/**
+ * The OSCAL model version the document was authored against.
+ */
+export declare type OSCALVersion = string;
+/**
+ * A name given to the document revision, which may be used by a tool for display and navigation.
+ */
+export declare type DocumentTitle1 = string;
+/**
+ * A unique identifier that can be used to reference this property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.
+ */
+export declare type PropertyUniversallyUniqueIdentifier = string;
+/**
+ * A textual label that uniquely identifies a specific attribute, characteristic, or quality of the property's containing object.
+ */
+export declare type PropertyName = string;
+/**
+ * A namespace qualifying the property's name. This allows different organizations to associate distinct semantics with the same name.
+ */
+export declare type PropertyNamespace = string;
+/**
+ * A textual label that provides a sub-type or characterization of the property's name. This can be used to further distinguish or discriminate between the semantics of multiple properties of the same object with the same name and ns.
+ */
+export declare type PropertyClass = string;
+/**
+ * A textual label that uniquely identifies a specific attribute, characteristic, or quality of the annotated property's containing object.
+ */
+export declare type AnnotatedPropertyName = string;
+/**
+ * A unique identifier that can be used to reference this annotated property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.
+ */
+export declare type AnnotatedPropertyUniversallyUniqueIdentifier = string;
+/**
+ * A namespace qualifying the annotated property's name. This allows different organizations to associate distinct semantics with the same name.
+ */
+export declare type AnnotatedPropertyNamespace = string;
+/**
+ * Indicates the value of the attribute, characteristic, or quality.
+ */
+export declare type AnnotatedPropertyValue = string;
+/**
+ * Additional commentary on the containing object.
+ */
+export declare type Remarks = string;
+/**
+ * A resolvable URL reference to a resource.
+ */
+export declare type HypertextReference = string;
+/**
+ * Describes the type of relationship provided by the link. This can be an indicator of the link's purpose.
+ */
+export declare type Relation = string;
+/**
+ * Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.
+ */
+export declare type MediaType = string;
+/**
+ * A textual label to associate with the link, which may be used for presentation in a tool.
+ */
+export declare type LinkText = string;
+/**
+ * Qualifies the kind of document identifier.
+ */
+export declare type DocumentIdentificationScheme = string;
+/**
+ * A unique identifier for a specific role instance. This identifier's uniqueness is document scoped and is intended to be consistent for the same role across minor revisions of the document.
+ */
+export declare type RoleIdentifier = string;
+/**
+ * A name given to the role, which may be used by a tool for display and navigation.
+ */
+export declare type RoleTitle = string;
+/**
+ * A short common name, abbreviation, or acronym for the role.
+ */
+export declare type RoleShortName = string;
+/**
+ * A summary of the role's purpose and associated responsibilities.
+ */
+export declare type RoleDescription = string;
+/**
+ * A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.
+ */
+export declare type LocationUniversallyUniqueIdentifier = string;
+/**
+ * A name given to the location, which may be used by a tool for display and navigation.
+ */
+export declare type LocationTitle = string;
+/**
+ * A single line of an address.
+ */
+export declare type AddressLine = string;
+/**
+ * City, town or geographical region for the mailing address.
+ */
+export declare type City = string;
+/**
+ * State, province or analogous geographical region for mailing address
+ */
+export declare type State = string;
+/**
+ * Postal or ZIP code for mailing address
+ */
+export declare type PostalCode = string;
+/**
+ * The ISO 3166-1 alpha-2 country code for the mailing address.
+ */
+export declare type CountryCode = string;
+/**
+ * An email address as defined by RFC 5322 Section 3.4.1.
+ */
+export declare type EmailAddress = string;
+/**
+ * Indicates the type of phone number.
+ */
+export declare type TypeFlag = string;
+/**
+ * The uniform resource locator (URL) for a web site or Internet presence associated with the location.
+ */
+export declare type LocationURL = string;
+/**
+ * A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given party across revisions of the document.
+ */
+export declare type PartyUniversallyUniqueIdentifier = string;
+/**
+ * A category describing the kind of party the object describes.
+ */
+export declare type PartyType = "person" | "organization";
+/**
+ * The full name of the party. This is typically the legal name associated with the party.
+ */
+export declare type PartyName = string;
+/**
+ * A short common name, abbreviation, or acronym for the party.
+ */
+export declare type PartyShortName = string;
+/**
+ * Indicates the type of external identifier.
+ */
+export declare type ExternalIdentifierSchema = string;
+/**
+ * References a location defined in metadata.
+ */
+export declare type LocationReference = string;
+/**
+ * Identifies that the party object is a member of the organization associated with the provided UUID.
+ */
+export declare type OrganizationalAffiliation = string;
+/**
+ * References a party defined in metadata.
+ */
+export declare type PartyReference = string;
+/**
+ * >A resolvable URL reference to the system security plan for the system being assessed.
+ */
+export declare type SystemSecurityPlanReference = string;
+/**
+ * Identifies the identification system from which the provided identifier was assigned.
+ */
+export declare type IdentificationSystemType = string;
+/**
+ * A category describing the purpose of the component.
+ */
+export declare type ComponentType = string;
+/**
+ * A human readable name for the system component.
+ */
+export declare type ComponentTitle = string;
+/**
+ * A description of the component, including information about its function.
+ */
+export declare type ComponentDescription = string;
+/**
+ * A summary of the technological or business purpose of the component.
+ */
+export declare type Purpose = string;
+/**
+ * The operational status.
+ */
+export declare type State1 = "under-development" | "operational" | "disposition" | "other";
+/**
+ * A globally unique identifier that can be used to reference this service protocol entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.
+ */
+export declare type ServiceProtocolInformationUniversallyUniqueIdentifier = string;
+/**
+ * The common name of the protocol, which should be the appropriate "service name" from the IANA Service Name and Transport Protocol Port Number Registry.
+ */
+export declare type ProtocolName = string;
+/**
+ * A human readable name for the protocol (e.g., Transport Layer Security).
+ */
+export declare type TitleField = string;
+/**
+ * Indicates the starting port number in a port range
+ */
+export declare type Start = number;
+/**
+ * Indicates the ending port number in a port range
+ */
+export declare type End = number;
+/**
+ * Indicates the transport type.
+ */
+export declare type Transport = "TCP" | "UDP";
+/**
+ * A globally unique identifier that can be used to reference this inventory item entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.
+ */
+export declare type InventoryItemUniversallyUniqueIdentifier = string;
+/**
+ * A summary of the inventory item stating its purpose within the system.
+ */
+export declare type InventoryItemDescription = string;
+/**
+ * A reference to a component that is implemented as part of an inventory item.
+ */
+export declare type ComponentUniversallyUniqueIdentifierReference = string;
 /**
  * Uniquely identifies this observation. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. Once assigned, a UUID should be consistantly used for a given observation across revisions.
  */
@@ -20,7 +248,7 @@ export declare type ObservationUniversallyUniqueIdentifier = string;
  */
 export declare type ObservationTitle = string;
 /**
- * A human_readable description of this assessment observation.
+ * A human-readable description of this assessment observation.
  */
 export declare type ObservatonDescription = string;
 /**
@@ -34,7 +262,7 @@ export declare type ObservationType = string;
 /**
  * The kind of actor.
  */
-export declare type ActorType = "tool" | "assessment_platform" | "party";
+export declare type ActorType = "tool" | "assessment-platform" | "party";
 /**
  * A pointer to the tool or person based on the associated type.
  */
@@ -44,6 +272,38 @@ export declare type ActorUUIDReference = string;
  */
 export declare type ActorRole = string;
 /**
+ * References a unique action by UUID.
+ */
+export declare type ActionUniversallyUniqueIdentifierReference = string;
+/**
+ * References a unique task by UUID.
+ */
+export declare type TaskUniversallyUniqueIdentifierReference = string;
+/**
+ * Indicates the type of assessment subject, such as a component, inventory, item, location, or party represented by this selection statement.
+ */
+export declare type SubjectType = string;
+/**
+ * A human-readable description of the collection of subjects being included in this assessment.
+ */
+export declare type IncludeSubjectsDescription = string;
+/**
+ * A key word to indicate all.
+ */
+export declare type All = string;
+/**
+ * A pointer to a component, inventory-item, location, party, user, or resource using it's UUID.
+ */
+export declare type UUIDReference = string;
+/**
+ * A pointer to a component, inventory-item, location, party, user, or resource using it's UUID.
+ */
+export declare type UUIDReference1 = string;
+/**
+ * Used to indicate the type of object pointed to by the uuid-ref.
+ */
+export declare type UniversallyUniqueIdentifierReferenceType = string;
+/**
  * The title or name for the referenced subject.
  */
 export declare type SubjectReferenceTitle = string;
@@ -52,7 +312,7 @@ export declare type SubjectReferenceTitle = string;
  */
 export declare type RelevantEvidenceReference = string;
 /**
- * A human_readable description of this evidence.
+ * A human-readable description of this evidence.
  */
 export declare type RelevantEvidenceDescription = string;
 /**
@@ -64,13 +324,17 @@ export declare type RiskUniversallyUniqueIdentifier = string;
  */
 export declare type RiskTitle = string;
 /**
- * A human_readable summary of what was identified regarding the risk.
+ * A human-readable summary of what was identified regarding the risk.
  */
 export declare type RiskDescription = string;
 /**
  * An summary of impact for how the risk affects the system.
  */
 export declare type RiskStatement = string;
+/**
+ * Describes the status of the associated risk.
+ */
+export declare type Status1 = string;
 /**
  * Specifies the source of the threat information.
  */
@@ -100,21 +364,101 @@ export declare type MitigatingFactorUniversallyUniqueIdentifier = string;
  */
 export declare type ImplementationUUID = string;
 /**
- * A human_readable description of this mitigating factor.
+ * A human-readable description of this mitigating factor.
  */
 export declare type MitigatingFactorDescription = string;
+/**
+ * The date/time by which the risk must be resolved.
+ */
+export declare type RiskResolutionDeadline = string;
+/**
+ * Uniquely identifies this remediation. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. Once assigned, a UUID should be consistantly used for a given remediation across revisions.
+ */
+export declare type RemediationUniversallyUniqueIdentifier = string;
+/**
+ * Identifies whether this is a recommendation, such as from an assessor or tool, or an actual plan accepted by the system owner.
+ */
+export declare type RemediationIntent = string;
+/**
+ * The title for this response activity.
+ */
+export declare type ResponseTitle = string;
+/**
+ * A human-readable description of this response plan.
+ */
+export declare type ResponseDescription = string;
 /**
  * Uniquely identifies this required asset. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. Once assigned, a UUID should be consistantly used for a given required asset across revisions.
  */
 export declare type RequiredUniversallyUniqueIdentifier = string;
 /**
+ * The title for this required asset.
+ */
+export declare type TitleForRequiredAsset = string;
+/**
+ * A human-readable description of this required asset.
+ */
+export declare type DescriptionOfRequiredAsset = string;
+/**
+ * Uniquely identifies this assessment task.
+ */
+export declare type TaskUniversallyUniqueIdentifier = string;
+/**
+ * The title for this task.
+ */
+export declare type TaskTitle = string;
+/**
+ * A human-readable description of this task.
+ */
+export declare type TaskDescription = string;
+/**
+ * The task must occur on or after the specified date.
+ */
+export declare type TaskStartDate = string;
+/**
+ * The task must occur on or before the specified date.
+ */
+export declare type TaskEndDate = string;
+/**
+ * Uniquely identifies an assessment event. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. A UUID should be consistantly used for this schedule across revisions of the document.
+ */
+export declare type RiskLogEntryUniversallyUniqueIdentifier = string;
+/**
+ * The title for this event.
+ */
+export declare type ActionTitle = string;
+/**
+ * A human-readable description of this event.
+ */
+export declare type ActionDescription = string;
+/**
+ * Identifies the start date and time of an event.
+ */
+export declare type Start1 = string;
+/**
+ * Identifies the end date and time of an event. If the event is a point in time, the start and end will be the same date and time.
+ */
+export declare type End1 = string;
+/**
  * A pointer to the party who is making the log entry.
  */
 export declare type PartyUUIDReference = string;
 /**
- * A point to the role_id of the role in which the party is making the log entry.
+ * A point to the role-id of the role in which the party is making the log entry.
  */
-export declare type LogActorRole = string;
+export declare type ActorRole1 = string;
+/**
+ * Describes the status of the associated risk.
+ */
+export declare type RiskStatus = string;
+/**
+ * References a unique risk response by UUID.
+ */
+export declare type ResponseUniversallyUniqueIdentifierReference = string;
+/**
+ * References an observation defined in the list of observations.
+ */
+export declare type ObservationUniversallyUniqueIdentifierReference = string;
 /**
  * Uniquely identifies the POA&M entry. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. A UUID should be consistantly used for a given POA&M item across revisions of the document.
  */
@@ -124,7 +468,7 @@ export declare type POAMItemUniversallyUniqueIdentifier = string;
  */
 export declare type POAMItemTitle = string;
 /**
- * A human_readable description of POA&M item.
+ * A human-readable description of POA&M item.
  */
 export declare type POAMItemDescription = string;
 /**
@@ -132,29 +476,336 @@ export declare type POAMItemDescription = string;
  */
 export declare type CollectedField = string;
 /**
- * Date/time identifying when the finding information is out_of_date and no longer valid. Typically used with continuous assessment scenarios.
+ * Date/time identifying when the finding information is out-of-date and no longer valid. Typically used with continuous assessment scenarios.
  */
 export declare type ExpiresField = string;
 /**
- * A plan of action and milestones which identifies initial and residual risks, deviations, and disposition, such as those required by FedRAMP.
+ * References an observation defined in the list of observations.
  */
-export interface PlanOfActionAndMilestones {
-    uuid: POAMUniversallyUniqueIdentifier;
-    metadata: PublicationMetadata;
-    import_ssp?: ImportSystemSecurityPlan;
-    system_id?: SystemIdentification;
-    local_definitions?: PoamLocalDefinitions;
-    observations?: Objective[];
-    risks?: IdentifiedRisk[];
-    poam_items: POAMItem[];
-    back_matter?: BackMatter;
+export declare type ObservationUniversallyUniqueIdentifierReference1 = string;
+/**
+ * References an risk defined in the list of risks.
+ */
+export declare type RiskUniversallyUniqueIdentifierReference = string;
+/**
+ * A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.
+ */
+export declare type ResourceUniversallyUniqueIdentifier = string;
+/**
+ * A name given to the resource, which may be used by a tool for display and navigation.
+ */
+export declare type ResourceTitle = string;
+/**
+ * A short summary of the resource used to indicate the purpose of the resource.
+ */
+export declare type ResourceDescription = string;
+/**
+ * A line of citation text.
+ */
+export declare type CitationText = string;
+/**
+ * A resolvable URI reference to a resource.
+ */
+export declare type HypertextReference1 = string;
+/**
+ * Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.
+ */
+export declare type MediaType1 = string;
+/**
+ * Method by which a hash is derived
+ */
+export declare type HashAlgorithm = string;
+/**
+ * Name of the file before it was encoded as Base64 to be embedded in a resource. This is the name that will be assigned to the file when the file is decoded.
+ */
+export declare type FileName = string;
+/**
+ * Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.
+ */
+export declare type MediaType2 = string;
+export interface OscalPoamSchema {
+    "plan-of-action-and-milestones": PlanOfActionAndMilestonesPOAM;
 }
 /**
- * Allows components, and inventory_items to be defined within the POA&M for circumstances where no OSCAL_based SSP exists, or is not delivered with the POA&M.
+ * A plan of action and milestones which identifies initial and residual risks, deviations, and disposition, such as those required by FedRAMP.
  */
-export interface PoamLocalDefinitions {
-    components?: Record<ComponentUniversallyUniqueIdentifierReference, Component>;
-    inventory_items?: InventoryItem[];
+export interface PlanOfActionAndMilestonesPOAM {
+    uuid: POAMUniversallyUniqueIdentifier;
+    metadata: PublicationMetadata;
+    "import-ssp"?: ImportSystemSecurityPlan;
+    "system-id"?: SystemIdentification;
+    "local-definitions"?: LocalDefinitions;
+    observations?: Objective[];
+    risks?: IdentifiedRisk[];
+    "poam-items": POAMItem[];
+    "back-matter"?: BackMatter;
+}
+/**
+ * Provides information about the publication and availability of the containing document.
+ */
+export interface PublicationMetadata {
+    title: DocumentTitle;
+    published?: PublicationTimestamp;
+    "last-modified": LastModifiedTimestamp;
+    version: DocumentVersion;
+    "oscal-version": OSCALVersion;
+    revisions?: RevisionHistoryEntry[];
+    "document-ids"?: DocumentIdentifier[];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    roles?: Role[];
+    locations?: Location[];
+    parties?: PartyOrganizationOrPerson[];
+    "responsible-parties"?: {
+        [k: string]: ResponsibleParty & {
+            [k: string]: unknown;
+        };
+    };
+    remarks?: Remarks;
+}
+/**
+ * An entry in a sequential list of revisions to the containing document in reverse chronological order (i.e., most recent previous revision first).
+ */
+export interface RevisionHistoryEntry {
+    title?: DocumentTitle1;
+    published?: PublicationTimestamp;
+    "last-modified"?: LastModifiedTimestamp;
+    version?: DocumentVersion;
+    "oscal-version"?: OSCALVersion;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    remarks?: Remarks;
+}
+/**
+ * An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values in some OSCAL formats.
+ */
+export interface Property {
+    uuid?: PropertyUniversallyUniqueIdentifier;
+    name: PropertyName;
+    ns?: PropertyNamespace;
+    class?: PropertyClass;
+    value: string;
+}
+/**
+ * An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair with optional explanatory remarks. The value of an annotated property is a simple scalar value.
+ */
+export interface AnnotatedProperty {
+    name: AnnotatedPropertyName;
+    uuid?: AnnotatedPropertyUniversallyUniqueIdentifier;
+    ns?: AnnotatedPropertyNamespace;
+    value: AnnotatedPropertyValue;
+    remarks?: Remarks;
+}
+/**
+ * A reference to a local or remote resource
+ */
+export interface Link {
+    href: HypertextReference;
+    rel?: Relation;
+    "media-type"?: MediaType;
+    text?: LinkText;
+}
+/**
+ * A document identifier qualified by an identifier type.
+ */
+export interface DocumentIdentifier {
+    scheme: DocumentIdentificationScheme;
+    identifier: string;
+}
+/**
+ * Defines a function assumed or expected to be assumed by a party in a specific situation.
+ */
+export interface Role {
+    id: RoleIdentifier;
+    title: RoleTitle;
+    "short-name"?: RoleShortName;
+    description?: RoleDescription;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    remarks?: Remarks;
+}
+/**
+ * A location, with associated metadata that can be referenced.
+ */
+export interface Location {
+    uuid: LocationUniversallyUniqueIdentifier;
+    title?: LocationTitle;
+    address: Address;
+    "email-addresses"?: EmailAddress[];
+    "telephone-numbers"?: TelephoneNumber[];
+    urls?: LocationURL[];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    remarks?: Remarks;
+}
+/**
+ * A postal address for the location.
+ */
+export interface Address {
+    type?: string;
+    "addr-lines"?: AddressLine[];
+    city?: City;
+    state?: State;
+    "postal-code"?: PostalCode;
+    country?: CountryCode;
+}
+/**
+ * Contact number by telephone.
+ */
+export interface TelephoneNumber {
+    type?: TypeFlag;
+    number: string;
+}
+/**
+ * A responsible entity which is either a person or an organization.
+ */
+export interface PartyOrganizationOrPerson {
+    uuid: PartyUniversallyUniqueIdentifier;
+    type: PartyType;
+    name?: PartyName;
+    "short-name"?: PartyShortName;
+    "external-ids"?: PartyExternalIdentifier[];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    "email-addresses"?: EmailAddress[];
+    "telephone-numbers"?: TelephoneNumber[];
+    addresses?: Address[];
+    "location-uuids"?: LocationReference[];
+    "member-of-organizations"?: OrganizationalAffiliation[];
+    remarks?: Remarks;
+}
+/**
+ * An identifier for a person or organization using a designated scheme. e.g. an Open Researcher and Contributor ID (ORCID)
+ */
+export interface PartyExternalIdentifier {
+    scheme: ExternalIdentifierSchema;
+    id: string;
+}
+/**
+ * A reference to a set of organizations or persons that have responsibility for performing a referenced role in the context of the containing object.
+ */
+export interface ResponsibleParty {
+    "party-uuids": PartyReference[];
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    remarks?: Remarks;
+}
+/**
+ * Used by the assessment plan and POA&M to import information about the system.
+ */
+export interface ImportSystemSecurityPlan {
+    href: SystemSecurityPlanReference;
+    remarks?: Remarks;
+}
+/**
+ * A unique identifier for the system described by this system security plan.
+ */
+export interface SystemIdentification {
+    "identifier-type"?: IdentificationSystemType;
+    id: string;
+}
+/**
+ * Allows components, and inventory-items to be defined within the POA&M for circumstances where no OSCAL-based SSP exists, or is not delivered with the POA&M.
+ */
+export interface LocalDefinitions {
+    components?: {
+        [k: string]: Component & {
+            [k: string]: unknown;
+        };
+    };
+    "inventory-items"?: InventoryItem[];
+    remarks?: Remarks;
+}
+/**
+ * A defined component that can be part of an implemented system.
+ */
+export interface Component {
+    type: ComponentType;
+    title: ComponentTitle;
+    description: ComponentDescription;
+    purpose?: Purpose;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    status: Status;
+    "responsible-roles"?: {
+        [k: string]: ResponsibleRole & {
+            [k: string]: unknown;
+        };
+    };
+    protocols?: ServiceProtocolInformation[];
+    remarks?: Remarks;
+}
+/**
+ * Describes the operational status of the system component.
+ */
+export interface Status {
+    state: State1;
+    remarks?: Remarks;
+}
+/**
+ * A reference to one or more roles with responsibility for performing a function relative to the containing object.
+ */
+export interface ResponsibleRole {
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    "party-uuids"?: PartyReference[];
+    remarks?: Remarks;
+}
+/**
+ * Information about the protocol used to provide a service.
+ */
+export interface ServiceProtocolInformation {
+    uuid?: ServiceProtocolInformationUniversallyUniqueIdentifier;
+    name: ProtocolName;
+    title?: TitleField;
+    "port-ranges"?: PortRange[];
+}
+/**
+ * Where applicable this is the IPv4 port range on which the service operates.
+ */
+export interface PortRange {
+    start?: Start;
+    end?: End;
+    transport?: Transport;
+}
+/**
+ * A single managed inventory item within the system.
+ */
+export interface InventoryItem {
+    uuid: InventoryItemUniversallyUniqueIdentifier;
+    description: InventoryItemDescription;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    "responsible-parties"?: {
+        [k: string]: ResponsibleParty & {
+            [k: string]: unknown;
+        };
+    };
+    "implemented-components"?: ImplementedComponent[];
+    remarks?: Remarks;
+}
+/**
+ * The set of components that are implemented in a given system inventory item.
+ */
+export interface ImplementedComponent {
+    "component-uuid": ComponentUniversallyUniqueIdentifierReference;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    "responsible-parties"?: {
+        [k: string]: ResponsibleParty & {
+            [k: string]: unknown;
+        };
+    };
     remarks?: Remarks;
 }
 /**
@@ -171,7 +822,93 @@ export interface Objective {
     types?: ObservationType[];
     origins?: Origin[];
     subjects?: IdentifiesTheSubject[];
-    relevant_evidence?: RelevantEvidence[];
+    "relevant-evidence"?: RelevantEvidence[];
+    remarks?: Remarks;
+}
+/**
+ * Identifies the source of the finding, such as a tool, interviewed person, or activity.
+ */
+export interface Origin {
+    actors: AssessmentActor[];
+    "related-actions"?: ActionReference[];
+    "related-tasks"?: TaskReference[];
+}
+/**
+ * The actor that produces an observation, a finding, or a risk. One or more actor type can be used to specify a person that is using a tool.
+ */
+export interface AssessmentActor {
+    type: ActorType;
+    "uuid-ref": ActorUUIDReference;
+    "role-id"?: ActorRole;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+}
+/**
+ * Identifies an individual action for which the containing object is a consequence of.
+ */
+export interface ActionReference {
+    "action-uuid": ActionUniversallyUniqueIdentifierReference;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    "responsible-parties"?: {
+        [k: string]: ResponsibleParty & {
+            [k: string]: unknown;
+        };
+    };
+    remarks?: Remarks;
+}
+/**
+ * Identifies an individual task for which the containing object is a consequence of.
+ */
+export interface TaskReference {
+    "task-uuid": TaskUniversallyUniqueIdentifierReference;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    "responsible-parties"?: {
+        [k: string]: ResponsibleParty & {
+            [k: string]: unknown;
+        };
+    };
+    "assessment-subjects"?: SubjectOfAssessment[];
+    remarks?: Remarks;
+}
+/**
+ * Identifies system elements being assessed, such as components, inventory items, and locations. In the assessment plan, this identifies a planned assessment subject. In the assessment results this is an actual assessment subject, and reflects any changes from the plan. exactly what will be the focus of this assessment. Any subjects not identified in this way are out-of-scope.
+ */
+export interface SubjectOfAssessment {
+    type: SubjectType;
+    description?: IncludeSubjectsDescription;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    "include-all"?: All;
+    "include-subjects"?: SelectAssessmentSubject[];
+    "exclude-subjects"?: SelectAssessmentSubject[];
+    remarks?: Remarks;
+}
+/**
+ * Identifies a set of assessment subjects to include/exclude by UUID.
+ */
+export interface SelectAssessmentSubject {
+    "uuid-ref": UUIDReference;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    remarks?: Remarks;
+}
+/**
+ * A pointer to a resource based on its universally unique identifier (UUID). Use type to indicate whether the identified resource is a component, inventory item, location, user, or something else.
+ */
+export interface IdentifiesTheSubject {
+    "uuid-ref": UUIDReference1;
+    type: UniversallyUniqueIdentifierReferenceType;
+    title?: SubjectReferenceTitle;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
     remarks?: Remarks;
 }
 /**
@@ -186,7 +923,28 @@ export interface RelevantEvidence {
     remarks?: Remarks;
 }
 /**
- * A pointer, by ID, to an externally_defined threat.
+ * An identified risk.
+ */
+export interface IdentifiedRisk {
+    uuid: RiskUniversallyUniqueIdentifier;
+    title: RiskTitle;
+    description: RiskDescription;
+    statement: RiskStatement;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    status: Status1;
+    origins?: Origin[];
+    "threat-ids"?: ThreatID[];
+    characterizations?: Characterization[];
+    "mitigating-factors"?: MitigatingFactor[];
+    deadline?: RiskResolutionDeadline;
+    remediations?: RiskResponse[];
+    "risk-log"?: RiskLog;
+    "related-observations"?: RelatedObservation[];
+}
+/**
+ * A pointer, by ID, to an externally-defined threat.
  */
 export interface ThreatID {
     system: ThreatTypeIdentificationSystem;
@@ -201,7 +959,7 @@ export interface Characterization {
     annotations?: AnnotatedProperty[];
     links?: Link[];
     origin: Origin;
-    facets: [Facet, ...Facet[]];
+    facets: Facet[];
 }
 /**
  * An individual characteristic that is part of a larger set produced by the same actor.
@@ -220,12 +978,28 @@ export interface Facet {
  */
 export interface MitigatingFactor {
     uuid: MitigatingFactorUniversallyUniqueIdentifier;
-    implementation_uuid?: ImplementationUUID;
+    "implementation-uuid"?: ImplementationUUID;
     description: MitigatingFactorDescription;
     props?: Property[];
     annotations?: AnnotatedProperty[];
     links?: Link[];
     subjects?: IdentifiesTheSubject[];
+}
+/**
+ * Describes either recommended or an actual plan for addressing the risk.
+ */
+export interface RiskResponse {
+    uuid: RemediationUniversallyUniqueIdentifier;
+    lifecycle: RemediationIntent;
+    title: ResponseTitle;
+    description: ResponseDescription;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    origins?: Origin[];
+    "required-assets"?: RequiredAsset[];
+    tasks?: Task[];
+    remarks?: Remarks;
 }
 /**
  * Identifies an asset required to achieve remediation.
@@ -241,11 +1015,71 @@ export interface RequiredAsset {
     remarks?: Remarks;
 }
 /**
+ * Represents a scheduled event or milestone, which may be associated with a series of assessment actions.
+ */
+export interface Task {
+    uuid: TaskUniversallyUniqueIdentifier;
+    title: TaskTitle;
+    description?: TaskDescription;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    start: TaskStartDate;
+    end: TaskEndDate;
+    "related-actions"?: ActionReference[];
+    "responsible-roles"?: {
+        [k: string]: ResponsibleRole & {
+            [k: string]: unknown;
+        };
+    };
+    remarks?: Remarks;
+}
+/**
+ * A log of all risk-related actions taken.
+ */
+export interface RiskLog {
+    entries: RiskLogEntry[];
+}
+/**
+ * Identifies the result of an action and/or task that occured as part of executing an assessment plan or an assessment event that occured in producing the assessment results.
+ */
+export interface RiskLogEntry {
+    uuid: RiskLogEntryUniversallyUniqueIdentifier;
+    title?: ActionTitle;
+    description?: ActionDescription;
+    start: Start1;
+    end?: End1;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    "logged-by"?: LoggedBy[];
+    "status-change"?: RiskStatus;
+    "related-responses"?: ActionReference1[];
+    remarks?: Remarks;
+}
+/**
  * Used to indicate who created a log entry in what role.
  */
 export interface LoggedBy {
-    party_uuid: PartyUUIDReference;
-    role_id?: LogActorRole;
+    "party-uuid": PartyUUIDReference;
+    "role-id"?: ActorRole1;
+}
+/**
+ * Identifies an individual risk response that this log entry is for.
+ */
+export interface ActionReference1 {
+    "response-uuid": ResponseUniversallyUniqueIdentifierReference;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    links?: Link[];
+    "related-actions"?: ActionReference[];
+    remarks?: Remarks;
+}
+/**
+ * Relates the finding to a set of referenced observations that were used to determine the finding.
+ */
+export interface RelatedObservation {
+    "observation-uuid": ObservationUniversallyUniqueIdentifierReference;
 }
 /**
  * Describes an individual POA&M item.
@@ -260,7 +1094,77 @@ export interface POAMItem {
     origins?: Origin[];
     collected: CollectedField;
     expires?: ExpiresField;
-    related_observations?: RelatedObservation[];
-    related_risks?: AssociatedRisk[];
+    "related-observations"?: RelatedObservation1[];
+    "related-risks"?: AssociatedRisk[];
     remarks?: Remarks;
+}
+/**
+ * Relates the poam-item to a set of referenced observations that were used to determine the finding.
+ */
+export interface RelatedObservation1 {
+    "observation-uuid": ObservationUniversallyUniqueIdentifierReference1;
+}
+/**
+ * Relates the finding to a set of referenced risks that were used to determine the finding.
+ */
+export interface AssociatedRisk {
+    "risk-uuid": RiskUniversallyUniqueIdentifierReference;
+}
+/**
+ * A collection of resources, which may be included directly or by reference.
+ */
+export interface BackMatter {
+    resources?: Resource[];
+}
+/**
+ * A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equavalent internet resources.
+ */
+export interface Resource {
+    uuid: ResourceUniversallyUniqueIdentifier;
+    title?: ResourceTitle;
+    description?: ResourceDescription;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    "document-ids"?: DocumentIdentifier[];
+    citation?: Citation;
+    rlinks?: ResourceLink[];
+    base64?: Base64;
+    remarks?: Remarks;
+}
+/**
+ * A citation consisting of end note text and optional structured bibliographic data.
+ */
+export interface Citation {
+    text: CitationText;
+    props?: Property[];
+    annotations?: AnnotatedProperty[];
+    biblio?: BibliographicDefinition;
+}
+/**
+ * A container for structured bibliographic information. The model of this information is undefined by OSCAL.
+ */
+export interface BibliographicDefinition {
+}
+/**
+ * A pointer to an external resource with an optional hash for verification and change detection.
+ */
+export interface ResourceLink {
+    href: HypertextReference1;
+    "media-type"?: MediaType1;
+    hashes?: Hash[];
+}
+/**
+ * A representation of a cryptographic digest generated over a resource using a specified hash algorithm.
+ */
+export interface Hash {
+    algorithm: HashAlgorithm;
+    value: string;
+}
+/**
+ * The Base64 alphabet in RFC 2045 - aligned with XSD.
+ */
+export interface Base64 {
+    filename?: FileName;
+    "media-type"?: MediaType2;
+    value: string;
 }
