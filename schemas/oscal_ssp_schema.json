@@ -519,7 +519,6 @@
                         "text": {
                             "title": "Citation Text",
                             "description": "A line of citation text.",
-                            "$id": "#/definitions/back_matter_resource_citation_text",
                             "type": "string"
                         },
                         "props": {
@@ -539,7 +538,6 @@
                         "biblio": {
                             "title": "Bibliographic Definition",
                             "description": "A container for structured bibliographic information. The model of this information is undefined by OSCAL.",
-                            "$id": "#/definitions/back_matter_resource_citation_biblio",
                             "type": "object",
                             "additionalProperties": false
                         }
@@ -555,7 +553,6 @@
                     "items": {
                         "title": "Resource link",
                         "description": "A pointer to an external resource with an optional hash for verification and change detection.",
-                        "$id": "#/definitions/back_matter_resource_rlink",
                         "type": "object",
                         "properties": {
                             "href": {
