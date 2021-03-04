@@ -54,7 +54,7 @@
         },
         "imports": [
             {
-                "href": "#f52e1458-7a97-49fd-8189-6af6a4e7051b",
+                "href": "#779d39d7-7f4c-4c82-b8ff-b126f0520ff8",
                 "include": {
                     "calls": [
                         {
@@ -3480,11 +3480,11 @@
         "back-matter": {
             "resources": [
                 {
-                    "uuid": "f52e1458-7a97-49fd-8189-6af6a4e7051b",
+                    "uuid": "779d39d7-7f4c-4c82-b8ff-b126f0520ff8",
                     "description": "NIST Special Publication 800-53 Revision 4: Security and Privacy Controls for Federal Information Systems and Organizations",
                     "rlinks": [
                         {
-                            "href": "NIST_SP-800-53_rev4_catalog.xml",
+                            "href": "NIST_SP-800-53_rev4_catalog.json",
                             "media-type": "application/oscal.catalog+json"
                         }
                     ]
