@@ -2759,7 +2759,6 @@
                 "items": {
                   "title": "Uses Component",
                   "description": "The set of components that are used by the assessment platform.",
-                  "$id": "#/definitions/uses_component",
                   "type": "object",
                   "properties": {
                     "component_uuid": {
