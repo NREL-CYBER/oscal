@@ -7,11 +7,11 @@ import { IdentifiedRisk, ThreatID } from "./IdentifiedRisk";
  */
 export type DocumentTitle = string;
 /**
- * The date and time the document was published. The date_time value must be formatted according to RFC 3339 with full time and time zone included.
+ * The date and time the document was published. The date-time value must be formatted according to RFC 3339 with full time and time zone included.
  */
 export type PublicationTimestamp = string;
 /**
- * The date and time the document was last modified. The date_time value must be formatted according to RFC 3339 with full time and time zone included.
+ * The date and time the document was last modified. The date-time value must be formatted according to RFC 3339 with full time and time zone included.
  */
 export type LastModifiedTimestamp = string;
 /**
@@ -27,7 +27,7 @@ export type OSCALVersion = string;
  */
 export type DocumentRevisionTitle = string;
 /**
- * The date and time the document was published. The date_time value must be formatted according to RFC 3339 with full time and time zone included.
+ * The date and time the document was published. The date-time value must be formatted according to RFC 3339 with full time and time zone included.
  */
 export type PublicationRevisionTitle = string;
 /**
