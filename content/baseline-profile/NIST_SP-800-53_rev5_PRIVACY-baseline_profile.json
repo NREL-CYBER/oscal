@@ -352,5 +352,19 @@
         "merge": {
             "as-is": true
         }
+    },
+    "back-matter": {
+        "resources": [
+            {
+                "uuid": "779d39d7-7f4c-4c82-b8ff-b126f0520ff8",
+                "description": "NIST Special Publication 800-53 Revision 5: Security and Privacy Controls for Federal Information Systems and Organizations",
+                "rlinks": [
+                    {
+                        "href": "NIST_SP-800-53_rev5_catalog.json",
+                        "media-type": "application/oscal.catalog+json"
+                    }
+                ]
+            }
+        ]
     }
 }
