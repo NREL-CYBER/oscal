@@ -1631,7 +1631,8 @@
         { "type" : 
           { "title" : "Subject Type",
             "description" : "Indicates the type of assessment subject, such as a component, inventory, item, location, or party represented by this selection statement.",
-            "type" : "string" },
+            "type" : "string",
+          "enum": ["inventory_item","component","location","party"] },
           "description" : 
           { "title" : "Include Subjects Description",
             "description" : "A human_readable description of the collection of subjects being included in this assessment.",
