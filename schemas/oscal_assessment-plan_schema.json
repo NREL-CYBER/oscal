@@ -180,7 +180,7 @@
           { "title" : "Location Universally Unique Identifier",
             "description" : "A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.",
             "type" : "string",
-            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
           "title" : 
           { "title" : "Location Title",
             "description" : "A name given to the location, which may be used by a tool for display and navigation.",
@@ -231,7 +231,7 @@
         "description" : "References a location defined in metadata.",
         "$id" : "#/definitions/location_uuid",
         "type" : "string",
-        "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+        "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
       "party" : 
       { "title" : "Party (organization or person)",
         "description" : "A responsible entity which is either a person or an organization.",
@@ -242,7 +242,7 @@
           { "title" : "Party Universally Unique Identifier",
             "description" : "A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given party across revisions of the document.",
             "type" : "string",
-            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
           "type" : 
           { "title" : "Party Type",
             "description" : "A category describing the kind of party the object describes.",
@@ -319,7 +319,7 @@
             { "title" : "Organizational Affiliation",
               "description" : "Identifies that the party object is a member of the organization associated with the provided UUID.",
               "type" : "string",
-              "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" } },
+              "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" } },
           "remarks" : 
           { "$ref" : "#/definitions/remarks" } },
         "required" : 
@@ -331,7 +331,7 @@
         "description" : "References a party defined in metadata.",
         "$id" : "#/definitions/party_uuid",
         "type" : "string",
-        "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+        "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
       "role" : 
       { "title" : "Role",
         "description" : "Defines a function assumed or expected to be assumed by a party in a specific situation.",
@@ -398,7 +398,7 @@
                 { "title" : "Resource Universally Unique Identifier",
                   "description" : "A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.",
                   "type" : "string",
-                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
                 "title" : 
                 { "title" : "Resource Title",
                   "description" : "A name given to the resource, which may be used by a tool for display and navigation.",
@@ -509,7 +509,7 @@
           { "title" : "Property Universally Unique Identifier",
             "description" : "A unique identifier that can be used to reference this property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.",
             "type" : "string",
-            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
           "name" : 
           { "title" : "Property Name",
             "description" : "A textual label that uniquely identifies a specific attribute, characteristic, or quality of the property's containing object.",
@@ -543,7 +543,7 @@
           { "title" : "Annotated Property Universally Unique Identifier",
             "description" : "A unique identifier that can be used to reference this annotated property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.",
             "type" : "string",
-            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
           "ns" : 
           { "title" : "Annotated Property Namespace",
             "description" : "A namespace qualifying the annotated property's name. This allows different organizations to associate distinct semantics with the same name.",
@@ -853,7 +853,7 @@
           { "title" : "Service Protocol Information Universally Unique Identifier",
             "description" : "A globally unique identifier that can be used to reference this service protocol entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
             "type" : "string",
-            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
           "name" : 
           { "title" : "Protocol Name",
             "description" : "The common name of the protocol, which should be the appropriate \"service name\" from the IANA Service Name and Transport Protocol Port Number Registry.",
@@ -980,7 +980,7 @@
           { "title" : "Inventory Item Universally Unique Identifier",
             "description" : "A globally unique identifier that can be used to reference this inventory item entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
             "type" : "string",
-            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
           "description" : 
           { "title" : "Inventory Item Description",
             "description" : "A summary of the inventory item stating its purpose within the system.",
@@ -1022,7 +1022,7 @@
                 { "title" : "Component Universally Unique Identifier Reference",
                   "description" : "A reference to a component that is implemented as part of an inventory item.",
                   "type" : "string",
-                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
                 "props" : 
                 { "type" : "array",
                   "minItems" : 1,
@@ -1125,7 +1125,7 @@
           { "title" : "Assessment Activity Universally Unique Identifier",
             "description" : "Uniquely identifies this assessment activity. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. A UUID should be consistantly used for a given included activity across revisions of the document.",
             "type" : "string",
-            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
           "title" : 
           { "title" : "Included Activity Title",
             "description" : "The title for this included activity.",
@@ -1161,7 +1161,7 @@
                 { "title" : "Action Universally Unique Identifier",
                   "description" : "Uniquely identifies this defined action. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. A UUID should be consistantly used for a given test step across revisions of the document.",
                   "type" : "string",
-                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
                 "title" : 
                 { "title" : "Action Title",
                   "description" : "The title for this action.",
@@ -1231,7 +1231,7 @@
           { "title" : "Task Universally Unique Identifier",
             "description" : "Uniquely identifies this assessment task.",
             "type" : "string",
-            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
           "type" : 
           { "title" : "Task Type",
             "description" : "The type of task.",
@@ -1338,7 +1338,7 @@
                 { "title" : "Task Universally Unique Identifier Reference",
                   "description" : "References a unique task by UUID.",
                   "type" : "string",
-                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
                 "remarks" : 
                 { "$ref" : "#/definitions/remarks" } },
               "required" : 
@@ -1361,7 +1361,7 @@
                 { "title" : "Activity Universally Unique Identifier Reference",
                   "description" : "References an activity defined in the list of activities.",
                   "type" : "string",
-                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
                 "props" : 
                 { "type" : "array",
                   "minItems" : 1,
@@ -1580,7 +1580,7 @@
           { "title" : "Assessment Subject Placeholder Universally Unique Identifier",
             "description" : "Uniquely identifies a set of assessment subjects that will be identified by a task or an activity that is part of a task.",
             "type" : "string",
-            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
           "description" : 
           { "title" : "Assessment Subject Placeholder Description",
             "description" : "A human_readable description of intent of this assessment subject placeholder.",
@@ -1597,7 +1597,7 @@
                 { "title" : "Task Universally Unique Identifier",
                   "description" : "Uniquely identifies an assessment activity to be performed as part of the event. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. A UUID should be consistantly used for this schedule across revisions of the document.",
                   "type" : "string",
-                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" } },
+                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" } },
               "required" : 
               [ "task_uuid" ],
               "additionalProperties" : false } },
@@ -1682,8 +1682,8 @@
           { "title" : "UUID Reference",
             "description" : "A pointer to a component, inventory_item, location, party, user, or resource using it's UUID.",
             "type" : "string",
-            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
-          "props" : 
+            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$",
+            "props" : 
           { "type" : "array",
             "minItems" : 1,
             "items" : 
@@ -1699,9 +1699,9 @@
             "items" : 
             { "$ref" : "#/definitions/link" } },
           "remarks" : 
-          { "$ref" : "#/definitions/remarks" } },
-        "required" : 
-        [ "uuid_ref" ],
+          { "$ref" : "#/definitions/remarks" } 
+        },
+        "required" : [ "uuid_ref" ],
         "additionalProperties" : false },
       "assessment_assets" : 
       { "title" : "Assessment Assets",
@@ -1731,7 +1731,7 @@
                 { "title" : "Assessment Platform Universally Unique Identifier",
                   "description" : "Uniquely identifies this assessment Platform.",
                   "type" : "string",
-                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+                  "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
                 "title" : 
                 { "title" : "Assessment Platform Title",
                   "description" : "The title or name for the assessment platform.",
@@ -1763,7 +1763,7 @@
                       { "title" : "Component Universally Unique Identifier Reference",
                         "description" : "A reference to a component that is implemented as part of an inventory item.",
                         "type" : "string",
-                        "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+                        "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
                       "props" : 
                       { "type" : "array",
                         "minItems" : 1,
@@ -1812,7 +1812,7 @@
           { "title" : "Part Identifier",
             "description" : "A unique identifier for a specific part instance. This identifier's uniqueness is document scoped and is intended to be consistent for the same part across minor revisions of the document.",
             "type" : "string",
-            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
           "name" : 
           { "title" : "Part Name",
             "description" : "A textual label that uniquely identifies the part's semantic type.",
@@ -1867,7 +1867,7 @@
           { "title" : "Assessment Plan Universally Unique Identifier",
             "description" : "Uniquely identifies this assessment plan. This UUID must be changed each time the content of the plan changes.",
             "type" : "string",
-            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0_9A-Fa-f]{12}$" },
+            "pattern" : "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$" },
           "metadata" : 
           { "$ref" : "#/definitions/metadata" },
           "import_ssp" : 
