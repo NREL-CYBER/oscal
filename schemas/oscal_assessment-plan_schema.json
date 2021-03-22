@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json_schema.org/draft_07/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "http://csrc.nist.gov/ns/oscal/1.0_schema.json",
   "$comment": "OSCAL Assessment Plan Model: JSON Schema",
   "type": "object",
