@@ -11,8 +11,9 @@
     "build:types": "tsc --emitDeclarationOnly ",
     "build": "babel src --out-dir dist --extensions .ts,.tsx",
     "build:docs": "typedoc --mode file",
-    "make": "tsc ./compile.ts",
-    "compile": "node ./compile.js"
+    "make": "tsc validate.ts --resolveJsonModule --esModuleInterop",
+    "compile": "node ./compile.js",
+    "validate": "node ./validate.js"
   },
   "repository": {
     "type": "git",
