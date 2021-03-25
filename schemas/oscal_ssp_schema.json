@@ -2828,16 +2828,15 @@
       "description"
     ],
     "additionalProperties": false
-  }
-},
-"properties": {
-  "system_security_plan": {
-    "$ref": "#/definitions/system_security_plan"
-  }
-},
-"required": [
-  "system_security_plan"
-],
-"additionalProperties": false,
-"maxProperties": 1
+  },
+  "properties": {
+    "system_security_plan": {
+      "$ref": "#/definitions/system_security_plan"
+    }
+  },
+  "required": [
+    "system_security_plan"
+  ],
+  "additionalProperties": false,
+  "maxProperties": 1
 }
