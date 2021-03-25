@@ -593,7 +593,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/defininitions/resource"
+            "$ref": "#/definitions/resource"
           }
         }
       }
