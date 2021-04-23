@@ -1,6 +1,6 @@
 {
   "name": "oscal",
-  "version": "1.5.8",
+  "version": "1.5.9",
   "description": "Oscal Typescript types",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -10,7 +10,7 @@
   "scripts": {
     "build:types": "tsc --emitDeclarationOnly ",
     "build": "babel src --out-dir dist --extensions .ts,.tsx",
-    "build:docs": "typedoc --mode file",
+    "build:docs": "typedoc --mode fexile",
     "make": "tsc validate.ts --resolveJsonModule --esModuleInterop",
     "compile": "node ./compile.js",
     "validate": "node ./validate.js"
