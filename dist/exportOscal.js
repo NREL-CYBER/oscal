@@ -14,7 +14,8 @@ var kebabcaseKeys = require('kebabcase-keys');
 
 var exportOscal = function exportOscal(input) {
   return kebabcaseKeys(input, {
-    deep: true
+    deep: true,
+    exclude: [, /[\w]{8}(-[\w]{4}){3}-[\w]{12}/]
   });
 };
 
