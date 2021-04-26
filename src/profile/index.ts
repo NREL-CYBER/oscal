@@ -1,4 +1,5 @@
 import { AnnotatedProperty, DocumentIdentifier, HypertextReference, Link, MediaType, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, Property, PublicationMetadata, Remarks } from "../shared";
+import { Parameter } from "src/catalog";
 
 
 /**
@@ -232,30 +233,6 @@ export interface ControlGroup {
   groups?: [ControlGroup, ...ControlGroup[]];
   calls?: [Call, ...Call[]];
   matches?: [MatchControlsByIdentifier, ...MatchControlsByIdentifier[]];
-}
-/**
- * Parameters provide a mechanism for the dynamic assignment of value(s) in a control.
- */
-export interface Parameter {
-  id: ParameterIdentifier;
-  class?: ParameterClass;
-  depends_on?: DependsOn;
-  props?: Property[];
-  annotations?: AnnotatedProperty[];
-  links?: Link[];
-  label?: ParameterLabel;
-  usage?: ParameterUsageDescription;
-  constraints?: [Constraint, ...Constraint[]];
-  guidelines?: [Guideline, ...Guideline[]];
-  values?: ParameterValue[];
-  select?: Selection;
-}
-/**
- * A formal or informal expression of a constraint or test
- */
-export interface Constraint {
-  description?: ConstraintDescription;
-  tests?: [ConstraintTest, ...ConstraintTest[]];
 }
 /**
  * A test expression which is expected to be evaluated by a tool.
