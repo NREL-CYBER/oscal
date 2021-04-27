@@ -13,9 +13,11 @@ var kebabcaseKeys = require('kebabcase-keys');
 
 
 var exportOscal = function exportOscal(input) {
+  // Skip anything that already has a dash in it.
+  // If it has a dash, it's probably already good to go since its a UUID or ID of some kind.
   return kebabcaseKeys(input, {
     deep: true,
-    exclude: [, /[\w]{8}(-[\w]{4}){3}-[\w]{12}/]
+    exclude: [/^.*[\-].*/]
   });
 };
 
