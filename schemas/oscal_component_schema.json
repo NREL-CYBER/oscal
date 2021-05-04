@@ -1116,7 +1116,21 @@
         "type": {
           "title": "Component Type",
           "description": "A category describing the purpose of the component.",
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "system",
+            "interconnection",
+            "software",
+            "hardware",
+            "service",
+            "policy",
+            "physical",
+            "process-procedure",
+            "plan",
+            "guidance",
+            "standard",
+            "validation"
+          ]
         },
         "title": {
           "title": "Component Title",
