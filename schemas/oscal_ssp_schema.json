@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://csrc.nist.gov/ns/oscal/ssp-1.0-schema.json",
+  "$id": "http://csrc.nist.gov/ns/oscal/1.0-schema.json",
   "$comment": "OSCAL System Security Plan (SSP) Model: JSON Schema",
   "type": "object",
   "definitions": {
@@ -16,29 +16,29 @@
           "type": "string"
         },
         "published": {
-          "$ref": "#/definitions/metadata_published"
+          "$ref": "#/definitions/oscal_metadata_published"
         },
         "last_modified": {
-          "$ref": "#/definitions/metadata_last_modified"
+          "$ref": "#/definitions/oscal_metadata_last_modified"
         },
         "version": {
-          "$ref": "#/definitions/metadata_version"
+          "$ref": "#/definitions/oscal_metadata_version"
         },
         "oscal_version": {
-          "$ref": "#/definitions/metadata_oscal_version"
+          "$ref": "#/definitions/oscal_metadata_oscal_version"
         },
         "revisions": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_revision"
+            "$ref": "#/definitions/oscal_metadata_revision"
           }
         },
         "document_ids": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_document_id"
+            "$ref": "#/definitions/oscal_metadata_document_id"
           }
         },
         "props": {
@@ -46,13 +46,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -106,15 +99,15 @@
       "required": [
         "title",
         "last_modified",
-        "oscal_version",
-        "version"
+        "version",
+        "oscal_version"
       ],
       "additionalProperties": false
     },
-    "metadata_revision": {
+    "oscal_metadata_revision": {
       "title": "Revision History Entry",
       "description": "An entry in a sequential list of revisions to the containing document in reverse chronological order (i.e., most recent previous revision first).",
-      "$id": "#/definitions/metadata_revision",
+      "$id": "#/definitions/oscal_metadata_revision",
       "type": "object",
       "properties": {
         "title": {
@@ -123,29 +116,22 @@
           "type": "string"
         },
         "published": {
-          "$ref": "#/definitions/metadata_published"
+          "$ref": "#/definitions/oscal_metadata_published"
         },
         "last_modified": {
-          "$ref": "#/definitions/metadata_last_modified"
+          "$ref": "#/definitions/oscal_metadata_last_modified"
         },
         "version": {
-          "$ref": "#/definitions/metadata_version"
+          "$ref": "#/definitions/oscal_metadata_version"
         },
         "oscal_version": {
-          "$ref": "#/definitions/metadata_oscal_version"
+          "$ref": "#/definitions/oscal_metadata_oscal_version"
         },
         "props": {
           "type": "array",
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -169,7 +155,7 @@
       "properties": {
         "uuid": {
           "title": "Location Universally Unique Identifier",
-          "description": "A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.",
+          "description": "A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistently used for a given location across revisions of the document.",
           "type": "string",
           "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
@@ -179,20 +165,20 @@
           "type": "string"
         },
         "address": {
-          "$ref": "#/definitions/metadata_address"
+          "$ref": "#/definitions/oscal_metadata_address"
         },
         "email_addresses": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_email_address"
+            "$ref": "#/definitions/oscal_metadata_email_address"
           }
         },
         "telephone_numbers": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_telephone_number"
+            "$ref": "#/definitions/oscal_metadata_telephone_number"
           }
         },
         "urls": {
@@ -210,13 +196,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -251,7 +230,7 @@
       "properties": {
         "uuid": {
           "title": "Party Universally Unique Identifier",
-          "description": "A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given party across revisions of the document.",
+          "description": "A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistently used for a given party across revisions of the document.",
           "type": "string",
           "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
@@ -306,13 +285,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -324,21 +296,21 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_email_address"
+            "$ref": "#/definitions/oscal_metadata_email_address"
           }
         },
         "telephone_numbers": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_telephone_number"
+            "$ref": "#/definitions/oscal_metadata_telephone_number"
           }
         },
         "addresses": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_address"
+            "$ref": "#/definitions/oscal_metadata_address"
           }
         },
         "location_uuids": {
@@ -408,13 +380,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -438,151 +403,6 @@
       "$id": "#/definitions/role_id",
       "type": "string"
     },
-    "resource": {
-      "title": "Resource",
-      "description": "A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equavalent internet resources.",
-      "type": "object",
-      "properties": {
-        "uuid": {
-          "title": "Resource Universally Unique Identifier",
-          "description": "A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.",
-          "type": "string",
-          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-        },
-        "title": {
-          "title": "Resource Title",
-          "description": "A name given to the resource, which may be used by a tool for display and navigation.",
-          "type": "string"
-        },
-        "description": {
-          "title": "Resource Description",
-          "description": "A short summary of the resource used to indicate the purpose of the resource.",
-          "type": "string"
-        },
-        "props": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
-        "document_ids": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/metadata_document_id"
-          }
-        },
-        "citation": {
-          "title": "Citation",
-          "description": "A citation consisting of end note text and optional structured bibliographic data.",
-          "type": "object",
-          "properties": {
-            "text": {
-              "title": "Citation Text",
-              "description": "A line of citation text.",
-              "type": "string"
-            },
-            "props": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/property"
-              }
-            },
-            "annotations": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/annotation"
-              }
-            },
-            "biblio": {
-              "title": "Bibliographic Definition",
-              "description": "A container for structured bibliographic information. The model of this information is undefined by OSCAL.",
-              "type": "object",
-              "additionalProperties": true
-            }
-          },
-          "required": [
-            "text"
-          ],
-          "additionalProperties": false
-        },
-        "rlinks": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "title": "Resource link",
-            "description": "A pointer to an external resource with an optional hash for verification and change detection.",
-            "type": "object",
-            "properties": {
-              "href": {
-                "title": "Hypertext Reference",
-                "description": "A resolvable URI reference to a resource.",
-                "type": "string",
-                "format": "uri-reference"
-              },
-              "media_type": {
-                "title": "Media Type",
-                "description": "Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.",
-                "type": "string"
-              },
-              "hashes": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/hash"
-                }
-              }
-            },
-            "required": [
-              "href"
-            ],
-            "additionalProperties": false
-          }
-        },
-        "base64": {
-          "title": "Base64",
-          "description": "The Base64 alphabet in RFC 2045 _ aligned with XSD.",
-          "type": "object",
-          "properties": {
-            "filename": {
-              "title": "File Name",
-              "description": "Name of the file before it was encoded as Base64 to be embedded in a resource. This is the name that will be assigned to the file when the file is decoded.",
-              "type": "string",
-              "format": "uri-reference"
-            },
-            "media_type": {
-              "title": "Media Type",
-              "description": "Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.",
-              "type": "string"
-            },
-            "value": {
-              "type": "string"
-            }
-          },
-          "required": [
-            "value"
-          ],
-          "additionalProperties": false
-        },
-        "remarks": {
-          "$ref": "#/definitions/remarks"
-        }
-      },
-      "required": [
-        "uuid"
-      ],
-      "additionalProperties": true
-    },
     "back_matter": {
       "title": "Back matter",
       "description": "A collection of resources, which may be included directly or by reference.",
@@ -593,7 +413,135 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/resource"
+            "title": "Resource",
+            "description": "A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equivalent internet resources.",
+            "type": "object",
+            "properties": {
+              "uuid": {
+                "title": "Resource Universally Unique Identifier",
+                "description": "A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+              },
+              "title": {
+                "title": "Resource Title",
+                "description": "A name given to the resource, which may be used by a tool for display and navigation.",
+                "type": "string"
+              },
+              "description": {
+                "title": "Resource Description",
+                "description": "A short summary of the resource used to indicate the purpose of the resource.",
+                "type": "string"
+              },
+              "props": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/definitions/property"
+                }
+              },
+              "document_ids": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/definitions/oscal_metadata_document_id"
+                }
+              },
+              "citation": {
+                "title": "Citation",
+                "description": "A citation consisting of end note text and optional structured bibliographic data.",
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "title": "Citation Text",
+                    "description": "A line of citation text.",
+                    "type": "string"
+                  },
+                  "props": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/definitions/property"
+                    }
+                  },
+                  "biblio": {
+                    "title": "Bibliographic Definition",
+                    "description": "A container for structured bibliographic information. The model of this information is undefined by OSCAL.",
+                    "type": "object",
+                    "additionalProperties": true
+                  }
+                },
+                "required": [
+                  "text"
+                ],
+                "additionalProperties": false
+              },
+              "rlinks": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "title": "Resource link",
+                  "description": "A pointer to an external resource with an optional hash for verification and change detection.",
+                  "type": "object",
+                  "properties": {
+                    "href": {
+                      "title": "Hypertext Reference",
+                      "description": "A resolvable URI reference to a resource.",
+                      "type": "string",
+                      "format": "uri_reference"
+                    },
+                    "media_type": {
+                      "title": "Media Type",
+                      "description": "Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.",
+                      "type": "string"
+                    },
+                    "hashes": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": {
+                        "$ref": "#/definitions/hash"
+                      }
+                    }
+                  },
+                  "required": [
+                    "href"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "base64": {
+                "title": "Base64",
+                "description": "The Base64 alphabet in RFC 2045 _ aligned with XSD.",
+                "type": "object",
+                "properties": {
+                  "filename": {
+                    "title": "File Name",
+                    "description": "Name of the file before it was encoded as Base64 to be embedded in a resource. This is the name that will be assigned to the file when the file is decoded.",
+                    "type": "string",
+                    "format": "uri_reference"
+                  },
+                  "media_type": {
+                    "title": "Media Type",
+                    "description": "Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.",
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "value"
+                ],
+                "additionalProperties": false
+              },
+              "remarks": {
+                "$ref": "#/definitions/remarks"
+              }
+            },
+            "required": [
+              "uuid"
+            ],
+            "additionalProperties": false
           }
         }
       },
@@ -601,20 +549,20 @@
     },
     "property": {
       "title": "Property",
-      "description": "An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values in some OSCAL formats.",
+      "description": "An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values.",
       "$id": "#/definitions/property",
       "type": "object",
       "properties": {
-        "uuid": {
-          "title": "Property Universally Unique Identifier",
-          "description": "A unique identifier that can be used to reference this property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.",
-          "type": "string",
-          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-        },
         "name": {
           "title": "Property Name",
           "description": "A textual label that uniquely identifies a specific attribute, characteristic, or quality of the property's containing object.",
           "type": "string"
+        },
+        "uuid": {
+          "title": "Property Universally Unique Identifier",
+          "description": "A unique identifier that can be used to reference this property elsewhere in an OSCAL document. A UUID should be consistently used for a given location across revisions of the document.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
         "ns": {
           "title": "Property Namespace",
@@ -622,47 +570,14 @@
           "type": "string",
           "format": "uri"
         },
+        "value": {
+          "title": "Property Value",
+          "description": "Indicates the value of the attribute, characteristic, or quality.",
+          "type": "string"
+        },
         "class": {
           "title": "Property Class",
           "description": "A textual label that provides a sub_type or characterization of the property's name. This can be used to further distinguish or discriminate between the semantics of multiple properties of the same object with the same name and ns.",
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "value",
-        "name"
-      ],
-      "additionalProperties": false
-    },
-    "annotation": {
-      "title": "Annotated Property",
-      "description": "An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair with optional explanatory remarks. The value of an annotated property is a simple scalar value.",
-      "$id": "#/definitions/annotation",
-      "type": "object",
-      "properties": {
-        "name": {
-          "title": "Annotated Property Name",
-          "description": "A textual label that uniquely identifies a specific attribute, characteristic, or quality of the annotated property's containing object.",
-          "type": "string"
-        },
-        "uuid": {
-          "title": "Annotated Property Universally Unique Identifier",
-          "description": "A unique identifier that can be used to reference this annotated property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.",
-          "type": "string",
-          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-        },
-        "ns": {
-          "title": "Annotated Property Namespace",
-          "description": "A namespace qualifying the annotated property's name. This allows different organizations to associate distinct semantics with the same name.",
-          "type": "string",
-          "format": "uri"
-        },
-        "value": {
-          "title": "Annotated Property Value",
-          "description": "Indicates the value of the attribute, characteristic, or quality.",
           "type": "string"
         },
         "remarks": {
@@ -685,7 +600,7 @@
           "title": "Hypertext Reference",
           "description": "A resolvable URL reference to a resource.",
           "type": "string",
-          "format": "uri-reference"
+          "format": "uri_reference"
         },
         "rel": {
           "title": "Relation",
@@ -728,13 +643,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -762,13 +670,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -818,46 +719,46 @@
       "$id": "#/definitions/remarks",
       "type": "string"
     },
-    "metadata_published": {
+    "oscal_metadata_published": {
       "title": "Publication Timestamp",
-      "description": "The date and time the document was published. The date-time value must be formatted according to RFC 3339 with full time and time zone included.",
-      "$id": "#/definitions/metadata_published",
+      "description": "The date and time the document was published. The date_time value must be formatted according to RFC 3339 with full time and time zone included.",
+      "$id": "#/definitions/oscal_metadata_published",
       "type": "string",
-      "format": "date-time",
-      "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+      "format": "date_time",
+      "pattern": "^((2000|2400|2800|(19|2[0_9](0[48]|[2468][048]|[13579][26])))_02_29)|(((19|2[0_9])[0_9]{2})_02_(0[1_9]|1[0_9]|2[0_8]))|(((19|2[0_9])[0_9]{2})_(0[13578]|10|12)_(0[1_9]|[12][0_9]|3[01]))|(((19|2[0_9])[0_9]{2})_(0[469]|11)_(0[1_9]|[12][0_9]|30))T(2[0_3]|[01][0_9]):([0_5][0_9]):([0_5][0_9])(\\.[0_9]+)?(Z|[+_][0_9]{2}:[0_9]{2})$"
     },
-    "metadata_last_modified": {
+    "oscal_metadata_last_modified": {
       "title": "Last Modified Timestamp",
-      "description": "The date and time the document was last modified. The date-time value must be formatted according to RFC 3339 with full time and time zone included.",
-      "$id": "#/definitions/metadata_last_modified",
+      "description": "The date and time the document was last modified. The date_time value must be formatted according to RFC 3339 with full time and time zone included.",
+      "$id": "#/definitions/oscal_metadata_last_modified",
       "type": "string",
-      "format": "date-time",
-      "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+      "format": "date_time",
+      "pattern": "^((2000|2400|2800|(19|2[0_9](0[48]|[2468][048]|[13579][26])))_02_29)|(((19|2[0_9])[0_9]{2})_02_(0[1_9]|1[0_9]|2[0_8]))|(((19|2[0_9])[0_9]{2})_(0[13578]|10|12)_(0[1_9]|[12][0_9]|3[01]))|(((19|2[0_9])[0_9]{2})_(0[469]|11)_(0[1_9]|[12][0_9]|30))T(2[0_3]|[01][0_9]):([0_5][0_9]):([0_5][0_9])(\\.[0_9]+)?(Z|[+_][0_9]{2}:[0_9]{2})$"
     },
-    "metadata_version": {
+    "oscal_metadata_version": {
       "title": "Document Version",
       "description": "A string used to distinguish the current version of the document from other previous (and future) versions.",
-      "$id": "#/definitions/metadata_version",
+      "$id": "#/definitions/oscal_metadata_version",
       "type": "string"
     },
-    "metadata_oscal_version": {
+    "oscal_metadata_oscal_version": {
       "title": "OSCAL version",
       "description": "The OSCAL model version the document was authored against.",
-      "$id": "#/definitions/metadata_oscal_version",
+      "$id": "#/definitions/oscal_metadata_oscal_version",
       "type": "string"
     },
-    "metadata_email_address": {
+    "oscal_metadata_email_address": {
       "title": "Email Address",
       "description": "An email address as defined by RFC 5322 Section 3.4.1.",
-      "$id": "#/definitions/metadata_email_address",
+      "$id": "#/definitions/oscal_metadata_email_address",
       "type": "string",
       "format": "email",
       "pattern": "^.+@.+"
     },
-    "metadata_telephone_number": {
+    "oscal_metadata_telephone_number": {
       "title": "Telephone Number",
       "description": "Contact number by telephone.",
-      "$id": "#/definitions/metadata_telephone_number",
+      "$id": "#/definitions/oscal_metadata_telephone_number",
       "type": "object",
       "properties": {
         "type": {
@@ -874,10 +775,10 @@
       ],
       "additionalProperties": false
     },
-    "metadata_address": {
+    "oscal_metadata_address": {
       "title": "Address",
       "description": "A postal address for the location.",
-      "$id": "#/definitions/metadata_address",
+      "$id": "#/definitions/oscal_metadata_address",
       "type": "object",
       "properties": {
         "type": {
@@ -889,7 +790,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_addr_line"
+            "$ref": "#/definitions/oscal_metadata_addr_line"
           }
         },
         "city": {
@@ -915,16 +816,16 @@
       },
       "additionalProperties": false
     },
-    "metadata_addr_line": {
+    "oscal_metadata_addr_line": {
       "title": "Address line",
       "description": "A single line of an address.",
-      "$id": "#/definitions/metadata_addr_line",
+      "$id": "#/definitions/oscal_metadata_addr_line",
       "type": "string"
     },
-    "metadata_document_id": {
+    "oscal_metadata_document_id": {
       "title": "Document Identifier",
       "description": "A document identifier qualified by an identifier scheme. A document identifier provides a globally unique identifier for a group of documents that are to be treated as different versions of the same document. If this element does not appear, or if the value of this element is empty, the value of \"document_id\" is equal to the value of the \"uuid\" flag of the top_level root element.",
-      "$id": "#/definitions/metadata_document_id",
+      "$id": "#/definitions/oscal_metadata_document_id",
       "type": "object",
       "properties": {
         "scheme": {
@@ -953,7 +854,9 @@
           "description": "A category describing the purpose of the component.",
           "type": "string",
           "enum": [
-            "system",
+            "subnet",
+            "leveraged-system",
+            "this-system",
             "interconnection",
             "software",
             "hardware",
@@ -987,13 +890,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -1081,7 +977,7 @@
           "type": "string"
         },
         "title": {
-          "title": "title field",
+          "title": "Protocol Title",
           "description": "A human readable name for the protocol (e.g., Transport Layer Security).",
           "type": "string"
         },
@@ -1130,6 +1026,26 @@
       },
       "additionalProperties": false
     },
+    "implementation_status": {
+      "title": "Implementation Status",
+      "description": "Indicates the degree to which the a given control is implemented.",
+      "$id": "#/definitions/implementation_status",
+      "type": "object",
+      "properties": {
+        "state": {
+          "title": "Implementation State",
+          "description": "Identifies the implementation status of the control or control objective.",
+          "type": "string"
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "required": [
+        "state"
+      ],
+      "additionalProperties": false
+    },
     "system_user": {
       "title": "System User",
       "description": "A type of user that interacts with the system based on an associated role.",
@@ -1156,13 +1072,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -1199,7 +1108,7 @@
       "type": "object",
       "properties": {
         "title": {
-          "title": "title field",
+          "title": "Privilege Title",
           "description": "A human readable name for the privilege.",
           "type": "string"
         },
@@ -1252,13 +1161,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -1301,13 +1203,6 @@
                 "minItems": 1,
                 "items": {
                   "$ref": "#/definitions/property"
-                }
-              },
-              "annotations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/annotation"
                 }
               },
               "links": {
@@ -1449,7 +1344,7 @@
           "title": "Profile Reference",
           "description": "A resolvable URL reference to the profile to use as the system's control baseline.",
           "type": "string",
-          "format": "uri-reference"
+          "format": "uri_reference"
         },
         "remarks": {
           "$ref": "#/definitions/remarks"
@@ -1493,13 +1388,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -1580,13 +1468,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -1604,7 +1485,7 @@
             "properties": {
               "uuid": {
                 "title": "Information Type Universally Unique Identifier",
-                "description": "A globally unique identifier that can be used to reference this information type entry elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.",
+                "description": "A globally unique identifier that can be used to reference this information type entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
                 "type": "string",
                 "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
               },
@@ -1655,13 +1536,6 @@
                   "$ref": "#/definitions/property"
                 }
               },
-              "annotations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/annotation"
-                }
-              },
               "links": {
                 "type": "array",
                 "minItems": 1,
@@ -1679,13 +1553,6 @@
                     "minItems": 1,
                     "items": {
                       "$ref": "#/definitions/property"
-                    }
-                  },
-                  "annotations": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/definitions/annotation"
                     }
                   },
                   "links": {
@@ -1722,13 +1589,6 @@
                       "$ref": "#/definitions/property"
                     }
                   },
-                  "annotations": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/definitions/annotation"
-                    }
-                  },
                   "links": {
                     "type": "array",
                     "minItems": 1,
@@ -1761,13 +1621,6 @@
                     "minItems": 1,
                     "items": {
                       "$ref": "#/definitions/property"
-                    }
-                  },
-                  "annotations": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/definitions/annotation"
                     }
                   },
                   "links": {
@@ -1888,7 +1741,7 @@
       "description": "The date the system received its authorization.",
       "$id": "#/definitions/date_authorized",
       "type": "string",
-      "format": "date"
+      "pattern": "^((2000|2400|2800|(19|2[0_9](0[48]|[2468][048]|[13579][26])))_02_29)|(((19|2[0_9])[0_9]{2})_02_(0[1_9]|1[0_9]|2[0_8]))|(((19|2[0_9])[0_9]{2})_(0[13578]|10|12)_(0[1_9]|[12][0_9]|3[01]))|(((19|2[0_9])[0_9]{2})_(0[469]|11)_(0[1_9]|[12][0_9]|30))(Z|[+_][0_9]{2}:[0_9]{2})?$"
     },
     "authorization_boundary": {
       "title": "Authorization Boundary",
@@ -1906,13 +1759,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -1967,13 +1813,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -2010,13 +1849,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -2069,13 +1901,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -2121,13 +1946,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -2145,7 +1963,7 @@
             "properties": {
               "uuid": {
                 "title": "Leveraged Authorization Universally Unique Identifier",
-                "description": "A globally unique identifier that can be used to reference this leveraged authorization entry elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.",
+                "description": "A globally unique identifier that can be used to reference this leveraged authorization entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
                 "type": "string",
                 "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
               },
@@ -2159,13 +1977,6 @@
                 "minItems": 1,
                 "items": {
                   "$ref": "#/definitions/property"
-                }
-              },
-              "annotations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/annotation"
                 }
               },
               "links": {
@@ -2257,6 +2068,22 @@
           "description": "A statement describing important things to know about how this set of control satisfaction documentation is approached.",
           "type": "string"
         },
+        "set_parameters": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "allOf": [
+              {
+                "$ref": "#/definitions/set_parameter"
+              },
+              {
+                "not": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
         "implemented_requirements": {
           "type": "array",
           "minItems": 1,
@@ -2279,7 +2106,7 @@
       "properties": {
         "uuid": {
           "title": "Control Requirement Universally Unique Identifier",
-          "description": "A globally unique identifier that can be used to reference this control requirement entry elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.",
+          "description": "A globally unique identifier that can be used to reference this control requirement entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
           "type": "string",
           "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
@@ -2293,13 +2120,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -2391,7 +2211,7 @@
       "properties": {
         "uuid": {
           "title": "Control Statement Reference Universally Unique Identifier",
-          "description": "A globally unique identifier that can be used to reference this control statement entry elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.",
+          "description": "A globally unique identifier that can be used to reference this control statement entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
           "type": "string",
           "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
@@ -2400,13 +2220,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -2449,7 +2262,7 @@
       "properties": {
         "uuid": {
           "title": "By_Component Universally Unique Identifier",
-          "description": "A globally unique identifier that can be used to reference this by_component entry elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.",
+          "description": "A globally unique identifier that can be used to reference this by_component entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
           "type": "string",
           "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
@@ -2463,13 +2276,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -2495,6 +2301,9 @@
             ]
           }
         },
+        "implementation_status": {
+          "$ref": "#/definitions/implementation_status"
+        },
         "export": {
           "title": "Export",
           "description": "Identifies content intended for external consumption, such as with leveraged organizations.",
@@ -2510,13 +2319,6 @@
               "minItems": 1,
               "items": {
                 "$ref": "#/definitions/property"
-              }
-            },
-            "annotations": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/annotation"
               }
             },
             "links": {
@@ -2536,7 +2338,7 @@
                 "properties": {
                   "uuid": {
                     "title": "Provided Universally Unique Identifier",
-                    "description": "A globally unique identifier that can be used to reference this provided entry elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.",
+                    "description": "A globally unique identifier that can be used to reference this provided entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
                     "type": "string",
                     "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                   },
@@ -2550,13 +2352,6 @@
                     "minItems": 1,
                     "items": {
                       "$ref": "#/definitions/property"
-                    }
-                  },
-                  "annotations": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/definitions/annotation"
                     }
                   },
                   "links": {
@@ -2598,12 +2393,12 @@
               "minItems": 1,
               "items": {
                 "title": "Control Implementation Responsibility",
-                "description": "Describes a control implementation responsibiity imposed on a leveraging system.",
+                "description": "Describes a control implementation responsibility imposed on a leveraging system.",
                 "type": "object",
                 "properties": {
                   "uuid": {
                     "title": "Responsibility Universally Unique Identifier",
-                    "description": "A globally unique identifier that can be used to reference this responsibility entry elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.",
+                    "description": "A globally unique identifier that can be used to reference this responsibility entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
                     "type": "string",
                     "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                   },
@@ -2623,13 +2418,6 @@
                     "minItems": 1,
                     "items": {
                       "$ref": "#/definitions/property"
-                    }
-                  },
-                  "annotations": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/definitions/annotation"
                     }
                   },
                   "links": {
@@ -2682,7 +2470,7 @@
             "properties": {
               "uuid": {
                 "title": "Inherited Universally Unique Identifier",
-                "description": "A globally unique identifier that can be used to reference this inherited entry elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.",
+                "description": "A globally unique identifier that can be used to reference this inherited entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
                 "type": "string",
                 "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
               },
@@ -2702,13 +2490,6 @@
                 "minItems": 1,
                 "items": {
                   "$ref": "#/definitions/property"
-                }
-              },
-              "annotations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/annotation"
                 }
               },
               "links": {
@@ -2747,12 +2528,12 @@
           "minItems": 1,
           "items": {
             "title": "Satisfied Control Implementation Responsibility",
-            "description": "Describes how this system satisfies a responsibiity imposed by a leveraged system.",
+            "description": "Describes how this system satisfies a responsibility imposed by a leveraged system.",
             "type": "object",
             "properties": {
               "uuid": {
                 "title": "Satisfied Universally Unique Identifier",
-                "description": "A globally unique identifier that can be used to reference this satisfied entry elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.",
+                "description": "A globally unique identifier that can be used to reference this satisfied entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
                 "type": "string",
                 "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
               },
@@ -2772,13 +2553,6 @@
                 "minItems": 1,
                 "items": {
                   "$ref": "#/definitions/property"
-                }
-              },
-              "annotations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/annotation"
                 }
               },
               "links": {
