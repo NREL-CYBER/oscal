@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "http://csrc.nist.gov/ns/oscal/sap-1.0-schema.json",
+  "$id": "http://csrc.nist.gov/ns/oscal/1.0-schema.json",
   "$comment": "OSCAL Assessment Plan Model: JSON Schema",
   "type": "object",
   "definitions": {
@@ -43,13 +43,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "prose": {
           "title": "Part Text",
           "description": "Permits multiple paragraphs, lists, tables etc.",
@@ -73,7 +66,7 @@
       "required": [
         "name"
       ],
-      "additionalProperties": true
+      "additionalProperties": false
     },
     "metadata": {
       "title": "Publication metadata",
@@ -87,29 +80,29 @@
           "type": "string"
         },
         "published": {
-          "$ref": "#/definitions/metadata_published"
+          "$ref": "#/definitions/oscal_metadata_published"
         },
         "last_modified": {
-          "$ref": "#/definitions/metadata_last_modified"
+          "$ref": "#/definitions/oscal_metadata_last_modified"
         },
         "version": {
-          "$ref": "#/definitions/metadata_version"
+          "$ref": "#/definitions/oscal_metadata_version"
         },
         "oscal_version": {
-          "$ref": "#/definitions/metadata_oscal_version"
+          "$ref": "#/definitions/oscal_metadata_oscal_version"
         },
         "revisions": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_revision"
+            "$ref": "#/definitions/oscal_metadata_revision"
           }
         },
         "document_ids": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_document_id"
+            "$ref": "#/definitions/oscal_metadata_document_id"
           }
         },
         "props": {
@@ -117,13 +110,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -182,10 +168,10 @@
       ],
       "additionalProperties": false
     },
-    "metadata_revision": {
+    "oscal_metadata_revision": {
       "title": "Revision History Entry",
       "description": "An entry in a sequential list of revisions to the containing document in reverse chronological order (i.e., most recent previous revision first).",
-      "$id": "#/definitions/metadata_revision",
+      "$id": "#/definitions/oscal_metadata_revision",
       "type": "object",
       "properties": {
         "title": {
@@ -194,29 +180,22 @@
           "type": "string"
         },
         "published": {
-          "$ref": "#/definitions/metadata_published"
+          "$ref": "#/definitions/oscal_metadata_published"
         },
         "last_modified": {
-          "$ref": "#/definitions/metadata_last_modified"
+          "$ref": "#/definitions/oscal_metadata_last_modified"
         },
         "version": {
-          "$ref": "#/definitions/metadata_version"
+          "$ref": "#/definitions/oscal_metadata_version"
         },
         "oscal_version": {
-          "$ref": "#/definitions/metadata_oscal_version"
+          "$ref": "#/definitions/oscal_metadata_oscal_version"
         },
         "props": {
           "type": "array",
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -240,7 +219,7 @@
       "properties": {
         "uuid": {
           "title": "Location Universally Unique Identifier",
-          "description": "A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.",
+          "description": "A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistently used for a given location across revisions of the document.",
           "type": "string",
           "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
@@ -250,20 +229,20 @@
           "type": "string"
         },
         "address": {
-          "$ref": "#/definitions/metadata_address"
+          "$ref": "#/definitions/oscal_metadata_address"
         },
         "email_addresses": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_email_address"
+            "$ref": "#/definitions/oscal_metadata_email_address"
           }
         },
         "telephone_numbers": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_telephone_number"
+            "$ref": "#/definitions/oscal_metadata_telephone_number"
           }
         },
         "urls": {
@@ -281,13 +260,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -322,7 +294,7 @@
       "properties": {
         "uuid": {
           "title": "Party Universally Unique Identifier",
-          "description": "A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistantly used for a given party across revisions of the document.",
+          "description": "A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistently used for a given party across revisions of the document.",
           "type": "string",
           "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
@@ -377,13 +349,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -395,21 +360,21 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_email_address"
+            "$ref": "#/definitions/oscal_metadata_email_address"
           }
         },
         "telephone_numbers": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_telephone_number"
+            "$ref": "#/definitions/oscal_metadata_telephone_number"
           }
         },
         "addresses": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_address"
+            "$ref": "#/definitions/oscal_metadata_address"
           }
         },
         "location_uuids": {
@@ -479,13 +444,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -520,12 +478,12 @@
           "minItems": 1,
           "items": {
             "title": "Resource",
-            "description": "A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equavalent internet resources.",
+            "description": "A resource associated with content in the containing document. A resource may be directly included in the document base64 encoded or may point to one or more equivalent internet resources.",
             "type": "object",
             "properties": {
               "uuid": {
                 "title": "Resource Universally Unique Identifier",
-                "description": "A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistantly used for a given resource across revisions of the document.",
+                "description": "A globally unique identifier that can be used to reference this defined resource elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
                 "type": "string",
                 "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
               },
@@ -546,18 +504,11 @@
                   "$ref": "#/definitions/property"
                 }
               },
-              "annotations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/annotation"
-                }
-              },
               "document_ids": {
                 "type": "array",
                 "minItems": 1,
                 "items": {
-                  "$ref": "#/definitions/metadata_document_id"
+                  "$ref": "#/definitions/oscal_metadata_document_id"
                 }
               },
               "citation": {
@@ -575,13 +526,6 @@
                     "minItems": 1,
                     "items": {
                       "$ref": "#/definitions/property"
-                    }
-                  },
-                  "annotations": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/definitions/annotation"
                     }
                   },
                   "biblio": {
@@ -661,7 +605,7 @@
             "required": [
               "uuid"
             ],
-            "additionalProperties": true
+            "additionalProperties": false
           }
         }
       },
@@ -669,20 +613,20 @@
     },
     "property": {
       "title": "Property",
-      "description": "An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values in some OSCAL formats.",
+      "description": "An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair. The value of a property is a simple scalar value, which may be expressed as a list of values.",
       "$id": "#/definitions/property",
       "type": "object",
       "properties": {
-        "uuid": {
-          "title": "Property Universally Unique Identifier",
-          "description": "A unique identifier that can be used to reference this property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.",
-          "type": "string",
-          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-        },
         "name": {
           "title": "Property Name",
           "description": "A textual label that uniquely identifies a specific attribute, characteristic, or quality of the property's containing object.",
           "type": "string"
+        },
+        "uuid": {
+          "title": "Property Universally Unique Identifier",
+          "description": "A unique identifier that can be used to reference this property elsewhere in an OSCAL document. A UUID should be consistently used for a given location across revisions of the document.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
         "ns": {
           "title": "Property Namespace",
@@ -690,47 +634,14 @@
           "type": "string",
           "format": "uri"
         },
+        "value": {
+          "title": "Property Value",
+          "description": "Indicates the value of the attribute, characteristic, or quality.",
+          "type": "string"
+        },
         "class": {
           "title": "Property Class",
           "description": "A textual label that provides a sub_type or characterization of the property's name. This can be used to further distinguish or discriminate between the semantics of multiple properties of the same object with the same name and ns.",
-          "type": "string"
-        },
-        "value": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "value",
-        "name"
-      ],
-      "additionalProperties": false
-    },
-    "annotation": {
-      "title": "Annotated Property",
-      "description": "An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair with optional explanatory remarks. The value of an annotated property is a simple scalar value.",
-      "$id": "#/definitions/annotation",
-      "type": "object",
-      "properties": {
-        "name": {
-          "title": "Annotated Property Name",
-          "description": "A textual label that uniquely identifies a specific attribute, characteristic, or quality of the annotated property's containing object.",
-          "type": "string"
-        },
-        "uuid": {
-          "title": "Annotated Property Universally Unique Identifier",
-          "description": "A unique identifier that can be used to reference this annotated property elsewhere in an OSCAL document. A UUID should be consistantly used for a given location across revisions of the document.",
-          "type": "string",
-          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-        },
-        "ns": {
-          "title": "Annotated Property Namespace",
-          "description": "A namespace qualifying the annotated property's name. This allows different organizations to associate distinct semantics with the same name.",
-          "type": "string",
-          "format": "uri"
-        },
-        "value": {
-          "title": "Annotated Property Value",
-          "description": "Indicates the value of the attribute, characteristic, or quality.",
           "type": "string"
         },
         "remarks": {
@@ -796,13 +707,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -830,13 +734,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -886,46 +783,44 @@
       "$id": "#/definitions/remarks",
       "type": "string"
     },
-    "metadata_published": {
+    "oscal_metadata_published": {
       "title": "Publication Timestamp",
       "description": "The date and time the document was published. The date-time value must be formatted according to RFC 3339 with full time and time zone included.",
-      "$id": "#/definitions/metadata_published",
+      "$id": "#/definitions/oscal_metadata_published",
       "type": "string",
-      "format": "date-time",
-      "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+      "format": "date-time"
     },
-    "metadata_last_modified": {
+    "oscal_metadata_last_modified": {
       "title": "Last Modified Timestamp",
       "description": "The date and time the document was last modified. The date-time value must be formatted according to RFC 3339 with full time and time zone included.",
-      "$id": "#/definitions/metadata_last_modified",
+      "$id": "#/definitions/oscal_metadata_last_modified",
       "type": "string",
-      "format": "date-time",
-      "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+      "format": "date-time"
     },
-    "metadata_version": {
+    "oscal_metadata_version": {
       "title": "Document Version",
       "description": "A string used to distinguish the current version of the document from other previous (and future) versions.",
-      "$id": "#/definitions/metadata_version",
+      "$id": "#/definitions/oscal_metadata_version",
       "type": "string"
     },
-    "metadata_oscal_version": {
+    "oscal_metadata_oscal_version": {
       "title": "OSCAL version",
       "description": "The OSCAL model version the document was authored against.",
-      "$id": "#/definitions/metadata_oscal_version",
+      "$id": "#/definitions/oscal_metadata_oscal_version",
       "type": "string"
     },
-    "metadata_email_address": {
+    "oscal_metadata_email_address": {
       "title": "Email Address",
       "description": "An email address as defined by RFC 5322 Section 3.4.1.",
-      "$id": "#/definitions/metadata_email_address",
+      "$id": "#/definitions/oscal_metadata_email_address",
       "type": "string",
       "format": "email",
       "pattern": "^.+@.+"
     },
-    "metadata_telephone_number": {
+    "oscal_metadata_telephone_number": {
       "title": "Telephone Number",
       "description": "Contact number by telephone.",
-      "$id": "#/definitions/metadata_telephone_number",
+      "$id": "#/definitions/oscal_metadata_telephone_number",
       "type": "object",
       "properties": {
         "type": {
@@ -942,10 +837,10 @@
       ],
       "additionalProperties": false
     },
-    "metadata_address": {
+    "oscal_metadata_address": {
       "title": "Address",
       "description": "A postal address for the location.",
-      "$id": "#/definitions/metadata_address",
+      "$id": "#/definitions/oscal_metadata_address",
       "type": "object",
       "properties": {
         "type": {
@@ -957,7 +852,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/metadata_addr_line"
+            "$ref": "#/definitions/oscal_metadata_addr_line"
           }
         },
         "city": {
@@ -983,21 +878,21 @@
       },
       "additionalProperties": false
     },
-    "metadata_addr_line": {
+    "oscal_metadata_addr_line": {
       "title": "Address line",
       "description": "A single line of an address.",
-      "$id": "#/definitions/metadata_addr_line",
+      "$id": "#/definitions/oscal_metadata_addr_line",
       "type": "string"
     },
-    "metadata_document_id": {
+    "oscal_metadata_document_id": {
       "title": "Document Identifier",
-      "description": "A document identifier qualified by an identifier type.",
-      "$id": "#/definitions/metadata_document_id",
+      "description": "A document identifier qualified by an identifier scheme. A document identifier provides a globally unique identifier for a group of documents that are to be treated as different versions of the same document. If this element does not appear, or if the value of this element is empty, the value of \"document_id\" is equal to the value of the \"uuid\" flag of the top_level root element.",
+      "$id": "#/definitions/oscal_metadata_document_id",
       "type": "object",
       "properties": {
         "scheme": {
           "title": "Document Identification Scheme",
-          "description": "Qualifies the kind of document identifier.",
+          "description": "Qualifies the kind of document identifier using a URI. If the scheme is not provided the value of the element will be interpreted as a string of characters.",
           "type": "string",
           "format": "uri"
         },
@@ -1006,8 +901,7 @@
         }
       },
       "required": [
-        "identifier",
-        "scheme"
+        "identifier"
       ],
       "additionalProperties": false
     },
@@ -1042,13 +936,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -1136,7 +1023,7 @@
           "type": "string"
         },
         "title": {
-          "title": "title field",
+          "title": "Protocol Title",
           "description": "A human readable name for the protocol (e.g., Transport Layer Security).",
           "type": "string"
         },
@@ -1213,13 +1100,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -1254,7 +1134,7 @@
       "type": "object",
       "properties": {
         "title": {
-          "title": "title field",
+          "title": "Privilege Title",
           "description": "A human readable name for the privilege.",
           "type": "string"
         },
@@ -1307,13 +1187,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -1356,13 +1229,6 @@
                 "minItems": 1,
                 "items": {
                   "$ref": "#/definitions/property"
-                }
-              },
-              "annotations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/annotation"
                 }
               },
               "links": {
@@ -1452,13 +1318,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -1485,13 +1344,13 @@
     },
     "activity": {
       "title": "Activity",
-      "description": "Identifies an assessment or related process that can be performed. In the assessment plan, this is an intended activity which may be associated with an assessment task. In the assessment results, this an activity that was actually performed as part of an assessement.",
+      "description": "Identifies an assessment or related process that can be performed. In the assessment plan, this is an intended activity which may be associated with an assessment task. In the assessment results, this an activity that was actually performed as part of an assessment.",
       "$id": "#/definitions/activity",
       "type": "object",
       "properties": {
         "uuid": {
           "title": "Assessment Activity Universally Unique Identifier",
-          "description": "Uniquely identifies this assessment activity. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. A UUID should be consistantly used for a given included activity across revisions of the document.",
+          "description": "Uniquely identifies this assessment activity. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. A UUID should be consistently used for a given included activity across revisions of the document.",
           "type": "string",
           "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
@@ -1512,13 +1371,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -1526,28 +1378,28 @@
             "$ref": "#/definitions/link"
           }
         },
-        "actions": {
+        "steps": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "title": "Action",
-            "description": "Identifies an individual actions, such as test steps or examination procedures.",
+            "title": "Step",
+            "description": "Identifies an individual step in a series of steps related to an activity, such as an assessment test or examination procedure.",
             "type": "object",
             "properties": {
               "uuid": {
-                "title": "Action Universally Unique Identifier",
-                "description": "Uniquely identifies this defined action. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. A UUID should be consistantly used for a given test step across revisions of the document.",
+                "title": "Step Universally Unique Identifier",
+                "description": "Uniquely identifies a step. This UUID may be referenced elsewhere in an OSCAL document when referring to this step. A UUID should be consistently used for a given test step across revisions of the document.",
                 "type": "string",
                 "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
               },
               "title": {
-                "title": "Action Title",
-                "description": "The title for this action.",
+                "title": "Step Title",
+                "description": "The title for this step.",
                 "type": "string"
               },
               "description": {
-                "title": "Action Description",
-                "description": "A human_readable description of this action.",
+                "title": "Step Description",
+                "description": "A human_readable description of this step.",
                 "type": "string"
               },
               "props": {
@@ -1555,13 +1407,6 @@
                 "minItems": 1,
                 "items": {
                   "$ref": "#/definitions/property"
-                }
-              },
-              "annotations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/annotation"
                 }
               },
               "links": {
@@ -1664,13 +1509,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -1692,8 +1530,7 @@
                   "title": "On Date Condition",
                   "description": "The task must occur on the specified date.",
                   "type": "string",
-                  "format": "date-time",
-                  "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+                  "format": "date-time"
                 }
               },
               "required": [
@@ -1710,15 +1547,13 @@
                   "title": "Start Date Condition",
                   "description": "The task must occur on or after the specified date.",
                   "type": "string",
-                  "format": "date-time",
-                  "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+                  "format": "date-time"
                 },
                 "end": {
                   "title": "End Date Condition",
                   "description": "The task must occur on or before the specified date.",
                   "type": "string",
-                  "format": "date-time",
-                  "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+                  "format": "date-time"
                 }
               },
               "required": [
@@ -1767,7 +1602,7 @@
           "minItems": 1,
           "items": {
             "title": "Task Dependency",
-            "description": "Used to indicate that a task is dependant on another task.",
+            "description": "Used to indicate that a task is dependent on another task.",
             "type": "object",
             "properties": {
               "task_uuid": {
@@ -1798,7 +1633,7 @@
           "minItems": 1,
           "items": {
             "title": "Associated Activity",
-            "description": "Identifies an individual activity to be performed as part of an action.",
+            "description": "Identifies an individual activity to be performed as part of a task.",
             "type": "object",
             "properties": {
               "activity_uuid": {
@@ -1812,13 +1647,6 @@
                 "minItems": 1,
                 "items": {
                   "$ref": "#/definitions/property"
-                }
-              },
-              "annotations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/annotation"
                 }
               },
               "links": {
@@ -1916,13 +1744,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "links": {
           "type": "array",
           "minItems": 1,
@@ -1948,13 +1769,6 @@
                 "minItems": 1,
                 "items": {
                   "$ref": "#/definitions/property"
-                }
-              },
-              "annotations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/annotation"
                 }
               },
               "links": {
@@ -2000,7 +1814,7 @@
             "type": "object",
             "properties": {
               "description": {
-                "title": "Control Ojectives Description",
+                "title": "Control Objectives Description",
                 "description": "A human_readable description of this collection of control objectives.",
                 "type": "string"
               },
@@ -2009,13 +1823,6 @@
                 "minItems": 1,
                 "items": {
                   "$ref": "#/definitions/property"
-                }
-              },
-              "annotations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/annotation"
                 }
               },
               "links": {
@@ -2077,7 +1884,7 @@
           "minItems": 1,
           "items": {
             "title": "Include Specific Statements",
-            "description": "Used to constrain the selection to only specificly identified statements.",
+            "description": "Used to constrain the selection to only specificity identified statements.",
             "type": "string"
           }
         }
@@ -2131,7 +1938,7 @@
             "properties": {
               "task_uuid": {
                 "title": "Task Universally Unique Identifier",
-                "description": "Uniquely identifies an assessment activity to be performed as part of the event. This UUID may be referenced elsewhere in an OSCAL document when refering to this information. A UUID should be consistantly used for this schedule across revisions of the document.",
+                "description": "Uniquely identifies an assessment activity to be performed as part of the event. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. A UUID should be consistently used for this schedule across revisions of the document.",
                 "type": "string",
                 "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
               }
@@ -2147,13 +1954,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -2194,13 +1994,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -2256,13 +2049,6 @@
           "minItems": 1,
           "items": {
             "$ref": "#/definitions/property"
-          }
-        },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
           }
         },
         "links": {
@@ -2329,13 +2115,6 @@
                   "$ref": "#/definitions/property"
                 }
               },
-              "annotations": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/annotation"
-                }
-              },
               "links": {
                 "type": "array",
                 "minItems": 1,
@@ -2362,13 +2141,6 @@
                       "minItems": 1,
                       "items": {
                         "$ref": "#/definitions/property"
-                      }
-                    },
-                    "annotations": {
-                      "type": "array",
-                      "minItems": 1,
-                      "items": {
-                        "$ref": "#/definitions/annotation"
                       }
                     },
                     "links": {
@@ -2460,13 +2232,6 @@
             "$ref": "#/definitions/property"
           }
         },
-        "annotations": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/annotation"
-          }
-        },
         "prose": {
           "title": "Part Text",
           "description": "Permits multiple paragraphs, lists, tables etc.",
@@ -2490,7 +2255,7 @@
       "required": [
         "name"
       ],
-      "additionalProperties": true
+      "additionalProperties": false
     },
     "assessment_plan": {
       "title": "Security Assessment Plan (SAP)",
