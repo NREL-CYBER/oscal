@@ -1,16 +1,17 @@
 import { SubjectOfAssessment, AssessmentSubjectPlaceholder } from "./Subject";
 import { ExcludeControl } from "../assessment_plan";
 import { IdentifiedRisk } from "./IdentifiedRisk";
+import { ParameterIdentifier } from "src/profile";
 /**
  * A name given to the document, which may be used by a tool for display and navigation.
  */
 export declare type DocumentTitle = string;
 /**
- * The date and time the document was published. The date_time value must be formatted according to RFC 3339 with full time and time zone included.
+ * The date and time the document was published. The date-time value must be formatted according to RFC 3339 with full time and time zone included.
  */
 export declare type PublicationTimestamp = string;
 /**
- * The date and time the document was last modified. The date_time value must be formatted according to RFC 3339 with full time and time zone included.
+ * The date and time the document was last modified. The date-time value must be formatted according to RFC 3339 with full time and time zone included.
  */
 export declare type LastModifiedTimestamp = string;
 /**
@@ -26,7 +27,7 @@ export declare type OSCALVersion = string;
  */
 export declare type DocumentRevisionTitle = string;
 /**
- * The date and time the document was published. The date_time value must be formatted according to RFC 3339 with full time and time zone included.
+ * The date and time the document was published. The date-time value must be formatted according to RFC 3339 with full time and time zone included.
  */
 export declare type PublicationRevisionTitle = string;
 /**
@@ -1330,6 +1331,7 @@ export interface ImplementedComponent {
 export interface ControlImplementation {
     description: ControlImplementationDescription;
     implemented_requirements: ControlBasedRequirement[];
+    set_parameters: Record<ParameterIdentifier, SetParameterValue>;
 }
 /**
  * Describes how the system satisfies an individual control.

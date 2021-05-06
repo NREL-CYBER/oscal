@@ -17,11 +17,11 @@ export declare type ComponentUniversallyUniqueIdentifier = string;
  */
 export declare type DocumentTitle = string;
 /**
- * The date and time the document was published. The date_time value must be formatted according to RFC 3339 with full time and time zone included.
+ * The date and time the document was published. The date-time value must be formatted according to RFC 3339 with full time and time zone included.
  */
 export declare type PublicationTimestamp = string;
 /**
- * The date and time the document was last modified. The date_time value must be formatted according to RFC 3339 with full time and time zone included.
+ * The date and time the document was last modified. The date-time value must be formatted according to RFC 3339 with full time and time zone included.
  */
 export declare type LastModifiedTimestamp = string;
 /**

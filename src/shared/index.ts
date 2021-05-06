@@ -1,6 +1,7 @@
 import { SubjectOfAssessment, AssessmentSubjectPlaceholder } from "./Subject";
 import { ExcludeControl } from "../assessment_plan";
 import { IdentifiedRisk, ThreatID } from "./IdentifiedRisk";
+import { ParameterIdentifier } from "src/profile";
 
 /**
  * A name given to the document, which may be used by a tool for display and navigation.
@@ -1359,6 +1360,7 @@ export interface ImplementedComponent {
 export interface ControlImplementation {
     description: ControlImplementationDescription;
     implemented_requirements: ControlBasedRequirement[];
+    set_parameters: Record<ParameterIdentifier, SetParameterValue>
 }
 /**
  * Describes how the system satisfies an individual control.
