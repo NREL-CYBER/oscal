@@ -7,6 +7,6 @@ const kebabcaseKeys = require('kebabcase-keys');
 const exportOscal = (input: any) => {
     // Skip anything that already has a dash in it.
     // If it has a dash, it's probably already good to go since its a UUID or ID of some kind.
-    return kebabcaseKeys(input, { deep: true, exclude: [/^.*[\-].*/] });
+    return kebabcaseKeys(input, { deep: true, exclude: [/^.*[\-].*/, "base64"] });
 }
 export default exportOscal;

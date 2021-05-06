@@ -17,7 +17,7 @@ var exportOscal = function exportOscal(input) {
   // If it has a dash, it's probably already good to go since its a UUID or ID of some kind.
   return kebabcaseKeys(input, {
     deep: true,
-    exclude: [/^.*[\-].*/]
+    exclude: [/^.*[\-].*/, "base64"]
   });
 };
 
