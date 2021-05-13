@@ -12,7 +12,9 @@ var _exportNames = {
   SecurityAssessmentPlan: true,
   exportOscal: true,
   importOscal: true,
-  OrganizationSecurityPolicy: true
+  OrganizationSecurityPolicy: true,
+  Capability: true,
+  ComponentDefinition: true
 };
 Object.defineProperty(exports, "SystemSecurityPlan", {
   enumerable: true,
@@ -66,6 +68,18 @@ Object.defineProperty(exports, "OrganizationSecurityPolicy", {
   enumerable: true,
   get: function get() {
     return _osp.OrganizationSecurityPolicy;
+  }
+});
+Object.defineProperty(exports, "Capability", {
+  enumerable: true,
+  get: function get() {
+    return _component.Capability;
+  }
+});
+Object.defineProperty(exports, "ComponentDefinition", {
+  enumerable: true,
+  get: function get() {
+    return _component.ComponentDefinition;
   }
 });
 
@@ -124,5 +138,7 @@ Object.keys(_shared).forEach(function (key) {
     }
   });
 });
+
+var _component = require("./component");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
