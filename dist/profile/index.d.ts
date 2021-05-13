@@ -1,5 +1,5 @@
 import { AnnotatedProperty, DocumentIdentifier, HypertextReference, Link, MediaType, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, Property, PublicationMetadata, Remarks } from "../shared";
-import { Parameter, Constraint } from "src/catalog";
+import { Parameter, Constraint } from "../catalog";
 /**
  * A globally unique identifier for this profile instance. This UUID should be changed when this document is revised.
  */

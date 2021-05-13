@@ -1,7 +1,7 @@
 import { SubjectOfAssessment, AssessmentSubjectPlaceholder } from "./Subject";
 import { ExcludeControl } from "../assessment_plan";
 import { IdentifiedRisk } from "./IdentifiedRisk";
-import { ParameterIdentifier } from "src/profile";
+import { ParameterIdentifier } from "../profile";
 /**
  * A name given to the document, which may be used by a tool for display and navigation.
  */
