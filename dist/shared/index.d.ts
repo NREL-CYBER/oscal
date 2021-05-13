@@ -1342,9 +1342,7 @@ export interface ControlBasedRequirement {
     props?: Property[];
     annotations?: AnnotatedProperty[];
     links?: Link[];
-    parameter_settings?: {
-        [k: string]: SetParameterValue;
-    };
+    parameter_settings?: Record<ParameterIdentifier, SetParameterValue>;
     responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
     by_components?: {
         [k: string]: ComponentControlImplementation;

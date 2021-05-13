@@ -11,6 +11,7 @@ import { OrganizationSecurityPolicy } from "./osp";
 export * from "./shared";
 export * from "./catalog";
 export * from "./poam";
+export { Capability, ComponentDefinition } from "./component";
 
 export {
     exportOscal,
