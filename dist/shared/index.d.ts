@@ -1371,6 +1371,10 @@ export interface ComponentControlImplementation {
         [k: string]: SetParameterValue;
     };
     export?: Export;
+    implementation_status: {
+        state: "implemented" | "partial" | "planned" | "alternative" | "not-applicable";
+        remarks?: Remarks;
+    };
     inherited?: InheritedControlImplementation[];
     satisfied?: SatisfiedControlImplementationResponsibility[];
     responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
