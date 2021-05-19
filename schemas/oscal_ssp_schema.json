@@ -1037,7 +1037,14 @@
         "state": {
           "title": "Implementation State",
           "description": "Identifies the implementation status of the control or control objective.",
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "implemented",
+            "partial",
+            "planned",
+            "alternative",
+            "not-applicable"
+          ]
         },
         "remarks": {
           "$ref": "#/definitions/remarks"
