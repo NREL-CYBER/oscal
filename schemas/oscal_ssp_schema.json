@@ -2621,7 +2621,8 @@
       },
       "required": [
         "uuid",
-        "description"
+        "description",
+        "implementation_status"
       ],
       "additionalProperties": false
     }
