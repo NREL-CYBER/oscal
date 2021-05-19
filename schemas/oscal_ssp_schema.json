@@ -336,6 +336,7 @@
       },
       "required": [
         "uuid",
+        "name",
         "type"
       ],
       "additionalProperties": false
