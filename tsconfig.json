@@ -11,7 +11,7 @@
         "strict": true,
         "sourceMap": true,
         "noEmitOnError": true,
-        "baseUrl": ".",
+        "baseUrl": "src/",
         "resolveJsonModule": true,
         "outDir": "dist"
     },

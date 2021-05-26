@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for oscal">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -40,8 +41,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -51,11 +50,6 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
 			<h1>oscal</h1>
 		</div>
 	</div>
@@ -71,14 +65,15 @@
 				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 					<h2>installation</h2>
 				</a>
-				<pre><code>npm install git:<span class="hljs-regexp">//gi</span>thub.nrel.gov<span class="hljs-regexp">/CyberSecurity/</span>oscal.git</code></pre>
+				<pre><code><span style="color: #001080">yarn</span><span style="color: #000000"> </span><span style="color: #001080">add</span><span style="color: #000000"> git:</span><span style="color: #008000">//github.nrel.gov/CyberSecurity/oscal.git</span>
+</code></pre>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
@@ -94,13 +89,7 @@
 						<a href="interfaces/activity.html" class="tsd-kind-icon">Activity</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/addition.html" class="tsd-kind-icon">Addition</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/address.html" class="tsd-kind-icon">Address</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/alteration.html" class="tsd-kind-icon">Alteration</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/annotatedproperty.html" class="tsd-kind-icon">Annotated<wbr>Property</a>
@@ -109,49 +98,7 @@
 						<a href="interfaces/assessedcontrols.html" class="tsd-kind-icon">Assessed<wbr>Controls</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/assessmentaction.html" class="tsd-kind-icon">Assessment<wbr>Action</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/assessmentactor.html" class="tsd-kind-icon">Assessment<wbr>Actor</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/assessmentassets.html" class="tsd-kind-icon">Assessment<wbr>Assets</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/assessmentlog.html" class="tsd-kind-icon">Assessment<wbr>Log</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/assessmentlogentry.html" class="tsd-kind-icon">Assessment<wbr>Log<wbr>Entry</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/assessmentpart.html" class="tsd-kind-icon">Assessment<wbr>Part</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/assessmentplantermsandconditions.html" class="tsd-kind-icon">Assessment<wbr>Plan<wbr>Terms<wbr>And<wbr>Conditions</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/assessmentplatform.html" class="tsd-kind-icon">Assessment<wbr>Platform</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/assessmentresult.html" class="tsd-kind-icon">Assessment<wbr>Result</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/assessmentspecificcontrolobjective.html" class="tsd-kind-icon">Assessment<wbr>Specific<wbr>Control<wbr>Objective</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/assessmentsubjectplaceholder.html" class="tsd-kind-icon">Assessment<wbr>Subject<wbr>Placeholder</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/assessmentsubjectsource.html" class="tsd-kind-icon">Assessment<wbr>Subject<wbr>Source</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/associatedactivity.html" class="tsd-kind-icon">Associated<wbr>Activity</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/associatedrisk.html" class="tsd-kind-icon">Associated<wbr>Risk</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/attestationstatements.html" class="tsd-kind-icon">Attestation<wbr>Statements</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/authorizationboundary.html" class="tsd-kind-icon">Authorization<wbr>Boundary</a>
@@ -169,9 +116,6 @@
 						<a href="interfaces/bibliographicdefinition.html" class="tsd-kind-icon">Bibliographic<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/call.html" class="tsd-kind-icon">Call</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/capability.html" class="tsd-kind-icon">Capability</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -182,9 +126,6 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/citation.html" class="tsd-kind-icon">Citation</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/combinationrule.html" class="tsd-kind-icon">Combination<wbr>Rule</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/component.html" class="tsd-kind-icon">Component</a>
@@ -205,9 +146,6 @@
 						<a href="interfaces/constraint.html" class="tsd-kind-icon">Constraint</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/constrainttest.html" class="tsd-kind-icon">Constraint<wbr>Test</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/control.html" class="tsd-kind-icon">Control</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -223,15 +161,6 @@
 						<a href="interfaces/controlimplementationresponsibility.html" class="tsd-kind-icon">Control<wbr>Implementation<wbr>Responsibility</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/controlimplementationset.html" class="tsd-kind-icon">Control<wbr>Implementation<wbr>Set</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/controlstatementimplementation.html" class="tsd-kind-icon">Control<wbr>Statement<wbr>Implementation</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/customgrouping.html" class="tsd-kind-icon">Custom<wbr>Grouping</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/dataflow.html" class="tsd-kind-icon">Data<wbr>Flow</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -244,19 +173,10 @@
 						<a href="interfaces/eventtiming.html" class="tsd-kind-icon">Event<wbr>Timing</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/excludecontrol.html" class="tsd-kind-icon">Exclude<wbr>Control</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/excludecontrols.html" class="tsd-kind-icon">Exclude<wbr>Controls</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/export.html" class="tsd-kind-icon">Export</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/facet.html" class="tsd-kind-icon">Facet</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/finding.html" class="tsd-kind-icon">Finding</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/frequencycondition.html" class="tsd-kind-icon">Frequency<wbr>Condition</a>
@@ -271,34 +191,13 @@
 						<a href="interfaces/identifiedrisk.html" class="tsd-kind-icon">Identified<wbr>Risk</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/identifiesthesubject.html" class="tsd-kind-icon">Identifies<wbr>The<wbr>Subject</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/implementedcomponent.html" class="tsd-kind-icon">Implemented<wbr>Component</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/importassessmentplan.html" class="tsd-kind-icon">Import<wbr>Assessment<wbr>Plan</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/importcomponentdefinition.html" class="tsd-kind-icon">Import<wbr>Component<wbr>Definition</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/importprofile.html" class="tsd-kind-icon">Import<wbr>Profile</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/importresource.html" class="tsd-kind-icon">Import<wbr>Resource</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/importsystemsecurityplan.html" class="tsd-kind-icon">Import<wbr>System<wbr>Security<wbr>Plan</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/includeall.html" class="tsd-kind-icon">Include<wbr>All</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/includecontrols.html" class="tsd-kind-icon">Include<wbr>Controls</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/incorporatescomponent.html" class="tsd-kind-icon">Incorporates<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/informationtype.html" class="tsd-kind-icon">Information<wbr>Type</a>
@@ -322,25 +221,13 @@
 						<a href="interfaces/link.html" class="tsd-kind-icon">Link</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/localdefinitions.html" class="tsd-kind-icon">Local<wbr>Definitions</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/location.html" class="tsd-kind-icon">Location</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/loggedby.html" class="tsd-kind-icon">Logged<wbr>By</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/matchcontrolsbyidentifier.html" class="tsd-kind-icon">Match<wbr>Controls<wbr>ByIdentifier</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/mergecontrols.html" class="tsd-kind-icon">Merge<wbr>Controls</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/mitigatingfactor.html" class="tsd-kind-icon">Mitigating<wbr>Factor</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/modifycontrols.html" class="tsd-kind-icon">Modify<wbr>Controls</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/networkarchitecture.html" class="tsd-kind-icon">Network<wbr>Architecture</a>
@@ -349,28 +236,19 @@
 						<a href="interfaces/objective.html" class="tsd-kind-icon">Objective</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/objectivestatus.html" class="tsd-kind-icon">Objective<wbr>Status</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/ondatecondition.html" class="tsd-kind-icon">On<wbr>Date<wbr>Condition</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/ondaterangecondition.html" class="tsd-kind-icon">On<wbr>Date<wbr>Range<wbr>Condition</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/origin.html" class="tsd-kind-icon">Origin</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/oscalcomponentschema.html" class="tsd-kind-icon">Oscal<wbr>Component<wbr>Schema</a>
+						<a href="interfaces/organizationsecuritypolicy.html" class="tsd-kind-icon">Organization<wbr>Security<wbr>Policy</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/poamitem.html" class="tsd-kind-icon">POAMItem</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/parameter.html" class="tsd-kind-icon">Parameter</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/parametersetting.html" class="tsd-kind-icon">Parameter<wbr>Setting</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/part.html" class="tsd-kind-icon">Part</a>
@@ -409,13 +287,7 @@
 						<a href="interfaces/referenedcontrolobjectives.html" class="tsd-kind-icon">Referened<wbr>Control<wbr>Objectives</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/relatedobservation.html" class="tsd-kind-icon">Related<wbr>Observation</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/relevantevidence.html" class="tsd-kind-icon">Relevant<wbr>Evidence</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/removal.html" class="tsd-kind-icon">Removal</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/requiredasset.html" class="tsd-kind-icon">Required<wbr>Asset</a>
@@ -439,28 +311,7 @@
 						<a href="interfaces/revisionhistoryentry.html" class="tsd-kind-icon">Revision<wbr>History<wbr>Entry</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/risklog.html" class="tsd-kind-icon">Risk<wbr>Log</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/risklogentry.html" class="tsd-kind-icon">Risk<wbr>Log<wbr>Entry</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/riskresponse.html" class="tsd-kind-icon">Risk<wbr>Response</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/riskresponseactionreference.html" class="tsd-kind-icon">Risk<wbr>Response<wbr>Action<wbr>Reference</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/riskresponsereference.html" class="tsd-kind-icon">Risk<wbr>Response<wbr>Reference</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/role.html" class="tsd-kind-icon">Role</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/saplocaldefinitions.html" class="tsd-kind-icon">SAPLocal<wbr>Definitions</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/sarlocaldefinitions.html" class="tsd-kind-icon">SARLocal<wbr>Definitions</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/satisfiedcontrolimplementationresponsibility.html" class="tsd-kind-icon">Satisfied<wbr>Control<wbr>Implementation<wbr>Responsibility</a>
@@ -473,9 +324,6 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/securityimpactlevel.html" class="tsd-kind-icon">Security<wbr>Impact<wbr>Level</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/selectassessmentsubject.html" class="tsd-kind-icon">Select<wbr>Assessment<wbr>Subject</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/selectcontrol.html" class="tsd-kind-icon">Select<wbr>Control</a>
@@ -499,9 +347,6 @@
 						<a href="interfaces/status.html" class="tsd-kind-icon">Status</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/subjectofassessment.html" class="tsd-kind-icon">Subject<wbr>OfAssessment</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/systemcharacteristics.html" class="tsd-kind-icon">System<wbr>Characteristics</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -520,9 +365,6 @@
 						<a href="interfaces/systemuser.html" class="tsd-kind-icon">System<wbr>User</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/task.html" class="tsd-kind-icon">Task</a>
-					</li>
-					<li class=" tsd-kind-interface">
 						<a href="interfaces/taskreference.html" class="tsd-kind-icon">Task<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -531,818 +373,605 @@
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/threatid.html" class="tsd-kind-icon">ThreatID</a>
 					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/usescomponent.html" class="tsd-kind-icon">Uses<wbr>Component</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#actiondescription" class="tsd-kind-icon">Action<wbr>Description</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#actiontitle" class="tsd-kind-icon">Action<wbr>Title</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#actionuniversallyuniqueidentifier" class="tsd-kind-icon">Action<wbr>Universally<wbr>Unique<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#actionuniversallyuniqueidentifierreference" class="tsd-kind-icon">Action<wbr>Universally<wbr>Unique<wbr>Identifier<wbr>Reference</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#activityinstanceuniversallyuniqueidentifier" class="tsd-kind-icon">Activity<wbr>Instance<wbr>Universally<wbr>Unique<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#activityuniversallyuniqueidentifierreference" class="tsd-kind-icon">Activity<wbr>Universally<wbr>Unique<wbr>Identifier<wbr>Reference</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#actorrole" class="tsd-kind-icon">Actor<wbr>Role</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#actortype" class="tsd-kind-icon">Actor<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#actoruuidreference" class="tsd-kind-icon">ActorUUIDReference</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#addressline" class="tsd-kind-icon">Address<wbr>Line</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#addresstype" class="tsd-kind-icon">Address<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#adjustmentjustification" class="tsd-kind-icon">Adjustment<wbr>Justification</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#all" class="tsd-kind-icon">All</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#annotatedpropertyname" class="tsd-kind-icon">Annotated<wbr>Property<wbr>Name</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#annotatedpropertynamespace" class="tsd-kind-icon">Annotated<wbr>Property<wbr>Namespace</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#annotatedpropertyuniversallyuniqueidentifier" class="tsd-kind-icon">Annotated<wbr>Property<wbr>Universally<wbr>Unique<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#annotatedpropertyvalue" class="tsd-kind-icon">Annotated<wbr>Property<wbr>Value</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#asis" class="tsd-kind-icon">As<wbr>Is</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#assessedcontrolsdescription" class="tsd-kind-icon">Assessed<wbr>Controls<wbr>Description</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#assessmentactivityuniversallyuniqueidentifier" class="tsd-kind-icon">Assessment<wbr>Activity<wbr>Universally<wbr>Unique<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#assessmentlogentryuniversallyuniqueidentifier" class="tsd-kind-icon">Assessment<wbr>Log<wbr>Entry<wbr>Universally<wbr>Unique<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#assessmentplanreference" class="tsd-kind-icon">Assessment<wbr>Plan<wbr>Reference</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#assessmentplanuniversallyuniqueidentifier" class="tsd-kind-icon">Assessment<wbr>Plan<wbr>Universally<wbr>Unique<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#assessmentplatformtitle" class="tsd-kind-icon">Assessment<wbr>Platform<wbr>Title</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#assessmentplatformuniversallyuniqueidentifier" class="tsd-kind-icon">Assessment<wbr>Platform<wbr>Universally<wbr>Unique<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#assessmentresultsuniversallyuniqueidentifier" class="tsd-kind-icon">Assessment<wbr>Results<wbr>Universally<wbr>Unique<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#assessmentsubjectplaceholderdescription" class="tsd-kind-icon">Assessment<wbr>Subject<wbr>Placeholder<wbr>Description</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#associatedactivityuniversallyuniqueidentifier" class="tsd-kind-icon">Associated<wbr>Activity<wbr>Universally<wbr>Unique<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#associatedriskstatus" class="tsd-kind-icon">Associated<wbr>Risk<wbr>Status</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#authorizationboundarydescription" class="tsd-kind-icon">Authorization<wbr>Boundary<wbr>Description</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#authorizationboundaryremarks" class="tsd-kind-icon">Authorization<wbr>Boundary<wbr>Remarks</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#baselevelconfidentialityintegrityoravailability" class="tsd-kind-icon">Base<wbr>Level<wbr>Confidentiality<wbr>Integrity<wbr>OrAvailability</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#bycomponentuniversallyuniqueidentifier" class="tsd-kind-icon">By<wbr>Component<wbr>Universally<wbr>Unique<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#capabilitydescription" class="tsd-kind-icon">Capability<wbr>Description</a>
-					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#capabilityname" class="tsd-kind-icon">Capability<wbr>Name</a>
+						<a href="modules.html#actiondescription" class="tsd-kind-icon">Action<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#caption" class="tsd-kind-icon">Caption</a>
+						<a href="modules.html#actiontitle" class="tsd-kind-icon">Action<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#catalogorprofilereference" class="tsd-kind-icon">Catalog<wbr>OrProfile<wbr>Reference</a>
+						<a href="modules.html#actionuniversallyuniqueidentifier" class="tsd-kind-icon">Action<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#cataloguniversallyuniqueidentifier" class="tsd-kind-icon">Catalog<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#actionuniversallyuniqueidentifierreference" class="tsd-kind-icon">Action<wbr>Universally<wbr>Unique<wbr>Identifier<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#choice" class="tsd-kind-icon">Choice</a>
+						<a href="modules.html#activityinstanceuniversallyuniqueidentifier" class="tsd-kind-icon">Activity<wbr>Instance<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#citationtext" class="tsd-kind-icon">Citation<wbr>Text</a>
+						<a href="modules.html#activityuniversallyuniqueidentifierreference" class="tsd-kind-icon">Activity<wbr>Universally<wbr>Unique<wbr>Identifier<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#city" class="tsd-kind-icon">City</a>
+						<a href="modules.html#actorrole" class="tsd-kind-icon">Actor<wbr>Role</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#collectedfield" class="tsd-kind-icon">Collected<wbr>Field</a>
+						<a href="modules.html#actortype" class="tsd-kind-icon">Actor<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#combinationmethod" class="tsd-kind-icon">Combination<wbr>Method</a>
+						<a href="modules.html#actoruuidreference" class="tsd-kind-icon">ActorUUIDReference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#componentdefinitionuniversallyuniqueidentifier" class="tsd-kind-icon">Component<wbr>Definition<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#addressline" class="tsd-kind-icon">Address<wbr>Line</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#componentdescription" class="tsd-kind-icon">Component<wbr>Description</a>
+						<a href="modules.html#addresstype" class="tsd-kind-icon">Address<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#componenttitle" class="tsd-kind-icon">Component<wbr>Title</a>
+						<a href="modules.html#adjustmentjustification" class="tsd-kind-icon">Adjustment<wbr>Justification</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#componenttype" class="tsd-kind-icon">Component<wbr>Type</a>
+						<a href="modules.html#all" class="tsd-kind-icon">All</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#componentuniversallyuniqueidentifier" class="tsd-kind-icon">Component<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#annotatedpropertyname" class="tsd-kind-icon">Annotated<wbr>Property<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#componentuniversallyuniqueidentifierreference" class="tsd-kind-icon">Component<wbr>Universally<wbr>Unique<wbr>Identifier<wbr>Reference</a>
+						<a href="modules.html#annotatedpropertynamespace" class="tsd-kind-icon">Annotated<wbr>Property<wbr>Namespace</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#conditionaldate" class="tsd-kind-icon">Conditional<wbr>Date</a>
+						<a href="modules.html#annotatedpropertyuniversallyuniqueidentifier" class="tsd-kind-icon">Annotated<wbr>Property<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#constraintdescription" class="tsd-kind-icon">Constraint<wbr>Description</a>
+						<a href="modules.html#annotatedpropertyvalue" class="tsd-kind-icon">Annotated<wbr>Property<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#constrainttestexpression" class="tsd-kind-icon">Constraint<wbr>Test<wbr>Expression</a>
+						<a href="modules.html#assessedcontrolsdescription" class="tsd-kind-icon">Assessed<wbr>Controls<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlclass" class="tsd-kind-icon">Control<wbr>Class</a>
+						<a href="modules.html#assessmentactivityuniversallyuniqueidentifier" class="tsd-kind-icon">Assessment<wbr>Activity<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlid" class="tsd-kind-icon">ControlID</a>
+						<a href="modules.html#assessmentlogentryuniversallyuniqueidentifier" class="tsd-kind-icon">Assessment<wbr>Log<wbr>Entry<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlidentifier" class="tsd-kind-icon">Control<wbr>Identifier</a>
+						<a href="modules.html#assessmentplanreference" class="tsd-kind-icon">Assessment<wbr>Plan<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlidentifierreference" class="tsd-kind-icon">Control<wbr>Identifier<wbr>Reference</a>
+						<a href="modules.html#assessmentplatformtitle" class="tsd-kind-icon">Assessment<wbr>Platform<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlimplementationdescription" class="tsd-kind-icon">Control<wbr>Implementation<wbr>Description</a>
+						<a href="modules.html#assessmentplatformuniversallyuniqueidentifier" class="tsd-kind-icon">Assessment<wbr>Platform<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlimplementationexportdescription" class="tsd-kind-icon">Control<wbr>Implementation<wbr>Export<wbr>Description</a>
+						<a href="modules.html#associatedactivityuniversallyuniqueidentifier" class="tsd-kind-icon">Associated<wbr>Activity<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlimplementationidentifier" class="tsd-kind-icon">Control<wbr>Implementation<wbr>Identifier</a>
+						<a href="modules.html#associatedriskstatus" class="tsd-kind-icon">Associated<wbr>Risk<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlimplementationresponsibilitydescription" class="tsd-kind-icon">Control<wbr>Implementation<wbr>Responsibility<wbr>Description</a>
+						<a href="modules.html#authorizationboundarydescription" class="tsd-kind-icon">Authorization<wbr>Boundary<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlimplementationsetidentifier" class="tsd-kind-icon">Control<wbr>Implementation<wbr>Set<wbr>Identifier</a>
+						<a href="modules.html#authorizationboundaryremarks" class="tsd-kind-icon">Authorization<wbr>Boundary<wbr>Remarks</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlobjectivedescription" class="tsd-kind-icon">Control<wbr>Objective<wbr>Description</a>
+						<a href="modules.html#baselevelconfidentialityintegrityoravailability" class="tsd-kind-icon">Base<wbr>Level<wbr>Confidentiality<wbr>Integrity<wbr>OrAvailability</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlojectivesdescription" class="tsd-kind-icon">Control<wbr>Ojectives<wbr>Description</a>
+						<a href="modules.html#bycomponentuniversallyuniqueidentifier" class="tsd-kind-icon">By<wbr>Component<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlrequirementuniversallyuniqueidentifier" class="tsd-kind-icon">Control<wbr>Requirement<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#caption" class="tsd-kind-icon">Caption</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlstatementimplementationidentifier" class="tsd-kind-icon">Control<wbr>Statement<wbr>Implementation<wbr>Identifier</a>
+						<a href="modules.html#cataloguniversallyuniqueidentifier" class="tsd-kind-icon">Catalog<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controlstatementreferenceuniversallyuniqueidentifier" class="tsd-kind-icon">Control<wbr>Statement<wbr>Reference<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#citationtext" class="tsd-kind-icon">Citation<wbr>Text</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#controltitle" class="tsd-kind-icon">Control<wbr>Title</a>
+						<a href="modules.html#city" class="tsd-kind-icon">City</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#countrycode" class="tsd-kind-icon">Country<wbr>Code</a>
+						<a href="modules.html#collectedfield" class="tsd-kind-icon">Collected<wbr>Field</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#dataflowdescription" class="tsd-kind-icon">Data<wbr>Flow<wbr>Description</a>
+						<a href="modules.html#componentdescription" class="tsd-kind-icon">Component<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#dependson" class="tsd-kind-icon">Depends<wbr>On</a>
+						<a href="modules.html#componenttitle" class="tsd-kind-icon">Component<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#descriptionofrequiredasset" class="tsd-kind-icon">Description<wbr>OfRequired<wbr>Asset</a>
+						<a href="modules.html#componenttype" class="tsd-kind-icon">Component<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#diagramdescription" class="tsd-kind-icon">Diagram<wbr>Description</a>
+						<a href="modules.html#componentuniversallyuniqueidentifierreference" class="tsd-kind-icon">Component<wbr>Universally<wbr>Unique<wbr>Identifier<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#documentidentificationscheme" class="tsd-kind-icon">Document<wbr>Identification<wbr>Scheme</a>
+						<a href="modules.html#conditionaldate" class="tsd-kind-icon">Conditional<wbr>Date</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#documentrevisiontitle" class="tsd-kind-icon">Document<wbr>Revision<wbr>Title</a>
+						<a href="modules.html#controlclass" class="tsd-kind-icon">Control<wbr>Class</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#documentrevisionversion" class="tsd-kind-icon">Document<wbr>Revision<wbr>Version</a>
+						<a href="modules.html#controlidentifier" class="tsd-kind-icon">Control<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#documenttitle" class="tsd-kind-icon">Document<wbr>Title</a>
+						<a href="modules.html#controlidentifierreference" class="tsd-kind-icon">Control<wbr>Identifier<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#documentversion" class="tsd-kind-icon">Document<wbr>Version</a>
+						<a href="modules.html#controlimplementationdescription" class="tsd-kind-icon">Control<wbr>Implementation<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#emailaddress" class="tsd-kind-icon">Email<wbr>Address</a>
+						<a href="modules.html#controlimplementationexportdescription" class="tsd-kind-icon">Control<wbr>Implementation<wbr>Export<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#end" class="tsd-kind-icon">End</a>
+						<a href="modules.html#controlimplementationresponsibilitydescription" class="tsd-kind-icon">Control<wbr>Implementation<wbr>Responsibility<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#enddatecondition" class="tsd-kind-icon">End<wbr>Date<wbr>Condition</a>
+						<a href="modules.html#controlobjectivedescription" class="tsd-kind-icon">Control<wbr>Objective<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#endfield" class="tsd-kind-icon">End<wbr>Field</a>
+						<a href="modules.html#controlojectivesdescription" class="tsd-kind-icon">Control<wbr>Ojectives<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#eventdescription" class="tsd-kind-icon">Event<wbr>Description</a>
+						<a href="modules.html#controlrequirementuniversallyuniqueidentifier" class="tsd-kind-icon">Control<wbr>Requirement<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#eventtitle" class="tsd-kind-icon">Event<wbr>Title</a>
+						<a href="modules.html#controlstatementreferenceuniversallyuniqueidentifier" class="tsd-kind-icon">Control<wbr>Statement<wbr>Reference<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#eventuniversallyuniqueidentifier" class="tsd-kind-icon">Event<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#controltitle" class="tsd-kind-icon">Control<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#expiresfield" class="tsd-kind-icon">Expires<wbr>Field</a>
+						<a href="modules.html#countrycode" class="tsd-kind-icon">Country<wbr>Code</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#externalidentifierschema" class="tsd-kind-icon">External<wbr>Identifier<wbr>Schema</a>
+						<a href="modules.html#dataflowdescription" class="tsd-kind-icon">Data<wbr>Flow<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#facetname" class="tsd-kind-icon">Facet<wbr>Name</a>
+						<a href="modules.html#diagramdescription" class="tsd-kind-icon">Diagram<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#facetvalue" class="tsd-kind-icon">Facet<wbr>Value</a>
+						<a href="modules.html#documentidentificationscheme" class="tsd-kind-icon">Document<wbr>Identification<wbr>Scheme</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#filename" class="tsd-kind-icon">File<wbr>Name</a>
+						<a href="modules.html#documentrevisiontitle" class="tsd-kind-icon">Document<wbr>Revision<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#findingdescription" class="tsd-kind-icon">Finding<wbr>Description</a>
+						<a href="modules.html#documentrevisionversion" class="tsd-kind-icon">Document<wbr>Revision<wbr>Version</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#findingtitle" class="tsd-kind-icon">Finding<wbr>Title</a>
+						<a href="modules.html#documenttitle" class="tsd-kind-icon">Document<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#findinguniversallyuniqueidentifier" class="tsd-kind-icon">Finding<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#documentversion" class="tsd-kind-icon">Document<wbr>Version</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#functionsperformed" class="tsd-kind-icon">Functions<wbr>Performed</a>
+						<a href="modules.html#emailaddress" class="tsd-kind-icon">Email<wbr>Address</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#groupclass" class="tsd-kind-icon">Group<wbr>Class</a>
+						<a href="modules.html#enddatecondition" class="tsd-kind-icon">End<wbr>Date<wbr>Condition</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#groupidentifier" class="tsd-kind-icon">Group<wbr>Identifier</a>
+						<a href="modules.html#eventdescription" class="tsd-kind-icon">Event<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#grouptitle" class="tsd-kind-icon">Group<wbr>Title</a>
+						<a href="modules.html#eventtitle" class="tsd-kind-icon">Event<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#guidelinetext" class="tsd-kind-icon">Guideline<wbr>Text</a>
+						<a href="modules.html#eventuniversallyuniqueidentifier" class="tsd-kind-icon">Event<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#hashalgorithm" class="tsd-kind-icon">Hash<wbr>Algorithm</a>
+						<a href="modules.html#expiresfield" class="tsd-kind-icon">Expires<wbr>Field</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#hyperlinkreference" class="tsd-kind-icon">Hyperlink<wbr>Reference</a>
+						<a href="modules.html#externalidentifierschema" class="tsd-kind-icon">External<wbr>Identifier<wbr>Schema</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#hypertextreference" class="tsd-kind-icon">Hypertext<wbr>Reference</a>
+						<a href="modules.html#facetname" class="tsd-kind-icon">Facet<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#identificationsystemtype" class="tsd-kind-icon">Identification<wbr>System<wbr>Type</a>
+						<a href="modules.html#facetvalue" class="tsd-kind-icon">Facet<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#implementationstatementuuid" class="tsd-kind-icon">Implementation<wbr>StatementUUID</a>
+						<a href="modules.html#filename" class="tsd-kind-icon">File<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#implementationstatus" class="tsd-kind-icon">Implementation<wbr>Status</a>
+						<a href="modules.html#functionsperformed" class="tsd-kind-icon">Functions<wbr>Performed</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#implementationuuid" class="tsd-kind-icon">ImplementationUUID</a>
+						<a href="modules.html#hashalgorithm" class="tsd-kind-icon">Hash<wbr>Algorithm</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#includecontainedcontrolswithcontrol" class="tsd-kind-icon">Include<wbr>Contained<wbr>Controls<wbr>With<wbr>Control</a>
+						<a href="modules.html#hypertextreference" class="tsd-kind-icon">Hypertext<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#includespecificstatements" class="tsd-kind-icon">Include<wbr>Specific<wbr>Statements</a>
+						<a href="modules.html#identificationsystemtype" class="tsd-kind-icon">Identification<wbr>System<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#includesubjectsdescription" class="tsd-kind-icon">Include<wbr>Subjects<wbr>Description</a>
+						<a href="modules.html#implementationstatementuuid" class="tsd-kind-icon">Implementation<wbr>StatementUUID</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#includedactivitydescription" class="tsd-kind-icon">Included<wbr>Activity<wbr>Description</a>
+						<a href="modules.html#implementationstatus" class="tsd-kind-icon">Implementation<wbr>Status</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#includedactivitytitle" class="tsd-kind-icon">Included<wbr>Activity<wbr>Title</a>
+						<a href="modules.html#implementationuuid" class="tsd-kind-icon">ImplementationUUID</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#incorporatescomponentdescription" class="tsd-kind-icon">Incorporates<wbr>Component<wbr>Description</a>
+						<a href="modules.html#includespecificstatements" class="tsd-kind-icon">Include<wbr>Specific<wbr>Statements</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#informationtypedescription" class="tsd-kind-icon">Information<wbr>Type<wbr>Description</a>
+						<a href="modules.html#includesubjectsdescription" class="tsd-kind-icon">Include<wbr>Subjects<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#informationtypeidentificationsystem" class="tsd-kind-icon">Information<wbr>Type<wbr>Identification<wbr>System</a>
+						<a href="modules.html#includedactivitydescription" class="tsd-kind-icon">Included<wbr>Activity<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#informationtypesystemizedidentifier" class="tsd-kind-icon">Information<wbr>Type<wbr>Systemized<wbr>Identifier</a>
+						<a href="modules.html#includedactivitytitle" class="tsd-kind-icon">Included<wbr>Activity<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#informationtypeuniversallyuniqueidentifier" class="tsd-kind-icon">Information<wbr>Type<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#informationtypedescription" class="tsd-kind-icon">Information<wbr>Type<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#inheritedcontrolimplementationdescription" class="tsd-kind-icon">Inherited<wbr>Control<wbr>Implementation<wbr>Description</a>
+						<a href="modules.html#informationtypeidentificationsystem" class="tsd-kind-icon">Information<wbr>Type<wbr>Identification<wbr>System</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#inheriteduniversallyuniqueidentifier" class="tsd-kind-icon">Inherited<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#informationtypesystemizedidentifier" class="tsd-kind-icon">Information<wbr>Type<wbr>Systemized<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#inventoryitemdescription" class="tsd-kind-icon">Inventory<wbr>Item<wbr>Description</a>
+						<a href="modules.html#informationtypeuniversallyuniqueidentifier" class="tsd-kind-icon">Information<wbr>Type<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#inventoryitemuniversallyuniqueidentifier" class="tsd-kind-icon">Inventory<wbr>Item<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#inheritedcontrolimplementationdescription" class="tsd-kind-icon">Inherited<wbr>Control<wbr>Implementation<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#lastmodifiedtimestamp" class="tsd-kind-icon">Last<wbr>Modified<wbr>Timestamp</a>
+						<a href="modules.html#inheriteduniversallyuniqueidentifier" class="tsd-kind-icon">Inherited<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#leveragedauthorizationuniversallyuniqueidentifier" class="tsd-kind-icon">Leveraged<wbr>Authorization<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#inventoryitemdescription" class="tsd-kind-icon">Inventory<wbr>Item<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#linktext" class="tsd-kind-icon">Link<wbr>Text</a>
+						<a href="modules.html#inventoryitemuniversallyuniqueidentifier" class="tsd-kind-icon">Inventory<wbr>Item<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#locationreference" class="tsd-kind-icon">Location<wbr>Reference</a>
+						<a href="modules.html#lastmodifiedtimestamp" class="tsd-kind-icon">Last<wbr>Modified<wbr>Timestamp</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#locationtitle" class="tsd-kind-icon">Location<wbr>Title</a>
+						<a href="modules.html#leveragedauthorizationuniversallyuniqueidentifier" class="tsd-kind-icon">Leveraged<wbr>Authorization<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#locationurl" class="tsd-kind-icon">LocationURL</a>
+						<a href="modules.html#linktext" class="tsd-kind-icon">Link<wbr>Text</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#locationuniversallyuniqueidentifier" class="tsd-kind-icon">Location<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#locationreference" class="tsd-kind-icon">Location<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#logactorrole" class="tsd-kind-icon">Log<wbr>Actor<wbr>Role</a>
+						<a href="modules.html#locationtitle" class="tsd-kind-icon">Location<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#mediatype" class="tsd-kind-icon">Media<wbr>Type</a>
+						<a href="modules.html#locationurl" class="tsd-kind-icon">LocationURL</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#mitigatingfactordescription" class="tsd-kind-icon">Mitigating<wbr>Factor<wbr>Description</a>
+						<a href="modules.html#locationuniversallyuniqueidentifier" class="tsd-kind-icon">Location<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#mitigatingfactoruniversallyuniqueidentifier" class="tsd-kind-icon">Mitigating<wbr>Factor<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#logactorrole" class="tsd-kind-icon">Log<wbr>Actor<wbr>Role</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#namingsystem" class="tsd-kind-icon">Naming<wbr>System</a>
+						<a href="modules.html#mediatype" class="tsd-kind-icon">Media<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#networkarchitecturedescription" class="tsd-kind-icon">Network<wbr>Architecture<wbr>Description</a>
+						<a href="modules.html#mitigatingfactordescription" class="tsd-kind-icon">Mitigating<wbr>Factor<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#oscalversion" class="tsd-kind-icon">OSCALVersion</a>
+						<a href="modules.html#mitigatingfactoruniversallyuniqueidentifier" class="tsd-kind-icon">Mitigating<wbr>Factor<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#objectivedescription" class="tsd-kind-icon">Objective<wbr>Description</a>
+						<a href="modules.html#namingsystem" class="tsd-kind-icon">Naming<wbr>System</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#objectiveid" class="tsd-kind-icon">ObjectiveID</a>
+						<a href="modules.html#networkarchitecturedescription" class="tsd-kind-icon">Network<wbr>Architecture<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#objectivestatusdescription" class="tsd-kind-icon">Objective<wbr>Status<wbr>Description</a>
+						<a href="modules.html#oscalversion" class="tsd-kind-icon">OSCALVersion</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#objectivestatustitle" class="tsd-kind-icon">Objective<wbr>Status<wbr>Title</a>
+						<a href="modules.html#objectivedescription" class="tsd-kind-icon">Objective<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#observationmethod" class="tsd-kind-icon">Observation<wbr>Method</a>
+						<a href="modules.html#objectiveid" class="tsd-kind-icon">ObjectiveID</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#observationtitle" class="tsd-kind-icon">Observation<wbr>Title</a>
+						<a href="modules.html#objectivestatusdescription" class="tsd-kind-icon">Objective<wbr>Status<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#observationtype" class="tsd-kind-icon">Observation<wbr>Type</a>
+						<a href="modules.html#objectivestatustitle" class="tsd-kind-icon">Objective<wbr>Status<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#observationuniversallyuniqueidentifier" class="tsd-kind-icon">Observation<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#observationmethod" class="tsd-kind-icon">Observation<wbr>Method</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#observationuniversallyuniqueidentifierreference" class="tsd-kind-icon">Observation<wbr>Universally<wbr>Unique<wbr>Identifier<wbr>Reference</a>
+						<a href="modules.html#observationtitle" class="tsd-kind-icon">Observation<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#observatondescription" class="tsd-kind-icon">Observaton<wbr>Description</a>
+						<a href="modules.html#observationtype" class="tsd-kind-icon">Observation<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#operatingstate" class="tsd-kind-icon">Operating<wbr>State</a>
+						<a href="modules.html#observationuniversallyuniqueidentifier" class="tsd-kind-icon">Observation<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#order" class="tsd-kind-icon">Order</a>
+						<a href="modules.html#observatondescription" class="tsd-kind-icon">Observaton<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#organizationalaffiliation" class="tsd-kind-icon">Organizational<wbr>Affiliation</a>
+						<a href="modules.html#operatingstate" class="tsd-kind-icon">Operating<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#poamitemdescription" class="tsd-kind-icon">POAMItem<wbr>Description</a>
+						<a href="modules.html#organizationalaffiliation" class="tsd-kind-icon">Organizational<wbr>Affiliation</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#poamitemtitle" class="tsd-kind-icon">POAMItem<wbr>Title</a>
+						<a href="modules.html#poamitemdescription" class="tsd-kind-icon">POAMItem<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#poamitemuniversallyuniqueidentifier" class="tsd-kind-icon">POAMItem<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#poamitemtitle" class="tsd-kind-icon">POAMItem<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#poamuniversallyuniqueidentifier" class="tsd-kind-icon">POAMUniversally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#poamitemuniversallyuniqueidentifier" class="tsd-kind-icon">POAMItem<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#parametercardinality" class="tsd-kind-icon">Parameter<wbr>Cardinality</a>
+						<a href="modules.html#poamuniversallyuniqueidentifier" class="tsd-kind-icon">POAMUniversally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#parameterclass" class="tsd-kind-icon">Parameter<wbr>Class</a>
+						<a href="modules.html#parametervalue" class="tsd-kind-icon">Parameter<wbr>Value</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#parameteridentifier" class="tsd-kind-icon">Parameter<wbr>Identifier</a>
+						<a href="modules.html#partclass" class="tsd-kind-icon">Part<wbr>Class</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#parameterlabel" class="tsd-kind-icon">Parameter<wbr>Label</a>
+						<a href="modules.html#partidentifier" class="tsd-kind-icon">Part<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#parameterusagedescription" class="tsd-kind-icon">Parameter<wbr>Usage<wbr>Description</a>
+						<a href="modules.html#partname" class="tsd-kind-icon">Part<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#parametervalue" class="tsd-kind-icon">Parameter<wbr>Value</a>
+						<a href="modules.html#partnamespace" class="tsd-kind-icon">Part<wbr>Namespace</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#partclass" class="tsd-kind-icon">Part<wbr>Class</a>
+						<a href="modules.html#parttext" class="tsd-kind-icon">Part<wbr>Text</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#partidentifier" class="tsd-kind-icon">Part<wbr>Identifier</a>
+						<a href="modules.html#parttitle" class="tsd-kind-icon">Part<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#partname" class="tsd-kind-icon">Part<wbr>Name</a>
+						<a href="modules.html#partyname" class="tsd-kind-icon">Party<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#partnamespace" class="tsd-kind-icon">Part<wbr>Namespace</a>
+						<a href="modules.html#partyreference" class="tsd-kind-icon">Party<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#parttext" class="tsd-kind-icon">Part<wbr>Text</a>
+						<a href="modules.html#partyshortname" class="tsd-kind-icon">Party<wbr>Short<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#parttitle" class="tsd-kind-icon">Part<wbr>Title</a>
+						<a href="modules.html#partytype" class="tsd-kind-icon">Party<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#partyname" class="tsd-kind-icon">Party<wbr>Name</a>
+						<a href="modules.html#partyuuidreference" class="tsd-kind-icon">PartyUUIDReference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#partyreference" class="tsd-kind-icon">Party<wbr>Reference</a>
+						<a href="modules.html#partyuniversallyuniqueidentifier" class="tsd-kind-icon">Party<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#partyshortname" class="tsd-kind-icon">Party<wbr>Short<wbr>Name</a>
+						<a href="modules.html#partyuuidfield" class="tsd-kind-icon">Party<wbr>Uuid<wbr>Field</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#partytype" class="tsd-kind-icon">Party<wbr>Type</a>
+						<a href="modules.html#period" class="tsd-kind-icon">Period</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#partyuuidreference" class="tsd-kind-icon">PartyUUIDReference</a>
+						<a href="modules.html#phonetype" class="tsd-kind-icon">Phone<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#partyuniversallyuniqueidentifier" class="tsd-kind-icon">Party<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#portrangeend" class="tsd-kind-icon">Port<wbr>Range<wbr>End</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#partyuuidfield" class="tsd-kind-icon">Party<wbr>Uuid<wbr>Field</a>
+						<a href="modules.html#portrangestart" class="tsd-kind-icon">Port<wbr>Range<wbr>Start</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#pattern" class="tsd-kind-icon">Pattern</a>
+						<a href="modules.html#postalcode" class="tsd-kind-icon">Postal<wbr>Code</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#period" class="tsd-kind-icon">Period</a>
+						<a href="modules.html#privilegedescription" class="tsd-kind-icon">Privilege<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#phonetype" class="tsd-kind-icon">Phone<wbr>Type</a>
+						<a href="modules.html#privilegetitle" class="tsd-kind-icon">Privilege<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#position" class="tsd-kind-icon">Position</a>
+						<a href="modules.html#profilereference" class="tsd-kind-icon">Profile<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#postalcode" class="tsd-kind-icon">Postal<wbr>Code</a>
+						<a href="modules.html#propertyclass" class="tsd-kind-icon">Property<wbr>Class</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#privilegedescription" class="tsd-kind-icon">Privilege<wbr>Description</a>
+						<a href="modules.html#propertyname" class="tsd-kind-icon">Property<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#privilegetitle" class="tsd-kind-icon">Privilege<wbr>Title</a>
+						<a href="modules.html#propertynamespace" class="tsd-kind-icon">Property<wbr>Namespace</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#profilereference" class="tsd-kind-icon">Profile<wbr>Reference</a>
+						<a href="modules.html#propertyuniversallyuniqueidentifier" class="tsd-kind-icon">Property<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#profileuniversallyuniqueidentifier" class="tsd-kind-icon">Profile<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#protocolname" class="tsd-kind-icon">Protocol<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#propertyclass" class="tsd-kind-icon">Property<wbr>Class</a>
+						<a href="modules.html#protocoltitle" class="tsd-kind-icon">Protocol<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#propertyname" class="tsd-kind-icon">Property<wbr>Name</a>
+						<a href="modules.html#providedcontrolimplementationdescription" class="tsd-kind-icon">Provided<wbr>Control<wbr>Implementation<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#propertynamespace" class="tsd-kind-icon">Property<wbr>Namespace</a>
+						<a href="modules.html#provideduuid" class="tsd-kind-icon">ProvidedUUID</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#propertyuniversallyuniqueidentifier" class="tsd-kind-icon">Property<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#provideduniversallyuniqueidentifier" class="tsd-kind-icon">Provided<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#protocolname" class="tsd-kind-icon">Protocol<wbr>Name</a>
+						<a href="modules.html#publicationrevisiontitle" class="tsd-kind-icon">Publication<wbr>Revision<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#protocoltitle" class="tsd-kind-icon">Protocol<wbr>Title</a>
+						<a href="modules.html#publicationtimestamp" class="tsd-kind-icon">Publication<wbr>Timestamp</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#providedcontrolimplementationdescription" class="tsd-kind-icon">Provided<wbr>Control<wbr>Implementation<wbr>Description</a>
+						<a href="modules.html#purpose" class="tsd-kind-icon">Purpose</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#provideduuid" class="tsd-kind-icon">ProvidedUUID</a>
+						<a href="modules.html#relation" class="tsd-kind-icon">Relation</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#provideduniversallyuniqueidentifier" class="tsd-kind-icon">Provided<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#relevantevidencedescription" class="tsd-kind-icon">Relevant<wbr>Evidence<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#publicationrevisiontitle" class="tsd-kind-icon">Publication<wbr>Revision<wbr>Title</a>
+						<a href="modules.html#relevantevidencereference" class="tsd-kind-icon">Relevant<wbr>Evidence<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#publicationtimestamp" class="tsd-kind-icon">Publication<wbr>Timestamp</a>
+						<a href="modules.html#remarks" class="tsd-kind-icon">Remarks</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#purpose" class="tsd-kind-icon">Purpose</a>
+						<a href="modules.html#remarksfield" class="tsd-kind-icon">Remarks<wbr>Field</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#referencebyassignedname" class="tsd-kind-icon">Reference<wbr>ByAssigned<wbr>Name</a>
+						<a href="modules.html#requireduniversallyuniqueidentifier" class="tsd-kind-icon">Required<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#referencebyclass" class="tsd-kind-icon">Reference<wbr>ByClass</a>
+						<a href="modules.html#resourcedescription" class="tsd-kind-icon">Resource<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#referencebyid" class="tsd-kind-icon">Reference<wbr>ByID</a>
+						<a href="modules.html#resourcetitle" class="tsd-kind-icon">Resource<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#referencesbyitemnameorgenericidentifier" class="tsd-kind-icon">References<wbr>ByItem<wbr>Name<wbr>OrGeneric<wbr>Identifier</a>
+						<a href="modules.html#resourceuniversallyuniqueidentifier" class="tsd-kind-icon">Resource<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#relation" class="tsd-kind-icon">Relation</a>
+						<a href="modules.html#responsibilityuniversallyuniqueidentifier" class="tsd-kind-icon">Responsibility<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#relevantevidencedescription" class="tsd-kind-icon">Relevant<wbr>Evidence<wbr>Description</a>
+						<a href="modules.html#riskdescription" class="tsd-kind-icon">Risk<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#relevantevidencereference" class="tsd-kind-icon">Relevant<wbr>Evidence<wbr>Reference</a>
+						<a href="modules.html#riskstatement" class="tsd-kind-icon">Risk<wbr>Statement</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#remarks" class="tsd-kind-icon">Remarks</a>
+						<a href="modules.html#risktitle" class="tsd-kind-icon">Risk<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#remarksfield" class="tsd-kind-icon">Remarks<wbr>Field</a>
+						<a href="modules.html#riskuniversallyuniqueidentifier" class="tsd-kind-icon">Risk<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#remediationintent" class="tsd-kind-icon">Remediation<wbr>Intent</a>
+						<a href="modules.html#roledescription" class="tsd-kind-icon">Role<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#remediationuniversallyuniqueidentifier" class="tsd-kind-icon">Remediation<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#roleidentifier" class="tsd-kind-icon">Role<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#requireduniversallyuniqueidentifier" class="tsd-kind-icon">Required<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#roleidentifierreference" class="tsd-kind-icon">Role<wbr>Identifier<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#resourcedescription" class="tsd-kind-icon">Resource<wbr>Description</a>
+						<a href="modules.html#roleshortname" class="tsd-kind-icon">Role<wbr>Short<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#resourcetitle" class="tsd-kind-icon">Resource<wbr>Title</a>
+						<a href="modules.html#roletitle" class="tsd-kind-icon">Role<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#resourceuniversallyuniqueidentifier" class="tsd-kind-icon">Resource<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#satisfiedcontrolimplementationresponsibilitydescription" class="tsd-kind-icon">Satisfied<wbr>Control<wbr>Implementation<wbr>Responsibility<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#responsedescription" class="tsd-kind-icon">Response<wbr>Description</a>
+						<a href="modules.html#satisfieduniversallyuniqueidentifier" class="tsd-kind-icon">Satisfied<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#responsetitle" class="tsd-kind-icon">Response<wbr>Title</a>
+						<a href="modules.html#securityobjectiveavailability" class="tsd-kind-icon">Security<wbr>Objective<wbr>Availability</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#responseuniversallyuniqueidentifierreference" class="tsd-kind-icon">Response<wbr>Universally<wbr>Unique<wbr>Identifier<wbr>Reference</a>
+						<a href="modules.html#securityobjectiveconfidentiality" class="tsd-kind-icon">Security<wbr>Objective<wbr>Confidentiality</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#responsibilityuniversallyuniqueidentifier" class="tsd-kind-icon">Responsibility<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#securityobjectiveintegrity" class="tsd-kind-icon">Security<wbr>Objective<wbr>Integrity</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#resultsdescription" class="tsd-kind-icon">Results<wbr>Description</a>
+						<a href="modules.html#securitysensitivitylevel" class="tsd-kind-icon">Security<wbr>Sensitivity<wbr>Level</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#resultstitle" class="tsd-kind-icon">Results<wbr>Title</a>
+						<a href="modules.html#selectedlevelconfidentialityintegrityoravailability" class="tsd-kind-icon">Selected<wbr>Level<wbr>Confidentiality<wbr>Integrity<wbr>OrAvailability</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#resultsuniversallyuniqueidentifier" class="tsd-kind-icon">Results<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#serviceprotocolinformationuniversallyuniqueidentifier" class="tsd-kind-icon">Service<wbr>Protocol<wbr>Information<wbr>Universally<wbr>Unique<wbr>Identifier</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#riskdescription" class="tsd-kind-icon">Risk<wbr>Description</a>
+						<a href="modules.html#startdatecondition" class="tsd-kind-icon">Start<wbr>Date<wbr>Condition</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#risklogentryuniversallyuniqueidentifier" class="tsd-kind-icon">Risk<wbr>Log<wbr>Entry<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#state" class="tsd-kind-icon">State</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#riskresolutiondeadline" class="tsd-kind-icon">Risk<wbr>Resolution<wbr>Deadline</a>
+						<a href="modules.html#subjectreferencetitle" class="tsd-kind-icon">Subject<wbr>Reference<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#riskstatement" class="tsd-kind-icon">Risk<wbr>Statement</a>
+						<a href="modules.html#subjecttype" class="tsd-kind-icon">Subject<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#riskstatus" class="tsd-kind-icon">Risk<wbr>Status</a>
+						<a href="modules.html#systemauthorizationdate" class="tsd-kind-icon">System<wbr>Authorization<wbr>Date</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#risktitle" class="tsd-kind-icon">Risk<wbr>Title</a>
+						<a href="modules.html#systemcomponentstate" class="tsd-kind-icon">System<wbr>Component<wbr>State</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#riskuniversallyuniqueidentifier" class="tsd-kind-icon">Risk<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#systemdescription" class="tsd-kind-icon">System<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#riskuniversallyuniqueidentifierreference" class="tsd-kind-icon">Risk<wbr>Universally<wbr>Unique<wbr>Identifier<wbr>Reference</a>
+						<a href="modules.html#systemnamefull" class="tsd-kind-icon">System<wbr>Name<wbr>Full</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#roledescription" class="tsd-kind-icon">Role<wbr>Description</a>
+						<a href="modules.html#systemnameshort" class="tsd-kind-icon">System<wbr>Name<wbr>Short</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#roleidentifier" class="tsd-kind-icon">Role<wbr>Identifier</a>
+						<a href="modules.html#systemsecurityplanreference" class="tsd-kind-icon">System<wbr>Security<wbr>Plan<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#roleidentifierreference" class="tsd-kind-icon">Role<wbr>Identifier<wbr>Reference</a>
+						<a href="modules.html#taskuniversallyuniqueidentifierreference" class="tsd-kind-icon">Task<wbr>Universally<wbr>Unique<wbr>Identifier<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#roleshortname" class="tsd-kind-icon">Role<wbr>Short<wbr>Name</a>
+						<a href="modules.html#threatinformationresourcereference" class="tsd-kind-icon">Threat<wbr>Information<wbr>Resource<wbr>Reference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#roletitle" class="tsd-kind-icon">Role<wbr>Title</a>
+						<a href="modules.html#threattypeidentificationsystem" class="tsd-kind-icon">Threat<wbr>Type<wbr>Identification<wbr>System</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#satisfiedcontrolimplementationresponsibilitydescription" class="tsd-kind-icon">Satisfied<wbr>Control<wbr>Implementation<wbr>Responsibility<wbr>Description</a>
+						<a href="modules.html#timeunit" class="tsd-kind-icon">Time<wbr>Unit</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#satisfieduniversallyuniqueidentifier" class="tsd-kind-icon">Satisfied<wbr>Universally<wbr>Unique<wbr>Identifier</a>
+						<a href="modules.html#titlefield" class="tsd-kind-icon">Title<wbr>Field</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#securityobjectiveavailability" class="tsd-kind-icon">Security<wbr>Objective<wbr>Availability</a>
+						<a href="modules.html#transport" class="tsd-kind-icon">Transport</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#securityobjectiveconfidentiality" class="tsd-kind-icon">Security<wbr>Objective<wbr>Confidentiality</a>
+						<a href="modules.html#uuidreference" class="tsd-kind-icon">UUIDReference</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#securityobjectiveintegrity" class="tsd-kind-icon">Security<wbr>Objective<wbr>Integrity</a>
+						<a href="modules.html#universallyuniqueidentifierreferencetype" class="tsd-kind-icon">Universally<wbr>Unique<wbr>Identifier<wbr>Reference<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#securitysensitivitylevel" class="tsd-kind-icon">Security<wbr>Sensitivity<wbr>Level</a>
+						<a href="modules.html#userdescription" class="tsd-kind-icon">User<wbr>Description</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#selectedlevelconfidentialityintegrityoravailability" class="tsd-kind-icon">Selected<wbr>Level<wbr>Confidentiality<wbr>Integrity<wbr>OrAvailability</a>
+						<a href="modules.html#usershortname" class="tsd-kind-icon">User<wbr>Short<wbr>Name</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#serviceprotocolinformationuniversallyuniqueidentifier" class="tsd-kind-icon">Service<wbr>Protocol<wbr>Information<wbr>Universally<wbr>Unique<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#sourceresourcereference" class="tsd-kind-icon">Source<wbr>Resource<wbr>Reference</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#start" class="tsd-kind-icon">Start</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#startdatecondition" class="tsd-kind-icon">Start<wbr>Date<wbr>Condition</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#startfield" class="tsd-kind-icon">Start<wbr>Field</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#state" class="tsd-kind-icon">State</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#statementimplementationdescription" class="tsd-kind-icon">Statement<wbr>Implementation<wbr>Description</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#subjectreferencetitle" class="tsd-kind-icon">Subject<wbr>Reference<wbr>Title</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#subjecttype" class="tsd-kind-icon">Subject<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#systemauthorizationdate" class="tsd-kind-icon">System<wbr>Authorization<wbr>Date</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#systemcomponentstate" class="tsd-kind-icon">System<wbr>Component<wbr>State</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#systemdescription" class="tsd-kind-icon">System<wbr>Description</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#systemnamefull" class="tsd-kind-icon">System<wbr>Name<wbr>Full</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#systemnameshort" class="tsd-kind-icon">System<wbr>Name<wbr>Short</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#systemsecurityplanreference" class="tsd-kind-icon">System<wbr>Security<wbr>Plan<wbr>Reference</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#systemsecurityplanuniversallyuniqueidentifier" class="tsd-kind-icon">System<wbr>Security<wbr>Plan<wbr>Universally<wbr>Unique<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#taskdescription" class="tsd-kind-icon">Task<wbr>Description</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#taskenddate" class="tsd-kind-icon">Task<wbr>End<wbr>Date</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#taskstartdate" class="tsd-kind-icon">Task<wbr>Start<wbr>Date</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#tasktitle" class="tsd-kind-icon">Task<wbr>Title</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#taskuniversallyuniqueidentifier" class="tsd-kind-icon">Task<wbr>Universally<wbr>Unique<wbr>Identifier</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#taskuniversallyuniqueidentifierreference" class="tsd-kind-icon">Task<wbr>Universally<wbr>Unique<wbr>Identifier<wbr>Reference</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#threatinformationresourcereference" class="tsd-kind-icon">Threat<wbr>Information<wbr>Resource<wbr>Reference</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#threattypeidentificationsystem" class="tsd-kind-icon">Threat<wbr>Type<wbr>Identification<wbr>System</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#timeunit" class="tsd-kind-icon">Time<wbr>Unit</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#titlechange" class="tsd-kind-icon">Title<wbr>Change</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#titlefield" class="tsd-kind-icon">Title<wbr>Field</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#titleforrequiredasset" class="tsd-kind-icon">Title<wbr>For<wbr>Required<wbr>Asset</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#transport" class="tsd-kind-icon">Transport</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#typeflag" class="tsd-kind-icon">Type<wbr>Flag</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#uuidreference" class="tsd-kind-icon">UUIDReference</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#universallyuniqueidentifierreferencetype" class="tsd-kind-icon">Universally<wbr>Unique<wbr>Identifier<wbr>Reference<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#userdescription" class="tsd-kind-icon">User<wbr>Description</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#usershortname" class="tsd-kind-icon">User<wbr>Short<wbr>Name</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#usertitle" class="tsd-kind-icon">User<wbr>Title</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="globals.html#kebabcasekeys" class="tsd-kind-icon">kebabcase<wbr>Keys</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="globals.html#snakecasekeys" class="tsd-kind-icon">snake<wbr>Case<wbr>Keys</a>
+						<a href="modules.html#usertitle" class="tsd-kind-icon">User<wbr>Title</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#exportoscal" class="tsd-kind-icon">export<wbr>Oscal</a>
+						<a href="modules.html#exportoscal" class="tsd-kind-icon">export<wbr>Oscal</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#importoscal" class="tsd-kind-icon">import<wbr>Oscal</a>
+						<a href="modules.html#importoscal" class="tsd-kind-icon">import<wbr>Oscal</a>
 					</li>
 				</ul>
 			</nav>

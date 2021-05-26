@@ -1,4 +1,4 @@
-import fedramp_extensions from "../../content/accepted-value/fedramp-extensions.json"
+import fedramp_extensions from "../content/accepted-value/fedramp-extensions.json"
 
 export const queryExtensions = (binding: string, ns: string) => {
     if (ns === "https://fedramp.gov/ns/oscal") {
