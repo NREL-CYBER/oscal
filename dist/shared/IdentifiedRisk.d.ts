@@ -1,4 +1,4 @@
-import { ActionReference, AnnotatedProperty, AssociatedRiskStatus, Link, Property, Remarks, TaskReference, UUIDReference, ActionDescription, ActionTitle } from ".";
+import { ActionReference, AssociatedRiskStatus, Link, Property, Remarks, TaskReference, UUIDReference, ActionDescription, ActionTitle } from ".";
 import { AssessmentActor } from "./Actor";
 import { RelatedObservation } from "./Observation";
 import { EndField, StartField, LoggedBy } from "../assessment_results";
@@ -16,7 +16,7 @@ export declare type SubjectReferenceTitle = string;
  */
 export declare type RelevantEvidenceReference = string;
 /**
- * A human_readable description of this evidence.
+ * A human readable description of this evidence.
  */
 export declare type RelevantEvidenceDescription = string;
 /**
@@ -28,7 +28,7 @@ export declare type RiskUniversallyUniqueIdentifier = string;
  */
 export declare type RiskTitle = string;
 /**
- * A human_readable summary of what was identified regarding the risk.
+ * A human readable summary of what was identified regarding the risk.
  */
 export declare type RiskDescription = string;
 /**
@@ -64,7 +64,7 @@ export declare type MitigatingFactorUniversallyUniqueIdentifier = string;
  */
 export declare type ImplementationUUID = string;
 /**
- * A human_readable description of this mitigating factor.
+ * A human readable description of this mitigating factor.
  */
 export declare type MitigatingFactorDescription = string;
 /**
@@ -104,7 +104,7 @@ export declare type RemediationIntent = string;
  */
 export declare type ResponseTitle = string;
 /**
- * A human_readable description of this response plan.
+ * A human readable description of this response plan.
  */
 export declare type ResponseDescription = string;
 /**
@@ -127,7 +127,6 @@ export interface RiskLogEntry {
     start: StartField;
     end?: EndField;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     logged_by?: LoggedBy[];
     status_change?: RiskStatus;
@@ -140,7 +139,6 @@ export interface RiskLogEntry {
 export interface RiskResponseReference {
     response_uuid: ResponseUniversallyUniqueIdentifierReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     related_actions?: ActionReference[];
     remarks?: Remarks;
@@ -165,7 +163,6 @@ export interface Origin {
 export interface SelectAssessmentSubject {
     uuid_ref: UUIDReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -177,7 +174,6 @@ export interface IdentifiesTheSubject {
     type: UniversallyUniqueIdentifierReferenceType;
     title?: SubjectReferenceTitle;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -194,7 +190,6 @@ export interface ThreatID {
  */
 export interface Characterization {
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     origin: Origin;
     facets: [Facet, ...Facet[]];
@@ -207,7 +202,6 @@ export interface Facet {
     system: NamingSystem;
     value: FacetValue;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -219,7 +213,6 @@ export interface MitigatingFactor {
     implementation_uuid?: ImplementationUUID;
     description: MitigatingFactorDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     subjects?: IdentifiesTheSubject[];
 }
@@ -232,7 +225,6 @@ export interface RequiredAsset {
     title?: TitleForRequiredAsset;
     description: DescriptionOfRequiredAsset;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -242,7 +234,6 @@ export interface RequiredAsset {
 export interface RiskResponseActionReference {
     response_uuid: ResponseUniversallyUniqueIdentifierReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     related_actions?: ActionReference[];
     remarks?: Remarks;
@@ -256,7 +247,6 @@ export interface RiskResponse {
     title: ResponseTitle;
     description: ResponseDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     origins?: Origin[];
     required_assets?: RequiredAsset[];
@@ -272,7 +262,6 @@ export interface IdentifiedRisk {
     description: RiskDescription;
     statement: RiskStatement;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     status: AssociatedRiskStatus;
     origins?: Origin[];

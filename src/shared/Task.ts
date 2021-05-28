@@ -5,7 +5,7 @@ import { Property, AnnotatedProperty, Link, ActionReference, ResponsibleRole, Re
  */
 export type TitleForRequiredAsset = string;
 /**
- * A human_readable description of this required asset.
+ * A human readable description of this required asset.
  */
 export type DescriptionOfRequiredAsset = string;
 /**
@@ -17,7 +17,7 @@ export type TaskUniversallyUniqueIdentifier = string;
  */
 export type TaskTitle = string;
 /**
- * A human_readable description of this task.
+ * A human readable description of this task.
  */
 export type TaskDescription = string;
 /**

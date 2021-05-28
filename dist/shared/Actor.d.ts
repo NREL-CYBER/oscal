@@ -1,4 +1,4 @@
-import { Property, AnnotatedProperty, Link } from ".";
+import { Property, Link } from ".";
 /**
  * The kind of actor.
  */
@@ -19,6 +19,5 @@ export interface AssessmentActor {
     uuid_ref: ActorUUIDReference;
     role_id?: ActorRole;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
 }

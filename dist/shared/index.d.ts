@@ -431,7 +431,7 @@ export declare type ActionUniversallyUniqueIdentifierReference = string;
  */
 export declare type ActionTitle = string;
 /**
- * A human_readable description of this event.
+ * A human readable description of this event.
  */
 export declare type ActionDescription = string;
 /**
@@ -523,15 +523,15 @@ export declare type FileName = string;
  */
 export declare type ActionUniversallyUniqueIdentifier = string;
 /**
- * A human_readable description of control objectives.
+ * A human readable description of control objectives.
  */
 export declare type ControlObjectiveDescription = string;
 /**
- * A human_readable description of in_scope controls specified for assessment.
+ * A human readable description of in_scope controls specified for assessment.
  */
 export declare type AssessedControlsDescription = string;
 /**
- * A human_readable description of this collection of control objectives.
+ * A human readable description of this collection of control objectives.
  */
 export declare type ControlOjectivesDescription = string;
 /**
@@ -539,7 +539,7 @@ export declare type ControlOjectivesDescription = string;
  */
 export declare type AssessmentActivityUniversallyUniqueIdentifier = string;
 /**
- * A human_readable description of this control objective.
+ * A human readable description of this control objective.
  */
 export declare type ObjectiveDescription = string;
 /**
@@ -547,7 +547,7 @@ export declare type ObjectiveDescription = string;
  */
 export declare type IncludedActivityTitle = string;
 /**
- * A human_readable description of this included activity.
+ * A human readable description of this included activity.
  */
 export declare type IncludedActivityDescription = string;
 /**
@@ -575,7 +575,7 @@ export declare type EventUniversallyUniqueIdentifier = string;
  */
 export declare type EventTitle = string;
 /**
- * A human_readable description of this event.
+ * A human readable description of this event.
  */
 export declare type EventDescription = string;
 /**
@@ -615,7 +615,7 @@ export declare type TimeUnit = "seconds" | "minutes" | "hours" | "days" | "month
  */
 export declare type SubjectType = string;
 /**
- * A human_readable description of the collection of subjects being included in this assessment.
+ * A human readable description of the collection of subjects being included in this assessment.
  */
 export declare type IncludeSubjectsDescription = string;
 /**
@@ -631,7 +631,7 @@ export declare type AssessmentLogEntryUniversallyUniqueIdentifier = string;
  */
 export declare type ObjectiveStatusTitle = string;
 /**
- * A human_readable description of the assessor's conclusions regarding the degree to which an objective is satisfied.
+ * A human readable description of the assessor's conclusions regarding the degree to which an objective is satisfied.
  */
 export declare type ObjectiveStatusDescription = string;
 /**
@@ -685,7 +685,6 @@ export interface AssociatedActivity {
     uuid: AssociatedActivityUniversallyUniqueIdentifier;
     activity_uuid: ActivityUniversallyUniqueIdentifierReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
     assessment_subjects?: SubjectOfAssessment[];
@@ -707,7 +706,6 @@ export interface Action {
     title?: ActionTitle;
     description: ActionDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     reviewed_controls?: ReviewedControlsAndControlObjectives;
     responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
@@ -719,7 +717,6 @@ export interface Action {
 export interface ReferenedControlObjectives {
     description?: ControlOjectivesDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     include_all?: All;
     include_objectives?: SelectObjective[];
@@ -732,7 +729,6 @@ export interface ReferenedControlObjectives {
 export interface ReviewedControlsAndControlObjectives {
     description?: ControlObjectiveDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     control_selections: AssessedControls[];
     control_objective_selections?: ReferenedControlObjectives[];
@@ -744,7 +740,6 @@ export interface ReviewedControlsAndControlObjectives {
 export interface AssessedControls {
     description?: AssessedControlsDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     include_all?: All;
     include_controls?: SelectControl[];
@@ -759,7 +754,6 @@ export interface Activity {
     title?: IncludedActivityTitle;
     description: IncludedActivityDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     actions?: Action[];
     related_controls?: ReviewedControlsAndControlObjectives;
@@ -774,7 +768,6 @@ export interface Action {
     title?: ActionTitle;
     description: ActionDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     reviewed_controls?: ReviewedControlsAndControlObjectives;
     responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
@@ -786,7 +779,6 @@ export interface Action {
 export interface ReviewedControlsAndControlObjectives {
     description?: ControlObjectiveDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     control_selections: AssessedControls[];
     control_objective_selections?: ReferenedControlObjectives[];
@@ -798,7 +790,6 @@ export interface ReviewedControlsAndControlObjectives {
 export interface AssessedControls {
     description?: AssessedControlsDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     include_all?: All;
     include_controls?: SelectControl[];
@@ -818,7 +809,6 @@ export interface SelectControl {
 export interface ReferenedControlObjectives {
     description?: ControlOjectivesDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     include_all?: All;
     include_objectives?: SelectObjective[];
@@ -843,7 +833,6 @@ export interface PublicationMetadata {
     revisions?: RevisionHistoryEntry[];
     document_ids?: DocumentIdentifier[];
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     roles?: Role[];
     locations?: Location[];
@@ -861,7 +850,6 @@ export interface RevisionHistoryEntry {
     version?: DocumentRevisionVersion;
     oscal_version?: OSCALVersion;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -910,7 +898,6 @@ export interface Role {
     short_name?: RoleShortName;
     description?: RoleDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -925,7 +912,6 @@ export interface Location {
     telephone_numbers?: TelephoneNumber[];
     urls?: LocationURL[];
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -957,7 +943,6 @@ export interface Party {
     short_name?: PartyShortName;
     external_ids?: PartyExternalIdentifier[];
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     email_addresses?: EmailAddress[];
     telephone_numbers?: TelephoneNumber[];
@@ -979,7 +964,6 @@ export interface PartyExternalIdentifier {
 export interface ResponsibleParty {
     party_uuids: PartyReference[];
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -996,7 +980,6 @@ export interface ImportProfile {
 export interface ActionReference {
     action_uuid: ActionUniversallyUniqueIdentifierReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
     remarks?: Remarks;
@@ -1007,7 +990,6 @@ export interface ActionReference {
 export interface TaskReference {
     task_uuid: TaskUniversallyUniqueIdentifierReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
     assessment_subjects?: SubjectOfAssessment[];
@@ -1022,7 +1004,6 @@ export interface SystemCharacteristics {
     system_name_short?: SystemNameShort;
     description: SystemDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     date_authorized?: SystemAuthorizationDate;
     security_sensitivity_level: SecuritySensitivityLevel;
@@ -1047,7 +1028,6 @@ export interface SystemIdentification {
  */
 export interface SystemInformation {
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     information_types: InformationType[];
 }
@@ -1060,7 +1040,6 @@ export interface InformationType {
     description: InformationTypeDescription;
     categorizations?: InformationTypeCategorization[];
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     confidentiality_impact: ConfidentialityImpactLevel;
     integrity_impact: IntegrityImpactLevel;
@@ -1078,7 +1057,6 @@ export interface InformationTypeCategorization {
  */
 export interface ConfidentialityImpactLevel {
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     base: BaseLevelConfidentialityIntegrityOrAvailability;
     selected?: SelectedLevelConfidentialityIntegrityOrAvailability;
@@ -1089,7 +1067,6 @@ export interface ConfidentialityImpactLevel {
  */
 export interface IntegrityImpactLevel {
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     base: BaseLevelConfidentialityIntegrityOrAvailability;
     selected?: SelectedLevelConfidentialityIntegrityOrAvailability;
@@ -1100,7 +1077,6 @@ export interface IntegrityImpactLevel {
  */
 export interface AvailabilityImpactLevel {
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     base: BaseLevelConfidentialityIntegrityOrAvailability;
     selected?: SelectedLevelConfidentialityIntegrityOrAvailability;
@@ -1127,7 +1103,6 @@ export interface Status {
 export interface AuthorizationBoundary {
     description: AuthorizationBoundaryDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     diagrams?: {
         [k: string]: Diagram;
@@ -1140,7 +1115,6 @@ export interface AuthorizationBoundary {
 export interface Diagram {
     description?: DiagramDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     caption?: Caption;
     remarks?: RemarksField;
@@ -1151,7 +1125,6 @@ export interface Diagram {
 export interface NetworkArchitecture {
     description: NetworkArchitectureDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     diagrams?: {
         [k: string]: Diagram;
@@ -1164,7 +1137,6 @@ export interface NetworkArchitecture {
 export interface DataFlow {
     description: DataFlowDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     diagrams?: {
         [k: string]: Diagram;
@@ -1177,7 +1149,6 @@ export interface DataFlow {
 export interface ActionReference {
     action_uuid: ActionUniversallyUniqueIdentifierReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
     remarks?: Remarks;
@@ -1187,7 +1158,6 @@ export interface ActionReference {
  */
 export interface SystemImplementation {
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     leveraged_authorizations?: LeveragedAuthorization[];
     users: {
@@ -1206,7 +1176,6 @@ export interface LeveragedAuthorization {
     uuid: LeveragedAuthorizationUniversallyUniqueIdentifier;
     title: TitleField;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     party_uuid: PartyUuidField;
     date_authorized: SystemAuthorizationDate;
@@ -1220,7 +1189,6 @@ export interface SystemUser {
     short_name?: UserShortName;
     description?: UserDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     role_ids?: RoleIdentifierReference[];
     authorized_privileges?: Privilege[];
@@ -1243,7 +1211,6 @@ export interface Component {
     description: ComponentDescription;
     purpose?: Purpose;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     status: ComponentStatus;
     responsible_roles?: {
@@ -1264,7 +1231,6 @@ export interface ComponentStatus {
  */
 export interface ResponsibleRole {
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     party_uuids?: PartyReference[];
     remarks?: Remarks;
@@ -1296,7 +1262,6 @@ export interface Part {
     class?: PartClass;
     title?: PartTitle;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     prose?: PartText;
     parts?: Part[];
     links?: Link[];
@@ -1308,7 +1273,6 @@ export interface InventoryItem {
     uuid: InventoryItemUniversallyUniqueIdentifier;
     description: InventoryItemDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
     implemented_components?: ImplementedComponent[];
@@ -1320,7 +1284,6 @@ export interface InventoryItem {
 export interface ImplementedComponent {
     component_uuid: ComponentUniversallyUniqueIdentifierReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
     remarks?: Remarks;
@@ -1340,7 +1303,6 @@ export interface ControlBasedRequirement {
     uuid: ControlRequirementUniversallyUniqueIdentifier;
     control_id: ControlIdentifierReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     parameter_settings?: Record<ParameterIdentifier, SetParameterValue>;
     responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
@@ -1365,7 +1327,6 @@ export interface ComponentControlImplementation {
     uuid: ByComponentUniversallyUniqueIdentifier;
     description: ControlImplementationDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     parameter_settings?: {
         [k: string]: SetParameterValue;
@@ -1386,7 +1347,6 @@ export interface ComponentControlImplementation {
 export interface Export {
     description?: ControlImplementationExportDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     provided?: ProvidedControlImplementation[];
     responsibilities?: ControlImplementationResponsibility[];
@@ -1399,7 +1359,6 @@ export interface ProvidedControlImplementation {
     uuid: ProvidedUniversallyUniqueIdentifier;
     description: ProvidedControlImplementationDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
     remarks?: Remarks;
@@ -1412,7 +1371,6 @@ export interface ControlImplementationResponsibility {
     provided_uuid?: ProvidedUUID;
     description: ControlImplementationResponsibilityDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
     remarks?: Remarks;
@@ -1425,7 +1383,6 @@ export interface InheritedControlImplementation {
     provided_uuid?: ProvidedUUID;
     description: InheritedControlImplementationDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
 }
@@ -1437,7 +1394,6 @@ export interface SatisfiedControlImplementationResponsibility {
     responsibility_uuid?: ProvidedUUID;
     description: SatisfiedControlImplementationResponsibilityDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
     remarks?: Remarks;
@@ -1448,7 +1404,6 @@ export interface SatisfiedControlImplementationResponsibility {
 export interface SpecificControlStatement {
     uuid: ControlStatementReferenceUniversallyUniqueIdentifier;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     by_components?: Record<string, ComponentControlImplementation>;
     remarks?: Remarks;
@@ -1467,7 +1422,6 @@ export interface Resource {
     title?: ResourceTitle;
     description?: ResourceDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     document_ids?: DocumentIdentifier[];
     citation?: Citation;
     rlinks?: ResourceLink[];
@@ -1480,7 +1434,6 @@ export interface Resource {
 export interface Citation {
     text: CitationText;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     biblio?: BibliographicDefinition;
 }
 /**

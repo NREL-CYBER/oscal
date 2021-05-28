@@ -1308,7 +1308,7 @@
         },
         "description": {
           "title": "Objective Description",
-          "description": "A human_readable description of this control objective.",
+          "description": "A human readable description of this control objective.",
           "type": "string"
         },
         "props": {
@@ -1361,7 +1361,7 @@
         },
         "description": {
           "title": "Included Activity Description",
-          "description": "A human_readable description of this included activity.",
+          "description": "A human readable description of this included activity.",
           "type": "string"
         },
         "props": {
@@ -1399,7 +1399,7 @@
               },
               "description": {
                 "title": "Step Description",
-                "description": "A human_readable description of this step.",
+                "description": "A human readable description of this step.",
                 "type": "string"
               },
               "props": {
@@ -1499,7 +1499,7 @@
         },
         "description": {
           "title": "Task Description",
-          "description": "A human_readable description of this task.",
+          "description": "A human readable description of this task.",
           "type": "string"
         },
         "props": {
@@ -1734,7 +1734,7 @@
       "properties": {
         "description": {
           "title": "Control Objective Description",
-          "description": "A human_readable description of control objectives.",
+          "description": "A human readable description of control objectives.",
           "type": "string"
         },
         "props": {
@@ -1761,7 +1761,7 @@
             "properties": {
               "description": {
                 "title": "Assessed Controls Description",
-                "description": "A human_readable description of in_scope controls specified for assessment.",
+                "description": "A human readable description of in_scope controls specified for assessment.",
                 "type": "string"
               },
               "props": {
@@ -1815,7 +1815,7 @@
             "properties": {
               "description": {
                 "title": "Control Objectives Description",
-                "description": "A human_readable description of this collection of control objectives.",
+                "description": "A human readable description of this collection of control objectives.",
                 "type": "string"
               },
               "props": {
@@ -1925,7 +1925,7 @@
         },
         "description": {
           "title": "Assessment Subject Placeholder Description",
-          "description": "A human_readable description of intent of this assessment subject placeholder.",
+          "description": "A human readable description of intent of this assessment subject placeholder.",
           "type": "string"
         },
         "sources": {
@@ -1986,7 +1986,7 @@
         },
         "description": {
           "title": "Include Subjects Description",
-          "description": "A human_readable description of the collection of subjects being included in this assessment.",
+          "description": "A human readable description of the collection of subjects being included in this assessment.",
           "type": "string"
         },
         "props": {

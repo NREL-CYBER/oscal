@@ -23,9 +23,9 @@ export type ObservationUniversallyUniqueIdentifier = string;
  */
 export type ObservationTitle = string;
 /**
- * A human_readable description of this assessment observation.
+ * A human readable description of this assessment observation.
  */
-export type ObservatonDescription = string;
+export type ObservationDescription = string;
 /**
  * Identifies how the observation was made.
  */
@@ -55,7 +55,7 @@ export type SubjectReferenceTitle = string;
  */
 export type RelevantEvidenceReference = string;
 /**
- * A human_readable description of this evidence.
+ * A human readable description of this evidence.
  */
 export type RelevantEvidenceDescription = string;
 /**
@@ -67,7 +67,7 @@ export type RiskUniversallyUniqueIdentifier = string;
  */
 export type RiskTitle = string;
 /**
- * A human_readable summary of what was identified regarding the risk.
+ * A human readable summary of what was identified regarding the risk.
  */
 export type RiskDescription = string;
 /**
@@ -103,7 +103,7 @@ export type MitigatingFactorUniversallyUniqueIdentifier = string;
  */
 export type ImplementationUUID = string;
 /**
- * A human_readable description of this mitigating factor.
+ * A human readable description of this mitigating factor.
  */
 export type MitigatingFactorDescription = string;
 /**
@@ -129,7 +129,7 @@ export type POAMItemUniversallyUniqueIdentifier = string;
  */
 export type POAMItemTitle = string;
 /**
- * A human_readable description of POA&M item.
+ * A human readable description of POA&M item.
  */
 export type POAMItemDescription = string;
 /**
@@ -150,7 +150,7 @@ export interface PlanOfActionAndMilestones {
   import_ssp?: ImportSystemSecurityPlan;
   system_id?: SystemIdentification;
   local_definitions?: PoamLocalDefinitions;
-  observations?: Objective[];
+  observations?: Observation[];
   risks?: IdentifiedRisk[];
   poam_items: POAMItem[];
   back_matter?: BackMatter;
@@ -166,10 +166,10 @@ export interface PoamLocalDefinitions {
 /**
  * Describes an individual observation.
  */
-export interface Objective {
+export interface Observation {
   uuid: ObservationUniversallyUniqueIdentifier;
   title?: ObservationTitle;
-  description: ObservatonDescription;
+  description: ObservationDescription;
   props?: Property[];
   annotations?: AnnotatedProperty[];
   links?: Link[];

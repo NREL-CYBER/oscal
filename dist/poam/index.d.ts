@@ -20,7 +20,7 @@ export declare type ObservationUniversallyUniqueIdentifier = string;
  */
 export declare type ObservationTitle = string;
 /**
- * A human_readable description of this assessment observation.
+ * A human readable description of this assessment observation.
  */
 export declare type ObservatonDescription = string;
 /**
@@ -52,7 +52,7 @@ export declare type SubjectReferenceTitle = string;
  */
 export declare type RelevantEvidenceReference = string;
 /**
- * A human_readable description of this evidence.
+ * A human readable description of this evidence.
  */
 export declare type RelevantEvidenceDescription = string;
 /**
@@ -64,7 +64,7 @@ export declare type RiskUniversallyUniqueIdentifier = string;
  */
 export declare type RiskTitle = string;
 /**
- * A human_readable summary of what was identified regarding the risk.
+ * A human readable summary of what was identified regarding the risk.
  */
 export declare type RiskDescription = string;
 /**
@@ -100,7 +100,7 @@ export declare type MitigatingFactorUniversallyUniqueIdentifier = string;
  */
 export declare type ImplementationUUID = string;
 /**
- * A human_readable description of this mitigating factor.
+ * A human readable description of this mitigating factor.
  */
 export declare type MitigatingFactorDescription = string;
 /**
@@ -124,7 +124,7 @@ export declare type POAMItemUniversallyUniqueIdentifier = string;
  */
 export declare type POAMItemTitle = string;
 /**
- * A human_readable description of POA&M item.
+ * A human readable description of POA&M item.
  */
 export declare type POAMItemDescription = string;
 /**
@@ -144,7 +144,7 @@ export interface PlanOfActionAndMilestones {
     import_ssp?: ImportSystemSecurityPlan;
     system_id?: SystemIdentification;
     local_definitions?: PoamLocalDefinitions;
-    observations?: Objective[];
+    observations?: Observation[];
     risks?: IdentifiedRisk[];
     poam_items: POAMItem[];
     back_matter?: BackMatter;
@@ -160,7 +160,7 @@ export interface PoamLocalDefinitions {
 /**
  * Describes an individual observation.
  */
-export interface Objective {
+export interface Observation {
     uuid: ObservationUniversallyUniqueIdentifier;
     title?: ObservationTitle;
     description: ObservatonDescription;

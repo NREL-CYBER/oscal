@@ -1,6 +1,6 @@
-import { Property, AnnotatedProperty, Link, Remarks, SubjectType, IncludeSubjectsDescription, All, UUIDReference } from ".";
+import { Property, Link, Remarks, SubjectType, IncludeSubjectsDescription, All, UUIDReference } from ".";
 /**
- * A human_readable description of intent of this assessment subject placeholder.
+ * A human readable description of intent of this assessment subject placeholder.
  */
 export declare type AssessmentSubjectPlaceholderDescription = string;
 /**
@@ -19,7 +19,6 @@ export declare type ActivityInstanceUniversallyUniqueIdentifier = string;
 export interface SelectAssessmentSubject {
     uuid_ref: UUIDReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -30,7 +29,6 @@ export interface SubjectOfAssessment {
     type: SubjectType;
     description?: IncludeSubjectsDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     include_all?: All;
     include_subjects?: SelectAssessmentSubject[];
@@ -44,7 +42,6 @@ export interface AssessmentSubjectPlaceholder {
     description?: AssessmentSubjectPlaceholderDescription;
     sources: [AssessmentSubjectSource, ...AssessmentSubjectSource[]];
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }

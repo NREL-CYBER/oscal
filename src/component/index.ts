@@ -42,7 +42,7 @@ export type ControlStatementImplementationIdentifier = string;
  */
 export type StatementImplementationDescription = string;
 /**
- * The capability's human_readable name.
+ * The capability's human readable name.
  */
 export type CapabilityName = string;
 /**

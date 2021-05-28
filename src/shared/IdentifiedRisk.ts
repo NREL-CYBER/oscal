@@ -16,7 +16,7 @@ export type SubjectReferenceTitle = string;
  */
 export type RelevantEvidenceReference = string;
 /**
- * A human_readable description of this evidence.
+ * A human readable description of this evidence.
  */
 export type RelevantEvidenceDescription = string;
 /**
@@ -28,7 +28,7 @@ export type RiskUniversallyUniqueIdentifier = string;
  */
 export type RiskTitle = string;
 /**
- * A human_readable summary of what was identified regarding the risk.
+ * A human readable summary of what was identified regarding the risk.
  */
 export type RiskDescription = string;
 /**
@@ -64,7 +64,7 @@ export type MitigatingFactorUniversallyUniqueIdentifier = string;
  */
 export type ImplementationUUID = string;
 /**
- * A human_readable description of this mitigating factor.
+ * A human readable description of this mitigating factor.
  */
 export type MitigatingFactorDescription = string;
 /**
@@ -106,7 +106,7 @@ export type RemediationIntent = string;
  */
 export type ResponseTitle = string;
 /**
- * A human_readable description of this response plan.
+ * A human readable description of this response plan.
  */
 export type ResponseDescription = string;
 

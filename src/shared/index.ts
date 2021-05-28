@@ -437,7 +437,7 @@ export type ActionUniversallyUniqueIdentifierReference = string;
 
 export type ActionTitle = string;
 /**
- * A human_readable description of this event.
+ * A human readable description of this event.
  */
 export type ActionDescription = string;
 /**
@@ -530,15 +530,15 @@ export type FileName = string;
  */
 export type ActionUniversallyUniqueIdentifier = string;
 /**
- * A human_readable description of control objectives.
+ * A human readable description of control objectives.
  */
 export type ControlObjectiveDescription = string;
 /**
- * A human_readable description of in_scope controls specified for assessment.
+ * A human readable description of in_scope controls specified for assessment.
  */
 export type AssessedControlsDescription = string;
 /**
- * A human_readable description of this collection of control objectives.
+ * A human readable description of this collection of control objectives.
  */
 export type ControlOjectivesDescription = string;
 
@@ -547,7 +547,7 @@ export type ControlOjectivesDescription = string;
  */
 export type AssessmentActivityUniversallyUniqueIdentifier = string;
 /**
- * A human_readable description of this control objective.
+ * A human readable description of this control objective.
  */
 export type ObjectiveDescription = string;
 
@@ -556,7 +556,7 @@ export type ObjectiveDescription = string;
  */
 export type IncludedActivityTitle = string;
 /**
- * A human_readable description of this included activity.
+ * A human readable description of this included activity.
  */
 export type IncludedActivityDescription = string;
 /**
@@ -585,7 +585,7 @@ export type EventUniversallyUniqueIdentifier = string;
  */
 export type EventTitle = string;
 /**
- * A human_readable description of this event.
+ * A human readable description of this event.
  */
 export type EventDescription = string;
 /**
@@ -625,7 +625,7 @@ export type TimeUnit = "seconds" | "minutes" | "hours" | "days" | "months" | "ye
  */
 export type SubjectType = string;
 /**
- * A human_readable description of the collection of subjects being included in this assessment.
+ * A human readable description of the collection of subjects being included in this assessment.
  */
 export type IncludeSubjectsDescription = string;
 /**
@@ -642,7 +642,7 @@ export type AssessmentLogEntryUniversallyUniqueIdentifier = string;
  */
 export type ObjectiveStatusTitle = string;
 /**
- * A human_readable description of the assessor's conclusions regarding the degree to which an objective is satisfied.
+ * A human readable description of the assessor's conclusions regarding the degree to which an objective is satisfied.
  */
 export type ObjectiveStatusDescription = string;
 /**

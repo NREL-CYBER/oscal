@@ -1421,7 +1421,7 @@
         },
         "description": {
           "title": "Objective Description",
-          "description": "A human_readable description of this control objective.",
+          "description": "A human readable description of this control objective.",
           "type": "string"
         },
         "props": {
@@ -1481,7 +1481,7 @@
         },
         "description": {
           "title": "Included Activity Description",
-          "description": "A human_readable description of this included activity.",
+          "description": "A human readable description of this included activity.",
           "type": "string"
         },
         "props": {
@@ -1526,7 +1526,7 @@
               },
               "description": {
                 "title": "Action Description",
-                "description": "A human_readable description of this action.",
+                "description": "A human readable description of this action.",
                 "type": "string"
               },
               "props": {
@@ -1628,7 +1628,7 @@
         },
         "description": {
           "title": "Event Description",
-          "description": "A human_readable description of this event.",
+          "description": "A human readable description of this event.",
           "type": "string"
         },
         "props": {
@@ -1702,7 +1702,7 @@
         },
         "description": {
           "title": "Task Description",
-          "description": "A human_readable description of this task.",
+          "description": "A human readable description of this task.",
           "type": "string"
         },
         "props": {
@@ -1954,7 +1954,7 @@
       "properties": {
         "description": {
           "title": "Control Objective Description",
-          "description": "A human_readable description of control objectives.",
+          "description": "A human readable description of control objectives.",
           "type": "string"
         },
         "props": {
@@ -1988,7 +1988,7 @@
             "properties": {
               "description": {
                 "title": "Assessed Controls Description",
-                "description": "A human_readable description of in_scope controls specified for assessment.",
+                "description": "A human readable description of in_scope controls specified for assessment.",
                 "type": "string"
               },
               "props": {
@@ -2049,7 +2049,7 @@
             "properties": {
               "description": {
                 "title": "Control Ojectives Description",
-                "description": "A human_readable description of this collection of control objectives.",
+                "description": "A human readable description of this collection of control objectives.",
                 "type": "string"
               },
               "props": {
@@ -2166,7 +2166,7 @@
         },
         "description": {
           "title": "Assessment Subject Placeholder Description",
-          "description": "A human_readable description of intent of this assessment subject placeholder.",
+          "description": "A human readable description of intent of this assessment subject placeholder.",
           "type": "string"
         },
         "sources": {
@@ -2234,7 +2234,7 @@
         },
         "description": {
           "title": "Include Subjects Description",
-          "description": "A human_readable description of the collection of subjects being included in this assessment.",
+          "description": "A human readable description of the collection of subjects being included in this assessment.",
           "type": "string"
         },
         "props": {
@@ -2548,7 +2548,7 @@
         },
         "description": {
           "title": "Objective Status Description",
-          "description": "A human_readable description of the assessor's conclusions regarding the degree to which an objective is satisfied.",
+          "description": "A human readable description of the assessor's conclusions regarding the degree to which an objective is satisfied.",
           "type": "string"
         },
         "props": {
@@ -2610,8 +2610,8 @@
           "type": "string"
         },
         "description": {
-          "title": "Observaton Description",
-          "description": "A human_readable description of this assessment observation.",
+          "title": "Observation Description",
+          "description": "A human readable description of this assessment observation.",
           "type": "string"
         },
         "props": {
@@ -2683,7 +2683,7 @@
               },
               "description": {
                 "title": "Relevant Evidence Description",
-                "description": "A human_readable description of this evidence.",
+                "description": "A human readable description of this evidence.",
                 "type": "string"
               },
               "props": {
@@ -2961,7 +2961,7 @@
         },
         "description": {
           "title": "Risk Description",
-          "description": "A human_readable summary of what was identified regarding the risk.",
+          "description": "A human readable summary of what was identified regarding the risk.",
           "type": "string"
         },
         "statement": {
@@ -3038,7 +3038,7 @@
               },
               "description": {
                 "title": "Mitigating Factor Description",
-                "description": "A human_readable description of this mitigating factor.",
+                "description": "A human readable description of this mitigating factor.",
                 "type": "string"
               },
               "props": {
@@ -3117,7 +3117,7 @@
                   },
                   "description": {
                     "title": "Action Description",
-                    "description": "A human_readable description of this event.",
+                    "description": "A human readable description of this event.",
                     "type": "string"
                   },
                   "start": {
@@ -3412,7 +3412,7 @@
         },
         "description": {
           "title": "Response Description",
-          "description": "A human_readable description of this response plan.",
+          "description": "A human readable description of this response plan.",
           "type": "string"
         },
         "props": {
@@ -3471,7 +3471,7 @@
               },
               "description": {
                 "title": "Description of Required Asset",
-                "description": "A human_readable description of this required asset.",
+                "description": "A human readable description of this required asset.",
                 "type": "string"
               },
               "props": {
@@ -3678,7 +3678,7 @@
         },
         "description": {
           "title": "Results Description",
-          "description": "A human_readable description of this set of test results.",
+          "description": "A human readable description of this set of test results.",
           "type": "string"
         },
         "start": {
@@ -3840,7 +3840,7 @@
                   },
                   "description": {
                     "title": "Action Description",
-                    "description": "A human_readable description of this event.",
+                    "description": "A human readable description of this event.",
                     "type": "string"
                   },
                   "start": {
@@ -3963,7 +3963,7 @@
         },
         "description": {
           "title": "Finding Description",
-          "description": "A human_readable description of this finding.",
+          "description": "A human readable description of this finding.",
           "type": "string"
         },
         "props": {

@@ -18,7 +18,7 @@ export declare type ResultsUniversallyUniqueIdentifier = string;
  */
 export declare type ResultsTitle = string;
 /**
- * A human_readable description of this set of test results.
+ * A human readable description of this set of test results.
  */
 export declare type ResultsDescription = string;
 /**
@@ -38,7 +38,7 @@ export declare type FindingUniversallyUniqueIdentifier = string;
  */
 export declare type FindingTitle = string;
 /**
- * A human_readable description of this finding.
+ * A human readable description of this finding.
  */
 export declare type FindingDescription = string;
 /**
@@ -174,8 +174,8 @@ export interface Finding {
     expires?: ExpiresField;
     objective_status?: ObjectiveStatus;
     implementation_statement_uuid?: ImplementationStatementUUID;
-    related_observations?: [RelatedObservation, ...RelatedObservation[]];
-    related_risks?: [AssociatedRisk, ...AssociatedRisk[]];
+    related_observations?: RelatedObservation[];
+    related_risks?: AssociatedRisk[];
     remarks?: Remarks;
 }
 /**
@@ -194,9 +194,9 @@ export interface AssessmentResult {
     reviewed_controls: ReviewedControlsAndControlObjectives;
     assessment_subjects?: SubjectOfAssessment[];
     assessment_assets?: AssessmentAssets;
-    attestations?: [AttestationStatements, ...AttestationStatements[]];
+    attestations?: AttestationStatements[];
     assessment_log?: AssessmentLog;
-    observations?: [Objective, ...Objective[]];
+    observations?: Objective[];
     risks?: IdentifiedRisk[];
     findings: Finding[];
     remarks?: Remarks;
@@ -212,7 +212,7 @@ export interface SARLocalDefinitions {
     users?: {
         [k: string]: SystemUser;
     };
-    assessment_actions?: [AssessmentAction, ...AssessmentAction[]];
+    assessment_actions?: AssessmentAction[];
 }
 /**
  * Describes the operational status of the system component.

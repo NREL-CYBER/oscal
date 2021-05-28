@@ -1,10 +1,10 @@
-import { Property, AnnotatedProperty, Link, ActionReference, ResponsibleRole, Remarks, RoleIdentifier } from ".";
+import { Property, Link, ActionReference, ResponsibleRole, Remarks, RoleIdentifier } from ".";
 /**
  * The title for this required asset.
  */
 export declare type TitleForRequiredAsset = string;
 /**
- * A human_readable description of this required asset.
+ * A human readable description of this required asset.
  */
 export declare type DescriptionOfRequiredAsset = string;
 /**
@@ -16,7 +16,7 @@ export declare type TaskUniversallyUniqueIdentifier = string;
  */
 export declare type TaskTitle = string;
 /**
- * A human_readable description of this task.
+ * A human readable description of this task.
  */
 export declare type TaskDescription = string;
 /**
@@ -35,7 +35,6 @@ export interface Task {
     title: TaskTitle;
     description?: TaskDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     start: TaskStartDate;
     end: TaskEndDate;

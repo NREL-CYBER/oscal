@@ -1,4 +1,4 @@
-import { CollectedField, ExpiresField, ObservationMethod, ObservationTitle, ObservationType, ObservationUniversallyUniqueIdentifier, ObservatonDescription, PartyUUIDReference } from "../poam";
+import { CollectedField, ExpiresField, ObservationMethod, ObservationTitle, ObservationType, ObservationUniversallyUniqueIdentifier, ObservationDescription, PartyUUIDReference } from "../poam";
 import { ActionDescription, ActionTitle, ActionUniversallyUniqueIdentifier, ActionUniversallyUniqueIdentifierReference, ActivityUniversallyUniqueIdentifierReference, All, AnnotatedProperty, AssessmentActivityUniversallyUniqueIdentifier, AssessmentLogEntryUniversallyUniqueIdentifier, AssessmentPlanReference, AssessmentPlatformTitle, AssessmentPlatformUniversallyUniqueIdentifier, AssociatedActivityUniversallyUniqueIdentifier, BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ConditionalDate, ControlIdentifierReference, ControlOjectivesDescription, EndDateCondition, EventDescription, EventTitle, EventUniversallyUniqueIdentifier, ImplementationStatementUUID, ImplementationStatus, IncludedActivityDescription, IncludedActivityTitle, IncludeSpecificStatements, InventoryItemDescription, InventoryItemUniversallyUniqueIdentifier, Link, ObjectiveDescription, ObjectiveID, ObjectiveStatusDescription, ObjectiveStatusTitle, OperatingState, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, PartyReference, Period, Privilege, Property, PublicationMetadata, Remarks, ResponsibleParty, ReviewedControlsAndControlObjectives, RoleIdentifier, RoleIdentifierReference, StartDateCondition, TaskUniversallyUniqueIdentifierReference, TimeUnit, UniversallyUniqueIdentifierReferenceType, UserDescription, UserShortName, UserTitle, UUIDReference } from "../shared";
 import { ActorRole, AssessmentActor } from "../shared/Actor";
 import { AssociatedRisk, IdentifiedRisk, RelevantEvidenceDescription, RelevantEvidenceReference, SubjectReferenceTitle } from "../shared/IdentifiedRisk";
@@ -20,7 +20,7 @@ export type ResultsUniversallyUniqueIdentifier = string;
  */
 export type ResultsTitle = string;
 /**
- * A human_readable description of this set of test results.
+ * A human readable description of this set of test results.
  */
 export type ResultsDescription = string;
 /**
@@ -41,7 +41,7 @@ export type FindingUniversallyUniqueIdentifier = string;
  */
 export type FindingTitle = string;
 /**
- * A human_readable description of this finding.
+ * A human readable description of this finding.
  */
 export type FindingDescription = string;
 
@@ -178,8 +178,8 @@ export interface Finding {
   expires?: ExpiresField;
   objective_status?: ObjectiveStatus;
   implementation_statement_uuid?: ImplementationStatementUUID;
-  related_observations?: [RelatedObservation, ...RelatedObservation[]];
-  related_risks?: [AssociatedRisk, ...AssociatedRisk[]];
+  related_observations?: RelatedObservation[];
+  related_risks?: AssociatedRisk[];
   remarks?: Remarks;
 }
 
@@ -199,9 +199,9 @@ export interface AssessmentResult {
   reviewed_controls: ReviewedControlsAndControlObjectives;
   assessment_subjects?: SubjectOfAssessment[];
   assessment_assets?: AssessmentAssets;
-  attestations?: [AttestationStatements, ...AttestationStatements[]];
+  attestations?: AttestationStatements[];
   assessment_log?: AssessmentLog;
-  observations?: [Objective, ...Objective[]];
+  observations?: Objective[];
   risks?: IdentifiedRisk[];
   findings: Finding[];
   remarks?: Remarks;
@@ -217,7 +217,7 @@ export interface SARLocalDefinitions {
   users?: {
     [k: string]: SystemUser;
   };
-  assessment_actions?: [AssessmentAction, ...AssessmentAction[]];
+  assessment_actions?: AssessmentAction[];
 }
 /**
  * Describes the operational status of the system component.
@@ -436,7 +436,7 @@ export interface TaskReference {
 export interface Objective {
   uuid: ObservationUniversallyUniqueIdentifier;
   title?: ObservationTitle;
-  description: ObservatonDescription;
+  description: ObservationDescription;
   props?: Property[];
   annotations?: AnnotatedProperty[];
   links?: Link[];

@@ -1217,7 +1217,7 @@
       "properties": {
         "name": {
           "title": "Capability Name",
-          "description": "The capability's human_readable name.",
+          "description": "The capability's human readable name.",
           "type": "string"
         },
         "description": {

@@ -35,7 +35,7 @@ export declare type ControlStatementImplementationIdentifier = string;
  */
 export declare type StatementImplementationDescription = string;
 /**
- * The capability's human_readable name.
+ * The capability's human readable name.
  */
 export declare type CapabilityName = string;
 /**

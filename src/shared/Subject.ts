@@ -1,7 +1,7 @@
 import { Property, AnnotatedProperty, Link, Remarks, SubjectType, IncludeSubjectsDescription, All, UUIDReference } from ".";
 
 /**
- * A human_readable description of intent of this assessment subject placeholder.
+ * A human readable description of intent of this assessment subject placeholder.
  */
 export type AssessmentSubjectPlaceholderDescription = string;
 /**
