@@ -5,9 +5,8 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-import { PublicationMetadata, Component, ControlImplementationDescription, Property, AnnotatedProperty, Link, ControlImplementation, RoleIdentifier, Remarks } from "..";
+import { PublicationMetadata, Component, ControlImplementationDescription, Property, AnnotatedProperty, Link, ControlImplementation, RoleIdentifier, Remarks, ResponsibleRole } from "..";
 import { BackMatter } from "../profile";
-import { ResponsibleRole } from "../assessment_results";
 
 
 /**
@@ -88,7 +87,6 @@ export interface ControlImplementationSet {
   source: SourceResourceReference;
   description: ControlImplementationDescription;
   props?: Property[];
-  annotations?: AnnotatedProperty[];
   links?: Link[];
   implemented_requirements: [ControlImplementation, ...ControlImplementation[]];
 }
@@ -99,7 +97,6 @@ export interface ControlStatementImplementation {
   uuid: ControlStatementImplementationIdentifier;
   description: StatementImplementationDescription;
   props?: Property[];
-  annotations?: AnnotatedProperty[];
   links?: Link[];
   responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
   remarks?: Remarks;
@@ -111,7 +108,6 @@ export interface Capability {
   name: CapabilityName;
   description: CapabilityDescription;
   props?: Property[];
-  annotations?: AnnotatedProperty[];
   links?: Link[];
   incorporates_components?: {
     [k: string]: IncorporatesComponent

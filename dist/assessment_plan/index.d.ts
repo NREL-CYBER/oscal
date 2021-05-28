@@ -1,4 +1,4 @@
-import { Action, ActionReference, All, AnnotatedProperty, AssessedControlsDescription, AssessmentActivityUniversallyUniqueIdentifier, AssessmentPlatformTitle, AssessmentPlatformUniversallyUniqueIdentifier, AssociatedActivity, BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ControlIdentifierReference, ControlObjectiveDescription, EventDescription, EventTiming, EventTitle, EventUniversallyUniqueIdentifier, ImportSystemSecurityPlan, IncludedActivityDescription, IncludedActivityTitle, IncludeSpecificStatements, InventoryItem, Link, ObjectiveDescription, ObjectiveID, Part, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, Property, PublicationMetadata, ReferenedControlObjectives, Remarks, ResponsibleParty, ResponsibleRole, SystemUser, RoleIdentifier, SubjectType, IncludeSubjectsDescription, UUIDReference } from "../shared";
+import { ActionReference, All, AssessmentPlatformTitle, AssessmentPlatformUniversallyUniqueIdentifier, AssociatedActivity, BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ControlIdentifierReference, EventDescription, EventTiming, EventTitle, EventUniversallyUniqueIdentifier, ImportSystemSecurityPlan, InventoryItem, Link, ObjectiveDescription, Part, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, Property, PublicationMetadata, Remarks, ResponsibleParty, ResponsibleRole, SystemUser, RoleIdentifier, SubjectType, IncludeSubjectsDescription, UUIDReference, Activity, SelectControl, ReviewedControlsAndControlObjectives } from "../shared";
 import { TaskDescription, TaskEndDate, TaskStartDate, TaskTitle, TaskUniversallyUniqueIdentifier } from "../shared/Task";
 /**
  * Uniquely identifies this assessment plan. This UUID must be changed each time the content of the plan changes.
@@ -42,68 +42,14 @@ export interface AssessmentSpecificControlObjective {
     control_id: ControlIdentifierReference;
     description?: ObjectiveDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     parts: Part[];
     remarks?: Remarks;
 }
 /**
- * Identifies an assessment or related process that can be performed. In the assessment plan, this is an intended activity which may be associated with an assessment task. In the assessment results, this an activity that was actually performed as part of an assessement.
- */
-export interface Activity {
-    uuid: AssessmentActivityUniversallyUniqueIdentifier;
-    title?: IncludedActivityTitle;
-    description: IncludedActivityDescription;
-    props?: Property[];
-    annotations?: AnnotatedProperty[];
-    links?: Link[];
-    actions?: Action[];
-    related_controls?: ReviewedControlsAndControlObjectives;
-    responsible_roles?: Record<RoleIdentifier, ResponsibleRole>;
-    remarks?: Remarks;
-}
-/**
- * Identifies the controls being assessed and their control objectives.
- */
-export interface ReviewedControlsAndControlObjectives {
-    description?: ControlObjectiveDescription;
-    props?: Property[];
-    annotations?: AnnotatedProperty[];
-    links?: Link[];
-    control_selections: AssessedControls[];
-    control_objective_selections?: ReferenedControlObjectives[];
-    remarks?: Remarks;
-}
-/**
- * Identifies the controls being assessed. In the assessment plan, these are the planned controls. In the assessment results, these are the actual controls, and reflects any changes from the plan.
- */
-export interface AssessedControls {
-    description?: AssessedControlsDescription;
-    props?: Property[];
-    annotations?: AnnotatedProperty[];
-    links?: Link[];
-    include_all?: All;
-    include_controls?: SelectControl[];
-    exclude_controls?: ExcludeControl[];
-    remarks?: Remarks;
-}
-/**
- * Used to select a control for inclusion based on the control's identifier. A set of statement identifiers can be optionally used to target the inclusion/exclusion to only specific control statements providing more granularity over the specific statements that are within the asessment scope.
- */
-export interface SelectControl {
-    control_id: ControlIdentifierReference;
-    statement_ids?: IncludeSpecificStatements[];
-}
-/**
  * Used to select a control for exclusion based on the control's identifier. A set of statement identifiers can be optionally used to target the inclusion/exclusion to only specific control statements providing more granularity over the specific statements that are within the asessment scope.
  */
 export interface ExcludeControl extends SelectControl {
-}
-/**
- * Used to select a control objective for inclusion/exclusion based on the control objective's identifier.
- */
-export interface SelectObjective {
-    objective_id: ObjectiveID;
 }
 /**
  * Used to define various terms and conditions under which an assessment, described by the plan, can be performed. Each child part defines a different type of term or condition.
@@ -121,7 +67,6 @@ export interface AssessmentPart {
     class?: PartClass;
     title?: PartTitle;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     prose: PartText;
     parts?: AssessmentPart[];
     links?: Link[];
@@ -133,7 +78,6 @@ export interface SubjectOfAssessment {
     type: SubjectType;
     description?: IncludeSubjectsDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     include_all?: All;
     include_subjects?: SelectAssessmentSubject[];
@@ -146,7 +90,6 @@ export interface SubjectOfAssessment {
 export interface SelectAssessmentSubject {
     uuid_ref: UUIDReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -166,7 +109,6 @@ export interface AssessmentPlatform {
     uuid: AssessmentPlatformUniversallyUniqueIdentifier;
     title?: AssessmentPlatformTitle;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     uses_components?: UsesComponent[];
     remarks?: Remarks;
@@ -177,7 +119,6 @@ export interface AssessmentPlatform {
 export interface UsesComponent {
     component_uuid: ComponentUniversallyUniqueIdentifierReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     responsible_parties?: Record<RoleIdentifier, ResponsibleParty>;
     remarks?: Remarks;
@@ -190,7 +131,6 @@ export interface AssessmentAction {
     title?: EventTitle;
     description: EventDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     timing?: EventTiming;
     assessment_subjects?: SubjectOfAssessment[];
@@ -206,7 +146,6 @@ export interface Task {
     title: TaskTitle;
     description?: TaskDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     start: TaskStartDate;
     end: TaskEndDate;

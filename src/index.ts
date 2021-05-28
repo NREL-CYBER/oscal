@@ -1,26 +1,31 @@
-import { SystemSecurityPlan } from "./ssp";
-import { PlanOfActionAndMilestones } from "./poam";
-import { Profile } from "./profile";
+import { SecurityAssessmentPlan } from "assessment_plan";
+import { SecurityAssessmentResults } from "assessment_results";
+import { ComponentDefinition } from "component";
 import { Catalog } from "./catalog";
-import { SecurityAssessmentResults } from "./assessment_results";
-import { SecurityAssessmentPlan } from "./assessment_plan";
 import exportOscal from "./exportOscal";
 import importOscal from "./importOscal";
 import { OrganizationSecurityPolicy } from "./osp";
+import { PlanOfActionAndMilestones } from "./poam";
+import { Profile } from "./profile";
+import { SystemSecurityPlan } from "./ssp";
 
-export * from "./shared";
+export * from "./assessment_plan";
+export * from "./assessment_results";
 export * from "./catalog";
+export * from "./component";
 export * from "./poam";
-export { Capability, ComponentDefinition } from "./component";
-
+export * from "./shared";
 export {
     exportOscal,
     importOscal,
     OrganizationSecurityPolicy,
-    SystemSecurityPlan
-    , PlanOfActionAndMilestones
-    , Profile
-    , Catalog
-    , SecurityAssessmentResults
-    , SecurityAssessmentPlan
-}
+    SystemSecurityPlan,
+    PlanOfActionAndMilestones,
+    Profile,
+    Catalog,
+    ComponentDefinition,
+    SecurityAssessmentResults,
+    SecurityAssessmentPlan
+};
+
+

@@ -1,4 +1,4 @@
-import { AnnotatedProperty, DocumentIdentifier, HypertextReference, Link, MediaType, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, Property, PublicationMetadata, Remarks } from "../shared";
+import { DocumentIdentifier, HypertextReference, Link, MediaType, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, Property, PublicationMetadata, Remarks } from "../shared";
 import { Parameter, Constraint } from "../catalog";
 /**
  * A globally unique identifier for this profile instance. This UUID should be changed when this document is revised.
@@ -222,7 +222,6 @@ export interface ControlGroup {
     title: GroupTitle;
     params?: [Parameter, ...Parameter[]];
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     parts?: Part[];
     groups?: [ControlGroup, ...ControlGroup[]];
@@ -259,7 +258,6 @@ export interface Part {
     class?: PartClass;
     title?: PartTitle;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     prose?: PartText;
     parts?: Part[];
     links?: Link[];
@@ -280,7 +278,6 @@ export interface ParameterSetting {
     class?: ParameterClass;
     depends_on?: DependsOn;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     label?: ParameterLabel;
     usage?: ParameterUsageDescription;
@@ -315,7 +312,6 @@ export interface Addition {
     title?: TitleChange;
     params?: [Parameter, ...Parameter[]];
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     parts?: Part[];
 }
@@ -333,7 +329,6 @@ export interface Resource {
     title?: ResourceTitle;
     description?: ResourceDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     document_ids?: DocumentIdentifier[];
     citation?: Citation;
     rlinks?: ResourceLink[];
@@ -346,7 +341,6 @@ export interface Resource {
 export interface Citation {
     text: CitationText;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     biblio?: BibliographicDefinition;
 }
 /**

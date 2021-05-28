@@ -1,5 +1,5 @@
 import { Choice, ConstraintDescription, ConstraintTest, DependsOn, GroupClass, GroupIdentifier, GroupTitle, GuidelineText, ParameterCardinality, ParameterClass, ParameterIdentifier, ParameterLabel, ParameterUsageDescription } from "../profile";
-import { AnnotatedProperty, BackMatter, Link, ParameterValue, Property, Part, PublicationMetadata } from "../shared";
+import { BackMatter, Link, ParameterValue, Property, Part, PublicationMetadata } from "../shared";
 /**
  * A unique identifier for a specific control instance that can be used to reference the control in other OSCAL documents. This identifier's uniqueness is document scoped and is intended to be consistent for the same control across minor revisions of the document.
  */
@@ -35,7 +35,6 @@ export interface Parameter {
     class?: ParameterClass;
     depends_on?: DependsOn;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     label?: ParameterLabel;
     usage?: ParameterUsageDescription;
@@ -73,7 +72,6 @@ export interface Control {
     title: ControlTitle;
     params?: Parameter[];
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     parts?: Part[];
     controls?: Control[];
@@ -87,7 +85,6 @@ export interface ControlGroup {
     title: GroupTitle;
     params?: Parameter[];
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     parts?: Part[];
     groups?: ControlGroup[];

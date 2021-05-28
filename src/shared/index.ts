@@ -729,7 +729,7 @@ export interface Action {
 /**
  * Identifies the control objectives of the assessment. In the assessment plan, these are the planned objectives. In the assessment results, these are the assessed objectives, and reflects any changes from the plan.
  */
-export interface ReferenedControlObjectives {
+export interface ReferencedControlObjectives {
     description?: ControlOjectivesDescription;
     props?: Property[];
     links?: Link[];
@@ -748,7 +748,7 @@ export interface ReviewedControlsAndControlObjectives {
     props?: Property[];
     links?: Link[];
     control_selections: AssessedControls[];
-    control_objective_selections?: ReferenedControlObjectives[];
+    control_objective_selections?: ReferencedControlObjectives[];
     remarks?: Remarks;
 }
 /**
@@ -801,7 +801,7 @@ export interface ReviewedControlsAndControlObjectives {
     props?: Property[];
     links?: Link[];
     control_selections: AssessedControls[];
-    control_objective_selections?: ReferenedControlObjectives[];
+    control_objective_selections?: ReferencedControlObjectives[];
     remarks?: Remarks;
 }
 /**
@@ -826,7 +826,7 @@ export interface SelectControl {
 /**
  * Identifies the control objectives of the assessment. In the assessment plan, these are the planned objectives. In the assessment results, these are the assessed objectives, and reflects any changes from the plan.
  */
-export interface ReferenedControlObjectives {
+export interface ReferencedControlObjectives {
     description?: ControlOjectivesDescription;
     props?: Property[];
     links?: Link[];

@@ -1,8 +1,9 @@
-import { ActionReference, AnnotatedProperty, AssociatedRiskStatus, Link, Property, Remarks, TaskReference, UUIDReference, ActionDescription, ActionTitle } from ".";
+import { ActionDescription, ActionReference, ActionTitle, AssociatedRiskStatus, Link, Property, Remarks, TaskReference, UUIDReference } from ".";
+import { EndField, StartField } from "../assessment_results";
 import { AssessmentActor } from "./Actor";
 import { RelatedObservation } from "./Observation";
-import { EndField, StartField, LoggedBy } from "../assessment_results";
-import { Task, DescriptionOfRequiredAsset } from "./Task";
+import { DescriptionOfRequiredAsset, Task } from "./Task";
+import { LoggedBy } from "poam";
 /**
  * Used to indicate the type of object pointed to by the uuid_ref.
  */

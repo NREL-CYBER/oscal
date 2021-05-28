@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ReferenedControlObjectives | oscal</title>
+	<title>ObjectiveStatus | oscal</title>
 	<meta name="description" content="Documentation for oscal">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">oscal</a>
 				</li>
 				<li>
-					<a href="referenedcontrolobjectives.html">ReferenedControlObjectives</a>
+					<a href="objectivestatus.html">ObjectiveStatus</a>
 				</li>
 			</ul>
-			<h1>Interface ReferenedControlObjectives</h1>
+			<h1>Interface ObjectiveStatus</h1>
 		</div>
 	</div>
 </header>
@@ -68,7 +68,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Identifies the control objectives of the assessment. In the assessment plan, these are the planned objectives. In the assessment results, these are the assessed objectives, and reflects any changes from the plan.</p>
+						<p>Captures an assessor&#39;s conclusions regarding the degree to which an objective is satisfied.</p>
 					</div>
 				</div>
 			</section>
@@ -76,7 +76,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ReferenedControlObjectives</span>
+						<span class="target">ObjectiveStatus</span>
 					</li>
 				</ul>
 			</section>
@@ -87,14 +87,14 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="referenedcontrolobjectives.html#annotations" class="tsd-kind-icon">annotations</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="referenedcontrolobjectives.html#description" class="tsd-kind-icon">description</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="referenedcontrolobjectives.html#exclude_objectives" class="tsd-kind-icon">exclude_<wbr>objectives</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="referenedcontrolobjectives.html#include_all" class="tsd-kind-icon">include_<wbr>all</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="referenedcontrolobjectives.html#include_objectives" class="tsd-kind-icon">include_<wbr>objectives</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="referenedcontrolobjectives.html#links" class="tsd-kind-icon">links</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="referenedcontrolobjectives.html#props" class="tsd-kind-icon">props</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="referenedcontrolobjectives.html#remarks" class="tsd-kind-icon">remarks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="objectivestatus.html#control_id" class="tsd-kind-icon">control_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="objectivestatus.html#description" class="tsd-kind-icon">description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="objectivestatus.html#links" class="tsd-kind-icon">links</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="objectivestatus.html#objective_id" class="tsd-kind-icon">objective_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="objectivestatus.html#props" class="tsd-kind-icon">props</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="objectivestatus.html#remarks" class="tsd-kind-icon">remarks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="objectivestatus.html#status" class="tsd-kind-icon">status</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="objectivestatus.html#title" class="tsd-kind-icon">title</a></li>
 							</ul>
 						</section>
 					</div>
@@ -103,12 +103,12 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="annotations" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> annotations</h3>
-					<div class="tsd-signature tsd-kind-icon">annotations<span class="tsd-signature-symbol">:</span> <a href="annotatedproperty.html" class="tsd-signature-type" data-tsd-kind="Interface">AnnotatedProperty</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="control_id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> control_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">control_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6d8c571/src/shared/index.ts#L737">shared/index.ts:737</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/22826a8/src/assessment_results/index.ts#L200">assessment_results/index.ts:200</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -118,37 +118,7 @@
 					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6d8c571/src/shared/index.ts#L735">shared/index.ts:735</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="exclude_objectives" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> exclude_<wbr>objectives</h3>
-					<div class="tsd-signature tsd-kind-icon">exclude_<wbr>objectives<span class="tsd-signature-symbol">:</span> <a href="selectobjective.html" class="tsd-signature-type" data-tsd-kind="Interface">SelectObjective</a><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6d8c571/src/shared/index.ts#L741">shared/index.ts:741</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="include_all" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> include_<wbr>all</h3>
-					<div class="tsd-signature tsd-kind-icon">include_<wbr>all<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;ALL&quot;</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6d8c571/src/shared/index.ts#L739">shared/index.ts:739</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="include_objectives" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> include_<wbr>objectives</h3>
-					<div class="tsd-signature tsd-kind-icon">include_<wbr>objectives<span class="tsd-signature-symbol">:</span> <a href="selectobjective.html" class="tsd-signature-type" data-tsd-kind="Interface">SelectObjective</a><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6d8c571/src/shared/index.ts#L740">shared/index.ts:740</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/22826a8/src/assessment_results/index.ts#L202">assessment_results/index.ts:202</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -158,7 +128,17 @@
 					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6d8c571/src/shared/index.ts#L738">shared/index.ts:738</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/22826a8/src/assessment_results/index.ts#L204">assessment_results/index.ts:204</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="objective_id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> objective_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">objective_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/22826a8/src/assessment_results/index.ts#L199">assessment_results/index.ts:199</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -168,7 +148,7 @@
 					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6d8c571/src/shared/index.ts#L736">shared/index.ts:736</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/22826a8/src/assessment_results/index.ts#L203">assessment_results/index.ts:203</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -178,7 +158,27 @@
 					<div class="tsd-signature tsd-kind-icon">remarks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6d8c571/src/shared/index.ts#L742">shared/index.ts:742</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/22826a8/src/assessment_results/index.ts#L206">assessment_results/index.ts:206</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="status" class="tsd-anchor"></a>
+					<h3>status</h3>
+					<div class="tsd-signature tsd-kind-icon">status<span class="tsd-signature-symbol">:</span> <a href="../modules.html#implementationstatus" class="tsd-signature-type" data-tsd-kind="Type alias">ImplementationStatus</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/22826a8/src/assessment_results/index.ts#L205">assessment_results/index.ts:205</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="title" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> title</h3>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/22826a8/src/assessment_results/index.ts#L201">assessment_results/index.ts:201</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -197,31 +197,31 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="referenedcontrolobjectives.html" class="tsd-kind-icon">Referened<wbr>Control<wbr>Objectives</a>
+						<a href="objectivestatus.html" class="tsd-kind-icon">Objective<wbr>Status</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="referenedcontrolobjectives.html#annotations" class="tsd-kind-icon">annotations</a>
+								<a href="objectivestatus.html#control_id" class="tsd-kind-icon">control_<wbr>id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="referenedcontrolobjectives.html#description" class="tsd-kind-icon">description</a>
+								<a href="objectivestatus.html#description" class="tsd-kind-icon">description</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="referenedcontrolobjectives.html#exclude_objectives" class="tsd-kind-icon">exclude_<wbr>objectives</a>
+								<a href="objectivestatus.html#links" class="tsd-kind-icon">links</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="referenedcontrolobjectives.html#include_all" class="tsd-kind-icon">include_<wbr>all</a>
+								<a href="objectivestatus.html#objective_id" class="tsd-kind-icon">objective_<wbr>id</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="referenedcontrolobjectives.html#include_objectives" class="tsd-kind-icon">include_<wbr>objectives</a>
+								<a href="objectivestatus.html#props" class="tsd-kind-icon">props</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="referenedcontrolobjectives.html#links" class="tsd-kind-icon">links</a>
+								<a href="objectivestatus.html#remarks" class="tsd-kind-icon">remarks</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="referenedcontrolobjectives.html#props" class="tsd-kind-icon">props</a>
+								<a href="objectivestatus.html#status" class="tsd-kind-icon">status</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="referenedcontrolobjectives.html#remarks" class="tsd-kind-icon">remarks</a>
+								<a href="objectivestatus.html#title" class="tsd-kind-icon">title</a>
 							</li>
 						</ul>
 					</li>

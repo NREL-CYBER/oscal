@@ -171,7 +171,6 @@ export interface Observation {
   title?: ObservationTitle;
   description: ObservationDescription;
   props?: Property[];
-  annotations?: AnnotatedProperty[];
   links?: Link[];
   methods: ObservationMethod[];
   types?: ObservationType[];
@@ -187,7 +186,6 @@ export interface RelevantEvidence {
   href?: RelevantEvidenceReference;
   description: RelevantEvidenceDescription;
   props?: Property[];
-  annotations?: AnnotatedProperty[];
   links?: Link[];
   remarks?: Remarks;
 }
@@ -204,7 +202,6 @@ export interface ThreatID {
  */
 export interface Characterization {
   props?: Property[];
-  annotations?: AnnotatedProperty[];
   links?: Link[];
   origin: Origin;
   facets: [Facet, ...Facet[]];
@@ -217,7 +214,6 @@ export interface Facet {
   system: NamingSystem;
   value: FacetValue;
   props?: Property[];
-  annotations?: AnnotatedProperty[];
   links?: Link[];
   remarks?: Remarks;
 }
@@ -229,7 +225,6 @@ export interface MitigatingFactor {
   implementation_uuid?: ImplementationUUID;
   description: MitigatingFactorDescription;
   props?: Property[];
-  annotations?: AnnotatedProperty[];
   links?: Link[];
   subjects?: IdentifiesTheSubject[];
 }
@@ -242,7 +237,6 @@ export interface RequiredAsset {
   title?: TitleForRequiredAsset;
   description: DescriptionOfRequiredAsset;
   props?: Property[];
-  annotations?: AnnotatedProperty[];
   links?: Link[];
   remarks?: Remarks;
 }
@@ -261,7 +255,6 @@ export interface POAMItem {
   title: POAMItemTitle;
   description: POAMItemDescription;
   props?: Property[];
-  annotations?: AnnotatedProperty[];
   links?: Link[];
   origins?: Origin[];
   collected: CollectedField;
