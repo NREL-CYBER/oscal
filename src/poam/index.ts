@@ -5,7 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-import { AnnotatedProperty, BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ImportSystemSecurityPlan, InventoryItem, Link, Property, PublicationMetadata, Remarks, SystemIdentification } from "../shared";
+import { BackMatter, Component, ComponentUniversallyUniqueIdentifierReference, ImportSystemSecurityPlan, InventoryItem, Link, Property, PublicationMetadata, Remarks, SystemIdentification } from "../shared";
 import { AssociatedRisk, IdentifiedRisk, IdentifiesTheSubject, Origin } from "../shared/IdentifiedRisk";
 import { RelatedObservation } from "../shared/Observation";
 import { DescriptionOfRequiredAsset, Task, TitleForRequiredAsset } from "../shared/Task";

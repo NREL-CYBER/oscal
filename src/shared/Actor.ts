@@ -1,4 +1,4 @@
-import { Property, AnnotatedProperty, Link } from ".";
+import { Property, Link } from ".";
 
 /**
  * The kind of actor.

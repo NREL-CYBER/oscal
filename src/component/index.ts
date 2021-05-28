@@ -5,7 +5,7 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-import { PublicationMetadata, Component, ControlImplementationDescription, Property, AnnotatedProperty, Link, ControlImplementation, RoleIdentifier, Remarks, ResponsibleRole } from "..";
+import { PublicationMetadata, Component, ControlImplementationDescription, Property, Link, ControlImplementation, RoleIdentifier, Remarks, ResponsibleRole } from "..";
 import { BackMatter } from "../profile";
 
 

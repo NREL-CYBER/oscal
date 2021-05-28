@@ -1,4 +1,4 @@
-import { Property, Link, Remarks, SubjectType, IncludeSubjectsDescription, All, UUIDReference } from ".";
+import { All, IncludeSubjectsDescription, Link, Property, Remarks, SubjectType, UUIDReference } from ".";
 /**
  * A human readable description of intent of this assessment subject placeholder.
  */

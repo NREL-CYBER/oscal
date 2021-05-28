@@ -1,4 +1,4 @@
-import { Property, AnnotatedProperty, Link, ActionReference, ResponsibleRole, Remarks, RoleIdentifier } from ".";
+import { ActionReference, Link, Property, Remarks, ResponsibleRole, RoleIdentifier } from ".";
 
 /**
  * The title for this required asset.

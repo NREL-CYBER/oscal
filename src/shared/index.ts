@@ -883,17 +883,8 @@ export interface Property {
     name: PropertyName;
     ns?: PropertyNamespace;
     class?: PropertyClass;
-    value: string;
-}
-/**
- * An attribute, characteristic, or quality of the containing object expressed as a namespace qualified name/value pair with optional explanatory remarks. The value of an annotated property is a simple scalar value.
- */
-export interface AnnotatedProperty {
-    name: AnnotatedPropertyName;
-    uuid?: AnnotatedPropertyUniversallyUniqueIdentifier;
-    ns?: AnnotatedPropertyNamespace;
-    value: AnnotatedPropertyValue;
     remarks?: Remarks;
+    value: string;
 }
 /**
  * A reference to a local or remote resource

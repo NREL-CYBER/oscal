@@ -1,5 +1,5 @@
-import { AnnotatedProperty, DocumentIdentifier, HypertextReference, Link, MediaType, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, Property, PublicationMetadata, Remarks } from "../shared";
-import { Parameter, Constraint } from "../catalog";
+import { Constraint, Parameter } from "../catalog";
+import { DocumentIdentifier, HypertextReference, Link, MediaType, PartClass, PartIdentifier, PartName, PartNamespace, PartText, PartTitle, Property, PublicationMetadata, Remarks } from "../shared";
 
 
 /**

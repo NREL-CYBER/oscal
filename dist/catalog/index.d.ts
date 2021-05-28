@@ -1,5 +1,5 @@
 import { Choice, ConstraintDescription, ConstraintTest, DependsOn, GroupClass, GroupIdentifier, GroupTitle, GuidelineText, ParameterCardinality, ParameterClass, ParameterIdentifier, ParameterLabel, ParameterUsageDescription } from "../profile";
-import { BackMatter, Link, ParameterValue, Property, Part, PublicationMetadata } from "../shared";
+import { BackMatter, Link, ParameterValue, Part, Property, PublicationMetadata } from "../shared";
 /**
  * A unique identifier for a specific control instance that can be used to reference the control in other OSCAL documents. This identifier's uniqueness is document scoped and is intended to be consistent for the same control across minor revisions of the document.
  */
