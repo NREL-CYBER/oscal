@@ -1,6 +1,6 @@
-import { SecurityAssessmentPlan } from "assessment_plan";
-import { SecurityAssessmentResults } from "assessment_results";
-import { ComponentDefinition } from "component";
+import { SecurityAssessmentPlan } from "./assessment_plan";
+import { SecurityAssessmentResults } from "./assessment_results";
+import { ComponentDefinition } from "./component";
 import { Catalog } from "./catalog";
 import exportOscal from "./exportOscal";
 import importOscal from "./importOscal";

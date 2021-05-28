@@ -76,11 +76,47 @@ Object.defineProperty(exports, "SystemSecurityPlan", {
   }
 });
 
-var _assessment_plan = require("assessment_plan");
+var _assessment_plan = require("./assessment_plan");
 
-var _assessment_results = require("assessment_results");
+Object.keys(_assessment_plan).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  if (key in exports && exports[key] === _assessment_plan[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _assessment_plan[key];
+    }
+  });
+});
 
-var _component = require("component");
+var _assessment_results = require("./assessment_results");
+
+Object.keys(_assessment_results).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  if (key in exports && exports[key] === _assessment_results[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _assessment_results[key];
+    }
+  });
+});
+
+var _component = require("./component");
+
+Object.keys(_component).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  if (key in exports && exports[key] === _component[key]) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _component[key];
+    }
+  });
+});
 
 var _catalog = require("./catalog");
 
@@ -119,48 +155,6 @@ Object.keys(_poam).forEach(function (key) {
 var _profile = require("./profile");
 
 var _ssp = require("./ssp");
-
-var _assessment_plan2 = require("./assessment_plan");
-
-Object.keys(_assessment_plan2).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
-  if (key in exports && exports[key] === _assessment_plan2[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _assessment_plan2[key];
-    }
-  });
-});
-
-var _assessment_results2 = require("./assessment_results");
-
-Object.keys(_assessment_results2).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
-  if (key in exports && exports[key] === _assessment_results2[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _assessment_results2[key];
-    }
-  });
-});
-
-var _component2 = require("./component");
-
-Object.keys(_component2).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
-  if (key in exports && exports[key] === _component2[key]) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _component2[key];
-    }
-  });
-});
 
 var _shared = require("./shared");
 
