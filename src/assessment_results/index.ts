@@ -1,4 +1,4 @@
-import { AssessmentPart, AssessmentSpecificControlObjective, AssessmentAssets, AssessmentAction } from "assessment_plan";
+import { AssessmentPart, AssessmentSpecificControlObjective, AssessmentAssets, AssessmentAction } from "../assessment_plan";
 import { CollectedField, ExpiresField, LoggedBy, ObservationDescription, ObservationMethod, ObservationTitle, ObservationType, ObservationUniversallyUniqueIdentifier, RelevantEvidence } from "../poam";
 import { ActionDescription, ActionTitle, AssessmentLogEntryUniversallyUniqueIdentifier, AssessmentPlanReference, BackMatter, Component, ControlIdentifierReference, ImplementationStatementUUID, ImplementationStatus, Link, ObjectiveID, ObjectiveStatusDescription, ObjectiveStatusTitle, Property, PublicationMetadata, Remarks, ResponsibleParty, ReviewedControlsAndControlObjectives, RoleIdentifier, UniversallyUniqueIdentifierReferenceType, UUIDReference, Activity, InventoryItem, SystemUser, ActionReference, TaskReference } from "../shared";
 import { AssessmentActor } from "../shared/Actor";
