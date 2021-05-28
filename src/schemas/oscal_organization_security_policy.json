@@ -1493,11 +1493,13 @@
                     "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
                 },
                 "title": {
-                    "title": "Business Mission / function title",
+                    "title": "Business function title",
+                    "description": "Enter the title of the business function",
                     "type": "string"
                 },
                 "description": {
-                    "title": "Business Mission / function description",
+                    "title": "Business function description",
+                    "description": "Describe the business mission/function",
                     "type": "string"
                 },
                 "remarks": {

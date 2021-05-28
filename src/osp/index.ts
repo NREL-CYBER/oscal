@@ -12,9 +12,14 @@ export interface BusinessFunction {
     remarks?: string
 }
 /**
+ * Business Mission Statement.
+ */
+type MissionStatement = string
+/**
  * Organization Security Policy.
  */
 export interface OrganizationSecurityPolicy {
     uuid: OSPUniversallyUniqueIdentifier;
     functions: BusinessFunction[];
+    mission: MissionStatement
 }
