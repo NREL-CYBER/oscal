@@ -1,9 +1,9 @@
+import { LoggedBy } from "../poam";
 import { ActionDescription, ActionReference, ActionTitle, AssociatedRiskStatus, Link, Property, Remarks, TaskReference, UUIDReference } from ".";
 import { EndField, StartField } from "../assessment_results";
 import { AssessmentActor } from "./Actor";
 import { RelatedObservation } from "./Observation";
 import { DescriptionOfRequiredAsset, Task } from "./Task";
-import { LoggedBy } from "poam";
 /**
  * Used to indicate the type of object pointed to by the uuid_ref.
  */
