@@ -21,7 +21,6 @@ export type ActivityInstanceUniversallyUniqueIdentifier = string;
 export interface SelectAssessmentSubject {
     uuid_ref: UUIDReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -33,7 +32,6 @@ export interface SubjectOfAssessment {
     type: SubjectType;
     description?: IncludeSubjectsDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     include_all?: All;
     include_subjects?: SelectAssessmentSubject[];
@@ -48,7 +46,6 @@ export interface AssessmentSubjectPlaceholder {
     description?: AssessmentSubjectPlaceholderDescription;
     sources: [AssessmentSubjectSource, ...AssessmentSubjectSource[]];
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }

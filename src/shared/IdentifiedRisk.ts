@@ -134,7 +134,6 @@ export interface RiskLogEntry {
     start: StartField;
     end?: EndField;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     logged_by?: LoggedBy[];
     status_change?: RiskStatus;
@@ -148,7 +147,6 @@ export interface RiskLogEntry {
 export interface RiskResponseReference {
     response_uuid: ResponseUniversallyUniqueIdentifierReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     related_actions?: ActionReference[];
     remarks?: Remarks;
@@ -174,7 +172,6 @@ export interface Origin {
 export interface SelectAssessmentSubject {
     uuid_ref: UUIDReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -186,7 +183,6 @@ export interface IdentifiesTheSubject {
     type: UniversallyUniqueIdentifierReferenceType;
     title?: SubjectReferenceTitle;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -203,7 +199,6 @@ export interface ThreatID {
  */
 export interface Characterization {
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     origin: Origin;
     facets: [Facet, ...Facet[]];
@@ -216,7 +211,6 @@ export interface Facet {
     system: NamingSystem;
     value: FacetValue;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -228,7 +222,6 @@ export interface MitigatingFactor {
     implementation_uuid?: ImplementationUUID;
     description: MitigatingFactorDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     subjects?: IdentifiesTheSubject[];
 }
@@ -242,7 +235,6 @@ export interface RequiredAsset {
     title?: TitleForRequiredAsset;
     description: DescriptionOfRequiredAsset;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     remarks?: Remarks;
 }
@@ -252,7 +244,6 @@ export interface RequiredAsset {
 export interface RiskResponseActionReference {
     response_uuid: ResponseUniversallyUniqueIdentifierReference;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     related_actions?: ActionReference[];
     remarks?: Remarks;
@@ -269,7 +260,6 @@ export interface RiskResponse {
     title: ResponseTitle;
     description: ResponseDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     origins?: Origin[];
     required_assets?: RequiredAsset[];
@@ -285,7 +275,6 @@ export interface IdentifiedRisk {
     description: RiskDescription;
     statement: RiskStatement;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     status: AssociatedRiskStatus;
     origins?: Origin[];

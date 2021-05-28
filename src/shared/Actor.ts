@@ -21,6 +21,5 @@ export interface AssessmentActor {
     uuid_ref: ActorUUIDReference;
     role_id?: ActorRole;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
 }

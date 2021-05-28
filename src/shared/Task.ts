@@ -37,7 +37,6 @@ export interface Task {
     title: TaskTitle;
     description?: TaskDescription;
     props?: Property[];
-    annotations?: AnnotatedProperty[];
     links?: Link[];
     start: TaskStartDate;
     end: TaskEndDate;
