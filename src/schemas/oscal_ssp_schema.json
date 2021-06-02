@@ -855,23 +855,7 @@
         "type": {
           "title": "Component Type",
           "description": "A category describing the purpose of the component.",
-          "type": "string",
-          "enum": [
-            "subnet",
-            "leveraged-system",
-            "this-system",
-            "interconnection",
-            "software",
-            "hardware",
-            "service",
-            "policy",
-            "physical",
-            "process-procedure",
-            "plan",
-            "guidance",
-            "standard",
-            "validation"
-          ]
+          "type": "string"
         },
         "title": {
           "title": "Component Title",
@@ -2621,8 +2605,7 @@
       },
       "required": [
         "uuid",
-        "description",
-        "implementation_status"
+        "description"
       ],
       "additionalProperties": false
     }
