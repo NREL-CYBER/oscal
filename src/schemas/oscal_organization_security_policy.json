@@ -1012,6 +1012,136 @@
             },
             "additionalProperties": false
         },
+        "inherited": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "title": "Inherited Control Implementation",
+                "description": "Describes a control implementation inherited by a leveraging system.",
+                "type": "object",
+                "properties": {
+                    "uuid": {
+                        "title": "Inherited Universally Unique Identifier",
+                        "description": "A globally unique identifier that can be used to reference this inherited entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
+                        "type": "string",
+                        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+                    },
+                    "provided_uuid": {
+                        "title": "Provided UUID",
+                        "description": "Identifies a 'provided' assembly associated with this assembly.",
+                        "type": "string",
+                        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+                    },
+                    "description": {
+                        "title": "Inherited Control Implementation Description",
+                        "description": "An implementation statement that describes the aspects of a control or control statement implementation that a leveraging system is inheriting from a leveraged system.",
+                        "type": "string"
+                    },
+                    "props": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                            "$ref": "#/definitions/property"
+                        }
+                    },
+                    "links": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                            "$ref": "#/definitions/link"
+                        }
+                    },
+                    "responsible_roles": {
+                        "type": "object",
+                        "minProperties": 1,
+                        "additionalProperties": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/responsible_role"
+                                },
+                                {
+                                    "not": {
+                                        "type": "string"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "uuid",
+                    "description"
+                ],
+                "additionalProperties": false
+            }
+        },
+        "satisfied": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+                "title": "Satisfied Control Implementation Responsibility",
+                "description": "Describes how this system satisfies a responsibility imposed by a leveraged system.",
+                "type": "object",
+                "properties": {
+                    "uuid": {
+                        "title": "Satisfied Universally Unique Identifier",
+                        "description": "A globally unique identifier that can be used to reference this satisfied entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
+                        "type": "string",
+                        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+                    },
+                    "responsibility_uuid": {
+                        "title": "Provided UUID",
+                        "description": "Identifies a 'provided' assembly associated with this assembly.",
+                        "type": "string",
+                        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+                    },
+                    "description": {
+                        "title": "Satisfied Control Implementation Responsibility Description",
+                        "description": "An implementation statement that describes the aspects of a control or control statement implementation that a leveraging system is implementing based on a requirement from a leveraged system.",
+                        "type": "string"
+                    },
+                    "props": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                            "$ref": "#/definitions/property"
+                        }
+                    },
+                    "links": {
+                        "type": "array",
+                        "minItems": 1,
+                        "items": {
+                            "$ref": "#/definitions/link"
+                        }
+                    },
+                    "responsible_roles": {
+                        "type": "object",
+                        "minProperties": 1,
+                        "additionalProperties": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/definitions/responsible_role"
+                                },
+                                {
+                                    "not": {
+                                        "type": "string"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "remarks": {
+                        "$ref": "#/definitions/remarks"
+                    }
+                },
+                "required": [
+                    "uuid",
+                    "description",
+                    "implementation_status"
+                ],
+                "additionalProperties": false
+            }
+        },
         "hash": {
             "title": "Hash",
             "description": "A representation of a cryptographic digest generated over a resource using a specified hash algorithm.",

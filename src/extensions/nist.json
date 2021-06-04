@@ -1,0 +1,126 @@
+{
+    "extensions": {
+        "uuid": "BA710064-79AC-47D5-8F70-6749B359E7E2",
+        "metadata": {
+            "title": "[EXPERIMENTAL] NIST Extensions [DRAFT]",
+            "published": "2021-02-25T00:00:00Z",
+            "last-modified": "2021-02-25T00:00:00Z",
+            "version": "DRAFT-01",
+            "oscal-version": "1.0.0",
+            "revisions": [
+                {
+                    "published": "2019-06-01T00:00:00.00-04:00",
+                    "version": "DRAFT-01",
+                    "props": [
+                        {
+                            "name": "party-uuid",
+                            "ns": "https://fedramp.gov/ns/oscal",
+                            "value": "6b286b5d-8f07-4fa7-8847-1dd0d88f73fb"
+                        }
+                    ],
+                    "remarks": "Initial draft."
+                },
+                {
+                    "published": "2020-03-03T00:00:00.00-04:00",
+                    "version": "DRAFT-02",
+                    "props": [
+                        {
+                            "name": "party-uuid",
+                            "ns": "https://fedramp.gov/ns/oscal",
+                            "value": "6b286b5d-8f07-4fa7-8847-1dd0d88f73fb"
+                        }
+                    ],
+                    "remarks": "Partial update to include some SAP, SAR, and POA&M extensions."
+                },
+                {
+                    "published": "2021-02-09T00:00:00.00-04:00",
+                    "version": "DRAFT-03",
+                    "props": [
+                        {
+                            "name": "party-uuid",
+                            "ns": "https://fedramp.gov/ns/oscal",
+                            "value": "6b286b5d-8f07-4fa7-8847-1dd0d88f73fb"
+                        }
+                    ],
+                    "remarks": "Revised draft to better align with OSCAL RC-1 SSP syntax."
+                }
+            ],
+            "roles": [
+                {
+                    "id": "prepared-by",
+                    "title": "Prepared By",
+                    "description": "The organization that prepared this content."
+                }
+            ],
+            "parties": [
+                {
+                    "uuid": "77e0e2c8-2560-4fe9-ac78-c3ff4ffc9f6d",
+                    "type": "organization",
+                    "name": "Federal Risk and Authorization Management Program: Program Management\n            Office",
+                    "short-name": "FedRAMP PMO",
+                    "links": [
+                        {
+                            "href": "https://fedramp.gov"
+                        }
+                    ],
+                    "email-addresses": [
+                        "info@fedramp.gov"
+                    ],
+                    "addresses": [
+                        {
+                            "type": "work",
+                            "addr-lines": [
+                                "1800 F St. NW",
+                                ""
+                            ],
+                            "city": "Washington",
+                            "state": "DC",
+                            "postal-code": "",
+                            "country": "US"
+                        }
+                    ],
+                    "remarks": "This party entry must be present in a FedRAMP SSP.\n\nThe uuid may be different; however, the uuid must be associated with the \\\"fedramp-pmo\\\" role in the responsible-party assemblies."
+                }
+            ],
+            "responsible-parties": {
+                "prepared-by": {
+                    "party-uuids": [
+                        "77e0e2c8-2560-4fe9-ac78-c3ff4ffc9f6d"
+                    ]
+                }
+            },
+            "remarks": "This EXPERIMENTAL and DRAFT file exteneds OSCAL to meet FedRAMP requirements.\n\nIt provides the extensions, defined identifiers, and acceptable values in a machine-readable format necssary to meet FedRAMP Authorization Package requirements."
+        },
+        "indexes": [
+            {
+                "formal-name": "Nist Allowed Component Types",
+                "description": "Identifies component types for SSP.",
+                "bindings": [
+                    {
+                        "pattern": "o:system-security-plan/o:system-implementation/o:component/@type"
+                    }
+                ],
+                "allowed-values": [
+                    {
+                        "allow-other": "yes",
+                        "enums": [
+                            {
+                                "value": "assessment-origination",
+                                "label": "Assessment Origination",
+                                "RICHTEXT": "The component identifies one or more IP addresses from which assessment activities may be performed."
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "extension-namespace": {
+            "ns": "https://nist.gov/ns/oscal"
+        },
+        "extensions": {},
+        "constraints": [],
+        "back-matter": {
+            "resources": []
+        }
+    }
+}
