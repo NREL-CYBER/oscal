@@ -1237,6 +1237,7 @@
                             "enum": [
                                 "under_development",
                                 "operational",
+                                "under_major_modification",
                                 "disposition",
                                 "other"
                             ]
