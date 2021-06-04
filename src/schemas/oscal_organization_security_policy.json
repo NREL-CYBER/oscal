@@ -1710,7 +1710,35 @@
             },
             "required": [
                 "uuid",
+                "implementation_status",
                 "description"
+            ],
+            "additionalProperties": false
+        },
+        "implementation_status": {
+            "title": "Implementation Status",
+            "description": "Indicates the degree to which the a given control is implemented.",
+            "$id": "#/definitions/implementation_status",
+            "type": "object",
+            "properties": {
+                "state": {
+                    "title": "Implementation State",
+                    "description": "Identifies the implementation status of the control or control objective.",
+                    "type": "string",
+                    "enum": [
+                        "implemented",
+                        "partial",
+                        "planned",
+                        "alternative",
+                        "not-applicable"
+                    ]
+                },
+                "remarks": {
+                    "$ref": "#/definitions/remarks"
+                }
+            },
+            "required": [
+                "state"
             ],
             "additionalProperties": false
         },
