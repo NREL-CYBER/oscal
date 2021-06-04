@@ -1178,7 +1178,23 @@
                 "type": {
                     "title": "Component Type",
                     "description": "A category describing the purpose of the component.",
-                    "type": "string"
+                    "type": "string",
+                    "enum": [
+                        "subnet",
+                        "leveraged-system",
+                        "this-system",
+                        "interconnection",
+                        "software",
+                        "hardware",
+                        "service",
+                        "policy",
+                        "physical",
+                        "process-procedure",
+                        "plan",
+                        "guidance",
+                        "standard",
+                        "validation"
+                    ]
                 },
                 "title": {
                     "title": "Component Title",
@@ -1200,13 +1216,6 @@
                     "minItems": 1,
                     "items": {
                         "$ref": "#/definitions/property"
-                    }
-                },
-                "annotations": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                        "$ref": "#/definitions/annotation"
                     }
                 },
                 "links": {
