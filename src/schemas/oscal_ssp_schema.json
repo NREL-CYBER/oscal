@@ -2080,7 +2080,7 @@
         },
         "implemented_requirements": {
           "type": "array",
-          "minItems": 0,
+          "minItems": 1,
           "items": {
             "$ref": "#/definitions/implemented_requirement"
           }
