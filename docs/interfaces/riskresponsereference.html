@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>PoamLocalDefinitions | oscal</title>
+	<title>RiskResponseReference | oscal</title>
 	<meta name="description" content="Documentation for oscal">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">oscal</a>
 				</li>
 				<li>
-					<a href="poamlocaldefinitions.html">PoamLocalDefinitions</a>
+					<a href="riskresponsereference.html">RiskResponseReference</a>
 				</li>
 			</ul>
-			<h1>Interface PoamLocalDefinitions</h1>
+			<h1>Interface RiskResponseReference</h1>
 		</div>
 	</div>
 </header>
@@ -68,7 +68,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Allows components, and inventory_items to be defined within the POA&amp;M for circumstances where no OSCAL_based SSP exists, or is not delivered with the POA&amp;M.</p>
+						<p>Identifies an individual risk response that this log entry is for.</p>
 					</div>
 				</div>
 			</section>
@@ -76,7 +76,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">PoamLocalDefinitions</span>
+						<span class="target">RiskResponseReference</span>
 					</li>
 				</ul>
 			</section>
@@ -87,9 +87,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="poamlocaldefinitions.html#components" class="tsd-kind-icon">components</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="poamlocaldefinitions.html#inventory_items" class="tsd-kind-icon">inventory_<wbr>items</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="poamlocaldefinitions.html#remarks" class="tsd-kind-icon">remarks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="riskresponsereference.html#links" class="tsd-kind-icon">links</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="riskresponsereference.html#props" class="tsd-kind-icon">props</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="riskresponsereference.html#related_tasks" class="tsd-kind-icon">related_<wbr>tasks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="riskresponsereference.html#remarks" class="tsd-kind-icon">remarks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="riskresponsereference.html#response_uuid" class="tsd-kind-icon">response_<wbr>uuid</a></li>
 							</ul>
 						</section>
 					</div>
@@ -98,22 +100,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="components" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> components</h3>
-					<div class="tsd-signature tsd-kind-icon">components<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="component.html" class="tsd-signature-type" data-tsd-kind="Interface">Component</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="links" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> links</h3>
+					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/poam/index.ts#L162">poam/index.ts:162</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2509">index.ts:2509</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="inventory_items" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> inventory_<wbr>items</h3>
-					<div class="tsd-signature tsd-kind-icon">inventory_<wbr>items<span class="tsd-signature-symbol">:</span> <a href="inventoryitem.html" class="tsd-signature-type" data-tsd-kind="Interface">InventoryItem</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="props" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> props</h3>
+					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/poam/index.ts#L163">poam/index.ts:163</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2508">index.ts:2508</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="related_tasks" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> related_<wbr>tasks</h3>
+					<div class="tsd-signature tsd-kind-icon">related_<wbr>tasks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="taskreference.html" class="tsd-signature-type" data-tsd-kind="Interface">TaskReference</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="taskreference.html" class="tsd-signature-type" data-tsd-kind="Interface">TaskReference</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2510">index.ts:2510</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -123,7 +135,17 @@
 					<div class="tsd-signature tsd-kind-icon">remarks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/poam/index.ts#L164">poam/index.ts:164</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2511">index.ts:2511</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="response_uuid" class="tsd-anchor"></a>
+					<h3>response_<wbr>uuid</h3>
+					<div class="tsd-signature tsd-kind-icon">response_<wbr>uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2507">index.ts:2507</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -142,16 +164,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="poamlocaldefinitions.html" class="tsd-kind-icon">Poam<wbr>Local<wbr>Definitions</a>
+						<a href="riskresponsereference.html" class="tsd-kind-icon">Risk<wbr>Response<wbr>Reference</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="poamlocaldefinitions.html#components" class="tsd-kind-icon">components</a>
+								<a href="riskresponsereference.html#links" class="tsd-kind-icon">links</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="poamlocaldefinitions.html#inventory_items" class="tsd-kind-icon">inventory_<wbr>items</a>
+								<a href="riskresponsereference.html#props" class="tsd-kind-icon">props</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="poamlocaldefinitions.html#remarks" class="tsd-kind-icon">remarks</a>
+								<a href="riskresponsereference.html#related_tasks" class="tsd-kind-icon">related_<wbr>tasks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="riskresponsereference.html#remarks" class="tsd-kind-icon">remarks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="riskresponsereference.html#response_uuid" class="tsd-kind-icon">response_<wbr>uuid</a>
 							</li>
 						</ul>
 					</li>

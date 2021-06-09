@@ -1841,7 +1841,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/import_component_definitions"
+            "$ref": "#/definitions/import_component_definition"
           }
         },
         "components": {
@@ -5908,6 +5908,24 @@
       ],
       "additionalProperties": false
     },
+    "organization_security_plan": {
+      "title": "Organization Security Plan",
+      "properties": {
+        "mission": {
+          "type": "string"
+        },
+        "business_functions": {
+          "type": "array",
+          "items": {
+            "properties": {
+              "title": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
     "assessment_results": {
       "title": "Security Assessment Results (SAR)",
       "description": "Security assessment results, such as those provided by a FedRAMP assessor in the FedRAMP Security Assessment Report.",
@@ -6396,7 +6414,7 @@
       ],
       "additionalProperties": false
     },
-    "local_definitions": {
+    "poam_local_definitions": {
       "title": "Local Definitions",
       "description": "Allows components, and inventory_items to be defined within the POA&M for circumstances where no OSCAL_based SSP exists, or is not delivered with the POA&M.",
       "$id": "#/definitions/poam_local_definitions",

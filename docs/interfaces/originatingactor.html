@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>SARLocalDefinitions | oscal</title>
+	<title>OriginatingActor | oscal</title>
 	<meta name="description" content="Documentation for oscal">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">oscal</a>
 				</li>
 				<li>
-					<a href="sarlocaldefinitions.html">SARLocalDefinitions</a>
+					<a href="originatingactor.html">OriginatingActor</a>
 				</li>
 			</ul>
-			<h1>Interface SARLocalDefinitions</h1>
+			<h1>Interface OriginatingActor</h1>
 		</div>
 	</div>
 </header>
@@ -68,7 +68,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Used to define data objects that are used in the assessment plan, that do not appear in the referenced SSP.</p>
+						<p>The actor that produces an observation, a finding, or a risk. One or more actor type can be used to specify a person that is using a tool.</p>
 					</div>
 				</div>
 			</section>
@@ -76,7 +76,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">SARLocalDefinitions</span>
+						<span class="target">OriginatingActor</span>
 					</li>
 				</ul>
 			</section>
@@ -87,10 +87,11 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sarlocaldefinitions.html#assessment_actions" class="tsd-kind-icon">assessment_<wbr>actions</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sarlocaldefinitions.html#components" class="tsd-kind-icon">components</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sarlocaldefinitions.html#inventory_items" class="tsd-kind-icon">inventory_<wbr>items</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="sarlocaldefinitions.html#users" class="tsd-kind-icon">users</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="originatingactor.html#actor_uuid" class="tsd-kind-icon">actor_<wbr>uuid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="originatingactor.html#links" class="tsd-kind-icon">links</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="originatingactor.html#props" class="tsd-kind-icon">props</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="originatingactor.html#role_id" class="tsd-kind-icon">role_<wbr>id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="originatingactor.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,60 +100,54 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="assessment_actions" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> assessment_<wbr>actions</h3>
-					<div class="tsd-signature tsd-kind-icon">assessment_<wbr>actions<span class="tsd-signature-symbol">:</span> <a href="assessmentaction.html" class="tsd-signature-type" data-tsd-kind="Interface">AssessmentAction</a><span class="tsd-signature-symbol">[]</span></div>
+					<a name="actor_uuid" class="tsd-anchor"></a>
+					<h3>actor_<wbr>uuid</h3>
+					<div class="tsd-signature tsd-kind-icon">actor_<wbr>uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L126">assessment_results/index.ts:126</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2369">index.ts:2369</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="components" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> components</h3>
-					<div class="tsd-signature tsd-kind-icon">components<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+					<a name="links" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> links</h3>
+					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L119">assessment_results/index.ts:119</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="component.html" class="tsd-signature-type" data-tsd-kind="Interface">Component</a></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="inventory_items" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> inventory_<wbr>items</h3>
-					<div class="tsd-signature tsd-kind-icon">inventory_<wbr>items<span class="tsd-signature-symbol">:</span> <a href="inventoryitem.html" class="tsd-signature-type" data-tsd-kind="Interface">InventoryItem</a><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L122">assessment_results/index.ts:122</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2372">index.ts:2372</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="users" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> users</h3>
-					<div class="tsd-signature tsd-kind-icon">users<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
+					<a name="props" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> props</h3>
+					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L123">assessment_results/index.ts:123</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2371">index.ts:2371</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="systemuser.html" class="tsd-signature-type" data-tsd-kind="Interface">SystemUser</a></h5>
-							</li>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="role_id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> role_<wbr>id</h3>
+					<div class="tsd-signature tsd-kind-icon">role_<wbr>id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2370">index.ts:2370</a></li>
 						</ul>
-					</div>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../modules.html#actortype" class="tsd-signature-type" data-tsd-kind="Type alias">ActorType</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2368">index.ts:2368</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -169,19 +164,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="sarlocaldefinitions.html" class="tsd-kind-icon">SARLocal<wbr>Definitions</a>
+						<a href="originatingactor.html" class="tsd-kind-icon">Originating<wbr>Actor</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sarlocaldefinitions.html#assessment_actions" class="tsd-kind-icon">assessment_<wbr>actions</a>
+								<a href="originatingactor.html#actor_uuid" class="tsd-kind-icon">actor_<wbr>uuid</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sarlocaldefinitions.html#components" class="tsd-kind-icon">components</a>
+								<a href="originatingactor.html#links" class="tsd-kind-icon">links</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sarlocaldefinitions.html#inventory_items" class="tsd-kind-icon">inventory_<wbr>items</a>
+								<a href="originatingactor.html#props" class="tsd-kind-icon">props</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="sarlocaldefinitions.html#users" class="tsd-kind-icon">users</a>
+								<a href="originatingactor.html#role_id" class="tsd-kind-icon">role_<wbr>id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="originatingactor.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>

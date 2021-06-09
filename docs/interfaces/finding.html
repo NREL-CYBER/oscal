@@ -87,17 +87,15 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#collected" class="tsd-kind-icon">collected</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#description" class="tsd-kind-icon">description</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#expires" class="tsd-kind-icon">expires</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#implementation_statement_uuid" class="tsd-kind-icon">implementation_<wbr>statement_<wbr>uuid</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#links" class="tsd-kind-icon">links</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#objective_status" class="tsd-kind-icon">objective_<wbr>status</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#origins" class="tsd-kind-icon">origins</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#props" class="tsd-kind-icon">props</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#related_observations" class="tsd-kind-icon">related_<wbr>observations</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#related_risks" class="tsd-kind-icon">related_<wbr>risks</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#remarks" class="tsd-kind-icon">remarks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#target" class="tsd-kind-icon">target</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#title" class="tsd-kind-icon">title</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="finding.html#uuid" class="tsd-kind-icon">uuid</a></li>
 							</ul>
@@ -108,32 +106,12 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="collected" class="tsd-anchor"></a>
-					<h3>collected</h3>
-					<div class="tsd-signature tsd-kind-icon">collected<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L84">assessment_results/index.ts:84</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="description" class="tsd-anchor"></a>
 					<h3>description</h3>
 					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L80">assessment_results/index.ts:80</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="expires" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> expires</h3>
-					<div class="tsd-signature tsd-kind-icon">expires<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L85">assessment_results/index.ts:85</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2525">index.ts:2525</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -143,67 +121,57 @@
 					<div class="tsd-signature tsd-kind-icon">implementation_<wbr>statement_<wbr>uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L87">assessment_results/index.ts:87</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2530">index.ts:2530</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="links" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> links</h3>
-					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L82">assessment_results/index.ts:82</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="objective_status" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> objective_<wbr>status</h3>
-					<div class="tsd-signature tsd-kind-icon">objective_<wbr>status<span class="tsd-signature-symbol">:</span> <a href="objectivestatus.html" class="tsd-signature-type" data-tsd-kind="Interface">ObjectiveStatus</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L86">assessment_results/index.ts:86</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2527">index.ts:2527</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="origins" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> origins</h3>
-					<div class="tsd-signature tsd-kind-icon">origins<span class="tsd-signature-symbol">:</span> <a href="origin.html" class="tsd-signature-type" data-tsd-kind="Interface">Origin</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">origins<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="origin.html" class="tsd-signature-type" data-tsd-kind="Interface">Origin</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="origin.html" class="tsd-signature-type" data-tsd-kind="Interface">Origin</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L83">assessment_results/index.ts:83</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2528">index.ts:2528</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="props" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> props</h3>
-					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L81">assessment_results/index.ts:81</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2526">index.ts:2526</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="related_observations" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> related_<wbr>observations</h3>
-					<div class="tsd-signature tsd-kind-icon">related_<wbr>observations<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RelatedObservation</span><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">related_<wbr>observations<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="relatedobservation.html" class="tsd-signature-type" data-tsd-kind="Interface">RelatedObservation</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="relatedobservation.html" class="tsd-signature-type" data-tsd-kind="Interface">RelatedObservation</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L88">assessment_results/index.ts:88</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2531">index.ts:2531</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="related_risks" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> related_<wbr>risks</h3>
-					<div class="tsd-signature tsd-kind-icon">related_<wbr>risks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">AssociatedRisk</span><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">related_<wbr>risks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="associatedrisk.html" class="tsd-signature-type" data-tsd-kind="Interface">AssociatedRisk</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="associatedrisk.html" class="tsd-signature-type" data-tsd-kind="Interface">AssociatedRisk</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L89">assessment_results/index.ts:89</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2532">index.ts:2532</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -213,7 +181,17 @@
 					<div class="tsd-signature tsd-kind-icon">remarks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L90">assessment_results/index.ts:90</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2533">index.ts:2533</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="target" class="tsd-anchor"></a>
+					<h3>target</h3>
+					<div class="tsd-signature tsd-kind-icon">target<span class="tsd-signature-symbol">:</span> <a href="objectivestatus.html" class="tsd-signature-type" data-tsd-kind="Interface">ObjectiveStatus</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2529">index.ts:2529</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -223,7 +201,7 @@
 					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L79">assessment_results/index.ts:79</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2524">index.ts:2524</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -233,7 +211,7 @@
 					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_results/index.ts#L78">assessment_results/index.ts:78</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2523">index.ts:2523</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -255,22 +233,13 @@
 						<a href="finding.html" class="tsd-kind-icon">Finding</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="finding.html#collected" class="tsd-kind-icon">collected</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="finding.html#description" class="tsd-kind-icon">description</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="finding.html#expires" class="tsd-kind-icon">expires</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="finding.html#implementation_statement_uuid" class="tsd-kind-icon">implementation_<wbr>statement_<wbr>uuid</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="finding.html#links" class="tsd-kind-icon">links</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="finding.html#objective_status" class="tsd-kind-icon">objective_<wbr>status</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="finding.html#origins" class="tsd-kind-icon">origins</a>
@@ -286,6 +255,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="finding.html#remarks" class="tsd-kind-icon">remarks</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="finding.html#target" class="tsd-kind-icon">target</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="finding.html#title" class="tsd-kind-icon">title</a>

@@ -87,16 +87,17 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#component_uuid" class="tsd-kind-icon">component_<wbr>uuid</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#description" class="tsd-kind-icon">description</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#export" class="tsd-kind-icon">export</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#implementation_status" class="tsd-kind-icon">implementation_<wbr>status</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#inherited" class="tsd-kind-icon">inherited</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#links" class="tsd-kind-icon">links</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#parameter_settings" class="tsd-kind-icon">parameter_<wbr>settings</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#props" class="tsd-kind-icon">props</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#remarks-1" class="tsd-kind-icon">remarks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#remarks" class="tsd-kind-icon">remarks</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#responsible_roles" class="tsd-kind-icon">responsible_<wbr>roles</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#satisfied" class="tsd-kind-icon">satisfied</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#set_parameters" class="tsd-kind-icon">set_<wbr>parameters</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="componentcontrolimplementation.html#uuid" class="tsd-kind-icon">uuid</a></li>
 							</ul>
 						</section>
@@ -106,12 +107,22 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="component_uuid" class="tsd-anchor"></a>
+					<h3>component_<wbr>uuid</h3>
+					<div class="tsd-signature tsd-kind-icon">component_<wbr>uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L1628">index.ts:1628</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="description" class="tsd-anchor"></a>
 					<h3>description</h3>
 					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/shared/index.ts#L1348">shared/index.ts:1348</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L1630">index.ts:1630</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -121,106 +132,87 @@
 					<div class="tsd-signature tsd-kind-icon">export<span class="tsd-signature-symbol">:</span> <a href="export.html" class="tsd-signature-type" data-tsd-kind="Interface">Export</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/shared/index.ts#L1354">shared/index.ts:1354</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L1635">index.ts:1635</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="implementation_status" class="tsd-anchor"></a>
-					<h3>implementation_<wbr>status</h3>
-					<div class="tsd-signature tsd-kind-icon">implementation_<wbr>status<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>remarks<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;implemented&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;partial&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;planned&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;alternative&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;not-applicable&quot;</span><span class="tsd-signature-symbol"> }</span></div>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> implementation_<wbr>status</h3>
+					<div class="tsd-signature tsd-kind-icon">implementation_<wbr>status<span class="tsd-signature-symbol">:</span> <a href="implementationstatus.html" class="tsd-signature-type" data-tsd-kind="Interface">ImplementationStatus</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/shared/index.ts#L1355">shared/index.ts:1355</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L1634">index.ts:1634</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> remarks<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-							<li class="tsd-parameter">
-								<h5>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">&quot;implemented&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;partial&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;planned&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;alternative&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;not-applicable&quot;</span></h5>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="inherited" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> inherited</h3>
-					<div class="tsd-signature tsd-kind-icon">inherited<span class="tsd-signature-symbol">:</span> <a href="inheritedcontrolimplementation.html" class="tsd-signature-type" data-tsd-kind="Interface">InheritedControlImplementation</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">inherited<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="inheritedcontrolimplementation.html" class="tsd-signature-type" data-tsd-kind="Interface">InheritedControlImplementation</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="inheritedcontrolimplementation.html" class="tsd-signature-type" data-tsd-kind="Interface">InheritedControlImplementation</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/shared/index.ts#L1359">shared/index.ts:1359</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L1636">index.ts:1636</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="links" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> links</h3>
-					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/shared/index.ts#L1350">shared/index.ts:1350</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L1632">index.ts:1632</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="parameter_settings" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> parameter_<wbr>settings</h3>
-					<div class="tsd-signature tsd-kind-icon">parameter_<wbr>settings<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{}</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/shared/index.ts#L1351">shared/index.ts:1351</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>k: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><a href="setparametervalue.html" class="tsd-signature-type" data-tsd-kind="Interface">SetParameterValue</a></h5>
-							</li>
-						</ul>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="props" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> props</h3>
-					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/shared/index.ts#L1349">shared/index.ts:1349</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L1631">index.ts:1631</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="remarks-1" class="tsd-anchor"></a>
+					<a name="remarks" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> remarks</h3>
 					<div class="tsd-signature tsd-kind-icon">remarks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/shared/index.ts#L1362">shared/index.ts:1362</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L1639">index.ts:1639</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="responsible_roles" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> responsible_<wbr>roles</h3>
-					<div class="tsd-signature tsd-kind-icon">responsible_<wbr>roles<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="responsiblerole.html" class="tsd-signature-type" data-tsd-kind="Interface">ResponsibleRole</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">responsible_<wbr>roles<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/shared/index.ts#L1361">shared/index.ts:1361</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L1638">index.ts:1638</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="satisfied" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> satisfied</h3>
-					<div class="tsd-signature tsd-kind-icon">satisfied<span class="tsd-signature-symbol">:</span> <a href="satisfiedcontrolimplementationresponsibility.html" class="tsd-signature-type" data-tsd-kind="Interface">SatisfiedControlImplementationResponsibility</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">satisfied<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="satisfiedcontrolimplementationresponsibility.html" class="tsd-signature-type" data-tsd-kind="Interface">SatisfiedControlImplementationResponsibility</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="satisfiedcontrolimplementationresponsibility.html" class="tsd-signature-type" data-tsd-kind="Interface">SatisfiedControlImplementationResponsibility</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/shared/index.ts#L1360">shared/index.ts:1360</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L1637">index.ts:1637</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="set_parameters" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> set_<wbr>parameters</h3>
+					<div class="tsd-signature tsd-kind-icon">set_<wbr>parameters<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="setparametervalue.html" class="tsd-signature-type" data-tsd-kind="Interface">SetParameterValue</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="setparametervalue.html" class="tsd-signature-type" data-tsd-kind="Interface">SetParameterValue</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L1633">index.ts:1633</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -230,7 +222,7 @@
 					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/shared/index.ts#L1347">shared/index.ts:1347</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L1629">index.ts:1629</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -252,6 +244,9 @@
 						<a href="componentcontrolimplementation.html" class="tsd-kind-icon">Component<wbr>Control<wbr>Implementation</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="componentcontrolimplementation.html#component_uuid" class="tsd-kind-icon">component_<wbr>uuid</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="componentcontrolimplementation.html#description" class="tsd-kind-icon">description</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
@@ -267,19 +262,19 @@
 								<a href="componentcontrolimplementation.html#links" class="tsd-kind-icon">links</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="componentcontrolimplementation.html#parameter_settings" class="tsd-kind-icon">parameter_<wbr>settings</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="componentcontrolimplementation.html#props" class="tsd-kind-icon">props</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="componentcontrolimplementation.html#remarks-1" class="tsd-kind-icon">remarks</a>
+								<a href="componentcontrolimplementation.html#remarks" class="tsd-kind-icon">remarks</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="componentcontrolimplementation.html#responsible_roles" class="tsd-kind-icon">responsible_<wbr>roles</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="componentcontrolimplementation.html#satisfied" class="tsd-kind-icon">satisfied</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="componentcontrolimplementation.html#set_parameters" class="tsd-kind-icon">set_<wbr>parameters</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="componentcontrolimplementation.html#uuid" class="tsd-kind-icon">uuid</a>

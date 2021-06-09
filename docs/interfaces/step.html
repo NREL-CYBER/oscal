@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AssessmentAction | oscal</title>
+	<title>Step | oscal</title>
 	<meta name="description" content="Documentation for oscal">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,10 +55,10 @@
 					<a href="../modules.html">oscal</a>
 				</li>
 				<li>
-					<a href="assessmentaction.html">AssessmentAction</a>
+					<a href="step.html">Step</a>
 				</li>
 			</ul>
-			<h1>Interface AssessmentAction</h1>
+			<h1>Interface Step</h1>
 		</div>
 	</div>
 </header>
@@ -68,7 +68,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Identifies an assessment_related event that must occur as part of executing an assessment plan, the result of which may be recorded within the assessment log in assessment results.</p>
+						<p>Identifies an individual step in a series of steps related to an activity, such as an assessment test or examination procedure.</p>
 					</div>
 				</div>
 			</section>
@@ -76,7 +76,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">AssessmentAction</span>
+						<span class="target">Step</span>
 					</li>
 				</ul>
 			</section>
@@ -87,16 +87,14 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentaction.html#assessment_subjects" class="tsd-kind-icon">assessment_<wbr>subjects</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentaction.html#associated_activities" class="tsd-kind-icon">associated_<wbr>activities</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentaction.html#description" class="tsd-kind-icon">description</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentaction.html#links" class="tsd-kind-icon">links</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentaction.html#props" class="tsd-kind-icon">props</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentaction.html#remarks" class="tsd-kind-icon">remarks</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentaction.html#responsible_roles" class="tsd-kind-icon">responsible_<wbr>roles</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentaction.html#timing" class="tsd-kind-icon">timing</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentaction.html#title" class="tsd-kind-icon">title</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="assessmentaction.html#uuid" class="tsd-kind-icon">uuid</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="step.html#description" class="tsd-kind-icon">description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="step.html#links" class="tsd-kind-icon">links</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="step.html#props" class="tsd-kind-icon">props</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="step.html#remarks" class="tsd-kind-icon">remarks</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="step.html#responsible_roles" class="tsd-kind-icon">responsible_<wbr>roles</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="step.html#reviewed_controls" class="tsd-kind-icon">reviewed_<wbr>controls</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="step.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="step.html#uuid" class="tsd-kind-icon">uuid</a></li>
 							</ul>
 						</section>
 					</div>
@@ -105,52 +103,32 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="assessment_subjects" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> assessment_<wbr>subjects</h3>
-					<div class="tsd-signature tsd-kind-icon">assessment_<wbr>subjects<span class="tsd-signature-symbol">:</span> <a href="subjectofassessment.html" class="tsd-signature-type" data-tsd-kind="Interface">SubjectOfAssessment</a><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_plan/index.ts#L150">assessment_plan/index.ts:150</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="associated_activities" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> associated_<wbr>activities</h3>
-					<div class="tsd-signature tsd-kind-icon">associated_<wbr>activities<span class="tsd-signature-symbol">:</span> <a href="associatedactivity.html" class="tsd-signature-type" data-tsd-kind="Interface">AssociatedActivity</a><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_plan/index.ts#L152">assessment_plan/index.ts:152</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="description" class="tsd-anchor"></a>
 					<h3>description</h3>
 					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_plan/index.ts#L146">assessment_plan/index.ts:146</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2042">index.ts:2042</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="links" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> links</h3>
-					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">links<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="link.html" class="tsd-signature-type" data-tsd-kind="Interface">Link</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_plan/index.ts#L148">assessment_plan/index.ts:148</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2044">index.ts:2044</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="props" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> props</h3>
-					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">[]</span></div>
+					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><a href="property.html" class="tsd-signature-type" data-tsd-kind="Interface">Property</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_plan/index.ts#L147">assessment_plan/index.ts:147</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2043">index.ts:2043</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -160,27 +138,27 @@
 					<div class="tsd-signature tsd-kind-icon">remarks<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_plan/index.ts#L153">assessment_plan/index.ts:153</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2047">index.ts:2047</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="responsible_roles" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> responsible_<wbr>roles</h3>
-					<div class="tsd-signature tsd-kind-icon">responsible_<wbr>roles<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="responsiblerole.html" class="tsd-signature-type" data-tsd-kind="Interface">ResponsibleRole</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<div class="tsd-signature tsd-kind-icon">responsible_<wbr>roles<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-symbol">...</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_plan/index.ts#L151">assessment_plan/index.ts:151</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2046">index.ts:2046</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="timing" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> timing</h3>
-					<div class="tsd-signature tsd-kind-icon">timing<span class="tsd-signature-symbol">:</span> <a href="eventtiming.html" class="tsd-signature-type" data-tsd-kind="Interface">EventTiming</a></div>
+					<a name="reviewed_controls" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> reviewed_<wbr>controls</h3>
+					<div class="tsd-signature tsd-kind-icon">reviewed_<wbr>controls<span class="tsd-signature-symbol">:</span> <a href="reviewedcontrolsandcontrolobjectives.html" class="tsd-signature-type" data-tsd-kind="Interface">ReviewedControlsAndControlObjectives</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_plan/index.ts#L149">assessment_plan/index.ts:149</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2045">index.ts:2045</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -190,7 +168,7 @@
 					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_plan/index.ts#L145">assessment_plan/index.ts:145</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2041">index.ts:2041</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -200,7 +178,7 @@
 					<div class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/8a542bb/src/assessment_plan/index.ts#L144">assessment_plan/index.ts:144</a></li>
+							<li>Defined in <a href="https://github.com/NREL-CYBER/oscal/blob/6b3ff0c/src/index.ts#L2040">index.ts:2040</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -219,37 +197,31 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="assessmentaction.html" class="tsd-kind-icon">Assessment<wbr>Action</a>
+						<a href="step.html" class="tsd-kind-icon">Step</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="assessmentaction.html#assessment_subjects" class="tsd-kind-icon">assessment_<wbr>subjects</a>
+								<a href="step.html#description" class="tsd-kind-icon">description</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="assessmentaction.html#associated_activities" class="tsd-kind-icon">associated_<wbr>activities</a>
+								<a href="step.html#links" class="tsd-kind-icon">links</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="assessmentaction.html#description" class="tsd-kind-icon">description</a>
+								<a href="step.html#props" class="tsd-kind-icon">props</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="assessmentaction.html#links" class="tsd-kind-icon">links</a>
+								<a href="step.html#remarks" class="tsd-kind-icon">remarks</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="assessmentaction.html#props" class="tsd-kind-icon">props</a>
+								<a href="step.html#responsible_roles" class="tsd-kind-icon">responsible_<wbr>roles</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="assessmentaction.html#remarks" class="tsd-kind-icon">remarks</a>
+								<a href="step.html#reviewed_controls" class="tsd-kind-icon">reviewed_<wbr>controls</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="assessmentaction.html#responsible_roles" class="tsd-kind-icon">responsible_<wbr>roles</a>
+								<a href="step.html#title" class="tsd-kind-icon">title</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="assessmentaction.html#timing" class="tsd-kind-icon">timing</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="assessmentaction.html#title" class="tsd-kind-icon">title</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="assessmentaction.html#uuid" class="tsd-kind-icon">uuid</a>
+								<a href="step.html#uuid" class="tsd-kind-icon">uuid</a>
 							</li>
 						</ul>
 					</li>
