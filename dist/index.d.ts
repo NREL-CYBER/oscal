@@ -1129,7 +1129,7 @@ export interface PublicationMetadata {
     links?: [Link, ...Link[]];
     roles?: [Role, ...Role[]];
     locations?: [Location, ...Location[]];
-    parties?: [PartyOrganizationOrPerson, ...PartyOrganizationOrPerson[]];
+    parties?: [Party, ...Party[]];
     responsible_parties?: [ResponsibleParty, ...ResponsibleParty[]];
     remarks?: Remarks;
 }
@@ -1220,7 +1220,7 @@ export interface TelephoneNumber {
 /**
  * A responsible entity which is either a person or an organization.
  */
-export interface PartyOrganizationOrPerson {
+export interface Party {
     uuid: PartyUniversallyUniqueIdentifier;
     type: PartyType;
     name?: PartyName;
@@ -1717,7 +1717,7 @@ export interface IncorporatesComponent {
 /**
  * A system security plan, such as those described in NIST SP 800_18
  */
-export interface SystemSecurityPlanSSP {
+export interface SystemSecurityPlan {
     uuid: SystemSecurityPlanUniversallyUniqueIdentifier;
     metadata: PublicationMetadata;
     import_profile: ImportProfile;
