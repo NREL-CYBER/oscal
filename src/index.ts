@@ -2534,9 +2534,10 @@ export interface BusinessFunction {
     uuid: UniversallyUniqueIdentifier
     title: string,
     description: string
+    links: Link[]
 }
-export interface OrganizationSecurityPolicy {
-    uuid: ProvidedUUID
+export interface OrganizationMissionStatement {
+    uuid: UniversallyUniqueIdentifier
     mission: string,
     business_functions: BusinessFunction[]
 }
