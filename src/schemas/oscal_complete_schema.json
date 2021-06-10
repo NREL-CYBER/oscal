@@ -1951,7 +1951,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/control_implementation"
+            "$ref": "#/definitions/component_definition_control_implementation"
           }
         },
         "remarks": {
@@ -2055,7 +2055,7 @@
     "component_definition_control_implementation": {
       "title": "Control Implementation Set",
       "description": "Defines how the component or capability supports a set of controls.",
-      "$id": "#/definitions/control_implementation",
+      "$id": "#/definitions/component_definition_control_implementation",
       "type": "object",
       "properties": {
         "uuid": {
