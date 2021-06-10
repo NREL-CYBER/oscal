@@ -2545,7 +2545,8 @@ export interface OrganizationMissionStatement {
  * Acceptable values for @system_component.type
  */
 export const SystemComponentTypes =
-    ["subnet",
+    [
+        "subnet",
         "leveraged-system",
         "interconnection",
         "software",
