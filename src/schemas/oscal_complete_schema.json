@@ -5911,6 +5911,7 @@
     "organization_mission_statement": {
       "$id": "#/definitions/organization_mission_statement",
       "title": "Organization Mission Statement",
+      "type": "object",
       "properties": {
         "uuid": {
           "type": "string"
