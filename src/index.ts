@@ -2541,7 +2541,23 @@ export interface OrganizationMissionStatement {
     mission: string,
     business_functions: BusinessFunction[]
 }
-
+/**
+ * Acceptable values for @system_component.type
+ */
+export const SystemComponentTypes =
+    ["subnet",
+        "leveraged-system",
+        "interconnection",
+        "software",
+        "hardware",
+        "service",
+        "policy",
+        "physical",
+        "process-procedure",
+        "plan",
+        "guidance",
+        "standard",
+        "validation"]
 /**
  * Captures an assessor's conclusions regarding the degree to which an objective is satisfied.
  */

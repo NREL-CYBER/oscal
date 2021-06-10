@@ -5917,6 +5917,8 @@
           "type": "string"
         },
         "mission": {
+          "title": "Organization Mission",
+          "description": "A mission statement defines what line of business an organization is in, and why it exists or what purpose it serves. ",
           "type": "string"
         },
         "business_functions": {
@@ -5929,10 +5931,18 @@
               },
               "title": {
                 "title": "Business Function Title",
+                "description": "Activities carried out by an enterprise",
                 "type": "string"
               },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "core",
+                  "support"
+                ]
+              },
               "description": {
-                "title": "Business Funcion Description",
+                "title": "Business Function Description",
                 "type": "string"
               },
               "links": {
@@ -5943,7 +5953,9 @@
               }
             },
             "required": [
-              "title"
+              "title",
+              "type",
+              "description"
             ]
           }
         }

@@ -2536,6 +2536,10 @@ export interface OrganizationMissionStatement {
     business_functions: BusinessFunction[];
 }
 /**
+ * Acceptable values for @system_component.type
+ */
+export declare const SystemComponentTypes: string[];
+/**
  * Captures an assessor's conclusions regarding the degree to which an objective is satisfied.
  */
 export interface ObjectiveStatus {
