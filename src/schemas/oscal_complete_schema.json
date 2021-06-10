@@ -4825,92 +4825,92 @@
         "assessment_platforms"
       ],
       "additionalProperties": false
-    },
-    "assessment_platform": {
-      "$id": "/definitions/assessment_platforms",
-      "title": "Assessment Platform",
-      "description": "Used to represent the toolset used to perform aspects of the assessment.",
-      "type": "object",
-      "properties": {
-        "uuid": {
-          "title": "Assessment Platform Universally Unique Identifier",
-          "description": "Uniquely identifies this assessment Platform.",
-          "type": "string",
-          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-        },
-        "title": {
-          "title": "Assessment Platform Title",
-          "description": "The title or name for the assessment platform.",
-          "type": "string"
-        },
-        "props": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/property"
-          }
-        },
-        "links": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "uses_components": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "title": "Uses Component",
-            "description": "The set of components that are used by the assessment platform.",
-            "type": "object",
-            "properties": {
-              "component_uuid": {
-                "title": "Component Universally Unique Identifier Reference",
-                "description": "A reference to a component that is implemented as part of an inventory item.",
-                "type": "string",
-                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-              },
-              "props": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/property"
-                }
-              },
-              "links": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/link"
-                }
-              },
-              "responsible_parties": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/responsible_party"
-                }
-              },
-              "remarks": {
-                "$ref": "#/definitions/remarks"
-              }
-            },
-            "required": [
-              "component_uuid"
-            ],
-            "additionalProperties": false
-          }
-        },
-        "remarks": {
-          "$ref": "#/definitions/remarks"
+    }
+  },
+  "assessment_platform": {
+    "$id": "/definitions/assessment_platforms",
+    "title": "Assessment Platform",
+    "description": "Used to represent the toolset used to perform aspects of the assessment.",
+    "type": "object",
+    "properties": {
+      "uuid": {
+        "title": "Assessment Platform Universally Unique Identifier",
+        "description": "Uniquely identifies this assessment Platform.",
+        "type": "string",
+        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+      },
+      "title": {
+        "title": "Assessment Platform Title",
+        "description": "The title or name for the assessment platform.",
+        "type": "string"
+      },
+      "props": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "#/definitions/property"
         }
       },
-      "required": [
-        "uuid"
-      ],
-      "additionalProperties": false
-    }
+      "links": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "#/definitions/link"
+        }
+      },
+      "uses_components": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "title": "Uses Component",
+          "description": "The set of components that are used by the assessment platform.",
+          "type": "object",
+          "properties": {
+            "component_uuid": {
+              "title": "Component Universally Unique Identifier Reference",
+              "description": "A reference to a component that is implemented as part of an inventory item.",
+              "type": "string",
+              "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+            },
+            "props": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/property"
+              }
+            },
+            "links": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            },
+            "responsible_parties": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/responsible_party"
+              }
+            },
+            "remarks": {
+              "$ref": "#/definitions/remarks"
+            }
+          },
+          "required": [
+            "component_uuid"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "remarks": {
+        "$ref": "#/definitions/remarks"
+      }
+    },
+    "required": [
+      "uuid"
+    ],
+    "additionalProperties": false
   },
   "finding_target": {
     "title": "Objective Status",
