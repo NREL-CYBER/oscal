@@ -5909,6 +5909,7 @@
       "additionalProperties": false
     },
     "organization_security_plan": {
+      "$id": "#/definitions/organization_security_plan",
       "title": "Organization Security Plan",
       "properties": {
         "mission": {
@@ -5924,7 +5925,10 @@
             }
           }
         }
-      }
+      },
+      "required": [
+        "mission"
+      ]
     },
     "assessment_results": {
       "title": "Security Assessment Results (SAR)",
