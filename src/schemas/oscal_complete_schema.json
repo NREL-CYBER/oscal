@@ -5922,6 +5922,7 @@
         "business_functions": {
           "type": "array",
           "items": {
+            "type": "object",
             "properties": {
               "uuid": {
                 "type": "string"
