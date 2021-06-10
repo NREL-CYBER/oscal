@@ -750,7 +750,8 @@
       },
       "required": [
         "uuid",
-        "type"
+        "type",
+        "name"
       ],
       "additionalProperties": false
     },
