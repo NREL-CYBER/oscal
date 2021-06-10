@@ -1838,7 +1838,7 @@ export interface SecurityImpactLevel {
  * Describes the operational status of the system.
  */
 export interface Status {
-    state: OperationalStatus;
+    state: OperationalState;
     remarks?: Remarks;
 }
 /**
