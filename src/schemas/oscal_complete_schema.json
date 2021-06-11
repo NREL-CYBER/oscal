@@ -5932,6 +5932,8 @@
           "type": "string"
         },
         "business_functions": {
+          "title": "Business functions",
+          "description": "Functions carried out by an organization",
           "type": "array",
           "items": {
             "type": "object",
@@ -5941,10 +5943,11 @@
               },
               "title": {
                 "title": "Business Function Title",
-                "description": "Activities carried out by an enterprise",
+                "description": "Human readable shortname for a business function",
                 "type": "string"
               },
               "type": {
+                "title": "Business Function Type (Core/Support)",
                 "type": "string",
                 "enum": [
                   "core",
@@ -5953,6 +5956,7 @@
               },
               "description": {
                 "title": "Business Function Description",
+                "description": "Details of a business function",
                 "type": "string"
               },
               "links": {
