@@ -1412,8 +1412,8 @@ export interface Profile {
 export interface ImportResource {
     href: CatalogOrProfileReference;
     include_all?: InsertAll;
-    include_controls?: SelectControl[];
-    exclude_controls?: SelectControl[];
+    include_controls?: Call[];
+    exclude_controls?: Call[];
 }
 /**
  * Insert all controls from the imported catalog or profile resources identified in the import directive.

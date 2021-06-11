@@ -1632,14 +1632,14 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/profile_select_control_by_id"
+            "$ref": "#/definitions/call"
           }
         },
         "exclude_controls": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/profile_select_control_by_id"
+            "$ref": "#/definitions/call"
           }
         }
       },
@@ -1652,10 +1652,10 @@
       "type": "object",
       "additionalProperties": false
     },
-    "profile_select_control_by_id": {
+    "call": {
       "title": "Call",
       "description": "Call a control by its ID",
-      "$id": "#/definitions/profile_select_control_by_id",
+      "$id": "#/definitions/call",
       "type": "object",
       "properties": {
         "with_child_controls": {
