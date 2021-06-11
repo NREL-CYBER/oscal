@@ -5936,6 +5936,7 @@
           "description": "Functions carried out by an organization",
           "type": "array",
           "items": {
+            "title": "Business Function",
             "type": "object",
             "properties": {
               "uuid": {
