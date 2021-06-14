@@ -750,6 +750,127 @@
       },
       "required": [
         "uuid",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    "party_with_name": {
+      "title": "Party (organization or person)",
+      "description": "A responsible entity which is either a person or an organization.",
+      "$id": "#/definitions/party",
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "title": "Party Universally Unique Identifier",
+          "description": "A unique identifier that can be used to reference this defined location elsewhere in an OSCAL document. A UUID should be consistently used for a given party across revisions of the document.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "type": {
+          "title": "Party Type",
+          "description": "A category describing the kind of party the object describes.",
+          "type": "string",
+          "pattern": "^\\S(.*\\S)?$",
+          "enum": [
+            "person",
+            "organization"
+          ]
+        },
+        "name": {
+          "title": "Party Name",
+          "description": "The full name of the party. This is typically the legal name associated with the party.",
+          "type": "string",
+          "pattern": "^\\S(.*\\S)?$"
+        },
+        "short_name": {
+          "title": "Party Short Name",
+          "description": "A short common name, abbreviation, or acronym for the party.",
+          "type": "string",
+          "pattern": "^\\S(.*\\S)?$"
+        },
+        "external_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "title": "Party External Identifier",
+            "description": "An identifier for a person or organization using a designated scheme. e.g. an Open Researcher and Contributor ID (ORCID)",
+            "type": "object",
+            "properties": {
+              "scheme": {
+                "title": "External Identifier Schema",
+                "description": "Indicates the type of external identifier.",
+                "type": "string",
+                "format": "uri"
+              },
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "scheme"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "email_addresses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/email_address"
+          }
+        },
+        "telephone_numbers": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/telephone_number"
+          }
+        },
+        "addresses": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/address"
+          }
+        },
+        "location_uuids": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/location_uuid"
+          }
+        },
+        "member_of_organizations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "title": "Organizational Affiliation",
+            "description": "Identifies that the party object is a member of the organization associated with the provided UUID.",
+            "type": "string",
+            "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+          }
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "required": [
+        "uuid",
         "type",
         "name"
       ],
