@@ -757,7 +757,7 @@
     "party_with_name": {
       "title": "Party (organization or person)",
       "description": "A responsible entity which is either a person or an organization.",
-      "$id": "#/definitions/party",
+      "$id": "#/definitions/party_with_name",
       "type": "object",
       "properties": {
         "uuid": {
