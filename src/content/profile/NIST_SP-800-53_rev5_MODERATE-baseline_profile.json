@@ -56,7 +56,7 @@
     },
     "imports": [
       {
-        "href": "NIST_SP-800-53_rev5_catalog.xml",
+        "href": "#613fca2d-704a-42e7-8e2b-b206fb92b456",
         "include-controls": [
           {
             "with-ids": [
