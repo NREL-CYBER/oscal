@@ -1332,6 +1332,7 @@
       "type": "object",
       "properties": {
         "type": {
+          "$id": "phone_type",
           "title": "type flag",
           "description": "Indicates the type of phone number.",
           "type": "string",
@@ -1353,6 +1354,7 @@
       "type": "object",
       "properties": {
         "type": {
+          "$id": "address_type",
           "title": "Address Type",
           "description": "Indicates the type of address.",
           "type": "string",
@@ -2025,6 +2027,7 @@
           "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
         "type": {
+          "$id": "defined_component_type",
           "title": "Component Type",
           "description": "A category describing the purpose of the component.",
           "type": "string",
@@ -2320,6 +2323,7 @@
           "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
         "type": {
+          "$id": "system_component_type",
           "title": "Component Type",
           "description": "A category describing the purpose of the component.",
           "type": "string",
@@ -4299,6 +4303,7 @@
           "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
         "type": {
+          "$id": "task_type",
           "title": "Task Type",
           "description": "The type of task.",
           "type": "string",
@@ -4779,6 +4784,7 @@
       "type": "object",
       "properties": {
         "type": {
+          "$id": "subject_type",
           "title": "Subject Type",
           "description": "Indicates the type of assessment subject, such as a component, inventory, item, location, or party represented by this selection statement.",
           "type": "string",
@@ -4845,6 +4851,7 @@
           "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
         "type": {
+          "$id": "subject_uuid_ref_type",
           "title": "Subject Universally Unique Identifier Reference Type",
           "description": "Used to indicate the type of object pointed to by the uuid_ref within a subject.",
           "type": "string",
@@ -4887,6 +4894,7 @@
           "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
         },
         "type": {
+          "$id": "subject_uuid_reference_type",
           "title": "Subject Universally Unique Identifier Reference Type",
           "description": "Used to indicate the type of object pointed to by the uuid_ref within a subject.",
           "type": "string",
@@ -6058,6 +6066,7 @@
           "type": "array",
           "items": {
             "title": "Business Function",
+            "description": "A Function that a business or enterprise performs",
             "type": "object",
             "properties": {
               "uuid": {
@@ -6069,7 +6078,7 @@
                 "type": "string"
               },
               "type": {
-                "title": "Business Function Type (Core/Support)",
+                "title": "Business Function Priority",
                 "type": "string",
                 "enum": [
                   "core",
