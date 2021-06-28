@@ -2578,7 +2578,7 @@ export interface PlanOfActionAndMilestones {
     local_definitions?: PlanOfActionAndMilestonesLocalDefinitions;
     observations?: Observation[];
     risks?: IdentifiedRisk[];
-    items?: POAMItem[];
+    poam_items?: POAMItem[];
     back_matter?: BackMatter;
 }
 /**

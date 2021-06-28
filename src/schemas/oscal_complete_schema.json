@@ -6579,7 +6579,7 @@
             "$ref": "#/definitions/risk"
           }
         },
-        "items": {
+        "poam_items": {
           "type": "array",
           "minItems": 1,
           "items": {
