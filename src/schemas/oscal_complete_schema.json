@@ -6065,6 +6065,7 @@
           "description": "Functions carried out by an organization",
           "type": "array",
           "items": {
+            "$id": "#definitions/organization_mission_statement/business_function",
             "title": "Business Function",
             "description": "A Function that a business or enterprise performs",
             "type": "object",
