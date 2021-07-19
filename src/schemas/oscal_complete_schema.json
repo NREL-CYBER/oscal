@@ -4963,6 +4963,48 @@
       ],
       "additionalProperties": false
     },
+    "uses_component": {
+      "$id": "/definitions/uses_component",
+      "title": "Uses Component",
+      "description": "The set of components that are used.",
+      "type": "object",
+      "properties": {
+        "component_uuid": {
+          "title": "Component Universally Unique Identifier Reference",
+          "description": "A reference to a component that is implemented as part of an inventory item.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "responsible_parties": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/responsible_party"
+          }
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "required": [
+        "component_uuid"
+      ],
+      "additionalProperties": false
+    },
     "assessment_platform": {
       "$id": "#/definitions/assessment_platform",
       "title": "Assessment Platform",
@@ -4998,45 +5040,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "title": "Uses Component",
-            "description": "The set of components that are used by the assessment platform.",
-            "type": "object",
-            "properties": {
-              "component_uuid": {
-                "title": "Component Universally Unique Identifier Reference",
-                "description": "A reference to a component that is implemented as part of an inventory item.",
-                "type": "string",
-                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-              },
-              "props": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/property"
-                }
-              },
-              "links": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/link"
-                }
-              },
-              "responsible_parties": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/responsible_party"
-                }
-              },
-              "remarks": {
-                "$ref": "#/definitions/remarks"
-              }
-            },
-            "required": [
-              "component_uuid"
-            ],
-            "additionalProperties": false
+            "$ref": "/definitions/uses_component"
           }
         },
         "remarks": {
