@@ -3452,7 +3452,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#definitions/leveraged_authorization"
+            "$ref": "#/definitions/leveraged_authorization"
           }
         },
         "users": {
