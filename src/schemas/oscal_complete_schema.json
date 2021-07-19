@@ -4964,7 +4964,7 @@
       "additionalProperties": false
     },
     "uses_component": {
-      "$id": "/definitions/uses_component",
+      "$id": "#/definitions/uses_component",
       "title": "Uses Component",
       "description": "The set of components that are used.",
       "type": "object",
@@ -5040,7 +5040,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "/definitions/uses_component"
+            "$ref": "#/definitions/uses_component"
           }
         },
         "remarks": {
