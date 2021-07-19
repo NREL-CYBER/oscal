@@ -3377,6 +3377,57 @@
       ],
       "additionalProperties": false
     },
+    "leveraged_authorization": {
+      "title": "Leveraged Authorization",
+      "description": "A description of another authorized system from which this system inherits capabilities that satisfy security requirements. Another term for this concept is a common control provider.",
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "title": "Leveraged Authorization Universally Unique Identifier",
+          "description": "A globally unique identifier that can be used to reference this leveraged authorization entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "title": {
+          "title": "title field",
+          "description": "A human readable name for the leveraged authorization in the context of the system.",
+          "type": "string"
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "party_uuid": {
+          "title": "party_uuid field",
+          "description": "A reference to the party that manages the leveraged system.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "date_authorized": {
+          "$ref": "#/definitions/date_authorized"
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "required": [
+        "uuid",
+        "title",
+        "party_uuid",
+        "date_authorized"
+      ],
+      "additionalProperties": false
+    },
     "system_implementation": {
       "title": "System Implementation",
       "description": "Provides information as to how the system is implemented.",
@@ -3396,57 +3447,6 @@
           "items": {
             "$ref": "#/definitions/link"
           }
-        },
-        "leveraged_authorization": {
-          "title": "Leveraged Authorization",
-          "description": "A description of another authorized system from which this system inherits capabilities that satisfy security requirements. Another term for this concept is a common control provider.",
-          "type": "object",
-          "properties": {
-            "uuid": {
-              "title": "Leveraged Authorization Universally Unique Identifier",
-              "description": "A globally unique identifier that can be used to reference this leveraged authorization entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
-              "type": "string",
-              "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-            },
-            "title": {
-              "title": "title field",
-              "description": "A human readable name for the leveraged authorization in the context of the system.",
-              "type": "string"
-            },
-            "props": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/property"
-              }
-            },
-            "links": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/link"
-              }
-            },
-            "party_uuid": {
-              "title": "party_uuid field",
-              "description": "A reference to the party that manages the leveraged system.",
-              "type": "string",
-              "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-            },
-            "date_authorized": {
-              "$ref": "#/definitions/date_authorized"
-            },
-            "remarks": {
-              "$ref": "#/definitions/remarks"
-            }
-          },
-          "required": [
-            "uuid",
-            "title",
-            "party_uuid",
-            "date_authorized"
-          ],
-          "additionalProperties": false
         },
         "leveraged_authorizations": {
           "type": "array",
