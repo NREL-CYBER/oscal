@@ -172,7 +172,7 @@ export declare type OrganizationalAffiliation = string;
 /**
  * The role that the party is responsible for.
  */
-export declare type ResponsibleRole = string;
+export declare type ResponsibleRoleId = string;
 /**
  * References a party defined in metadata.
  */
@@ -1245,7 +1245,7 @@ export interface PartyExternalIdentifier {
  * A reference to a set of organizations or persons that have responsibility for performing a referenced role in the context of the containing object.
  */
 export interface ResponsibleParty {
-    role_id: ResponsibleRole;
+    role_id: RoleIdentifierReference;
     party_uuids: PartyReference[];
     props?: Property[];
     links?: Link[];
@@ -1610,6 +1610,13 @@ export interface SpecificControlStatement {
     links?: Link[];
     responsible_roles?: ResponsibleRole[];
     by_components?: ComponentControlImplementation[];
+    remarks?: Remarks;
+}
+export interface ResponsibleRole {
+    role_id: RoleIdentifier;
+    party_uuids: PartyUUIDReference[];
+    props?: Property[];
+    links?: Link[];
     remarks?: Remarks;
 }
 /**
