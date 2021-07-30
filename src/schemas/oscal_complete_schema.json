@@ -6131,7 +6131,8 @@
         }
       },
       "required": [
-        "mission"
+        "mission",
+        "business_functions"
       ]
     },
     "assessment_results": {
