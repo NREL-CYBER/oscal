@@ -4,6 +4,111 @@
   "$comment": "OSCAL Unified Model of Models: JSON Schema",
   "type": "object",
   "definitions": {
+    "inherited_control_implementation": {
+      "$id": "#/definitions/inherited_control_implementation",
+      "title": "Inherited Control Implementation",
+      "description": "Describes a control implementation inherited by a leveraging system.",
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "title": "Inherited Universally Unique Identifier",
+          "description": "A globally unique identifier that can be used to reference this inherited entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "provided_uuid": {
+          "title": "Provided UUID",
+          "description": "Identifies a 'provided' assembly associated with this assembly.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "description": {
+          "title": "Inherited Control Implementation Description",
+          "description": "An implementation statement that describes the aspects of a control or control statement implementation that a leveraging system is inheriting from a leveraged system.",
+          "type": "string"
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "responsible_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/responsible_role"
+          }
+        }
+      },
+      "required": [
+        "uuid",
+        "description"
+      ],
+      "additionalProperties": false
+    },
+    "control_implementation_responsiblity": {
+      "$id": "#/definitions/control_implementation_responsiblity",
+      "title": "Control Implementation Responsibility",
+      "description": "Describes a control implementation responsibility imposed on a leveraging system.",
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "title": "Responsibility Universally Unique Identifier",
+          "description": "A globally unique identifier that can be used to reference this responsibility entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "provided_uuid": {
+          "title": "Provided UUID",
+          "description": "Identifies a 'provided' assembly associated with this assembly.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "description": {
+          "title": "Control Implementation Responsibility Description",
+          "description": "An implementation statement that describes the aspects of the control or control statement implementation that a leveraging system must implement to satisfy the control provided by a leveraged system.",
+          "type": "string"
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "responsible_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/responsible_role"
+          }
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "required": [
+        "uuid",
+        "description"
+      ],
+      "additionalProperties": false
+    },
     "catalog": {
       "title": "Catalog",
       "description": "A collection of controls.",
@@ -3644,308 +3749,204 @@
         "uuid"
       ],
       "additionalProperties": false
-    }
-  },
-  "inherited_control_implementation": {
-    "$id": "#/definitions/inherited_control_implementation",
-    "title": "Inherited Control Implementation",
-    "description": "Describes a control implementation inherited by a leveraging system.",
-    "type": "object",
-    "properties": {
-      "uuid": {
-        "title": "Inherited Universally Unique Identifier",
-        "description": "A globally unique identifier that can be used to reference this inherited entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
-        "type": "string",
-        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-      },
-      "provided_uuid": {
-        "title": "Provided UUID",
-        "description": "Identifies a 'provided' assembly associated with this assembly.",
-        "type": "string",
-        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-      },
-      "description": {
-        "title": "Inherited Control Implementation Description",
-        "description": "An implementation statement that describes the aspects of a control or control statement implementation that a leveraging system is inheriting from a leveraged system.",
-        "type": "string"
-      },
-      "props": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/property"
-        }
-      },
-      "links": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/link"
-        }
-      },
-      "responsible_roles": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/responsible_role"
-        }
-      }
     },
-    "required": [
-      "uuid",
-      "description"
-    ],
-    "additionalProperties": false
-  },
-  "satisfied_control_responsibility": {
-    "title": "Satisfied Control Implementation Responsibility",
-    "description": "Describes how this system satisfies a responsibility imposed by a leveraged system.",
-    "type": "object",
-    "properties": {
-      "uuid": {
-        "title": "Satisfied Universally Unique Identifier",
-        "description": "A globally unique identifier that can be used to reference this satisfied entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
-        "type": "string",
-        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-      },
-      "responsibility_uuid": {
-        "title": "Provided UUID",
-        "description": "Identifies a 'provided' assembly associated with this assembly.",
-        "type": "string",
-        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-      },
-      "description": {
-        "title": "Satisfied Control Implementation Responsibility Description",
-        "description": "An implementation statement that describes the aspects of a control or control statement implementation that a leveraging system is implementing based on a requirement from a leveraged system.",
-        "type": "string"
-      },
-      "props": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/property"
-        }
-      },
-      "links": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/link"
-        }
-      },
-      "responsible_roles": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/responsible_role"
-        }
-      },
-      "remarks": {
-        "$ref": "#/definitions/remarks"
-      }
-    },
-    "required": [
-      "uuid",
-      "description"
-    ],
-    "additionalProperties": false
-  },
-  "by_component": {
-    "title": "Component Control Implementation",
-    "description": "Defines how the referenced component implements a set of controls.",
-    "$id": "#/definitions/by_component",
-    "type": "object",
-    "properties": {
-      "component_uuid": {
-        "title": "Component Universally Unique Identifier Reference",
-        "description": "A reference to the component that is implementing a given control or control statement.",
-        "type": "string",
-        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-      },
-      "uuid": {
-        "title": "By_Component Universally Unique Identifier",
-        "description": "A globally unique identifier that can be used to reference this by_component entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
-        "type": "string",
-        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-      },
-      "description": {
-        "title": "Control Implementation Description",
-        "description": "An implementation statement that describes how a control or a control statement is implemented within the referenced system component.",
-        "type": "string"
-      },
-      "props": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/property"
-        }
-      },
-      "links": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/link"
-        }
-      },
-      "set_parameters": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/set_parameter"
-        }
-      },
-      "implementation_status": {
-        "$ref": "#/definitions/implementation_status"
-      },
-      "export": {
-        "title": "Export",
-        "description": "Identifies content intended for external consumption, such as with leveraged organizations.",
-        "type": "object",
-        "properties": {
-          "description": {
-            "title": "Control Implementation Export Description",
-            "description": "An implementation statement that describes the aspects of the control or control statement implementation that can be available to another system leveraging this system.",
-            "type": "string"
-          },
-          "props": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-              "$ref": "#/definitions/property"
-            }
-          },
-          "links": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-              "$ref": "#/definitions/link"
-            }
-          },
-          "provided": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-              "title": "Provided Control Implementation",
-              "description": "Describes a capability which may be inherited by a leveraging system.",
-              "type": "object",
-              "properties": {
-                "uuid": {
-                  "title": "Provided Universally Unique Identifier",
-                  "description": "A globally unique identifier that can be used to reference this provided entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
-                  "type": "string",
-                  "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-                },
-                "description": {
-                  "title": "Provided Control Implementation Description",
-                  "description": "An implementation statement that describes the aspects of the control or control statement implementation that can be provided to another system leveraging this system.",
-                  "type": "string"
-                },
-                "props": {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "$ref": "#/definitions/property"
-                  }
-                },
-                "links": {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "$ref": "#/definitions/link"
-                  }
-                },
-                "responsible_roles": {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "$ref": "#/definitions/responsible_role"
-                  }
-                },
-                "remarks": {
-                  "$ref": "#/definitions/remarks"
-                }
-              },
-              "required": [
-                "uuid",
-                "description"
-              ],
-              "additionalProperties": false
-            }
-          },
-          "responsibilities": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-              "title": "Control Implementation Responsibility",
-              "description": "Describes a control implementation responsibility imposed on a leveraging system.",
-              "type": "object",
-              "properties": {
-                "uuid": {
-                  "title": "Responsibility Universally Unique Identifier",
-                  "description": "A globally unique identifier that can be used to reference this responsibility entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
-                  "type": "string",
-                  "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-                },
-                "provided_uuid": {
-                  "title": "Provided UUID",
-                  "description": "Identifies a 'provided' assembly associated with this assembly.",
-                  "type": "string",
-                  "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-                },
-                "description": {
-                  "title": "Control Implementation Responsibility Description",
-                  "description": "An implementation statement that describes the aspects of the control or control statement implementation that a leveraging system must implement to satisfy the control provided by a leveraged system.",
-                  "type": "string"
-                },
-                "props": {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "$ref": "#/definitions/property"
-                  }
-                },
-                "links": {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "$ref": "#/definitions/link"
-                  }
-                },
-                "responsible_roles": {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "$ref": "#/definitions/responsible_role"
-                  }
-                },
-                "remarks": {
-                  "$ref": "#/definitions/remarks"
-                }
-              },
-              "required": [
-                "uuid",
-                "description"
-              ],
-              "additionalProperties": false
-            }
-          },
-          "remarks": {
-            "$ref": "#/definitions/remarks"
+    "by_component": {
+      "title": "Component Control Implementation",
+      "description": "Defines how the referenced component implements a set of controls.",
+      "$id": "#/definitions/by_component",
+      "type": "object",
+      "properties": {
+        "component_uuid": {
+          "title": "Component Universally Unique Identifier Reference",
+          "description": "A reference to the component that is implementing a given control or control statement.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "uuid": {
+          "title": "By_Component Universally Unique Identifier",
+          "description": "A globally unique identifier that can be used to reference this by_component entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "description": {
+          "title": "Control Implementation Description",
+          "description": "An implementation statement that describes how a control or a control statement is implemented within the referenced system component.",
+          "type": "string"
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
           }
         },
-        "additionalProperties": false
-      },
-      "inherited": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/inherited_control_implmementation"
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "set_parameters": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/set_parameter"
+          }
+        },
+        "implementation_status": {
+          "$ref": "#/definitions/implementation_status"
+        },
+        "export": {
+          "title": "Export",
+          "description": "Identifies content intended for external consumption, such as with leveraged organizations.",
+          "type": "object",
+          "properties": {
+            "description": {
+              "title": "Control Implementation Export Description",
+              "description": "An implementation statement that describes the aspects of the control or control statement implementation that can be available to another system leveraging this system.",
+              "type": "string"
+            },
+            "props": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/property"
+              }
+            },
+            "links": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            },
+            "provided": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "title": "Provided Control Implementation",
+                "description": "Describes a capability which may be inherited by a leveraging system.",
+                "type": "object",
+                "properties": {
+                  "uuid": {
+                    "title": "Provided Universally Unique Identifier",
+                    "description": "A globally unique identifier that can be used to reference this provided entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
+                    "type": "string",
+                    "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+                  },
+                  "description": {
+                    "title": "Provided Control Implementation Description",
+                    "description": "An implementation statement that describes the aspects of the control or control statement implementation that can be provided to another system leveraging this system.",
+                    "type": "string"
+                  },
+                  "props": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/definitions/property"
+                    }
+                  },
+                  "links": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/definitions/link"
+                    }
+                  },
+                  "responsible_roles": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/definitions/responsible_role"
+                    }
+                  },
+                  "remarks": {
+                    "$ref": "#/definitions/remarks"
+                  }
+                },
+                "required": [
+                  "uuid",
+                  "description"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "responsibilities": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/control_implementation_responsiblity"
+              }
+            },
+            "remarks": {
+              "$ref": "#/definitions/remarks"
+            }
+          },
+          "additionalProperties": false
+        },
+        "inherited": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/inherited_control_implementation"
+          }
         },
         "satisfied": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/satisfied_control_responsability"
+            "title": "Satisfied Control Implementation Responsibility",
+            "description": "Describes how this system satisfies a responsibility imposed by a leveraged system.",
+            "type": "object",
+            "properties": {
+              "uuid": {
+                "title": "Satisfied Universally Unique Identifier",
+                "description": "A globally unique identifier that can be used to reference this satisfied entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+              },
+              "responsibility_uuid": {
+                "title": "Provided UUID",
+                "description": "Identifies a 'provided' assembly associated with this assembly.",
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+              },
+              "description": {
+                "title": "Satisfied Control Implementation Responsibility Description",
+                "description": "An implementation statement that describes the aspects of a control or control statement implementation that a leveraging system is implementing based on a requirement from a leveraged system.",
+                "type": "string"
+              },
+              "props": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/definitions/property"
+                }
+              },
+              "links": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/definitions/link"
+                }
+              },
+              "responsible_roles": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/definitions/responsible_role"
+                }
+              },
+              "remarks": {
+                "$ref": "#/definitions/remarks"
+              }
+            },
+            "required": [
+              "uuid",
+              "description"
+            ],
+            "additionalProperties": false
           }
         },
         "responsible_roles": {
@@ -6126,8 +6127,7 @@
         }
       },
       "required": [
-        "mission",
-        "business_functions"
+        "mission"
       ]
     },
     "assessment_results": {
