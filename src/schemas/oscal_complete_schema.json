@@ -3804,6 +3804,96 @@
       ],
       "additionalProperties": false
     },
+
+    "export": {
+      "$id":"#/definitions/export",
+      "title": "Export",
+      "description": "Identifies content intended for external consumption, such as with leveraged organizations.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Control Implementation Export Description",
+          "description": "An implementation statement that describes the aspects of the control or control statement implementation that can be available to another system leveraging this system.",
+          "type": "string"
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "provided": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "title": "Provided Control Implementation",
+            "description": "Describes a capability which may be inherited by a leveraging system.",
+            "type": "object",
+            "properties": {
+              "uuid": {
+                "title": "Provided Universally Unique Identifier",
+                "description": "A globally unique identifier that can be used to reference this provided entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+              },
+              "description": {
+                "title": "Provided Control Implementation Description",
+                "description": "An implementation statement that describes the aspects of the control or control statement implementation that can be provided to another system leveraging this system.",
+                "type": "string"
+              },
+              "props": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/definitions/property"
+                }
+              },
+              "links": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/definitions/link"
+                }
+              },
+              "responsible_roles": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "$ref": "#/definitions/responsible_role"
+                }
+              },
+              "remarks": {
+                "$ref": "#/definitions/remarks"
+              }
+            },
+            "required": [
+              "uuid",
+              "description"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "responsibilities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/control_implementation_responsiblity"
+          }
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "additionalProperties": false
+    },
     "by_component": {
       "title": "Component Control Implementation",
       "description": "Defines how the referenced component implements a set of controls.",
@@ -3852,92 +3942,7 @@
           "$ref": "#/definitions/implementation_status"
         },
         "export": {
-          "title": "Export",
-          "description": "Identifies content intended for external consumption, such as with leveraged organizations.",
-          "type": "object",
-          "properties": {
-            "description": {
-              "title": "Control Implementation Export Description",
-              "description": "An implementation statement that describes the aspects of the control or control statement implementation that can be available to another system leveraging this system.",
-              "type": "string"
-            },
-            "props": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/property"
-              }
-            },
-            "links": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/link"
-              }
-            },
-            "provided": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "title": "Provided Control Implementation",
-                "description": "Describes a capability which may be inherited by a leveraging system.",
-                "type": "object",
-                "properties": {
-                  "uuid": {
-                    "title": "Provided Universally Unique Identifier",
-                    "description": "A globally unique identifier that can be used to reference this provided entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.",
-                    "type": "string",
-                    "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-                  },
-                  "description": {
-                    "title": "Provided Control Implementation Description",
-                    "description": "An implementation statement that describes the aspects of the control or control statement implementation that can be provided to another system leveraging this system.",
-                    "type": "string"
-                  },
-                  "props": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/definitions/property"
-                    }
-                  },
-                  "links": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/definitions/link"
-                    }
-                  },
-                  "responsible_roles": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/definitions/responsible_role"
-                    }
-                  },
-                  "remarks": {
-                    "$ref": "#/definitions/remarks"
-                  }
-                },
-                "required": [
-                  "uuid",
-                  "description"
-                ],
-                "additionalProperties": false
-              }
-            },
-            "responsibilities": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/control_implementation_responsiblity"
-              }
-            },
-            "remarks": {
-              "$ref": "#/definitions/remarks"
-            }
-          },
-          "additionalProperties": false
+          "$ref": "#/definitions/export"
         },
         "inherited": {
           "type": "array",
