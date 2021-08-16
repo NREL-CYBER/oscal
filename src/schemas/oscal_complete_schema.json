@@ -3804,9 +3804,8 @@
       ],
       "additionalProperties": false
     },
-
     "export": {
-      "$id":"#/definitions/export",
+      "$id": "#/definitions/export",
       "title": "Export",
       "description": "Identifies content intended for external consumption, such as with leveraged organizations.",
       "type": "object",
@@ -5612,48 +5611,79 @@
             "$ref": "#/definitions/response"
           }
         },
-        "risk_log": {
-          "title": "Risk Log",
-          "description": "A log of all risk_related tasks taken.",
+        "risk_log_entry": {
+          "$id": "#/definitions/risk_log_entry",
+          "title": "Risk Log Entry",
+          "description": "Identifies an individual risk response that occurred as part of managing an identified risk.",
           "type": "object",
           "properties": {
-            "entries": {
+            "uuid": {
+              "title": "Risk Log Entry Universally Unique Identifier",
+              "description": "Uniquely identifies a risk log entry. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. A UUID should be consistently used for this schedule across revisions of the document.",
+              "type": "string",
+              "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+            },
+            "title": {
+              "title": "Title",
+              "description": "The title for this risk log entry.",
+              "type": "string"
+            },
+            "description": {
+              "title": "Risk Task Description",
+              "description": "A human_readable description of what was done regarding the risk.",
+              "type": "string"
+            },
+            "start": {
+              "title": "Start",
+              "description": "Identifies the start date and time of the event.",
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+            },
+            "end": {
+              "title": "End",
+              "description": "Identifies the end date and time of the event. If the event is a point in time, the start and end will be the same date and time.",
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+            },
+            "props": {
               "type": "array",
               "minItems": 1,
               "items": {
-                "title": "Risk Log Entry",
-                "description": "Identifies an individual risk response that occurred as part of managing an identified risk.",
+                "$ref": "#/definitions/property"
+              }
+            },
+            "links": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/link"
+              }
+            },
+            "logged_by": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/logged_by"
+              }
+            },
+            "status_change": {
+              "$ref": "#/definitions/risk_status"
+            },
+            "related_responses": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "title": "Risk Response Reference",
+                "description": "Identifies an individual risk response that this log entry is for.",
                 "type": "object",
                 "properties": {
-                  "uuid": {
-                    "title": "Risk Log Entry Universally Unique Identifier",
-                    "description": "Uniquely identifies a risk log entry. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. A UUID should be consistently used for this schedule across revisions of the document.",
+                  "response_uuid": {
+                    "title": "Response Universally Unique Identifier Reference",
+                    "description": "References a unique risk response by UUID.",
                     "type": "string",
                     "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-                  },
-                  "title": {
-                    "title": "Title",
-                    "description": "The title for this risk log entry.",
-                    "type": "string"
-                  },
-                  "description": {
-                    "title": "Risk Task Description",
-                    "description": "A human_readable description of what was done regarding the risk.",
-                    "type": "string"
-                  },
-                  "start": {
-                    "title": "Start",
-                    "description": "Identifies the start date and time of the event.",
-                    "type": "string",
-                    "format": "date-time",
-                    "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
-                  },
-                  "end": {
-                    "title": "End",
-                    "description": "Identifies the end date and time of the event. If the event is a point in time, the start and end will be the same date and time.",
-                    "type": "string",
-                    "format": "date-time",
-                    "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
                   },
                   "props": {
                     "type": "array",
@@ -5669,59 +5699,11 @@
                       "$ref": "#/definitions/link"
                     }
                   },
-                  "logged_by": {
+                  "related_tasks": {
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                      "$ref": "#/definitions/logged_by"
-                    }
-                  },
-                  "status_change": {
-                    "$ref": "#/definitions/risk_status"
-                  },
-                  "related_responses": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "title": "Risk Response Reference",
-                      "description": "Identifies an individual risk response that this log entry is for.",
-                      "type": "object",
-                      "properties": {
-                        "response_uuid": {
-                          "title": "Response Universally Unique Identifier Reference",
-                          "description": "References a unique risk response by UUID.",
-                          "type": "string",
-                          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-                        },
-                        "props": {
-                          "type": "array",
-                          "minItems": 1,
-                          "items": {
-                            "$ref": "#/definitions/property"
-                          }
-                        },
-                        "links": {
-                          "type": "array",
-                          "minItems": 1,
-                          "items": {
-                            "$ref": "#/definitions/link"
-                          }
-                        },
-                        "related_tasks": {
-                          "type": "array",
-                          "minItems": 1,
-                          "items": {
-                            "$ref": "#/definitions/related_task"
-                          }
-                        },
-                        "remarks": {
-                          "$ref": "#/definitions/remarks"
-                        }
-                      },
-                      "required": [
-                        "response_uuid"
-                      ],
-                      "additionalProperties": false
+                      "$ref": "#/definitions/related_task"
                     }
                   },
                   "remarks": {
@@ -5729,10 +5711,31 @@
                   }
                 },
                 "required": [
-                  "uuid",
-                  "start"
+                  "response_uuid"
                 ],
                 "additionalProperties": false
+              }
+            },
+            "remarks": {
+              "$ref": "#/definitions/remarks"
+            }
+          },
+          "required": [
+            "uuid",
+            "start"
+          ],
+          "additionalProperties": false
+        },
+        "risk_log": {
+          "title": "Risk Log",
+          "description": "A log of all risk_related tasks taken.",
+          "type": "object",
+          "properties": {
+            "entries": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/risk_log_entry"
               }
             }
           },
