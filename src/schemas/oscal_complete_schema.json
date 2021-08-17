@@ -2545,7 +2545,7 @@
           }
         },
         "status": {
-          "$ref": "#/defintions/component_status"
+          "$ref": "#/definitions/component_status"
         },
         "responsible_roles": {
           "type": "array",
