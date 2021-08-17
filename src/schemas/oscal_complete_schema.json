@@ -2469,7 +2469,8 @@
       ],
       "additionalProperties": false
     },
-    "operating_status": {
+    "component_status": {
+      "$id": "#/definitions/component_status",
       "title": "Status",
       "description": "Describes the operational status of the system component.",
       "type": "object",
@@ -2544,7 +2545,7 @@
           }
         },
         "status": {
-          "$ref": "#/defintions/operating_status"
+          "$ref": "#/defintions/component_status"
         },
         "responsible_roles": {
           "type": "array",
@@ -3037,7 +3038,7 @@
           "$ref": "#/definitions/security_impact_level"
         },
         "status": {
-          "$ref": "#/definitions/status"
+          "$ref": "#/definitions/system_status"
         },
         "authorization_boundary": {
           "$ref": "#/definitions/authorization_boundary"
@@ -3331,10 +3332,10 @@
       ],
       "additionalProperties": false
     },
-    "status": {
+    "system_status": {
       "title": "Status",
       "description": "Describes the operational status of the system.",
-      "$id": "#/definitions/status",
+      "$id": "#/definitions/system_status",
       "type": "object",
       "properties": {
         "state": {
