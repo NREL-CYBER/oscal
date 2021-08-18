@@ -6701,22 +6701,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "title": "Origin",
-            "description": "Identifies the source of the finding, such as a tool or person.",
-            "type": "object",
-            "properties": {
-              "actors": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/origin_actor"
-                }
-              }
-            },
-            "required": [
-              "actors"
-            ],
-            "additionalProperties": false
+            "$ref": "#/definitions/origin"
           }
         },
         "related_observations": {
