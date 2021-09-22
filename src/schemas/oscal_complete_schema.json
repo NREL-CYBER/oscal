@@ -5609,7 +5609,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definition/mitigating_factor"
+            "$ref": "#/definitions/mitigating_factor"
           }
         },
         "deadline": {
