@@ -3140,6 +3140,7 @@
           }
         },
         "confidentiality_impact": {
+          "$id": "#/definitions/confidentiality_impact",
           "title": "Confidentiality Impact Level",
           "description": "The expected level of impact resulting from the unauthorized disclosure of the described information.",
           "type": "object",
@@ -3174,6 +3175,7 @@
           "additionalProperties": false
         },
         "integrity_impact": {
+          "$id": "#/definitions/integrity_impact",
           "title": "Integrity Impact Level",
           "description": "The expected level of impact resulting from the unauthorized modification of the described information.",
           "type": "object",
@@ -3208,6 +3210,7 @@
           "additionalProperties": false
         },
         "availability_impact": {
+          "$id": "#/definitions/availability_impact",
           "title": "Availability Impact Level",
           "description": "The expected level of impact resulting from the disruption of access to or use of the described information or the information system.",
           "type": "object",
@@ -5483,6 +5486,57 @@
       ],
       "additionalProperties": false
     },
+    "mitigating_factor": {
+      "$id": "#/definitions/mitigating_factor",
+      "title": "Mitigating Factor",
+      "description": "Describes an existing mitigating factor that may affect the overall determination of the risk, with an optional link to an implementation statement in the SSP.",
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "title": "Mitigating Factor Universally Unique Identifier",
+          "description": "Uniquely identifies this mitigating factor. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. Once assigned, a UUID should be consistently used for a given mitigating factor across revisions.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "implementation_uuid": {
+          "title": "Implementation UUID",
+          "description": "Points to an implementation statement in the SSP.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "description": {
+          "title": "Mitigating Factor Description",
+          "description": "A human_readable description of this mitigating factor.",
+          "type": "string"
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "subjects": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/subject_reference"
+          }
+        }
+      },
+      "required": [
+        "uuid",
+        "description"
+      ],
+      "additionalProperties": false
+    },
     "risk": {
       "title": "Identified Risk",
       "description": "An identified risk.",
@@ -5555,54 +5609,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "title": "Mitigating Factor",
-            "description": "Describes an existing mitigating factor that may affect the overall determination of the risk, with an optional link to an implementation statement in the SSP.",
-            "type": "object",
-            "properties": {
-              "uuid": {
-                "title": "Mitigating Factor Universally Unique Identifier",
-                "description": "Uniquely identifies this mitigating factor. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. Once assigned, a UUID should be consistently used for a given mitigating factor across revisions.",
-                "type": "string",
-                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-              },
-              "implementation_uuid": {
-                "title": "Implementation UUID",
-                "description": "Points to an implementation statement in the SSP.",
-                "type": "string",
-                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-              },
-              "description": {
-                "title": "Mitigating Factor Description",
-                "description": "A human_readable description of this mitigating factor.",
-                "type": "string"
-              },
-              "props": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/property"
-                }
-              },
-              "links": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/link"
-                }
-              },
-              "subjects": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/subject_reference"
-                }
-              }
-            },
-            "required": [
-              "uuid",
-              "description"
-            ],
-            "additionalProperties": false
+            "$ref": "#/definition/mitigating_factor"
           }
         },
         "deadline": {
