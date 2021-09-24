@@ -3766,6 +3766,12 @@
         "uuid",
         "control_id"
       ],
+      "dependencies": {
+        "control_id": [
+          "statements",
+          "set_parameters"
+        ]
+      },
       "additionalProperties": false
     },
     "statement": {
