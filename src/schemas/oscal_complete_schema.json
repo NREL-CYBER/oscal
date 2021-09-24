@@ -2576,6 +2576,11 @@
         "description",
         "status"
       ],
+      "dependencies": {
+        "type": [
+          "props"
+        ]
+      },
       "additionalProperties": false
     },
     "protocol": {
@@ -3694,7 +3699,7 @@
       "additionalProperties": false
     },
     "implemented_requirement": {
-      "title": "Control_based Requirement",
+      "title": "Control Based Requirement",
       "description": "Describes how the system satisfies an individual control.",
       "$id": "#/definitions/implemented_requirement",
       "type": "object",
@@ -5386,6 +5391,11 @@
         "type",
         "actor_uuid"
       ],
+      "dependencies": {
+        "type": [
+          "actor_uuid"
+        ]
+      },
       "additionalProperties": false
     },
     "related_task": {
