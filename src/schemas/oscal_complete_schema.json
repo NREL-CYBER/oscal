@@ -1132,6 +1132,41 @@
       ],
       "additionalProperties": false
     },
+    "rlinks": {
+      "$id":"#/definitions/rlinks",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "Resource link",
+        "description": "A pointer to an external resource with an optional hash for verification and change detection.",
+        "type": "object",
+        "properties": {
+          "href": {
+            "title": "Hypertext Reference",
+            "description": "A resolvable URI reference to a resource.",
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "media_type": {
+            "title": "Media Type",
+            "description": "Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.",
+            "type": "string",
+            "pattern": "^\\S(.*\\S)?$"
+          },
+          "hashes": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/definitions/hash"
+            }
+          }
+        },
+        "required": [
+          "href"
+        ],
+        "additionalProperties": false
+      }
+    },
     "resource": {
       "$id": "#/definitions/resource",
       "title": "Resource",
@@ -1172,38 +1207,7 @@
           "$ref": "#/definitions/citation"
         },
         "rlinks": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "title": "Resource link",
-            "description": "A pointer to an external resource with an optional hash for verification and change detection.",
-            "type": "object",
-            "properties": {
-              "href": {
-                "title": "Hypertext Reference",
-                "description": "A resolvable URI reference to a resource.",
-                "type": "string",
-                "format": "uri-reference"
-              },
-              "media_type": {
-                "title": "Media Type",
-                "description": "Specifies a media type as defined by the Internet Assigned Numbers Authority (IANA) Media Types Registry.",
-                "type": "string",
-                "pattern": "^\\S(.*\\S)?$"
-              },
-              "hashes": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/hash"
-                }
-              }
-            },
-            "required": [
-              "href"
-            ],
-            "additionalProperties": false
-          }
+          "$ref":"#/definitions/rlinks"        
         },
         "base64": {
           "title": "Base64",
