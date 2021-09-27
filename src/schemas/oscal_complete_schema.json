@@ -2580,11 +2580,6 @@
         "description",
         "status"
       ],
-      "dependencies": {
-        "type": [
-          "props"
-        ]
-      },
       "additionalProperties": false
     },
     "protocol": {
@@ -3772,8 +3767,7 @@
       ],
       "dependencies": {
         "control_id": [
-          "statements",
-          "set_parameters"
+          "statements"
         ]
       },
       "additionalProperties": false
