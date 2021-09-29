@@ -1161,8 +1161,7 @@
       "required": [
         "href"
       ],
-      "additionalProperties": false
-    }
+      "additionalProperties": false    
   },
   "rlinks": {
     "$id": "#/definitions/rlinks",
@@ -3608,7 +3607,8 @@
       "uuid",
       "title",
       "party_uuid",
-      "date_authorized"
+      "date_authorized",
+      "links"
     ],
     "additionalProperties": false
   },
