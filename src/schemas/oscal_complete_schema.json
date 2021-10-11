@@ -3587,7 +3587,7 @@
         "type": "array",
         "minItems": 1,
         "items": {
-          "$ref": "#/definitions/link"
+          "$ref": "#/definitions/import_ssp"
         }
       },
       "party_uuid": {
