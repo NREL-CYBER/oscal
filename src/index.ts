@@ -223,7 +223,7 @@ export type ParameterValue = string;
 /**
  * Describes the number of selections that must occur. Without this setting, only one value should be assumed to be permitted.
  */
-export type ParameterCardinality = "one" | "one_or_more";
+export type ParameterCardinality = "one" | "one-or-more";
 /**
  * A value selection among several such options
  */
@@ -323,7 +323,7 @@ export type IncludeSpecificStatements = string;
 /**
  * How clashing controls should be handled
  */
-export type CombinationMethod = "use_first" | "merge" | "keep";
+export type CombinationMethod = "use-first" | "merge" | "keep";
 /**
  * An As_is element indicates that the controls should be structured in resolution as they are structured in their source catalogs. It does not contain any elements or attributes.
  */
@@ -600,7 +600,7 @@ export type SecurityObjectiveAvailability = string;
 /**
  * The current operating status.
  */
-export type OperatingState = "operational" | "under_development" | "under_major_modification" | "disposition" | "other";
+export type OperatingState = "operational" | "under-development" | "under-major-modification" | "disposition" | "other";
 /**
  * A summary of the system's authorization boundary.
  */
@@ -676,7 +676,7 @@ export type FunctionsPerformed = string;
 /**
  * The operational status.
  */
-export type OperationalState = "under_development" | "operational" | "disposition" | "other";
+export type OperationalState = "under-development" | "operational" | "disposition" | "other";
 /**
  * A globally unique identifier that can be used to reference this inventory item entry elsewhere in an OSCAL document. A UUID should be consistently used for a given resource across revisions of the document.
  */
@@ -904,7 +904,7 @@ export type ObservationType = string;
 /**
  * The kind of actor.
  */
-export type ActorType = "tool" | "assessment_platform" | "party";
+export type ActorType = "tool" | "assessment-platform" | "party";
 /**
  * A pointer to the tool or person based on the associated type.
  */
@@ -1060,7 +1060,7 @@ export type FindingDescription = string;
 /**
  * Identifies the type of the target.
  */
-export type FindingTargetType = "statement_id" | "objective_id";
+export type FindingTargetType = "statement-id" | "objective-id";
 /**
  * Identifies the specific target qualified by the type.
  */
@@ -1076,7 +1076,7 @@ export type ObjectiveStatusDescription = string;
 /**
  * An indication as to whether the objective is satisfied or not.
  */
-export type ObjectiveStatusState = "satisfied" | "not_satisfied";
+export type ObjectiveStatusState = "satisfied" | "not-satisfied";
 /**
  * The reason the objective was given it's status.
  */
