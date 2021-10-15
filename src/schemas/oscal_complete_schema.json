@@ -4617,6 +4617,58 @@
       ],
       "additionalProperties": false
     },
+    
+    "assessed_controls": {
+      "$id": "#/definitions/assessed_controls",
+      "title": "Assessed Controls",
+      "description": "Identifies the controls being assessed. In the assessment plan, these are the planned controls. In the assessment results, these are the actual controls, and reflects any changes from the plan.",
+      "type": "object",
+      "properties": {
+        "description": {
+          "title": "Assessed Controls Description",
+          "description": "A human_readable description of in_scope controls specified for assessment.",
+          "type": "string"
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "include_all": {
+          "title": "All",
+          "description": "A key word to indicate all.",
+          "type": "object",
+          "additionalProperties": false
+        },
+        "include_controls": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/select_control_by_id"
+          }
+        },
+        "exclude_controls": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/select_control_by_id"
+          }
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "additionalProperties": false
+    },
     "reviewed_controls": {
       "title": "Reviewed Controls and Control Objectives",
       "description": "Identifies the controls being assessed and their control objectives.",
@@ -4643,55 +4695,11 @@
           }
         },
         "assessed_controls": {
-          "$id": "#/definitions/assessed_controls",
-          "title": "Assessed Controls",
-          "description": "Identifies the controls being assessed. In the assessment plan, these are the planned controls. In the assessment results, these are the actual controls, and reflects any changes from the plan.",
-          "type": "object",
-          "properties": {
-            "description": {
-              "title": "Assessed Controls Description",
-              "description": "A human_readable description of in_scope controls specified for assessment.",
-              "type": "string"
-            },
-            "props": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/property"
-              }
-            },
-            "links": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/link"
-              }
-            },
-            "include_all": {
-              "title": "All",
-              "description": "A key word to indicate all.",
-              "type": "object",
-              "additionalProperties": false
-            },
-            "include_controls": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/select_control_by_id"
-              }
-            },
-            "exclude_controls": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/select_control_by_id"
-              }
-            },
-            "remarks": {
-              "$ref": "#/definitions/remarks"
-            }
-          },
-          "additionalProperties": false
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/assessed_controls"
+          }
         },
         "control_selections": {
           "type": "array",
