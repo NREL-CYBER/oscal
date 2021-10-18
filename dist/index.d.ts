@@ -1102,6 +1102,12 @@ export declare type POAMItemDescription = string;
  * References an observation defined in the list of observations.
  */
 export declare type ObservationUniversallyUniqueIdentifierReference2 = string;
+export declare type ComponentTypeInfo = {
+    uuid: UniversallyUniqueIdentifier;
+    title: string;
+    required_props?: Property[];
+    description?: string;
+};
 /**
  * A collection of controls.
  */

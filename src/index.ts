@@ -1110,6 +1110,13 @@ export type POAMItemDescription = string;
  */
 export type ObservationUniversallyUniqueIdentifierReference2 = string;
 
+export type ComponentTypeInfo = {
+    uuid: UniversallyUniqueIdentifier,
+    title: string,
+    required_props?: Property[]
+    description?: string
+}
+
 /**
  * A collection of controls.
  */
