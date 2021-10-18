@@ -2546,6 +2546,7 @@
       "additionalProperties": false
     },
     "component_type_info": {
+      "$id": "#/definitions/component_type_info",
       "type": "object",
       "properties": {
         "uuid": {
