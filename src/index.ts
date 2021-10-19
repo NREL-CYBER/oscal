@@ -1113,7 +1113,7 @@ export type ObservationUniversallyUniqueIdentifierReference2 = string;
 export type ComponentTypeInfo = {
     uuid: UniversallyUniqueIdentifier,
     title: string,
-    required_props?: Property[]
+    required_props: Property[]
     description?: string
 }
 
