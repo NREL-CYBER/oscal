@@ -2525,6 +2525,7 @@
       "type": "object",
       "properties": {
         "state": {
+          "$id": "#/definitions/component_state",
           "title": "State",
           "description": "The operational status.",
           "type": "string",
@@ -3824,7 +3825,8 @@
       },
       "required": [
         "uuid",
-        "control_id"
+        "control_id",
+        "by_component"
       ],
       "dependencies": {
         "control_id": [
