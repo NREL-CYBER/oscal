@@ -3825,14 +3825,8 @@
       },
       "required": [
         "uuid",
-        "control_id",
-        "by_component"
+        "control_id"
       ],
-      "dependencies": {
-        "control_id": [
-          "statements"
-        ]
-      },
       "additionalProperties": false
     },
     "statement": {
