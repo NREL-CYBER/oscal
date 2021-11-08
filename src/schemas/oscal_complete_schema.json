@@ -5145,6 +5145,46 @@
       ],
       "additionalProperties": false
     },
+    "relevant_evidence_link": {
+      "$id": "#/definitions/relevant_evidence_link",
+      "title": "Relevant Evidence",
+      "description": "Links this observation to relevant evidence.",
+      "type": "object",
+      "properties": {
+        "href": {
+          "title": "Relevant Evidence Reference",
+          "description": ">A resolvable URL reference to relevant evidence.",
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "description": {
+          "title": "Relevant Evidence Description",
+          "description": "A human_readable description of this evidence.",
+          "type": "string"
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "required": [
+        "description"
+      ],
+      "additionalProperties": false
+    },
     "assessment_platform": {
       "$id": "#/definitions/assessment_platform",
       "title": "Assessment Platform",
@@ -5357,43 +5397,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "title": "Relevant Evidence",
-            "description": "Links this observation to relevant evidence.",
-            "type": "object",
-            "properties": {
-              "href": {
-                "title": "Relevant Evidence Reference",
-                "description": ">A resolvable URL reference to relevant evidence.",
-                "type": "string",
-                "format": "uri-reference"
-              },
-              "description": {
-                "title": "Relevant Evidence Description",
-                "description": "A human_readable description of this evidence.",
-                "type": "string"
-              },
-              "props": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/property"
-                }
-              },
-              "links": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/link"
-                }
-              },
-              "remarks": {
-                "$ref": "#/definitions/remarks"
-              }
-            },
-            "required": [
-              "description"
-            ],
-            "additionalProperties": false
+            "$ref": "#/definitions/relevant_evidence_link"
           }
         },
         "collected": {
