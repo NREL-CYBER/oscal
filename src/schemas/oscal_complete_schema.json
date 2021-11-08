@@ -2317,7 +2317,7 @@
         },
         "name": {
           "title": "Capability Name",
-          "description": "The capability's human_readable name.",
+          "description": "The capability's name.",
           "type": "string",
           "pattern": "^\\S(.*\\S)?$"
         },
@@ -4202,7 +4202,7 @@
         },
         "description": {
           "title": "Objective Description",
-          "description": "A human_readable description of this control objective.",
+          "description": "A description of this control objective.",
           "type": "string"
         },
         "props": {
@@ -4250,7 +4250,7 @@
         },
         "description": {
           "title": "Assessment Method Description",
-          "description": "A human_readable description of this assessment method.",
+          "description": "A description of this assessment method.",
           "type": "string"
         },
         "props": {
@@ -4280,6 +4280,62 @@
       ],
       "additionalProperties": false
     },
+    "activity_step": {
+      "$id": "#/definitions/activity_step",
+      "title": "Step",
+      "description": "Identifies an individual step in a series of steps related to an activity, such as an assessment test or examination procedure.",
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "title": "Step Universally Unique Identifier",
+          "description": "Uniquely identifies a step. This UUID may be referenced elsewhere in an OSCAL document when referring to this step. A UUID should be consistently used for a given test step across revisions of the document.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "title": {
+          "title": "Step Title",
+          "description": "The title for this step.",
+          "type": "string"
+        },
+        "description": {
+          "title": "Step Description",
+          "description": "A description of this step.",
+          "type": "string"
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "reviewed_controls": {
+          "$ref": "#/definitions/reviewed_controls"
+        },
+        "responsible_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/responsible_role"
+          }
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "required": [
+        "uuid",
+        "description"
+      ],
+      "additionalProperties": false
+    },
     "activity": {
       "title": "Activity",
       "description": "Identifies an assessment or related process that can be performed. In the assessment plan, this is an intended activity which may be associated with an assessment task. In the assessment results, this an activity that was actually performed as part of an assessment.",
@@ -4299,7 +4355,7 @@
         },
         "description": {
           "title": "Included Activity Description",
-          "description": "A human_readable description of this included activity.",
+          "description": "A description of this included activity.",
           "type": "string"
         },
         "props": {
@@ -4320,59 +4376,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "title": "Step",
-            "description": "Identifies an individual step in a series of steps related to an activity, such as an assessment test or examination procedure.",
-            "type": "object",
-            "properties": {
-              "uuid": {
-                "title": "Step Universally Unique Identifier",
-                "description": "Uniquely identifies a step. This UUID may be referenced elsewhere in an OSCAL document when referring to this step. A UUID should be consistently used for a given test step across revisions of the document.",
-                "type": "string",
-                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-              },
-              "title": {
-                "title": "Step Title",
-                "description": "The title for this step.",
-                "type": "string"
-              },
-              "description": {
-                "title": "Step Description",
-                "description": "A human_readable description of this step.",
-                "type": "string"
-              },
-              "props": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/property"
-                }
-              },
-              "links": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/link"
-                }
-              },
-              "reviewed_controls": {
-                "$ref": "#/definitions/reviewed_controls"
-              },
-              "responsible_roles": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/responsible_role"
-                }
-              },
-              "remarks": {
-                "$ref": "#/definitions/remarks"
-              }
-            },
-            "required": [
-              "uuid",
-              "description"
-            ],
-            "additionalProperties": false
+            "$ref": "#/definitions/activity_step"
           }
         },
         "related_controls": {
@@ -4425,7 +4429,7 @@
         },
         "description": {
           "title": "Task Description",
-          "description": "A human_readable description of this task.",
+          "description": "A description of this task.",
           "type": "string"
         },
         "props": {
@@ -4644,7 +4648,7 @@
       "properties": {
         "description": {
           "title": "Assessed Controls Description",
-          "description": "A human_readable description of in_scope controls specified for assessment.",
+          "description": "A description of in_scope controls specified for assessment.",
           "type": "string"
         },
         "props": {
@@ -4695,7 +4699,7 @@
       "properties": {
         "description": {
           "title": "Control Objective Description",
-          "description": "A human_readable description of control objectives.",
+          "description": "A description of control objectives.",
           "type": "string"
         },
         "props": {
@@ -4750,7 +4754,7 @@
       "properties": {
         "description": {
           "title": "Control Objectives Description",
-          "description": "A human_readable description of this collection of control objectives.",
+          "description": "A description of this collection of control objectives.",
           "type": "string"
         },
         "props": {
@@ -4853,7 +4857,7 @@
         },
         "description": {
           "title": "Assessment Subject Placeholder Description",
-          "description": "A human_readable description of intent of this assessment subject placeholder.",
+          "description": "A description of intent of this assessment subject placeholder.",
           "type": "string"
         },
         "sources": {
@@ -4924,7 +4928,7 @@
         },
         "description": {
           "title": "Include Subjects Description",
-          "description": "A human_readable description of the collection of subjects being included in this assessment.",
+          "description": "A description of the collection of subjects being included in this assessment.",
           "type": "string"
         },
         "props": {
@@ -5159,7 +5163,7 @@
         },
         "description": {
           "title": "Relevant Evidence Description",
-          "description": "A human_readable description of this evidence.",
+          "description": "A description of this evidence.",
           "type": "string"
         },
         "props": {
@@ -5262,7 +5266,7 @@
         },
         "description": {
           "title": "Objective Status Description",
-          "description": "A human_readable description of the assessor's conclusions regarding the degree to which an objective is satisfied.",
+          "description": "A description of the assessor's conclusions regarding the degree to which an objective is satisfied.",
           "type": "string"
         },
         "props": {
@@ -5342,7 +5346,7 @@
         },
         "description": {
           "title": "Observation Description",
-          "description": "A human_readable description of this assessment observation.",
+          "description": "A description of this assessment observation.",
           "type": "string"
         },
         "props": {
@@ -5630,7 +5634,7 @@
         },
         "description": {
           "title": "Mitigating Factor Description",
-          "description": "A human_readable description of this mitigating factor.",
+          "description": "A description of this mitigating factor.",
           "type": "string"
         },
         "props": {
@@ -5680,7 +5684,7 @@
         },
         "description": {
           "title": "Risk Description",
-          "description": "A human_readable summary of the identified risk, to include a statement of how the risk impacts the system.",
+          "description": "A summary of the identified risk, to include a statement of how the risk impacts the system.",
           "type": "string"
         },
         "statement": {
@@ -5818,7 +5822,7 @@
         },
         "description": {
           "title": "Risk Task Description",
-          "description": "A human_readable description of what was done regarding the risk.",
+          "description": "A description of what was done regarding the risk.",
           "type": "string"
         },
         "start": {
@@ -6053,7 +6057,7 @@
         },
         "description": {
           "title": "Description of Required Asset",
-          "description": "A human_readable description of this required asset.",
+          "description": "A description of this required asset.",
           "type": "string"
         },
         "props": {
@@ -6105,7 +6109,7 @@
         },
         "description": {
           "title": "Response Description",
-          "description": "A human_readable description of this response plan.",
+          "description": "A description of this response plan.",
           "type": "string"
         },
         "props": {
@@ -6286,6 +6290,32 @@
         "business_functions"
       ]
     },
+    "assessment_results_local_definitions": {
+      "$id": "#/definitions/assessment_results_local_definitions",
+      "title": "Local Definitions",
+      "description": "Used to define data objects that are used in the assessment plan, that do not appear in the referenced SSP.",
+      "type": "object",
+      "properties": {
+        "objectives_and_methods": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/local_objective"
+          }
+        },
+        "activities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/activity"
+          }
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "additionalProperties": false
+    },
     "assessment_results": {
       "title": "Security Assessment Results (SAR)",
       "description": "Security assessment results, such as those provided by a FedRAMP assessor in the FedRAMP Security Assessment Report.",
@@ -6305,29 +6335,7 @@
           "$ref": "#/definitions/import_ap"
         },
         "local_definitions": {
-          "title": "Local Definitions",
-          "description": "Used to define data objects that are used in the assessment plan, that do not appear in the referenced SSP.",
-          "type": "object",
-          "properties": {
-            "objectives_and_methods": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/local_objective"
-              }
-            },
-            "activities": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/activity"
-              }
-            },
-            "remarks": {
-              "$ref": "#/definitions/remarks"
-            }
-          },
-          "additionalProperties": false
+          "$ref": "#/definitions/assessment_results_local_definitions"
         },
         "results": {
           "type": "array",
@@ -6367,7 +6375,7 @@
         },
         "description": {
           "title": "Results Description",
-          "description": "A human_readable description of this set of test results.",
+          "description": "A description of this set of test results.",
           "type": "string"
         },
         "start": {
@@ -6495,7 +6503,7 @@
                   },
                   "description": {
                     "title": "Action Description",
-                    "description": "A human_readable description of this event.",
+                    "description": "A description of this event.",
                     "type": "string"
                   },
                   "start": {
@@ -6610,7 +6618,7 @@
         },
         "description": {
           "title": "Finding Description",
-          "description": "A human_readable description of this finding.",
+          "description": "A description of this finding.",
           "type": "string"
         },
         "props": {
@@ -6819,7 +6827,7 @@
         },
         "description": {
           "title": "POA&M Item Description",
-          "description": "A human_readable description of POA&M item.",
+          "description": "A description of POA&M item.",
           "type": "string"
         },
         "props": {

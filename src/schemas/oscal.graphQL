@@ -15,7 +15,7 @@ type Activity {
   """The title for this included activity."""
   title: String
 
-  """A human_readable description of this included activity."""
+  """A description of this included activity."""
   description: String!
   props: [Property!]
   links: [Link!]
@@ -42,7 +42,7 @@ input ActivityIn {
   """The title for this included activity."""
   title: String
 
-  """A human_readable description of this included activity."""
+  """A description of this included activity."""
   description: String!
   props: [PropertyIn!]
   links: [LinkIn!]
@@ -67,7 +67,7 @@ type ActivityStepsItem {
   """The title for this step."""
   title: String
 
-  """A human_readable description of this step."""
+  """A description of this step."""
   description: String!
   props: [Property!]
   links: [Link!]
@@ -91,7 +91,7 @@ input ActivityStepsItemIn {
   """The title for this step."""
   title: String
 
-  """A human_readable description of this step."""
+  """A description of this step."""
   description: String!
   props: [PropertyIn!]
   links: [LinkIn!]
@@ -233,7 +233,7 @@ type AssessmentMethod {
   """
   uuid: String!
 
-  """A human_readable description of this assessment method."""
+  """A description of this assessment method."""
   description: String
   props: [Property!]
   links: [Link!]
@@ -253,7 +253,7 @@ input AssessmentMethodIn {
   """
   uuid: String!
 
-  """A human_readable description of this assessment method."""
+  """A description of this assessment method."""
   description: String
   props: [PropertyIn!]
   links: [LinkIn!]
@@ -558,7 +558,7 @@ type AssessmentSubject {
   type: String!
 
   """
-  A human_readable description of the collection of subjects being included in this assessment.
+  A description of the collection of subjects being included in this assessment.
   """
   description: String
   props: [Property!]
@@ -586,7 +586,7 @@ input AssessmentSubjectIn {
   type: String!
 
   """
-  A human_readable description of the collection of subjects being included in this assessment.
+  A description of the collection of subjects being included in this assessment.
   """
   description: String
   props: [PropertyIn!]
@@ -621,7 +621,7 @@ type AssessmentSubjectPlaceholder {
   uuid: String!
 
   """
-  A human_readable description of intent of this assessment subject placeholder.
+  A description of intent of this assessment subject placeholder.
   """
   description: String
   sources: [AssessmentSubjectPlaceholderSourcesItem!]!
@@ -642,7 +642,7 @@ input AssessmentSubjectPlaceholderIn {
   uuid: String!
 
   """
-  A human_readable description of intent of this assessment subject placeholder.
+  A description of intent of this assessment subject placeholder.
   """
   description: String
   sources: [AssessmentSubjectPlaceholderSourcesItemIn!]!
@@ -1091,7 +1091,7 @@ type Capability {
   """A unique identifier for a capability."""
   uuid: String!
 
-  """The capability's human_readable name."""
+  """The capability's name."""
   name: String!
 
   """A summary of the capability."""
@@ -1108,7 +1108,7 @@ input CapabilityIn {
   """A unique identifier for a capability."""
   uuid: String!
 
-  """The capability's human_readable name."""
+  """The capability's name."""
   name: String!
 
   """A summary of the capability."""
@@ -1600,7 +1600,7 @@ type Finding {
   """The title for this finding."""
   title: String!
 
-  """A human_readable description of this finding."""
+  """A description of this finding."""
   description: String!
   props: [Property!]
   links: [Link!]
@@ -1628,7 +1628,7 @@ input FindingIn {
   """The title for this finding."""
   title: String!
 
-  """A human_readable description of this finding."""
+  """A description of this finding."""
   description: String!
   props: [PropertyIn!]
   links: [LinkIn!]
@@ -1690,7 +1690,7 @@ type FindingTarget {
   title: String
 
   """
-  A human_readable description of the assessor's conclusions regarding the degree to which an objective is satisfied.
+  A description of the assessor's conclusions regarding the degree to which an objective is satisfied.
   """
   description: String
   props: [Property!]
@@ -1718,7 +1718,7 @@ input FindingTargetIn {
   title: String
 
   """
-  A human_readable description of the assessor's conclusions regarding the degree to which an objective is satisfied.
+  A description of the assessor's conclusions regarding the degree to which an objective is satisfied.
   """
   description: String
   props: [PropertyIn!]
@@ -2188,7 +2188,7 @@ type LocalObjective {
   """A reference to a control with a corresponding id value."""
   control_id: String!
 
-  """A human_readable description of this control objective."""
+  """A description of this control objective."""
   description: String
   props: [Property!]
   links: [Link!]
@@ -2204,7 +2204,7 @@ input LocalObjectiveIn {
   """A reference to a control with a corresponding id value."""
   control_id: String!
 
-  """A human_readable description of this control objective."""
+  """A description of this control objective."""
   description: String
   props: [PropertyIn!]
   links: [LinkIn!]
@@ -2444,7 +2444,7 @@ type Observation {
   """The title for this observation."""
   title: String
 
-  """A human_readable description of this assessment observation."""
+  """A description of this assessment observation."""
   description: String!
   props: [Property!]
   links: [Link!]
@@ -2479,7 +2479,7 @@ input ObservationIn {
   """The title for this observation."""
   title: String
 
-  """A human_readable description of this assessment observation."""
+  """A description of this assessment observation."""
   description: String!
   props: [PropertyIn!]
   links: [LinkIn!]
@@ -2507,7 +2507,7 @@ type ObservationRelevantEvidenceItem {
   """>A resolvable URL reference to relevant evidence."""
   href: String
 
-  """A human_readable description of this evidence."""
+  """A description of this evidence."""
   description: String!
   props: [Property!]
   links: [Link!]
@@ -2519,7 +2519,7 @@ input ObservationRelevantEvidenceItemIn {
   """>A resolvable URL reference to relevant evidence."""
   href: String
 
-  """A human_readable description of this evidence."""
+  """A description of this evidence."""
   description: String!
   props: [PropertyIn!]
   links: [LinkIn!]
@@ -3066,7 +3066,7 @@ type PoamItem {
   """The title or name for this POA&M item ."""
   title: String!
 
-  """A human_readable description of POA&M item."""
+  """A description of POA&M item."""
   description: String!
   props: [Property!]
   links: [Link!]
@@ -3088,7 +3088,7 @@ input PoamItemIn {
   """The title or name for this POA&M item ."""
   title: String!
 
-  """A human_readable description of POA&M item."""
+  """A description of POA&M item."""
   description: String!
   props: [PropertyIn!]
   links: [LinkIn!]
@@ -3659,7 +3659,7 @@ type Response {
   """The title for this response activity."""
   title: String!
 
-  """A human_readable description of this response plan."""
+  """A description of this response plan."""
   description: String!
   props: [Property!]
   links: [Link!]
@@ -3689,7 +3689,7 @@ input ResponseIn {
   """The title for this response activity."""
   title: String!
 
-  """A human_readable description of this response plan."""
+  """A description of this response plan."""
   description: String!
   props: [PropertyIn!]
   links: [LinkIn!]
@@ -3712,7 +3712,7 @@ type ResponseRequiredAssetsItem {
   """The title for this required asset."""
   title: String
 
-  """A human_readable description of this required asset."""
+  """A description of this required asset."""
   description: String!
   props: [Property!]
   links: [Link!]
@@ -3732,7 +3732,7 @@ input ResponseRequiredAssetsItemIn {
   """The title for this required asset."""
   title: String
 
-  """A human_readable description of this required asset."""
+  """A description of this required asset."""
   description: String!
   props: [PropertyIn!]
   links: [LinkIn!]
@@ -3806,7 +3806,7 @@ type Result {
   """The title for this set of results."""
   title: String!
 
-  """A human_readable description of this set of test results."""
+  """A description of this set of test results."""
   description: String!
 
   """
@@ -3859,7 +3859,7 @@ type ResultAssessmentLogEntriesItem {
   """The title for this event."""
   title: String
 
-  """A human_readable description of this event."""
+  """A description of this event."""
   description: String
 
   """Identifies the start date and time of an event."""
@@ -3893,7 +3893,7 @@ input ResultAssessmentLogEntriesItemIn {
   """The title for this event."""
   title: String
 
-  """A human_readable description of this event."""
+  """A description of this event."""
   description: String
 
   """Identifies the start date and time of an event."""
@@ -3945,7 +3945,7 @@ input ResultIn {
   """The title for this set of results."""
   title: String!
 
-  """A human_readable description of this set of test results."""
+  """A description of this set of test results."""
   description: String!
 
   """
@@ -4001,7 +4001,7 @@ input ResultLocalsIn {
 
 """Identifies the controls being assessed and their control objectives."""
 type ReviewedControls {
-  """A human_readable description of control objectives."""
+  """A description of control objectives."""
   description: String
   props: [Property!]
   links: [Link!]
@@ -4016,7 +4016,7 @@ these are the planned objectives. In the assessment results, these are the
 assessed objectives, and reflects any changes from the plan.
 """
 type ReviewedControlsControlObjectiveSelectionsItem {
-  """A human_readable description of this collection of control objectives."""
+  """A description of this collection of control objectives."""
   description: String
   props: [Property!]
   links: [Link!]
@@ -4034,7 +4034,7 @@ these are the planned objectives. In the assessment results, these are the
 assessed objectives, and reflects any changes from the plan.
 """
 input ReviewedControlsControlObjectiveSelectionsItemIn {
-  """A human_readable description of this collection of control objectives."""
+  """A description of this collection of control objectives."""
   description: String
   props: [PropertyIn!]
   links: [LinkIn!]
@@ -4063,7 +4063,7 @@ reflects any changes from the plan.
 """
 type ReviewedControlsControlSelectionsItem {
   """
-  A human_readable description of in_scope controls specified for assessment.
+  A description of in_scope controls specified for assessment.
   """
   description: String
   props: [Property!]
@@ -4083,7 +4083,7 @@ reflects any changes from the plan.
 """
 input ReviewedControlsControlSelectionsItemIn {
   """
-  A human_readable description of in_scope controls specified for assessment.
+  A description of in_scope controls specified for assessment.
   """
   description: String
   props: [PropertyIn!]
@@ -4108,7 +4108,7 @@ input ReviewedControlsControlSelectionsItemIncludeAllIn {
 
 """Identifies the controls being assessed and their control objectives."""
 input ReviewedControlsIn {
-  """A human_readable description of control objectives."""
+  """A description of control objectives."""
   description: String
   props: [PropertyIn!]
   links: [LinkIn!]
@@ -4166,7 +4166,7 @@ type Risk {
   title: String!
 
   """
-  A human_readable summary of the identified risk, to include a statement of how the risk impacts the system.
+  A summary of the identified risk, to include a statement of how the risk impacts the system.
   """
   description: String!
 
@@ -4204,7 +4204,7 @@ input RiskIn {
   title: String!
 
   """
-  A human_readable summary of the identified risk, to include a statement of how the risk impacts the system.
+  A summary of the identified risk, to include a statement of how the risk impacts the system.
   """
   description: String!
 
@@ -4245,7 +4245,7 @@ type RiskMitigatingFactorsItem {
   """Points to an implementation statement in the SSP."""
   implementation_uuid: String
 
-  """A human_readable description of this mitigating factor."""
+  """A description of this mitigating factor."""
   description: String!
   props: [Property!]
   links: [Link!]
@@ -4268,7 +4268,7 @@ input RiskMitigatingFactorsItemIn {
   """Points to an implementation statement in the SSP."""
   implementation_uuid: String
 
-  """A human_readable description of this mitigating factor."""
+  """A description of this mitigating factor."""
   description: String!
   props: [PropertyIn!]
   links: [LinkIn!]
@@ -4310,7 +4310,7 @@ type RiskRiskLogEntriesItem {
   """The title for this risk log entry."""
   title: String
 
-  """A human_readable description of what was done regarding the risk."""
+  """A description of what was done regarding the risk."""
   description: String
 
   """Identifies the start date and time of the event."""
@@ -4343,7 +4343,7 @@ input RiskRiskLogEntriesItemIn {
   """The title for this risk log entry."""
   title: String
 
-  """A human_readable description of what was done regarding the risk."""
+  """A description of what was done regarding the risk."""
   description: String
 
   """Identifies the start date and time of the event."""
@@ -5195,7 +5195,7 @@ type Task {
   """The title for this task."""
   title: String!
 
-  """A human_readable description of this task."""
+  """A description of this task."""
   description: String
   props: [Property!]
   links: [Link!]
@@ -5259,7 +5259,7 @@ input TaskIn {
   """The title for this task."""
   title: String!
 
-  """A human_readable description of this task."""
+  """A description of this task."""
   description: String
   props: [PropertyIn!]
   links: [LinkIn!]

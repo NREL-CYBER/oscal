@@ -510,7 +510,7 @@ export type SatisfiedControlImplementationResponsibilityDescription = string;
  */
 export type CapabilityIdentifier = string;
 /**
- * The capability's human_readable name.
+ * The capability's name.
  */
 export type CapabilityName = string;
 /**
@@ -694,7 +694,7 @@ export type AssessmentPlanUniversallyUniqueIdentifier = string;
  */
 export type SystemSecurityPlanReference = string;
 /**
- * A human_readable description of this control objective.
+ * A description of this control objective.
  */
 export type ObjectiveDescription = string;
 /**
@@ -706,7 +706,7 @@ export type AssessmentActivityUniversallyUniqueIdentifier = string;
  */
 export type IncludedActivityTitle = string;
 /**
- * A human_readable description of this included activity.
+ * A description of this included activity.
  */
 export type IncludedActivityDescription = string;
 /**
@@ -718,19 +718,19 @@ export type StepUniversallyUniqueIdentifier = string;
  */
 export type StepTitle = string;
 /**
- * A human_readable description of this step.
+ * A description of this step.
  */
 export type StepDescription = string;
 /**
- * A human_readable description of control objectives.
+ * A description of control objectives.
  */
 export type ControlObjectiveDescription = string;
 /**
- * A human_readable description of in_scope controls specified for assessment.
+ * A description of in_scope controls specified for assessment.
  */
 export type AssessedControlsDescription = string;
 /**
- * A human_readable description of this collection of control objectives.
+ * A description of this collection of control objectives.
  */
 export type ControlObjectivesDescription = string;
 /**
@@ -766,7 +766,7 @@ export type AssessmentPartText = string;
  */
 export type SubjectType = string;
 /**
- * A human_readable description of the collection of subjects being included in this assessment.
+ * A description of the collection of subjects being included in this assessment.
  */
 export type IncludeSubjectsDescription = string;
 /**
@@ -802,7 +802,7 @@ export type TaskType = string;
  */
 export type TaskTitle = string;
 /**
- * A human_readable description of this task.
+ * A description of this task.
  */
 export type TaskDescription = string;
 /**
@@ -846,7 +846,7 @@ export type ResultsUniversallyUniqueIdentifier = string;
  */
 export type ResultsTitle = string;
 /**
- * A human_readable description of this set of test results.
+ * A description of this set of test results.
  */
 export type ResultsDescription = string;
 /**
@@ -866,7 +866,7 @@ export type AssessmentLogEntryUniversallyUniqueIdentifier = string;
  */
 export type ActionTitle = string;
 /**
- * A human_readable description of this event.
+ * A description of this event.
  */
 export type ActionDescription = string;
 /**
@@ -890,7 +890,7 @@ export type ObservationUniversallyUniqueIdentifier = string;
  */
 export type ObservationTitle = string;
 /**
- * A human_readable description of this assessment observation.
+ * A description of this assessment observation.
  */
 export type ObservationDescription = string;
 /**
@@ -922,7 +922,7 @@ export type SubjectReferenceTitle = string;
  */
 export type RelevantEvidenceReference = string;
 /**
- * A human_readable description of this evidence.
+ * A description of this evidence.
  */
 export type RelevantEvidenceDescription = string;
 /**
@@ -942,7 +942,7 @@ export type RiskUniversallyUniqueIdentifier = string;
  */
 export type RiskTitle = string;
 /**
- * A human_readable summary of the identified risk, to include a statement of how the risk impacts the system.
+ * A summary of the identified risk, to include a statement of how the risk impacts the system.
  */
 export type RiskDescription = string;
 /**
@@ -982,7 +982,7 @@ export type MitigatingFactorUniversallyUniqueIdentifier = string;
  */
 export type ImplementationUUID = string;
 /**
- * A human_readable description of this mitigating factor.
+ * A description of this mitigating factor.
  */
 export type MitigatingFactorDescription = string;
 /**
@@ -1002,7 +1002,7 @@ export type RemediationIntent = string;
  */
 export type ResponseTitle = string;
 /**
- * A human_readable description of this response plan.
+ * A description of this response plan.
  */
 export type ResponseDescription = string;
 /**
@@ -1014,7 +1014,7 @@ export type RequiredUniversallyUniqueIdentifier = string;
  */
 export type TitleForRequiredAsset = string;
 /**
- * A human_readable description of this required asset.
+ * A description of this required asset.
  */
 export type DescriptionOfRequiredAsset = string;
 /**
@@ -1026,7 +1026,7 @@ export type RiskLogEntryUniversallyUniqueIdentifier = string;
  */
 export type Title = string;
 /**
- * A human_readable description of what was done regarding the risk.
+ * A description of what was done regarding the risk.
  */
 export type RiskTaskDescription = string;
 /**
@@ -1054,7 +1054,7 @@ export type FindingUniversallyUniqueIdentifier = string;
  */
 export type FindingTitle = string;
 /**
- * A human_readable description of this finding.
+ * A description of this finding.
  */
 export type FindingDescription = string;
 /**
@@ -1070,7 +1070,7 @@ export type FindingTargetIdentifierReference = string;
  */
 export type ObjectiveStatusTitle = string;
 /**
- * A human_readable description of the assessor's conclusions regarding the degree to which an objective is satisfied.
+ * A description of the assessor's conclusions regarding the degree to which an objective is satisfied.
  */
 export type ObjectiveStatusDescription = string;
 /**
@@ -1102,7 +1102,7 @@ export type POAMItemUniversallyUniqueIdentifier = string;
  */
 export type POAMItemTitle = string;
 /**
- * A human_readable description of POA&M item.
+ * A description of POA&M item.
  */
 export type POAMItemDescription = string;
 /**
