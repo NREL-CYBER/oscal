@@ -6356,6 +6356,33 @@
       ],
       "additionalProperties": false
     },
+    "attestation_statements":{
+      "$id": "#/definitions/attestation_statements",
+        "title": "Attestation Statements",
+        "description": "A set of textual statements, typically written by the assessor.",
+        "type": "object",
+        "properties": {
+          "responsible_parties": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/definitions/responsible_party"
+            }
+          },
+          "parts": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/definitions/assessment_part"
+            }
+          }
+        },
+        "required": [
+          "parts"
+        ],
+        "additionalProperties": false
+      }    
+    },
     "result": {
       "title": "Assessment Result",
       "description": "Used by the assessment results and POA&M. In the assessment results, this identifies all of the assessment observations and findings, initial and residual risks, deviations, and disposition. In the POA&M, this identifies initial and residual risks, deviations, and disposition.",
@@ -6451,32 +6478,9 @@
         "attestations": {
           "type": "array",
           "minItems": 1,
-          "items": {
-            "title": "Attestation Statements",
-            "description": "A set of textual statements, typically written by the assessor.",
-            "type": "object",
-            "properties": {
-              "responsible_parties": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/responsible_party"
-                }
-              },
-              "parts": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "$ref": "#/definitions/assessment_part"
-                }
-              }
-            },
-            "required": [
-              "parts"
-            ],
-            "additionalProperties": false
-          }
-        },
+          "items":{
+            "$ref": "#/definitions/attestation_statements"
+          },
         "assessment_log": {
           "title": "Assessment Log",
           "description": "A log of all assessment_related actions taken.",
