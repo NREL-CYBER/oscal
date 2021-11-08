@@ -6316,70 +6316,70 @@
       },
       "additionalProperties": false
     },
-    "assessment_results": {
-      "title": "Security Assessment Results (SAR)",
-      "description": "Security assessment results, such as those provided by a FedRAMP assessor in the FedRAMP Security Assessment Report.",
-      "$id": "#/definitions/assessment_results",
+    "attestation_statements": {
+      "$id": "#/definitions/attestation_statements",
+      "title": "Attestation Statements",
+      "description": "A set of textual statements, typically written by the assessor.",
       "type": "object",
       "properties": {
-        "uuid": {
-          "title": "Assessment Results Universally Unique Identifier",
-          "description": "Uniquely identifies this assessment results file. This UUID must be changed each time the content of the results changes.",
-          "type": "string",
-          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-        },
-        "metadata": {
-          "$ref": "#/definitions/metadata"
-        },
-        "import_ap": {
-          "$ref": "#/definitions/import_ap"
-        },
-        "local_definitions": {
-          "$ref": "#/definitions/assessment_results_local_definitions"
-        },
-        "results": {
+        "responsible_parties": {
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/result"
+            "$ref": "#/definitions/responsible_party"
           }
         },
-        "back_matter": {
-          "$ref": "#/definitions/back_matter"
+        "parts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/assessment_part"
+          }
         }
       },
       "required": [
-        "uuid",
-        "metadata",
-        "import_ap",
-        "results"
+        "parts"
       ],
       "additionalProperties": false
     }
   },
-  "attestation_statements": {
-    "$id": "#/definitions/attestation_statements",
-    "title": "Attestation Statements",
-    "description": "A set of textual statements, typically written by the assessor.",
+  "assessment_results": {
+    "title": "Security Assessment Results (SAR)",
+    "description": "Security assessment results, such as those provided by a FedRAMP assessor in the FedRAMP Security Assessment Report.",
+    "$id": "#/definitions/assessment_results",
     "type": "object",
     "properties": {
-      "responsible_parties": {
+      "uuid": {
+        "title": "Assessment Results Universally Unique Identifier",
+        "description": "Uniquely identifies this assessment results file. This UUID must be changed each time the content of the results changes.",
+        "type": "string",
+        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+      },
+      "metadata": {
+        "$ref": "#/definitions/metadata"
+      },
+      "import_ap": {
+        "$ref": "#/definitions/import_ap"
+      },
+      "local_definitions": {
+        "$ref": "#/definitions/assessment_results_local_definitions"
+      },
+      "results": {
         "type": "array",
         "minItems": 1,
         "items": {
-          "$ref": "#/definitions/responsible_party"
+          "$ref": "#/definitions/result"
         }
       },
-      "parts": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/assessment_part"
-        }
+      "back_matter": {
+        "$ref": "#/definitions/back_matter"
       }
     },
     "required": [
-      "parts"
+      "uuid",
+      "metadata",
+      "import_ap",
+      "results"
     ],
     "additionalProperties": false
   },
@@ -6480,519 +6480,518 @@
         "minItems": 1,
         "items": {
           "$ref": "#/definitions/attestation_statements"
-        }
-      },
-      "assessment_log": {
-        "title": "Assessment Log",
-        "description": "A log of all assessment_related actions taken.",
-        "type": "object",
-        "properties": {
-          "entries": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-              "title": "Assessment Log Entry",
-              "description": "Identifies the result of an action and/or task that occurred as part of executing an assessment plan or an assessment event that occurred in producing the assessment results.",
-              "type": "object",
-              "properties": {
-                "uuid": {
-                  "title": "Assessment Log Entry Universally Unique Identifier",
-                  "description": "Uniquely identifies an assessment event. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. A UUID should be consistently used for this schedule across revisions of the document.",
-                  "type": "string",
-                  "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-                },
-                "title": {
-                  "title": "Action Title",
-                  "description": "The title for this event.",
-                  "type": "string"
-                },
-                "description": {
-                  "title": "Action Description",
-                  "description": "A description of this event.",
-                  "type": "string"
-                },
-                "start": {
-                  "title": "Start",
-                  "description": "Identifies the start date and time of an event.",
-                  "type": "string",
-                  "format": "date-time",
-                  "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
-                },
-                "end": {
-                  "title": "End",
-                  "description": "Identifies the end date and time of an event. If the event is a point in time, the start and end will be the same date and time.",
-                  "type": "string",
-                  "format": "date-time",
-                  "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
-                },
-                "props": {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "$ref": "#/definitions/property"
+        },
+        "assessment_log": {
+          "title": "Assessment Log",
+          "description": "A log of all assessment_related actions taken.",
+          "type": "object",
+          "properties": {
+            "entries": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "title": "Assessment Log Entry",
+                "description": "Identifies the result of an action and/or task that occurred as part of executing an assessment plan or an assessment event that occurred in producing the assessment results.",
+                "type": "object",
+                "properties": {
+                  "uuid": {
+                    "title": "Assessment Log Entry Universally Unique Identifier",
+                    "description": "Uniquely identifies an assessment event. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. A UUID should be consistently used for this schedule across revisions of the document.",
+                    "type": "string",
+                    "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+                  },
+                  "title": {
+                    "title": "Action Title",
+                    "description": "The title for this event.",
+                    "type": "string"
+                  },
+                  "description": {
+                    "title": "Action Description",
+                    "description": "A description of this event.",
+                    "type": "string"
+                  },
+                  "start": {
+                    "title": "Start",
+                    "description": "Identifies the start date and time of an event.",
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+                  },
+                  "end": {
+                    "title": "End",
+                    "description": "Identifies the end date and time of an event. If the event is a point in time, the start and end will be the same date and time.",
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+                  },
+                  "props": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/definitions/property"
+                    }
+                  },
+                  "links": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/definitions/link"
+                    }
+                  },
+                  "logged_by": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/definitions/logged_by"
+                    }
+                  },
+                  "related_tasks": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "$ref": "#/definitions/related_task"
+                    }
+                  },
+                  "remarks": {
+                    "$ref": "#/definitions/remarks"
                   }
                 },
-                "links": {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "$ref": "#/definitions/link"
-                  }
-                },
-                "logged_by": {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "$ref": "#/definitions/logged_by"
-                  }
-                },
-                "related_tasks": {
-                  "type": "array",
-                  "minItems": 1,
-                  "items": {
-                    "$ref": "#/definitions/related_task"
-                  }
-                },
-                "remarks": {
-                  "$ref": "#/definitions/remarks"
-                }
-              },
-              "required": [
-                "uuid",
-                "start"
-              ],
-              "additionalProperties": false
+                "required": [
+                  "uuid",
+                  "start"
+                ],
+                "additionalProperties": false
+              }
             }
+          },
+          "required": [
+            "entries"
+          ],
+          "additionalProperties": false
+        },
+        "observations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/observation"
           }
         },
-        "required": [
-          "entries"
-        ],
-        "additionalProperties": false
-      },
-      "observations": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/observation"
+        "risks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/risk"
+          }
+        },
+        "findings": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/finding"
+          }
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
         }
       },
-      "risks": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/risk"
-        }
-      },
-      "findings": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/finding"
-        }
-      },
-      "remarks": {
-        "$ref": "#/definitions/remarks"
-      }
+      "required": [
+        "uuid",
+        "title",
+        "description",
+        "start",
+        "reviewed_controls"
+      ],
+      "additionalProperties": false
     },
-    "required": [
-      "uuid",
-      "title",
-      "description",
-      "start",
-      "reviewed_controls"
-    ],
-    "additionalProperties": false
+    "finding": {
+      "title": "Finding",
+      "description": "Describes an individual finding.",
+      "$id": "#/definitions/finding",
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "title": "Finding Universally Unique Identifier",
+          "description": "Uniquely identifies this finding. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. Once assigned, a UUID should be consistently used for a given finding across revisions.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "title": {
+          "title": "Finding Title",
+          "description": "The title for this finding.",
+          "type": "string"
+        },
+        "description": {
+          "title": "Finding Description",
+          "description": "A description of this finding.",
+          "type": "string"
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "origins": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/origin"
+          }
+        },
+        "target": {
+          "$ref": "#/definitions/finding_target"
+        },
+        "implementation_statement_uuid": {
+          "title": "Implementation Statement UUID",
+          "description": "Identifies the implementation statement in the SSP to which this finding is related.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "related_observations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "title": "Related Observation",
+            "description": "Relates the finding to a set of referenced observations that were used to determine the finding.",
+            "type": "object",
+            "properties": {
+              "observation_uuid": {
+                "title": "Observation Universally Unique Identifier Reference",
+                "description": "References an observation defined in the list of observations.",
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+              }
+            },
+            "required": [
+              "observation_uuid"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "related_risks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "title": "Associated Risk",
+            "description": "Relates the finding to a set of referenced risks that were used to determine the finding.",
+            "type": "object",
+            "properties": {
+              "risk_uuid": {
+                "title": "Risk Universally Unique Identifier Reference",
+                "description": "References an risk defined in the list of risks.",
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+              }
+            },
+            "required": [
+              "risk_uuid"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "required": [
+        "uuid",
+        "title",
+        "description",
+        "target"
+      ],
+      "additionalProperties": false
+    },
+    "import_ap": {
+      "title": "Import Assessment Plan",
+      "description": "Used by assessment_results to import information about the original plan for assessing the system.",
+      "$id": "#/definitions/import_ap",
+      "type": "object",
+      "properties": {
+        "href": {
+          "title": "Assessment Plan Reference",
+          "description": ">A resolvable URL reference to the assessment plan governing the assessment activities.",
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "required": [
+        "href"
+      ],
+      "additionalProperties": false
+    },
+    "plan_of_action_and_milestones": {
+      "title": "Plan of Action and Milestones (POA&M)",
+      "description": "A plan of action and milestones which identifies initial and residual risks, deviations, and disposition, such as those required by FedRAMP.",
+      "$id": "#/definitions/plan_of_action_and_milestones",
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "title": "POA&M Universally Unique Identifier",
+          "description": "Uniquely identifies this POA&M. This UUID must be changed each time the content of the POA&M changes.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "metadata": {
+          "$ref": "#/definitions/metadata"
+        },
+        "import_ssp": {
+          "$ref": "#/definitions/import_ssp"
+        },
+        "system_id": {
+          "$ref": "#/definitions/system_id"
+        },
+        "local_definitions": {
+          "$ref": "#/definitions/poam_local_definitions"
+        },
+        "observations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/observation"
+          }
+        },
+        "risks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/risk"
+          }
+        },
+        "poam_items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/poam_item"
+          }
+        },
+        "back_matter": {
+          "$ref": "#/definitions/back_matter"
+        }
+      },
+      "required": [
+        "uuid",
+        "metadata",
+        "poam_items"
+      ],
+      "additionalProperties": false
+    },
+    "poam_local_definitions": {
+      "title": "Local Definitions",
+      "description": "Allows components, and inventory_items to be defined within the POA&M for circumstances where no OSCAL_based SSP exists, or is not delivered with the POA&M.",
+      "$id": "#/definitions/poam_local_definitions",
+      "type": "object",
+      "properties": {
+        "components": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/system_component"
+          }
+        },
+        "inventory_items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/inventory_item"
+          }
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "additionalProperties": false
+    },
+    "poam_item": {
+      "title": "POA&M Item",
+      "description": "Describes an individual POA&M item.",
+      "$id": "#/definitions/poam_item",
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "title": "POA&M Item Universally Unique Identifier",
+          "description": "Uniquely identifies the POA&M entry. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. A UUID should be consistently used for a given POA&M item across revisions of the document.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "title": {
+          "title": "POA&M Item Title",
+          "description": "The title or name for this POA&M item .",
+          "type": "string"
+        },
+        "description": {
+          "title": "POA&M Item Description",
+          "description": "A description of POA&M item.",
+          "type": "string"
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "origins": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/origin"
+          }
+        },
+        "related_observations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "title": "Related Observation",
+            "description": "Relates the poam_item to a set of referenced observations that were used to determine the finding.",
+            "type": "object",
+            "properties": {
+              "observation_uuid": {
+                "title": "Observation Universally Unique Identifier Reference",
+                "description": "References an observation defined in the list of observations.",
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+              }
+            },
+            "required": [
+              "observation_uuid"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "related_risks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "title": "Associated Risk",
+            "description": "Relates the finding to a set of referenced risks that were used to determine the finding.",
+            "type": "object",
+            "properties": {
+              "risk_uuid": {
+                "title": "Risk Universally Unique Identifier Reference",
+                "description": "References an risk defined in the list of risks.",
+                "type": "string",
+                "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+              }
+            },
+            "required": [
+              "risk_uuid"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "required": [
+        "title",
+        "description"
+      ],
+      "additionalProperties": false
+    }
   },
-  "finding": {
-    "title": "Finding",
-    "description": "Describes an individual finding.",
-    "$id": "#/definitions/finding",
-    "type": "object",
-    "properties": {
-      "uuid": {
-        "title": "Finding Universally Unique Identifier",
-        "description": "Uniquely identifies this finding. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. Once assigned, a UUID should be consistently used for a given finding across revisions.",
-        "type": "string",
-        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-      },
-      "title": {
-        "title": "Finding Title",
-        "description": "The title for this finding.",
-        "type": "string"
-      },
-      "description": {
-        "title": "Finding Description",
-        "description": "A description of this finding.",
-        "type": "string"
-      },
-      "props": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/property"
+  "oneOf": [
+    {
+      "properties": {
+        "catalog": {
+          "$ref": "#/definitions/catalog"
         }
       },
-      "links": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/link"
-        }
-      },
-      "origins": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/origin"
-        }
-      },
-      "target": {
-        "$ref": "#/definitions/finding_target"
-      },
-      "implementation_statement_uuid": {
-        "title": "Implementation Statement UUID",
-        "description": "Identifies the implementation statement in the SSP to which this finding is related.",
-        "type": "string",
-        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-      },
-      "related_observations": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "title": "Related Observation",
-          "description": "Relates the finding to a set of referenced observations that were used to determine the finding.",
-          "type": "object",
-          "properties": {
-            "observation_uuid": {
-              "title": "Observation Universally Unique Identifier Reference",
-              "description": "References an observation defined in the list of observations.",
-              "type": "string",
-              "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-            }
-          },
-          "required": [
-            "observation_uuid"
-          ],
-          "additionalProperties": false
-        }
-      },
-      "related_risks": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "title": "Associated Risk",
-          "description": "Relates the finding to a set of referenced risks that were used to determine the finding.",
-          "type": "object",
-          "properties": {
-            "risk_uuid": {
-              "title": "Risk Universally Unique Identifier Reference",
-              "description": "References an risk defined in the list of risks.",
-              "type": "string",
-              "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-            }
-          },
-          "required": [
-            "risk_uuid"
-          ],
-          "additionalProperties": false
-        }
-      },
-      "remarks": {
-        "$ref": "#/definitions/remarks"
-      }
+      "required": [
+        "catalog"
+      ],
+      "additionalProperties": false,
+      "maxProperties": 1
     },
-    "required": [
-      "uuid",
-      "title",
-      "description",
-      "target"
-    ],
-    "additionalProperties": false
-  },
-  "import_ap": {
-    "title": "Import Assessment Plan",
-    "description": "Used by assessment_results to import information about the original plan for assessing the system.",
-    "$id": "#/definitions/import_ap",
-    "type": "object",
-    "properties": {
-      "href": {
-        "title": "Assessment Plan Reference",
-        "description": ">A resolvable URL reference to the assessment plan governing the assessment activities.",
-        "type": "string",
-        "format": "uri-reference"
-      },
-      "remarks": {
-        "$ref": "#/definitions/remarks"
-      }
-    },
-    "required": [
-      "href"
-    ],
-    "additionalProperties": false
-  },
-  "plan_of_action_and_milestones": {
-    "title": "Plan of Action and Milestones (POA&M)",
-    "description": "A plan of action and milestones which identifies initial and residual risks, deviations, and disposition, such as those required by FedRAMP.",
-    "$id": "#/definitions/plan_of_action_and_milestones",
-    "type": "object",
-    "properties": {
-      "uuid": {
-        "title": "POA&M Universally Unique Identifier",
-        "description": "Uniquely identifies this POA&M. This UUID must be changed each time the content of the POA&M changes.",
-        "type": "string",
-        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-      },
-      "metadata": {
-        "$ref": "#/definitions/metadata"
-      },
-      "import_ssp": {
-        "$ref": "#/definitions/import_ssp"
-      },
-      "system_id": {
-        "$ref": "#/definitions/system_id"
-      },
-      "local_definitions": {
-        "$ref": "#/definitions/poam_local_definitions"
-      },
-      "observations": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/observation"
+    {
+      "properties": {
+        "profile": {
+          "$ref": "#/definitions/profile"
         }
       },
-      "risks": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/risk"
+      "required": [
+        "profile"
+      ],
+      "additionalProperties": false,
+      "maxProperties": 1
+    },
+    {
+      "properties": {
+        "component_definition": {
+          "$ref": "#/definitions/component_definition"
         }
       },
-      "poam_items": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/poam_item"
+      "required": [
+        "component_definition"
+      ],
+      "additionalProperties": false,
+      "maxProperties": 1
+    },
+    {
+      "properties": {
+        "system_security_plan": {
+          "$ref": "#/definitions/system_security_plan"
         }
       },
-      "back_matter": {
-        "$ref": "#/definitions/back_matter"
-      }
+      "required": [
+        "system_security_plan"
+      ],
+      "additionalProperties": false,
+      "maxProperties": 1
     },
-    "required": [
-      "uuid",
-      "metadata",
-      "poam_items"
-    ],
-    "additionalProperties": false
-  },
-  "poam_local_definitions": {
-    "title": "Local Definitions",
-    "description": "Allows components, and inventory_items to be defined within the POA&M for circumstances where no OSCAL_based SSP exists, or is not delivered with the POA&M.",
-    "$id": "#/definitions/poam_local_definitions",
-    "type": "object",
-    "properties": {
-      "components": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/system_component"
+    {
+      "properties": {
+        "assessment_plan": {
+          "$ref": "#/definitions/assessment_plan"
         }
       },
-      "inventory_items": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/inventory_item"
+      "required": [
+        "assessment_plan"
+      ],
+      "additionalProperties": false,
+      "maxProperties": 1
+    },
+    {
+      "properties": {
+        "assessment_results": {
+          "$ref": "#/definitions/assessment_results"
         }
       },
-      "remarks": {
-        "$ref": "#/definitions/remarks"
-      }
+      "required": [
+        "assessment_results"
+      ],
+      "additionalProperties": false,
+      "maxProperties": 1
     },
-    "additionalProperties": false
-  },
-  "poam_item": {
-    "title": "POA&M Item",
-    "description": "Describes an individual POA&M item.",
-    "$id": "#/definitions/poam_item",
-    "type": "object",
-    "properties": {
-      "uuid": {
-        "title": "POA&M Item Universally Unique Identifier",
-        "description": "Uniquely identifies the POA&M entry. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. A UUID should be consistently used for a given POA&M item across revisions of the document.",
-        "type": "string",
-        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-      },
-      "title": {
-        "title": "POA&M Item Title",
-        "description": "The title or name for this POA&M item .",
-        "type": "string"
-      },
-      "description": {
-        "title": "POA&M Item Description",
-        "description": "A description of POA&M item.",
-        "type": "string"
-      },
-      "props": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/property"
+    {
+      "properties": {
+        "plan_of_action_and_milestones": {
+          "$ref": "#/definitions/plan_of_action_and_milestones"
         }
       },
-      "links": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/link"
-        }
-      },
-      "origins": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "$ref": "#/definitions/origin"
-        }
-      },
-      "related_observations": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "title": "Related Observation",
-          "description": "Relates the poam_item to a set of referenced observations that were used to determine the finding.",
-          "type": "object",
-          "properties": {
-            "observation_uuid": {
-              "title": "Observation Universally Unique Identifier Reference",
-              "description": "References an observation defined in the list of observations.",
-              "type": "string",
-              "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-            }
-          },
-          "required": [
-            "observation_uuid"
-          ],
-          "additionalProperties": false
-        }
-      },
-      "related_risks": {
-        "type": "array",
-        "minItems": 1,
-        "items": {
-          "title": "Associated Risk",
-          "description": "Relates the finding to a set of referenced risks that were used to determine the finding.",
-          "type": "object",
-          "properties": {
-            "risk_uuid": {
-              "title": "Risk Universally Unique Identifier Reference",
-              "description": "References an risk defined in the list of risks.",
-              "type": "string",
-              "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-            }
-          },
-          "required": [
-            "risk_uuid"
-          ],
-          "additionalProperties": false
-        }
-      },
-      "remarks": {
-        "$ref": "#/definitions/remarks"
-      }
-    },
-    "required": [
-      "title",
-      "description"
-    ],
-    "additionalProperties": false
-  }
-},
-"oneOf": [
-  {
-    "properties": {
-      "catalog": {
-        "$ref": "#/definitions/catalog"
-      }
-    },
-    "required": [
-      "catalog"
-    ],
-    "additionalProperties": false,
-    "maxProperties": 1
-  },
-  {
-    "properties": {
-      "profile": {
-        "$ref": "#/definitions/profile"
-      }
-    },
-    "required": [
-      "profile"
-    ],
-    "additionalProperties": false,
-    "maxProperties": 1
-  },
-  {
-    "properties": {
-      "component_definition": {
-        "$ref": "#/definitions/component_definition"
-      }
-    },
-    "required": [
-      "component_definition"
-    ],
-    "additionalProperties": false,
-    "maxProperties": 1
-  },
-  {
-    "properties": {
-      "system_security_plan": {
-        "$ref": "#/definitions/system_security_plan"
-      }
-    },
-    "required": [
-      "system_security_plan"
-    ],
-    "additionalProperties": false,
-    "maxProperties": 1
-  },
-  {
-    "properties": {
-      "assessment_plan": {
-        "$ref": "#/definitions/assessment_plan"
-      }
-    },
-    "required": [
-      "assessment_plan"
-    ],
-    "additionalProperties": false,
-    "maxProperties": 1
-  },
-  {
-    "properties": {
-      "assessment_results": {
-        "$ref": "#/definitions/assessment_results"
-      }
-    },
-    "required": [
-      "assessment_results"
-    ],
-    "additionalProperties": false,
-    "maxProperties": 1
-  },
-  {
-    "properties": {
-      "plan_of_action_and_milestones": {
-        "$ref": "#/definitions/plan_of_action_and_milestones"
-      }
-    },
-    "required": [
-      "plan_of_action_and_milestones"
-    ],
-    "additionalProperties": false,
-    "maxProperties": 1
-  }
-]
+      "required": [
+        "plan_of_action_and_milestones"
+      ],
+      "additionalProperties": false,
+      "maxProperties": 1
+    }
+  ]
 }
