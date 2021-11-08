@@ -6355,132 +6355,132 @@
         "results"
       ],
       "additionalProperties": false
+    }
+  },
+  "attestation_statements": {
+    "$id": "#/definitions/attestation_statements",
+    "title": "Attestation Statements",
+    "description": "A set of textual statements, typically written by the assessor.",
+    "type": "object",
+    "properties": {
+      "responsible_parties": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "#/definitions/responsible_party"
+        }
+      },
+      "parts": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "#/definitions/assessment_part"
+        }
+      }
     },
-    "attestation_statements":{
-      "$id": "#/definitions/attestation_statements",
-        "title": "Attestation Statements",
-        "description": "A set of textual statements, typically written by the assessor.",
+    "required": [
+      "parts"
+    ],
+    "additionalProperties": false
+  },
+  "result": {
+    "title": "Assessment Result",
+    "description": "Used by the assessment results and POA&M. In the assessment results, this identifies all of the assessment observations and findings, initial and residual risks, deviations, and disposition. In the POA&M, this identifies initial and residual risks, deviations, and disposition.",
+    "$id": "#/definitions/result",
+    "type": "object",
+    "properties": {
+      "uuid": {
+        "title": "Results Universally Unique Identifier",
+        "description": "Uniquely identifies this set of results. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. Once assigned, a UUID should be consistently used for a given set of results across revisions.",
+        "type": "string",
+        "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+      },
+      "title": {
+        "title": "Results Title",
+        "description": "The title for this set of results.",
+        "type": "string"
+      },
+      "description": {
+        "title": "Results Description",
+        "description": "A description of this set of test results.",
+        "type": "string"
+      },
+      "start": {
+        "title": "start field",
+        "description": "Date/time stamp identifying the start of the evidence collection reflected in these results.",
+        "type": "string",
+        "format": "date-time",
+        "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+      },
+      "end": {
+        "title": "end field",
+        "description": "Date/time stamp identifying the end of the evidence collection reflected in these results. In a continuous motoring scenario, this may contain the same value as start if appropriate.",
+        "type": "string",
+        "format": "date-time",
+        "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+      },
+      "prop": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "#/definitions/property"
+        }
+      },
+      "links": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "#/definitions/link"
+        }
+      },
+      "local_definitions": {
+        "title": "Local Definitions",
+        "description": "Used to define data objects that are used in the assessment plan, that do not appear in the referenced SSP.",
         "type": "object",
         "properties": {
-          "responsible_parties": {
+          "components": {
             "type": "array",
             "minItems": 1,
             "items": {
-              "$ref": "#/definitions/responsible_party"
+              "$ref": "#/definitions/system_component"
             }
           },
-          "parts": {
+          "inventory_items": {
             "type": "array",
             "minItems": 1,
             "items": {
-              "$ref": "#/definitions/assessment_part"
+              "$ref": "#/definitions/inventory_item"
+            }
+          },
+          "users": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/definitions/system_user"
+            }
+          },
+          "assessment_assets": {
+            "$ref": "#/definitions/assessment_assets"
+          },
+          "tasks": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/definitions/task"
             }
           }
         },
-        "required": [
-          "parts"
-        ],
         "additionalProperties": false
-      }    
-    },
-    "result": {
-      "title": "Assessment Result",
-      "description": "Used by the assessment results and POA&M. In the assessment results, this identifies all of the assessment observations and findings, initial and residual risks, deviations, and disposition. In the POA&M, this identifies initial and residual risks, deviations, and disposition.",
-      "$id": "#/definitions/result",
-      "type": "object",
-      "properties": {
-        "uuid": {
-          "title": "Results Universally Unique Identifier",
-          "description": "Uniquely identifies this set of results. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. Once assigned, a UUID should be consistently used for a given set of results across revisions.",
-          "type": "string",
-          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+      },
+      "reviewed_controls": {
+        "$ref": "#/definitions/reviewed_controls"
+      },
+      "attestations": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "$ref": "#/definitions/attestation_statements"
         },
-        "title": {
-          "title": "Results Title",
-          "description": "The title for this set of results.",
-          "type": "string"
-        },
-        "description": {
-          "title": "Results Description",
-          "description": "A description of this set of test results.",
-          "type": "string"
-        },
-        "start": {
-          "title": "start field",
-          "description": "Date/time stamp identifying the start of the evidence collection reflected in these results.",
-          "type": "string",
-          "format": "date-time",
-          "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
-        },
-        "end": {
-          "title": "end field",
-          "description": "Date/time stamp identifying the end of the evidence collection reflected in these results. In a continuous motoring scenario, this may contain the same value as start if appropriate.",
-          "type": "string",
-          "format": "date-time",
-          "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
-        },
-        "prop": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/property"
-          }
-        },
-        "links": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/link"
-          }
-        },
-        "local_definitions": {
-          "title": "Local Definitions",
-          "description": "Used to define data objects that are used in the assessment plan, that do not appear in the referenced SSP.",
-          "type": "object",
-          "properties": {
-            "components": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/system_component"
-              }
-            },
-            "inventory_items": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/inventory_item"
-              }
-            },
-            "users": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/system_user"
-              }
-            },
-            "assessment_assets": {
-              "$ref": "#/definitions/assessment_assets"
-            },
-            "tasks": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/task"
-              }
-            }
-          },
-          "additionalProperties": false
-        },
-        "reviewed_controls": {
-          "$ref": "#/definitions/reviewed_controls"
-        },
-        "attestations": {
-          "type": "array",
-          "minItems": 1,
-          "items":{
-            "$ref": "#/definitions/attestation_statements"
-          },
         "assessment_log": {
           "title": "Assessment Log",
           "description": "A log of all assessment_related actions taken.",
