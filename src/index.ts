@@ -1628,7 +1628,7 @@ export interface SpecificControlStatement {
 }
 export interface ResponsibleRole {
     role_id: RoleIdentifier
-    party_uuids: PartyUUIDReference[]
+    party_uuids?: PartyUUIDReference[]
     props?: Property[]
     links?: Link[];
     remarks?: Remarks;
