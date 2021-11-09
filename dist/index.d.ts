@@ -503,7 +503,7 @@ export declare type SatisfiedControlImplementationResponsibilityDescription = st
  */
 export declare type CapabilityIdentifier = string;
 /**
- * The capability's human_readable name.
+ * The capability's name.
  */
 export declare type CapabilityName = string;
 /**
@@ -687,7 +687,7 @@ export declare type AssessmentPlanUniversallyUniqueIdentifier = string;
  */
 export declare type SystemSecurityPlanReference = string;
 /**
- * A human_readable description of this control objective.
+ * A description of this control objective.
  */
 export declare type ObjectiveDescription = string;
 /**
@@ -699,7 +699,7 @@ export declare type AssessmentActivityUniversallyUniqueIdentifier = string;
  */
 export declare type IncludedActivityTitle = string;
 /**
- * A human_readable description of this included activity.
+ * A description of this included activity.
  */
 export declare type IncludedActivityDescription = string;
 /**
@@ -711,19 +711,19 @@ export declare type StepUniversallyUniqueIdentifier = string;
  */
 export declare type StepTitle = string;
 /**
- * A human_readable description of this step.
+ * A description of this step.
  */
 export declare type StepDescription = string;
 /**
- * A human_readable description of control objectives.
+ * A description of control objectives.
  */
 export declare type ControlObjectiveDescription = string;
 /**
- * A human_readable description of in_scope controls specified for assessment.
+ * A description of in_scope controls specified for assessment.
  */
 export declare type AssessedControlsDescription = string;
 /**
- * A human_readable description of this collection of control objectives.
+ * A description of this collection of control objectives.
  */
 export declare type ControlObjectivesDescription = string;
 /**
@@ -759,7 +759,7 @@ export declare type AssessmentPartText = string;
  */
 export declare type SubjectType = string;
 /**
- * A human_readable description of the collection of subjects being included in this assessment.
+ * A description of the collection of subjects being included in this assessment.
  */
 export declare type IncludeSubjectsDescription = string;
 /**
@@ -795,7 +795,7 @@ export declare type TaskType = string;
  */
 export declare type TaskTitle = string;
 /**
- * A human_readable description of this task.
+ * A description of this task.
  */
 export declare type TaskDescription = string;
 /**
@@ -839,7 +839,7 @@ export declare type ResultsUniversallyUniqueIdentifier = string;
  */
 export declare type ResultsTitle = string;
 /**
- * A human_readable description of this set of test results.
+ * A description of this set of test results.
  */
 export declare type ResultsDescription = string;
 /**
@@ -859,7 +859,7 @@ export declare type AssessmentLogEntryUniversallyUniqueIdentifier = string;
  */
 export declare type ActionTitle = string;
 /**
- * A human_readable description of this event.
+ * A description of this event.
  */
 export declare type ActionDescription = string;
 /**
@@ -883,7 +883,7 @@ export declare type ObservationUniversallyUniqueIdentifier = string;
  */
 export declare type ObservationTitle = string;
 /**
- * A human_readable description of this assessment observation.
+ * A description of this assessment observation.
  */
 export declare type ObservationDescription = string;
 /**
@@ -915,7 +915,7 @@ export declare type SubjectReferenceTitle = string;
  */
 export declare type RelevantEvidenceReference = string;
 /**
- * A human_readable description of this evidence.
+ * A description of this evidence.
  */
 export declare type RelevantEvidenceDescription = string;
 /**
@@ -935,7 +935,7 @@ export declare type RiskUniversallyUniqueIdentifier = string;
  */
 export declare type RiskTitle = string;
 /**
- * A human_readable summary of the identified risk, to include a statement of how the risk impacts the system.
+ * A summary of the identified risk, to include a statement of how the risk impacts the system.
  */
 export declare type RiskDescription = string;
 /**
@@ -975,7 +975,7 @@ export declare type MitigatingFactorUniversallyUniqueIdentifier = string;
  */
 export declare type ImplementationUUID = string;
 /**
- * A human_readable description of this mitigating factor.
+ * A description of this mitigating factor.
  */
 export declare type MitigatingFactorDescription = string;
 /**
@@ -995,7 +995,7 @@ export declare type RemediationIntent = string;
  */
 export declare type ResponseTitle = string;
 /**
- * A human_readable description of this response plan.
+ * A description of this response plan.
  */
 export declare type ResponseDescription = string;
 /**
@@ -1007,7 +1007,7 @@ export declare type RequiredUniversallyUniqueIdentifier = string;
  */
 export declare type TitleForRequiredAsset = string;
 /**
- * A human_readable description of this required asset.
+ * A description of this required asset.
  */
 export declare type DescriptionOfRequiredAsset = string;
 /**
@@ -1019,7 +1019,7 @@ export declare type RiskLogEntryUniversallyUniqueIdentifier = string;
  */
 export declare type Title = string;
 /**
- * A human_readable description of what was done regarding the risk.
+ * A description of what was done regarding the risk.
  */
 export declare type RiskTaskDescription = string;
 /**
@@ -1047,7 +1047,7 @@ export declare type FindingUniversallyUniqueIdentifier = string;
  */
 export declare type FindingTitle = string;
 /**
- * A human_readable description of this finding.
+ * A description of this finding.
  */
 export declare type FindingDescription = string;
 /**
@@ -1063,7 +1063,7 @@ export declare type FindingTargetIdentifierReference = string;
  */
 export declare type ObjectiveStatusTitle = string;
 /**
- * A human_readable description of the assessor's conclusions regarding the degree to which an objective is satisfied.
+ * A description of the assessor's conclusions regarding the degree to which an objective is satisfied.
  */
 export declare type ObjectiveStatusDescription = string;
 /**
@@ -1095,7 +1095,7 @@ export declare type POAMItemUniversallyUniqueIdentifier = string;
  */
 export declare type POAMItemTitle = string;
 /**
- * A human_readable description of POA&M item.
+ * A description of POA&M item.
  */
 export declare type POAMItemDescription = string;
 /**
@@ -1105,7 +1105,7 @@ export declare type ObservationUniversallyUniqueIdentifierReference2 = string;
 export declare type ComponentTypeInfo = {
     uuid: UniversallyUniqueIdentifier;
     title: string;
-    required_props?: Property[];
+    required_props: Property[];
     description?: string;
 };
 /**
@@ -1620,7 +1620,7 @@ export interface SpecificControlStatement {
 }
 export interface ResponsibleRole {
     role_id: RoleIdentifier;
-    party_uuids: PartyUUIDReference[];
+    party_uuids?: PartyUUIDReference[];
     props?: Property[];
     links?: Link[];
     remarks?: Remarks;
