@@ -6390,6 +6390,80 @@
       ],
       "additionalProperties": false
     },
+    "assessment_log_entry": {
+      "$id": "#definitions/assessment_log_entry",
+      "title": "Assessment Log Entry",
+      "description": "Identifies the result of an action and/or task that occurred as part of executing an assessment plan or an assessment event that occurred in producing the assessment results.",
+      "type": "object",
+      "properties": {
+        "uuid": {
+          "title": "Assessment Log Entry Universally Unique Identifier",
+          "description": "Uniquely identifies an assessment event. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. A UUID should be consistently used for this schedule across revisions of the document.",
+          "type": "string",
+          "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
+        },
+        "title": {
+          "title": "Action Title",
+          "description": "The title for this event.",
+          "type": "string"
+        },
+        "description": {
+          "title": "Action Description",
+          "description": "A description of this event.",
+          "type": "string"
+        },
+        "start": {
+          "title": "Start",
+          "description": "Identifies the start date and time of an event.",
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+        },
+        "end": {
+          "title": "End",
+          "description": "Identifies the end date and time of an event. If the event is a point in time, the start and end will be the same date and time.",
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
+        },
+        "props": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/property"
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/link"
+          }
+        },
+        "logged_by": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/logged_by"
+          }
+        },
+        "related_tasks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/related_task"
+          }
+        },
+        "remarks": {
+          "$ref": "#/definitions/remarks"
+        }
+      },
+      "required": [
+        "uuid",
+        "start"
+      ],
+      "additionalProperties": false
+    },
     "result": {
       "title": "Assessment Result",
       "description": "Used by the assessment results and POA&M. In the assessment results, this identifies all of the assessment observations and findings, initial and residual risks, deviations, and disposition. In the POA&M, this identifies initial and residual risks, deviations, and disposition.",
@@ -6498,77 +6572,7 @@
               "type": "array",
               "minItems": 1,
               "items": {
-                "title": "Assessment Log Entry",
-                "description": "Identifies the result of an action and/or task that occurred as part of executing an assessment plan or an assessment event that occurred in producing the assessment results.",
-                "type": "object",
-                "properties": {
-                  "uuid": {
-                    "title": "Assessment Log Entry Universally Unique Identifier",
-                    "description": "Uniquely identifies an assessment event. This UUID may be referenced elsewhere in an OSCAL document when referring to this information. A UUID should be consistently used for this schedule across revisions of the document.",
-                    "type": "string",
-                    "pattern": "^[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-4[0-9A-Fa-f]{3}-[89ABab][0-9A-Fa-f]{3}-[0-9A-Fa-f]{12}$"
-                  },
-                  "title": {
-                    "title": "Action Title",
-                    "description": "The title for this event.",
-                    "type": "string"
-                  },
-                  "description": {
-                    "title": "Action Description",
-                    "description": "A description of this event.",
-                    "type": "string"
-                  },
-                  "start": {
-                    "title": "Start",
-                    "description": "Identifies the start date and time of an event.",
-                    "type": "string",
-                    "format": "date-time",
-                    "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
-                  },
-                  "end": {
-                    "title": "End",
-                    "description": "Identifies the end date and time of an event. If the event is a point in time, the start and end will be the same date and time.",
-                    "type": "string",
-                    "format": "date-time",
-                    "pattern": "^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)|(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))|(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))|(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z|[+-][0-9]{2}:[0-9]{2})$"
-                  },
-                  "props": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/definitions/property"
-                    }
-                  },
-                  "links": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/definitions/link"
-                    }
-                  },
-                  "logged_by": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/definitions/logged_by"
-                    }
-                  },
-                  "related_tasks": {
-                    "type": "array",
-                    "minItems": 1,
-                    "items": {
-                      "$ref": "#/definitions/related_task"
-                    }
-                  },
-                  "remarks": {
-                    "$ref": "#/definitions/remarks"
-                  }
-                },
-                "required": [
-                  "uuid",
-                  "start"
-                ],
-                "additionalProperties": false
+                "$ref": "#/definitions/assessment_log_entry"
               }
             }
           },
