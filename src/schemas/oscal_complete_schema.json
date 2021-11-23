@@ -6464,6 +6464,25 @@
       ],
       "additionalProperties": false
     },
+    "assessment_log": {
+      "$id": "#/definitions/assessment_log",
+      "title": "Assessment Log",
+      "description": "A log of all assessment_related actions taken.",
+      "type": "object",
+      "properties": {
+        "entries": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/assessment_log_entry"
+          }
+        }
+      },
+      "required": [
+        "entries"
+      ],
+      "additionalProperties": false
+    },
     "result": {
       "title": "Assessment Result",
       "description": "Used by the assessment results and POA&M. In the assessment results, this identifies all of the assessment observations and findings, initial and residual risks, deviations, and disposition. In the POA&M, this identifies initial and residual risks, deviations, and disposition.",
@@ -6528,22 +6547,7 @@
           }
         },
         "assessment_log": {
-          "title": "Assessment Log",
-          "description": "A log of all assessment_related actions taken.",
-          "type": "object",
-          "properties": {
-            "entries": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/assessment_log_entry"
-              }
-            }
-          },
-          "required": [
-            "entries"
-          ],
-          "additionalProperties": false
+          "$ref": "#/definitions/assessment_log"
         },
         "observations": {
           "type": "array",
