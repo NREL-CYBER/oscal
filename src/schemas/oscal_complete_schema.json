@@ -6515,43 +6515,7 @@
           }
         },
         "local_definitions": {
-          "title": "Local Definitions",
-          "description": "Used to define data objects that are used in the assessment plan, that do not appear in the referenced SSP.",
-          "type": "object",
-          "properties": {
-            "components": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/system_component"
-              }
-            },
-            "inventory_items": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/inventory_item"
-              }
-            },
-            "users": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/system_user"
-              }
-            },
-            "assessment_assets": {
-              "$ref": "#/definitions/assessment_assets"
-            },
-            "tasks": {
-              "type": "array",
-              "minItems": 1,
-              "items": {
-                "$ref": "#/definitions/task"
-              }
-            }
-          },
-          "additionalProperties": false
+          "$ref": "#/definitions/assessment_plan_local_definitions"
         },
         "reviewed_controls": {
           "$ref": "#/definitions/reviewed_controls"
